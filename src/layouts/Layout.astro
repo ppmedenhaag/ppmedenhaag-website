@@ -1,0 +1,28 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Config from "../../astro.config.mjs"
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const defaultLocale=Config.i18n?.defaultLocale ?? 'nl';
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+
+---
+
+<!doctype html>
+<html lang={currentLocale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar lang={currentLocale}/>
+    <slot />
+  </body>
+</html>
