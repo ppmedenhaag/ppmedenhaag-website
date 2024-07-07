@@ -1,15 +1,13 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import Config from "../../astro.config.mjs"
-
+import Config from "../../astro.config.mjs";
+import { getLocale } from "astro-i18n-aut";
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-const defaultLocale=Config.i18n?.defaultLocale ?? 'nl';
-const currentLocale = Astro.currentLocale ?? defaultLocale;
-
+const currentLocale = getLocale(Astro.url);
 ---
 
 <!doctype html>
@@ -22,7 +20,7 @@ const currentLocale = Astro.currentLocale ?? defaultLocale;
     <title>{title}</title>
   </head>
   <body>
-    <Navbar lang={currentLocale}/>
+    <Navbar />
     <slot />
   </body>
 </html>
