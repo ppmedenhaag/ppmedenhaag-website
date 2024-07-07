@@ -1,7 +1,8 @@
 ---
 import { getLocale } from "astro-i18n-aut";
 import {menuData} from "../data/i18n.js"
-
+import { Image } from 'astro:assets';
+import logoImage from '../assets/logo.png'; 
 import {
   Astronav,
   MenuItems,
@@ -16,24 +17,26 @@ const currentPath = `/${new URL(Astro.url).pathname}`;
 
 ---
 
-<header class="lg:flex justify-between p-5 gap-5 mx-auto container">
+<header class="lg:flex justify-between p-2 mx-auto container">
   <Astronav closeOnClick>
-    <div class="flex w-full lg:w-auto justify-between">
-      <a>{locale}</a>
-      <div class="block lg:hidden">
-        <MenuIcon class="w-4 h-4 text-gray-800" />
+    <div class="flex w-full lg:w-auto justify-between items-center">
+      <Image src={logoImage} alt="Logo"   
+      width="100"
+      height="50" />
+      <div class="block lg:hidden items-center ">
+        <MenuIcon class="w-8 h-8 text-gray-800 m-1 border-2 border-gray-400" />
       </div>
     </div>
-    <MenuItems class="hidden lg:flex">
+    <MenuItems class="hidden lg:flex py-4 px-2">
       <ul
-        class="flex flex-col lg:flex-row lg:gap-5 font-semibold text-indigo-900"
+        class="flex flex-col lg:flex-row lg:gap-5 gap-y-2 font-semibold text-indigo-900 lg:items-center"
       >
       {
         menuData.get(locale)?.map(({ text, href, links }) => (
           <li>      
         {links?.length ? (
-                  <Dropdown class="group">
-            <button class="flex items-center gap-x-2">
+                  <Dropdown class="group ">
+            <button class="flex items-center gap-x-2 ">
               <span> {text}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +54,7 @@ const currentPath = `/${new URL(Astro.url).pathname}`;
             </button>
             <DropdownItems class="relative">
               <div
-                class="lg:absolute bg-white top-2 w-40 border shadow rounded p-2"
+                class="lg:absolute bg-white top-2 text-nowrap border shadow rounded p-2"
               >
                 <ul>
                   {links.map(({ text: text2, href: href2 }) => (
@@ -68,7 +71,7 @@ const currentPath = `/${new URL(Astro.url).pathname}`;
                       </li>
 
                   ))}</ul></div></DropDownItems></Dropdown>
-):(
+        ):(
           <a href={href}>{text}</a>
         )}
         </li>
