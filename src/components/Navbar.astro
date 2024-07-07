@@ -17,12 +17,13 @@ const currentPath = `/${new URL(Astro.url).pathname}`;
 
 ---
 
-<header class="lg:flex justify-between p-2 mx-auto container">
+<header class="lg:flex justify-between px-2 mx-auto container">
   <Astronav closeOnClick>
     <div class="flex w-full lg:w-auto justify-between items-center">
-      <Image src={logoImage} alt="Logo"   
+      <!-- <Image src={logoImage} alt="Logo"   
       width="100"
-      height="50" />
+      height="50" /> -->
+      <img src="/logo.svg" class="w-24 h-24"> </img>
       <div class="block lg:hidden items-center ">
         <MenuIcon class="w-8 h-8 text-gray-800 m-1 border-2 border-gray-400" />
       </div>
