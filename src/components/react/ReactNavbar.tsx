@@ -48,12 +48,12 @@ export default function NavbarExample(params:NavProps) {
   const localMenu = menuData.get(params.locale);
 
   return (
-    <header className="bg-ppme-blue-50">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <header className="bg-ppme-blue-50 ">
+      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">PPME Den Haag</span>
-            <img alt="" src="/ppme-logo.svg" className="h-12 w-auto" />
+            <img alt="" src="/ppme-logo.svg" className="h-12 lg:h-16 w-auto" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -67,29 +67,29 @@ export default function NavbarExample(params:NavProps) {
           </button>
         </div>
         
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 ">
         {localMenu?.map (({ text, href, links }) => (
           <>
           {links?.length ? (
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-ppme-blue-900 px-2 py-1">
+            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-ppme-blue-900 px-2 py-1">
               {text}
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-ppme-blue-900" />
             </PopoverButton>
 
             <PopoverPanel
               transition
-              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="p-4">
                 {links.map((item) => (
                   <div
                     key={item.text}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-ppme-blue-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-2 text-md leading-6 hover:bg-ppme-blue-50 my-1 mx-2"
                   >
 
                     <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold text-ppme-blue-900">
+                      <a href={item.href} className="block font-semibold text-ppme-blue-900 py-1 px-2">
                         {item.text}
                         <span className="absolute inset-0" />
                       </a>
@@ -101,7 +101,7 @@ export default function NavbarExample(params:NavProps) {
               
             </PopoverPanel>
           </Popover>
-          ):(<a href={href} className="text-sm font-semibold leading-6 text-ppme-blue-900 py-1 px-2">{text}</a>)}
+          ):(<a href={href} className="text-lg font-semibold leading-6 text-ppme-blue-900 py-1 px-2">{text}</a>)}
           </>
         ))}
         </PopoverGroup>
