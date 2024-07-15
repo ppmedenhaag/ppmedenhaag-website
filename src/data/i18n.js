@@ -38,7 +38,7 @@ export const menuData = new Map(Object.entries( {
       ],
     },
     {text:"Evenementen", href:"/event"},
-    {text:"Blog", href:"/blog"},
+    {text:"Blog", href:"#"},
     {
       text: 'Over ons',
       links: [
