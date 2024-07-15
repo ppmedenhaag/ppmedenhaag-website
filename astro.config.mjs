@@ -4,8 +4,9 @@ import mdx from "@astrojs/mdx";
 import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
 import { locales, defaultLocale } from "./src/data/i18n";
 import vercel from "@astrojs/vercel/serverless";
-
 import sitemap from "@astrojs/sitemap";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,11 +16,12 @@ export default defineConfig({
   }), sitemap({
     i18n: {
       locales,
-      defaultLocale,
+      defaultLocale
     },
-    filter: filterSitemapByDefaultLocale({ defaultLocale }),
-  }),
-  ],
+    filter: filterSitemapByDefaultLocale({
+      defaultLocale
+    })
+  }), react()],
   output: "server",
   adapter: vercel(),
   trailingSlash: "always"
