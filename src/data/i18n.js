@@ -63,7 +63,7 @@ export const menuData = new Map(Object.entries( {
       text: 'Ibadah',
       links: [
         {
-          text: 'Toetreden tot de Islam',
+          text: 'Menjadi Mualaf',
           href: '/ibadah/toetreden-islam',
         },
         {
