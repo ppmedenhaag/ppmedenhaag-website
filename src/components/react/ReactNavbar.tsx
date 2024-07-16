@@ -53,7 +53,7 @@ export default function NavbarExample(params:NavProps) {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">PPME Den Haag</span>
-            <img alt="" src="/ppme-logo.svg" className="h-12 lg:h-16 w-auto" />
+            <img alt="" src="/ppme-logo.svg" className="h-12 lg:h-[5rem] w-auto" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -116,11 +116,11 @@ export default function NavbarExample(params:NavProps) {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-ppme-blue-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">PPME Den Haag</span>
               <img
                 alt=""
                 src="/ppme-logo.svg"
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </a>
             <button
