@@ -91,19 +91,25 @@ export default function NavbarExample(params: NavProps) {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">PPME Den Haag</span>
-            <img alt="" src="/ppme-logo.svg" className="w-24 lg:w-32 h-12 lg:h-16" />
+            <img
+              alt=""
+              src="/ppme-logo.svg"
+              className="w-24 lg:w-32 h-12 lg:h-16"
+            />
           </a>
         </div>
 
         <PopoverGroup className="mx-auto lg:order-last">
           <Popover className="relative">
-            <PopoverButton className="w-28 flex flex-nowrap items-center gap-x-1 font-semibold leading-6 text-ppme-blue-900 px-2 py-1 bg-ppme-blue-100 border-2 border-ppme-blue-700 rounded-md">
+            <PopoverButton className="w-28 flex flex-nowrap items-center gap-x-1 font-semibold leading-6 text-ppme-blue-900 px-2 py-1 bg-ppme-blue-100 border border-ppme-blue-200 rounded-md">
               <img
-                className="h-6 mr-1.5 w-auto border border-ppme-blue-200 rounded-md"
+                className="h-6 w-auto mr-1.5 rounded-md"
                 src={country?.flagUrl}
                 alt=""
               />
-              <span className="flex-grow text-left">{country?.code?.toUpperCase()}</span>
+              <span className="flex-grow text-left">
+                {country?.code?.toUpperCase()}
+              </span>
               <ChevronDownIcon
                 aria-hidden="true"
                 className="h-5 w-5 flex-none text-ppme-blue-900"
@@ -112,17 +118,17 @@ export default function NavbarExample(params: NavProps) {
 
             <PopoverPanel
               transition
-              className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="px-2 py-1">
                 {LANG_LIST.map((item) => (
                   <div
                     key={item.code}
-                    className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-50 my-1 mx-2"
+                    className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
                   >
                     <div className="flex flex-nowrap items-center mx-2">
                       <img
-                        className="h-6 mr-1.5 w-auto border border-ppme-blue-200 rounded-md"
+                        className="h-6 w-auto mr-1.5 rounded-md"
                         src={item.flagUrl}
                         alt=""
                       />
@@ -207,12 +213,59 @@ export default function NavbarExample(params: NavProps) {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-ppme-blue-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-ppme-blue-50 px-6 py-1.5 sm:max-w-sm sm:ring-1 sm:ring-ppme-blue-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">PPME Den Haag</span>
-              <img alt="" src="/ppme-logo.svg" className="h-12 w-auto" />
+              <img alt="" src="/ppme-logo.svg" className="h-12 w-24" />
             </a>
+            <PopoverGroup className="sm:hidden">
+                  <Popover className="relative">
+                    <PopoverButton className="w-28 flex flex-nowrap items-center gap-x-1 font-semibold leading-6 text-ppme-blue-900 px-2 py-1 bg-ppme-blue-100 border border-ppme-blue-200 rounded-md">
+                      <img
+                        className="h-6 w-auto mr-1.5 rounded-md"
+                        src={country?.flagUrl}
+                        alt=""
+                      />
+                      <span className="flex-grow text-left">
+                        {country?.code?.toUpperCase()}
+                      </span>
+                      <ChevronDownIcon
+                        aria-hidden="true"
+                        className="h-5 w-5 flex-none text-ppme-blue-900"
+                      />
+                    </PopoverButton>
+
+                    <PopoverPanel
+                      transition
+                      className="absolute top-full -left-8 z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                    >
+                      <div className="px-2 py-1">
+                        {LANG_LIST.map((item) => (
+                          <div
+                            key={item.code}
+                            className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
+                          >
+                            <div className="flex flex-nowrap items-center mx-2">
+                              <img
+                                className="h-6 w-auto mr-1.5 rounded-md"
+                                src={item.flagUrl}
+                                alt=""
+                              />
+                              <a
+                                href={`/${item.code}/`}
+                                className="block font-semibold text-ppme-blue-900 py-1 px-2"
+                              >
+                                {item.name}
+                                <span className="absolute inset-0" />
+                              </a>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </PopoverPanel>
+                  </Popover>
+                </PopoverGroup>            
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -259,6 +312,7 @@ export default function NavbarExample(params: NavProps) {
                     )}
                   </>
                 ))}
+
               </div>
             </div>
           </div>
