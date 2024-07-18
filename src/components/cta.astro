@@ -7,8 +7,8 @@ const currentPath = `/${new URL(Astro.url).pathname}`;
 
 ---
 <div class="py-4 mx-auto grid grid-cols-1 border-2 justify-items-center bg-ppme-blue-700 space-y-2">
-    <span class="text-3xl font-semibold text-ppme-blue-200">{CTA_CONFIG.get(locale)?.subtitle }</span>
-    <span class="text-5xl font-bold text-ppme-blue-100">{CTA_CONFIG.get(locale)?.title }</span>
-    <Image src={CTA_CONFIG.get(locale)?.image ?? '/images/default.webp' } alt="CTA" width={800} height={600} class="rounded-md"/>
+    <span class="text-xl lg:text-3xl font-semibold text-ppme-blue-200">{CTA_CONFIG.get(locale)?.subtitle }</span>
+    <span class="text-2xl lg:text-5xl font-bold text-ppme-blue-100">{CTA_CONFIG.get(locale)?.title }</span>
+    <Image src={CTA_CONFIG.get(locale)?.image ?? '/images/default.webp' } alt="CTA" width={800} height={600} class="px-2"/>
 
 </div>
