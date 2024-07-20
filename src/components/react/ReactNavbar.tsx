@@ -120,7 +120,7 @@ export default function NavbarExample(params: NavProps) {
               className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="px-2 py-1">
-                {LANG_LIST.map((item) => (
+                {LANG_LIST.filter(l => l.code!== params.locale).map((item) => (
                   <div
                     key={item.code}
                     className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"

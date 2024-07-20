@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/footer.astro";
 import { getLocale } from "astro-i18n-aut";
 export interface Props {
   title: string;
@@ -22,6 +23,6 @@ const currentLocale = getLocale(Astro.url);
 
     <Navbar />
     <slot />
-\
+<Footer/>
   </body>
 </html>
