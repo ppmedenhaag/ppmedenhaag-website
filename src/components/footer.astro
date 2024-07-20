@@ -36,7 +36,6 @@ const navigation = {
       icon: "/icons/ig.svg",
     },
 
-
     {
       name: "YouTube",
       href: "#",
@@ -46,7 +45,7 @@ const navigation = {
       name: "GitHub",
       href: "#",
       icon: "/icons/gh.svg",
-    },    
+    },
   ],
 };
 ---
@@ -56,19 +55,23 @@ const navigation = {
   <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
       <div class="space-y-4 md:space-y-8">
-        <img
-          alt="PPME Den Haag"
-          src="/ppme-logo.svg"
-          class="h-[70px]"
-        />
-        <div class="px-1 text-base font-semibold text-ppme-blue-700  grid grid-cols-1">
+        <img alt="PPME Den Haag" src="/ppme-logo.svg" class="h-[70px]" />
+        <div class="px-1 flex space-x-2 items-center">
+          <img src="/icons/address.svg" class="h-8" />
+          <div
+            class="text-base font-semibold text-ppme-blue-700 grid grid-cols-1"
+          >
             <span>Heeswijkplein 170</span>
             <span>2531 HK Den Haag</span>
+          </div>
         </div>
         <div class="flex space-x-4 md:space-x-8">
           {
             navigation.social.map((item) => (
-              <a href={item.href} class="border border-ppme-blue-50 hover:border-ppme-blue-700 p-1 rounded-md hober:bg-white">
+              <a
+                href={item.href}
+                class="border border-ppme-blue-50 hover:border-ppme-blue-700 p-1 rounded-md hober:bg-white"
+              >
                 <span class="sr-only">{item.name}</span>
                 <img src={item.icon} class="h-6 w-6 md:h-8 md:w-8" />
               </a>
@@ -138,7 +141,9 @@ const navigation = {
             </ul>
           </div>
           <div class="mt-10 md:mt-0">
-            <h3 class="text-sm font-semibold leading-6 text-ppme-blue-900">Legal</h3>
+            <h3 class="text-sm font-semibold leading-6 text-ppme-blue-900">
+              Legal
+            </h3>
             <ul role="list" class="mt-6 space-y-4">
               {
                 navigation.legal.map((item) => (
