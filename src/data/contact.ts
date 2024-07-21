@@ -1,5 +1,4 @@
-export const SubjectData = new Map(
-  Object.entries({
+export const SubjectData = {
     nl: [
       { text: "PPME Lidmaatschap" },
       { text: "PPME Lidmaatschap" },
@@ -31,5 +30,4 @@ export const SubjectData = new Map(
       { text: "Feedback geven aan PPME Den Haag" },
       { text: "Ander onderwerp" },
     ],
-  })
-);
+  };
