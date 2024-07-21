@@ -3,8 +3,8 @@ import { getLocale } from "astro-i18n-aut";
 import { Image } from "astro:assets";
 import { CTA_CONFIG } from "../data/config";
 import { UI_CONFIG } from "../data/ui";
-import { useTranslations } from "../utils/lang";
-const locale = getLocale(Astro.url);
+import { getLang, useTranslations } from "../utils/lang";
+const locale = getLang(Astro.url);
 const t = useTranslations(locale);
 ---
 
