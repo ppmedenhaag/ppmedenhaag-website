@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import {
   Dialog,
@@ -31,48 +32,7 @@ interface NavProps {
   currentPath: string;
 }
 
-const langs = [
-  { text: "NL", href: "#" },
-  { text: "ID", href: "#" },
-  { text: "EN", href: "#" },
-];
 
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "/blog",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
 
 export default function NavbarExample(params: NavProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -156,9 +116,9 @@ export default function NavbarExample(params: NavProps) {
           </button>
         </div>
 
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12 ">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 items-center">
           {localMenu?.map(({ text, href, links }) => (
-            <>
+            <div key={text} className="">
               {links?.length ? (
                 <Popover className="relative">
                   <PopoverButton className="flex items-center gap-x-1 font-semibold leading-6 text-ppme-blue-900 px-2 py-1">
@@ -201,7 +161,7 @@ export default function NavbarExample(params: NavProps) {
                   {text}
                 </a>
               )}
-            </>
+            </div>
           ))}
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
@@ -240,7 +200,7 @@ export default function NavbarExample(params: NavProps) {
                   className="absolute top-full -left-8 z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   <div className="px-2 py-1">
-                    {LANG_LIST.map((item) => (
+                    {LANG_LIST.filter(l => l.code!== params.locale).map((item) => (
                       <div
                         key={item.code}
                         className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
@@ -278,7 +238,7 @@ export default function NavbarExample(params: NavProps) {
             <div className="-my-6 divide-y divide-ppme-blue-500/10">
               <div className="space-y-2 py-6">
                 {localMenu?.map(({ text, href, links }) => (
-                  <>
+                  <div key={text}>
                     {links?.length ? (
                       <Disclosure as="div" className="-mx-3">
                         <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50">
@@ -309,7 +269,7 @@ export default function NavbarExample(params: NavProps) {
                         {text}
                       </a>
                     )}
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

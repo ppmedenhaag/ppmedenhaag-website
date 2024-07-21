@@ -7,7 +7,7 @@ const currentPath = `/${new URL(Astro.url).pathname}`;
 
 ---
 
-<NavbarExample locale={locale} currentPath={currentPath} client:visible/>
+<NavbarExample locale={locale} currentPath={currentPath} client:load/>
 
 
 

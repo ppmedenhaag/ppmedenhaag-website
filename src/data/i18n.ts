@@ -71,7 +71,7 @@ export const menuData = new Map(
           },
           {
             text: "Contact",
-            href: "/contact",
+            href: "/contact/",
           },
         ],
       },
@@ -121,8 +121,8 @@ export const menuData = new Map(
             href: "/about/about-1",
           },
           {
-            text: "Contact",
-            href: "/contact",
+            text: "Hubungi Kami",
+            href: "/id/contact/",
           },
         ],
       },
@@ -173,8 +173,8 @@ export const menuData = new Map(
             href: "/about/about-1",
           },
           {
-            text: "Contact",
-            href: "/contact",
+            text: "Contact Us",
+            href: "/en/contact/",
           },
         ],
       },

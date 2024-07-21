@@ -1,0 +1,35 @@
+export const SubjectData = new Map(
+  Object.entries({
+    nl: [
+      { text: "PPME Lidmaatschap" },
+      { text: "PPME Lidmaatschap" },
+      { text: "Toetreden tot de Islam" },
+      { text: "Islamitische Trouwen" },
+      { text: "Geboorte" },
+      { text: "Zakat, Infaq en Sadaqah" },
+      { text: "Overlijden" },
+      { text: "Feedback geven aan PPME Den Haag" },
+      { text: "Ander onderwerp" },
+    ],
+    id: [
+      { text: "Keanggotaan PPME" },
+      { text: "Mualaf" },
+      { text: "Pernikahan Islami" },
+      { text: "Kelahiran anak" },
+      { text: "Zakat, Infaq dan Sadaqah" },
+      { text: "Kematian" },
+      { text: "Masukan untuk PPME Den Haag" },
+      { text: "Subyek lain" },
+    ],
+    en: [
+      { text: "PPME Lidmaatschap" },
+      { text: "Toetreden tot de Islam" },
+      { text: "Islamitische Trouwen" },
+      { text: "Geboorte" },
+      { text: "Zakat, Infaq en Sadaqah" },
+      { text: "Overlijden" },
+      { text: "Feedback geven aan PPME Den Haag" },
+      { text: "Ander onderwerp" },
+    ],
+  })
+);
