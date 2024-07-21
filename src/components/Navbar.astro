@@ -1,7 +1,8 @@
 ---
 import NavbarExample from "./react/ReactNavbar";
-import { getLocale } from "astro-i18n-aut";
-const locale = getLocale(Astro.url);
+import {getLang} from '../utils/lang';
+
+const locale = getLang(Astro.url);
 const currentPath = `/${new URL(Astro.url).pathname}`;
 
 

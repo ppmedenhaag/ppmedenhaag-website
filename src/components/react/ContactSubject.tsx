@@ -10,6 +10,7 @@ import {
 } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { SubjectData } from "../../data/contact";
+import type { locales } from "../../data/i18n";
 
 const people = [
   { id: 1, name: "Wade Cooper" },
@@ -24,10 +25,10 @@ const people = [
   { id: 10, name: "Emil Schaefer" },
 ];
 interface Props {
-  locale: string;
+  locale: keyof typeof locales;
 }
 export default function ContactSubject(params: Props) {
-  const subjects = SubjectData.get(params.locale);
+  const subjects = SubjectData[params.locale];
   console.log(subjects);
   const [selected, setSelected] = useState(subjects[0]);
 
