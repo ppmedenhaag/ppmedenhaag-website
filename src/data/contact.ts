@@ -1,6 +1,6 @@
 export const SubjectData = {
     nl: [
-      { text: "PPME Lidmaatschap" },
+      { text: " - " },
       { text: "PPME Lidmaatschap" },
       { text: "Toetreden tot de Islam" },
       { text: "Islamitische Trouwen" },
@@ -11,6 +11,7 @@ export const SubjectData = {
       { text: "Ander onderwerp" },
     ],
     id: [
+        { text: " - " },
       { text: "Keanggotaan PPME" },
       { text: "Mualaf" },
       { text: "Pernikahan Islami" },
@@ -21,13 +22,14 @@ export const SubjectData = {
       { text: "Subyek lain" },
     ],
     en: [
-      { text: "PPME Lidmaatschap" },
-      { text: "Toetreden tot de Islam" },
-      { text: "Islamitische Trouwen" },
-      { text: "Geboorte" },
-      { text: "Zakat, Infaq en Sadaqah" },
-      { text: "Overlijden" },
-      { text: "Feedback geven aan PPME Den Haag" },
-      { text: "Ander onderwerp" },
+        { text: " - " },
+      { text: "PPME membership" },
+      { text: "Joining Islam" },
+      { text: "Islamic marriage" },
+      { text: "Birth" },
+      { text: "Zakat, Infaq and Sadaqah" },
+      { text: "Passing Away" },
+      { text: "Feedback for PPME Den Haag" },
+      { text: "Other matters" },
     ],
   };

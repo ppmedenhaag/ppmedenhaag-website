@@ -1,17 +1,14 @@
 ---
-import { getLocale } from "astro-i18n-aut";
 import { Image } from "astro:assets";
-import { CTA_CONFIG } from "../data/config";
-import { UI_CONFIG } from "../data/ui";
 import { getLang, useTranslations } from "../utils/lang";
-import ContactSubject from "./react/ContactSubject";
 import contactImage from "../assets/contact.webp";
-const locale = getLang(Astro.url) ;
+import { SubjectData } from "../data/contact";
+const locale = getLang(Astro.url);
 const t = useTranslations(locale);
+const subjects = SubjectData[locale];
 ---
 
-
-<form>
+<form action="https://formspree.io/f/mdknakbg" method="POST">
   <div class="space-y-12">
     <div class="border-b border-gray-900/10 pb-12">
       <h2
@@ -23,20 +20,26 @@ const t = useTranslations(locale);
         {t("contact.subtitle")}
       </p>
       <Image
-      src={contactImage}
-      alt="Contact"
-      class="rounded-xl my-4"
-      widths={[240, 540, 720, contactImage.width]}
-      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${contactImage.width}px`}
-    />
+        src={contactImage}
+        alt="Contact"
+        class="rounded-xl my-4"
+        widths={[240, 540, 720, contactImage.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${contactImage.width}px`}
+      />
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="sm:col-span-4">
           <label
-            for="name"
+            for="subject"
             class="block text-sm font-medium leading-6 text-ppme-blue-800"
             >{t("contact.subject")}</label
           >
-          <ContactSubject locale={locale} client:load />
+          <select
+            id="subject"
+            name="subject"
+            class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          >
+            {subjects.map((s) => <option>{s.text}</option>)}
+          </select>
         </div>
         <div class="sm:col-span-4">
           <label
@@ -70,7 +73,7 @@ const t = useTranslations(locale);
               class="flex rounded-md shadow-sm ring-1 ring-inset ring-ppme-blue-400 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
             >
               <input
-                type="text"
+                type="email"
                 name="email"
                 id="email"
                 autocomplete="email"

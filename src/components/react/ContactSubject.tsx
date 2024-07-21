@@ -1,5 +1,5 @@
 "use client";
-
+import { useForm, ValidationError } from '@formspree/react';
 import { useState } from "react";
 import {
   Label,
@@ -33,7 +33,8 @@ export default function ContactSubject(params: Props) {
   const [selected, setSelected] = useState(subjects[0]);
 
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    
+    <Listbox value={selected} onChange={setSelected} name="subject">
       <div className="relative mt-2">
         <ListboxButton className="relative w-80 cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-ppme-blue-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
           <span className="block truncate">{selected.text}</span>
