@@ -33,7 +33,7 @@ export default function NavbarExample(params: NavProps) {
 
   return (
     <header className="bg-ppme-blue-50 ">
-      <span>{params.currentPath}</span>
+
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 lg:px-8"
