@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState } from "react";
 import {
   Dialog,
@@ -11,38 +11,29 @@ import {
   PopoverGroup,
   PopoverPanel,
 } from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-import { LANG_LIST, menuData } from "../../data/i18n.ts";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { LANG_LIST, menuData, type LangOptions } from "../../data/i18n.ts";
+import type { ui } from "../../data/ui.ts";
 
 interface NavProps {
-  locale: string;
+  locale: LangOptions;
   currentPath: string;
+  menu: (typeof menuData)[LangOptions];
+  langLinks: { name: string; code: LangOptions; flagUrl: string; path: string }[];
 }
-
-
 
 export default function NavbarExample(params: NavProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [country, setCountry] = useState(
-    LANG_LIST.find((l) => l.code === params.locale)
+    params.langLinks.find((l) => l.code === params.locale)
   );
-  const localMenu = menuData.get(params.locale);
+
+  const localMenu = params.menu;
 
   return (
     <header className="bg-ppme-blue-50 ">
+      <span>{params.currentPath}</span>
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 lg:px-8"
@@ -80,27 +71,29 @@ export default function NavbarExample(params: NavProps) {
               className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="px-2 py-1">
-                {LANG_LIST.filter(l => l.code!== params.locale).map((item) => (
-                  <div
-                    key={item.code}
-                    className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
-                  >
-                    <div className="flex flex-nowrap items-center mx-2">
-                      <img
-                        className="h-6 w-auto mr-1.5 rounded-md"
-                        src={item.flagUrl}
-                        alt=""
-                      />
-                      <a
-                        href={`/${item.code}/`}
-                        className="block font-semibold text-ppme-blue-900 py-1 px-2"
-                      >
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </a>
+                {params.langLinks.filter((l) => l.code !== params.locale).map(
+                  (item) => (
+                    <div
+                      key={item.code}
+                      className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
+                    >
+                      <div className="flex flex-nowrap items-center mx-2">
+                        <img
+                          className="h-6 w-auto mr-1.5 rounded-md"
+                          src={item.flagUrl}
+                          alt=""
+                        />
+                        <a
+                          href={item.path}
+                          className="block font-semibold text-ppme-blue-900 py-1 px-2"
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
             </PopoverPanel>
           </Popover>
@@ -200,27 +193,29 @@ export default function NavbarExample(params: NavProps) {
                   className="absolute top-full -left-8 z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   <div className="px-2 py-1">
-                    {LANG_LIST.filter(l => l.code!== params.locale).map((item) => (
-                      <div
-                        key={item.code}
-                        className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
-                      >
-                        <div className="flex flex-nowrap items-center mx-2">
-                          <img
-                            className="h-6 w-auto mr-1.5 rounded-md"
-                            src={item.flagUrl}
-                            alt=""
-                          />
-                          <a
-                            href={`/${item.code}/`}
-                            className="block font-semibold text-ppme-blue-900 py-1 px-2"
-                          >
-                            {item.name}
-                            <span className="absolute inset-0" />
-                          </a>
+                    {params.langLinks.filter((l) => l.code !== params.locale).map(
+                      (item) => (
+                        <div
+                          key={item.code}
+                          className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
+                        >
+                          <div className="flex flex-nowrap items-center mx-2">
+                            <img
+                              className="h-6 w-auto mr-1.5 rounded-md"
+                              src={item.flagUrl}
+                              alt=""
+                            />
+                            <a
+                              href={item.path}
+                              className="block font-semibold text-ppme-blue-900 py-1 px-2"
+                            >
+                              {item.name}
+                              <span className="absolute inset-0" />
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
                 </PopoverPanel>
               </Popover>

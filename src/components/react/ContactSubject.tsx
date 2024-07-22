@@ -9,15 +9,14 @@ import {
 } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { SubjectData } from "../../data/contact";
-import type { locales } from "../../data/i18n";
+import type { LangOptions, locales } from "../../data/i18n";
 
 
 interface Props {
-  locale: keyof typeof locales;
+  locale: LangOptions;
 }
 export default function ContactSubject(params: Props) {
   const subjects = SubjectData[params.locale];
-  console.log(subjects);
   const [selected, setSelected] = useState(subjects[0]);
 
   return (

@@ -1,14 +1,54 @@
 ---
 import NavbarExample from "./react/ReactNavbar";
-import {getLang} from '../utils/lang';
+import { getLang } from "../utils/lang";
+import { menuData, defaultLocale } from "../data/i18n";
+import { LANG_LIST } from "../data/i18n";
 
 const locale = getLang(Astro.url);
-const currentPath = `/${new URL(Astro.url).pathname}`;
+const currentPath = new URL(Astro.url).pathname;
+const localMenu = menuData[locale];
+let langLinks = undefined;
+if (locale === defaultLocale) {
+  langLinks = LANG_LIST.map((a) => {
+    let path = "";
+    if (a.code === locale) {
+      path = currentPath;
+    } else {
+      path = `/${a.code}${currentPath}`;
+    }
+    const retVal = {
+      name: a.name,
+      code: a.code,
+      flagUrl: a.flagUrl,
+      path: path,
+    };
 
+    return retVal;
+  });
+} else {
+  langLinks = LANG_LIST.map((a) => {
+    let path = "";
+    if (a.code === locale) {
+      path = currentPath;
+    } else {
+      path = `/${a.code}${currentPath.substring(3)}`;
+    }
+    const retVal = {
+      name: a.name,
+      code: a.code,
+      flagUrl: a.flagUrl,
+      path: path,
+    };
 
+    return retVal;
+  });
+}
 ---
 
-<NavbarExample locale={locale} currentPath={currentPath} client:load/>
-
-
-
+<NavbarExample
+  locale={locale}
+  currentPath={currentPath}
+  menu={localMenu}
+  langLinks={langLinks}
+  client:load
+/>
