@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
+  CloseButton,
   Dialog,
   DialogPanel,
   Disclosure,
@@ -77,7 +78,7 @@ export default function NavbarExample(params: NavProps) {
                       key={item.code}
                       className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
                     >
-                      <div className="flex flex-nowrap items-center mx-2">
+                      <CloseButton  className="flex flex-nowrap items-center mx-2">
                         <img
                           className="h-6 w-auto mr-1.5 rounded-md"
                           src={item.flagUrl}
@@ -90,7 +91,7 @@ export default function NavbarExample(params: NavProps) {
                           {item.name}
                           <span className="absolute inset-0" />
                         </a>
-                      </div>
+                      </CloseButton>
                     </div>
                   )
                 )}
