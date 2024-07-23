@@ -56,7 +56,7 @@ export const menuData  = {
         },
       ],
     },
-    { text: "Evenementen", href: "/event" },
+    { text: "Evenementen", href: "/event/" },
     { text: "Blog", href: "#" },
     {
       text: "Over ons",
@@ -107,7 +107,7 @@ export const menuData  = {
         },
       ],
     },
-    { text: "Evenementen", href: "/event" },
+    { text: "Evenementen", href: "/id/event/" },
     { text: "Blog", href: "/blog" },
     {
       text: "Over ons",
@@ -159,7 +159,7 @@ export const menuData  = {
         },
       ],
     },
-    { text: "Evenementen", href: "/event" },
+    { text: "Evenementen", href: "/en/event/" },
     { text: "Blog", href: "/blog" },
     {
       text: "Over ons",
