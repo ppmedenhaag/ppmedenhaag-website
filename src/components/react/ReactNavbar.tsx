@@ -250,6 +250,7 @@ export default function NavbarExample(params: NavProps) {
                               key={item.text}
                               as="a"
                               href={item.href}
+                              onClick={() => setMobileMenuOpen(false)}      
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50"
                             >
                               {item.text}
