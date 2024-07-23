@@ -246,14 +246,14 @@ export default function NavbarExample(params: NavProps) {
                         </DisclosureButton>
                         <DisclosurePanel className="mt-2 space-y-2">
                           {links.map((item) => (
-                            <DisclosureButton
+                            <CloseButton
                               key={item.text}
                               as="a"
                               href={item.href}
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50"
                             >
                               {item.text}
-                            </DisclosureButton>
+                            </CloseButton>
                           ))}
                         </DisclosurePanel>
                       </Disclosure>
