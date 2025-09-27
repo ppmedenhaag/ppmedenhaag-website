@@ -58,7 +58,7 @@ export default function NavbarExample(params: NavProps) {
                 src={country?.flagUrl}
                 alt=""
               />
-              <span className="flex-grow text-left">
+              <span className="grow text-left">
                 {country?.code?.toUpperCase()}
               </span>
               <ChevronDownIcon
@@ -69,7 +69,7 @@ export default function NavbarExample(params: NavProps) {
 
             <PopoverPanel
               transition
-              className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
             >
               <div className="px-2 py-1">
                 {params.langLinks.filter((l) => l.code !== params.locale).map(
@@ -125,7 +125,7 @@ export default function NavbarExample(params: NavProps) {
 
                   <PopoverPanel
                     transition
-                    className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                    className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-ppme-blue-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
                   >
                     <div className="p-4">
                       {links.map((item) => (
@@ -180,7 +180,7 @@ export default function NavbarExample(params: NavProps) {
                     src={country?.flagUrl}
                     alt=""
                   />
-                  <span className="flex-grow text-left">
+                  <span className="grow text-left">
                     {country?.code?.toUpperCase()}
                   </span>
                   <ChevronDownIcon
@@ -191,7 +191,7 @@ export default function NavbarExample(params: NavProps) {
 
                 <PopoverPanel
                   transition
-                  className="absolute top-full -left-8 z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                  className="absolute top-full -left-8 z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
                 >
                   <div className="px-2 py-1">
                     {params.langLinks.filter((l) => l.code !== params.locale).map(
@@ -241,7 +241,7 @@ export default function NavbarExample(params: NavProps) {
                           {text}
                           <ChevronDownIcon
                             aria-hidden="true"
-                            className="h-5 w-5 flex-none group-data-[open]:rotate-180"
+                            className="h-5 w-5 flex-none group-data-open:rotate-180"
                           />
                         </DisclosureButton>
                         <DisclosurePanel className="mt-2 space-y-2">

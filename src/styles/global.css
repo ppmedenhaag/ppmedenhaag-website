@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@theme {
+--color-ppme-blue-50: #f0f6ff;
+--color-ppme-blue-100: #e1edfd;
+--color-ppme-blue-200: #bcdafb;
+--color-ppme-blue-300: #81bef8;
+--color-ppme-blue-400: #3e9df2;
+--color-ppme-blue-500: #157fe2;
+--color-ppme-blue-600: #0863c1;
+--color-ppme-blue-700: #08509f;
+--color-ppme-blue-800: #0b4481;
+--color-ppme-blue-900: #0f396b;
+--color-ppme-blue-950: #0a2547;
+
+}
+

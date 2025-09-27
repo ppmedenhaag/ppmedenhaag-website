@@ -1,16 +1,16 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
-import { locales, defaultLocale } from "./src/data/i18n";
-import vercel from "@astrojs/vercel/serverless";
-import sitemap from "@astrojs/sitemap";
-import vercelStatic from '@astrojs/vercel/static';
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+
+import vercelStatic from '@astrojs/vercel/static';
+import tailwindcss from "@tailwindcss/vite";
+import { filterSitemapByDefaultLocale, i18n } from "astro-i18n-aut/integration";
+import { defineConfig } from "astro/config";
+import { defaultLocale, locales } from "./src/data/i18n";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx(), i18n({
+  integrations: [tailwindcss(),mdx(), i18n({
     locales,
     defaultLocale
   }), sitemap({
@@ -24,5 +24,8 @@ export default defineConfig({
   }), react()],
   output: 'static',
   adapter: vercelStatic(),
-  trailingSlash: "always"
+  trailingSlash: "always",
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
