@@ -10,7 +10,7 @@ import { defaultLocale, locales } from "./src/data/i18n";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwindcss(),mdx(), i18n({
+  integrations: [mdx(), i18n({
     locales,
     defaultLocale
   }), sitemap({

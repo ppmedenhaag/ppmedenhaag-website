@@ -26,29 +26,29 @@ export const LANG_LIST = [
 
 export const menuData  = {
   nl: [
-    { text: "Dakwah", href: "/dakwah" },
+    { text: "Dakwah", href: "/dakwah/" },
     {
       text: "Ibadah",
       links: [
         {
           text: "Toetreden tot de Islam",
-          href: "/ibadah/toetreden-islam",
+          href: "/ibadah/toetreden-islam/",
         },
         {
           text: "Zakat, Infaq en Sadaqah",
-          href: "/ibadah/sadaqah",
+          href: "/ibadah/sadaqah/",
         },
         {
           text: "Geboorte",
-          href: "/ibadah/geboorte",
+          href: "/ibadah/geboorte/",
         },
         {
           text: "Overlijden",
-          href: "/ibadah/overlijden",
+          href: "/ibadah/overlijden/",
         },
         {
           text: "Islamitisch trouwen",
-          href: "/ibadah/islamitisch-trouwen",
+          href: "/ibadah/islamitisch-trouwen/",
         },
         {
           text: "Gebedstijden 2024 (Den Haag)",
@@ -57,17 +57,17 @@ export const menuData  = {
       ],
     },
     { text: "Evenementen", href: "/event/" },
-    { text: "Blog", href: "#" },
+    { text: "Blog", href: "/blog/" },
     {
       text: "Over ons",
       links: [
         {
           text: "Overzicht",
-          href: "/about",
+          href: "/about/",
         },
         {
           text: "Lidmaatschap",
-          href: "/about/about-1",
+          href: "/about/about-1/",
         },
         {
           text: "Contact",
@@ -77,48 +77,48 @@ export const menuData  = {
     },
   ],
   id: [
-    { text: "Dakwah", href: "/dakwah" },
+    { text: "Dakwah", href: "/id/dakwah/" },
     {
       text: "Ibadah",
       links: [
         {
           text: "Menjadi Mualaf",
-          href: "/ibadah/toetreden-islam",
+          href: "/id//ibadah/toetreden-islam/",
         },
         {
-          text: "Zakat, Infaq en Sadaqah",
-          href: "/ibadah/sadaqah",
+          text: "Zakat, Infaq dan Sadaqah",
+          href: "/id/ibadah/sadaqah/",
         },
         {
-          text: "Geboorte",
-          href: "/ibadah/geboorte",
+          text: "Kelahiran",
+          href: "/id//ibadah/geboorte/",
         },
         {
-          text: "Overlijden",
-          href: "/ibadah/overlijden",
+          text: "Kematian",
+          href: "/id/ibadah/overlijden/",
         },
         {
-          text: "Islamitisch trouwen",
-          href: "/ibadah/islamitisch-trouwen",
+          text: "Pernikahan Islami",
+          href: "/id/ibadah/islamitisch-trouwen/",
         },
         {
-          text: "Gebedstijden 2024 (Den Haag)",
-          href: "/forms/schedule-sholat-den-haag-2024.pdf",
+          text: "Jadwal Sholat (Den Haag)",
+          href: "/id/forms/schedule-sholat-den-haag-2024.pdf",
         },
       ],
     },
-    { text: "Evenementen", href: "/id/event/" },
-    { text: "Blog", href: "/blog" },
+    { text: "Event", href: "/id/event/" },
+    { text: "Blog", href: "/id/blog/" },
     {
-      text: "Over ons",
+      text: "Info Lain",
       links: [
         {
-          text: "Overzicht",
-          href: "/about",
+          text: "Tentang Kita",
+          href: "/id/about/",
         },
         {
-          text: "Lidmaatschap",
-          href: "/about/about-1",
+          text: "Keanggotaan",
+          href: "/about/about-1/",
         },
         {
           text: "Hubungi Kami",
@@ -129,48 +129,48 @@ export const menuData  = {
   ],
 
   en: [
-    { text: "Dakwah", href: "/dakwah" },
+    { text: "Dakwah", href: "/en/dakwah/" },
     {
       text: "Ibadah",
       links: [
         {
           text: "Joining Islam",
-          href: "/en/ibadah/toetreden-islam",
+          href: "/en/ibadah/toetreden-islam/",
         },
         {
-          text: "Zakat, Infaq en Sadaqah",
-          href: "/ibadah/sadaqah",
+          text: "Zakat, Infaq and Sadaqah",
+          href: "/en/ibadah/sadaqah/",
         },
         {
-          text: "Geboorte",
-          href: "/ibadah/geboorte",
+          text: "Birth",
+          href: "/en/ibadah/geboorte/",
         },
         {
-          text: "Overlijden",
-          href: "/ibadah/overlijden",
+          text: "Death",
+          href: "/en/ibadah/overlijden/",
         },
         {
-          text: "Islamitisch trouwen",
-          href: "/ibadah/islamitisch-trouwen",
+          text: "Islamic Marriage",
+          href: "/en/ibadah/islamitisch-trouwen/",
         },
         {
-          text: "Gebedstijden 2024 (Den Haag)",
-          href: "/forms/schedule-sholat-den-haag-2024.pdf",
+          text: "Prayer Times (Den Haag)",
+          href: "/en/forms/schedule-sholat-den-haag-2024.pdf",
         },
       ],
     },
-    { text: "Evenementen", href: "/en/event/" },
-    { text: "Blog", href: "/blog" },
+    { text: "Events", href: "/en/event/" },
+    { text: "Blog", href: "/en/blog/" },
     {
       text: "Over ons",
       links: [
         {
           text: "Overzicht",
-          href: "/about",
+          href: "/about/",
         },
         {
           text: "Lidmaatschap",
-          href: "/about/about-1",
+          href: "/about/about-1/",
         },
         {
           text: "Contact Us",
