@@ -70,12 +70,12 @@ export default function NavbarExample(params: NavProps) {
               transition
               className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
             >
-              <div className="px-2 py-1">
+              <div className="p-1">
                 {params.langLinks.filter((l) => l.code !== params.locale).map(
                   (item) => (
                     <div
                       key={item.code}
-                      className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
+                      className="group relative flex items-center gap-x-6 rounded-lg p-1 text-md leading-6 hover:bg-ppme-blue-400  m-1"
                     >
                       <CloseButton  className="flex flex-nowrap items-center mx-2">
                         <img
@@ -85,7 +85,7 @@ export default function NavbarExample(params: NavProps) {
                         />
                         <a
                           href={item.path}
-                          className="block font-semibold text-ppme-blue-900 py-1 px-2"
+                          className="block font-semibold text-ppme-blue-900 hover:text-white py-1 px-2"
                         >
                           {item.name}
                           <span className="absolute inset-0" />

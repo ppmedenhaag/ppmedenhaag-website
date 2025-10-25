@@ -95,7 +95,7 @@ const locale = getLang(Astro.url);
 
 <footer aria-labelledby="footer-heading" class="bg-ppme-blue-50/10">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
-  <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+  <div class="mx-auto max-w-7xl px-6 pb-8 pt-12 sm:pt-24 lg:px-8 lg:pt-16">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
       <div class="space-y-4 md:space-y-8">
         <img alt="PPME Den Haag" src="/ppme-logo.svg" class="h-[70px]" />
@@ -125,16 +125,16 @@ const locale = getLang(Astro.url);
       <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
         <div class="md:grid md:grid-cols-2 md:gap-8">
           <div>
-            <h3 class="text-sm font-semibold leading-6 text-ppme-blue-900">
+            <h3 class="text-lg font-semibold text-zinc-600">
               {headerLinks.activities[locale]}
             </h3>
-            <ul role="list" class="mt-6 space-y-3 md:space-y-4 pl-4 md:pl-0">
+            <ul role="list" class="mt-4 space-y-1 md:space-y-3 pl-4 md:pl-0">
               {
                 navigation.ibadah[locale].map((item) => (
                   <li>
                     <a
                       href={item.href}
-                      class="text-base text-ppme-blue-700 hover:text-ppme-blue-900"
+                      class="text-base text-ppme-blue-700 hover:text-ppme-blue-600 font-semibold  hover:underline"
                     >
                       {item.name}
                     </a>
@@ -144,16 +144,16 @@ const locale = getLang(Astro.url);
             </ul>
           </div>
           <div class="mt-10 md:mt-0">
-            <h3 class="text-sm font-semibold leading-6 text-ppme-blue-900">
+            <h3 class="text-lg font-semibold text-zinc-600">
               {headerLinks.support[locale]}
             </h3>
-            <ul role="list" class="mt-6 space-y-3 md:space-y-4 pl-4 md:pl-0">
+            <ul role="list" class="mt-4 space-y-1 md:space-y-3 pl-4 md:pl-0">
               {
                 navigation.support[locale].map((item) => (
                   <li>
                     <a
                       href={item.href}
-                      class="text-base text-ppme-blue-700 hover:text-ppme-blue-900"
+                      class="text-base text-ppme-blue-700 hover:text-ppme-blue-600 font-semibold hover:underline"
                     >
                       {item.name}
                     </a>
@@ -166,9 +166,5 @@ const locale = getLang(Astro.url);
       </div>
     </div>
   </div>
-  <div class="mt-16 border-t border-ppme-blue-900/10 pt-8 sm:mt-20 lg:mt-24">
-    <p class="text-xs leading-5 text-ppme-blue-500">
-      &copy; 2024, PPME Den Haag.
-    </p>
-  </div>
+
 </footer>
