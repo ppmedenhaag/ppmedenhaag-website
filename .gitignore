@@ -1,6 +1,7 @@
 # build output
 dist/
 
+.raw_hugo_source/
 # generated types
 .astro/
 .vercel/

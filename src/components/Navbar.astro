@@ -5,6 +5,7 @@ import { menuData, defaultLocale } from "../data/i18n";
 import { LANG_LIST } from "../data/i18n";
 
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { getEntry } from "astro:content";
 import type { LangOptions } from "../data/i18n";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
@@ -21,7 +22,36 @@ if (!route.startsWith("/")) route = "/" + route;
 
 const localMenu = menuData[locale as keyof typeof menuData];
 
-const langLinks = LANG_LIST.map((a) => {
+const langLinksPromises = LANG_LIST.map(async (a) => {
+  let shouldInclude = true;
+
+  // Configuration mapping route prefixes to content collection names
+  // Add new sections here, e.g., "/blog/": "blog"
+  const contentMap: Record<string, "events"> = {
+    "/event/": "events",
+  };
+
+  for (const [prefix, collectionName] of Object.entries(contentMap)) {
+    if (route.startsWith(prefix) && route.length > prefix.length) {
+      // Extract slug
+      let slug = route.slice(prefix.length);
+      if (slug.endsWith("/")) slug = slug.slice(0, -1);
+
+      // Check existence
+      try {
+        const entry = await getEntry(collectionName, `${a.code}/${slug}`);
+        if (!entry) {
+          shouldInclude = false;
+        }
+      } catch (e) {
+        shouldInclude = false;
+      }
+      break; // Found a matching prefix, stop checking
+    }
+  }
+
+  if (!shouldInclude) return null;
+
   return {
     name: a.name,
     code: a.code,
@@ -29,6 +59,10 @@ const langLinks = LANG_LIST.map((a) => {
     path: getRelativeLocaleUrl(a.code, route),
   };
 });
+
+const langLinks = (await Promise.all(langLinksPromises)).filter(
+  (l) => l !== null,
+);
 ---
 
 <NavbarExample

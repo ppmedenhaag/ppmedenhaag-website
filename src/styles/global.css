@@ -1,17 +1,43 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
+
 @theme {
---color-ppme-blue-50: #f0f6ff;
---color-ppme-blue-100: #e1edfd;
---color-ppme-blue-200: #bcdafb;
---color-ppme-blue-300: #81bef8;
---color-ppme-blue-400: #3e9df2;
---color-ppme-blue-500: #157fe2;
---color-ppme-blue-600: #0863c1;
---color-ppme-blue-700: #08509f;
---color-ppme-blue-800: #0b4481;
---color-ppme-blue-900: #0f396b;
---color-ppme-blue-950: #0a2547;
+    --color-ppme-blue-50: #f0f6ff;
+    --color-ppme-blue-100: #e1edfd;
+    --color-ppme-blue-200: #bcdafb;
+    --color-ppme-blue-300: #81bef8;
+    --color-ppme-blue-400: #3e9df2;
+    --color-ppme-blue-500: #157fe2;
+    --color-ppme-blue-600: #0863c1;
+    --color-ppme-blue-700: #08509f;
+    --color-ppme-blue-800: #0b4481;
+    --color-ppme-blue-900: #0f396b;
+    --color-ppme-blue-950: #0a2547;
 
 }
 
+@layer components {
+    .prose table {
+        @apply w-full text-left border border-gray-200 my-4 overflow-hidden shadow-sm;
+    }
+
+    .prose thead {
+        @apply text-ppme-blue-900 border border-gray-200;
+    }
+
+    .prose th {
+        @apply p-4 font-semibold text-sm uppercase tracking-wider border border-gray-200;
+    }
+
+    .prose tbody tr {
+        @apply border border-gray-200 hover:bg-ppme-blue-50/50 transition-colors;
+    }
+
+    .prose tbody tr:last-child {
+        @apply border-b-0;
+    }
+
+    .prose td {
+        @apply p-4 text-gray-700 text-sm align-top border border-gray-200;
+    }
+}

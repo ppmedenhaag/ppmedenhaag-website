@@ -14,7 +14,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { menuData, type LangOptions } from "../../data/i18n.ts";
+import { menuData, type LangOptions, defaultLocale } from "../../data/i18n.ts";
 
 interface NavProps {
   locale: LangOptions;
@@ -39,7 +39,7 @@ export default function NavbarExample(params: NavProps) {
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href={`/${params.locale}/`} className="-m-1.5 p-1.5">
+          <a href={params.locale === defaultLocale ? "/" : `/${params.locale}/`} className="-m-1.5 p-1.5">
             <span className="sr-only">PPME Den Haag</span>
             <img
               alt=""
@@ -77,7 +77,7 @@ export default function NavbarExample(params: NavProps) {
                       key={item.code}
                       className="group relative flex items-center gap-x-6 rounded-lg p-1 text-md leading-6 hover:bg-ppme-blue-400  m-1"
                     >
-                      <CloseButton  className="flex flex-nowrap items-center mx-2">
+                      <CloseButton className="flex flex-nowrap items-center mx-2">
                         <img
                           className="h-6 w-auto mr-1.5 rounded-md"
                           src={item.flagUrl}
@@ -167,7 +167,7 @@ export default function NavbarExample(params: NavProps) {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-ppme-blue-50 px-6 py-1.5 sm:max-w-sm sm:ring-1 sm:ring-ppme-blue-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href={params.locale === defaultLocale ? "/" : `/${params.locale}/`} className="-m-1.5 p-1.5">
               <span className="sr-only">PPME Den Haag</span>
               <img alt="" src="/ppme-logo.svg" className="h-12 w-24" />
             </a>
@@ -249,7 +249,7 @@ export default function NavbarExample(params: NavProps) {
                               key={item.text}
                               as="a"
                               href={item.href}
-                              onClick={() => setMobileMenuOpen(false)}      
+                              onClick={() => setMobileMenuOpen(false)}
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50"
                             >
                               {item.text}
@@ -262,7 +262,7 @@ export default function NavbarExample(params: NavProps) {
                         href={href}
                         key={text}
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50"
-                        onClick={() => setMobileMenuOpen(false)} 
+                        onClick={() => setMobileMenuOpen(false)}
                       >
                         {text}
                       </CloseButton>

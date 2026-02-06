@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { defaultLocale } from "../../data/i18n";
+
+export async function getStaticPaths() {
+    const events = await getCollection("events", ({ slug }) => {
+        return slug.startsWith(`${defaultLocale}/`);
+    });
+    return events.map((entry) => {
+        const [locale, ...slugParts] = entry.slug.split("/");
+        return {
+            params: { slug: slugParts.join("/") },
+            props: { entry },
+        };
+    });
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+    <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+        <article
+            class="prose lg:prose-xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-sm border border-ppme-blue-100"
+        >
+            <header class="mb-8 border-b border-ppme-blue-100 pb-8">
+                <h1
+                    class="text-3xl font-bold tracking-tight text-ppme-blue-900 sm:text-4xl mb-4"
+                >
+                    {entry.data.title}
+                </h1>
+                <div
+                    class="flex flex-wrap items-center gap-4 text-sm text-gray-500"
+                >
+                    <time
+                        datetime={entry.data.date.toISOString()}
+                        class="flex items-center"
+                    >
+                        <svg
+                            class="mr-1.5 h-5 w-5 text-ppme-blue-500"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            ></path>
+                        </svg>
+                        {
+                            entry.data.date.toLocaleDateString(
+                                Astro.currentLocale ?? defaultLocale,
+                                {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                },
+                            )
+                        }
+                    </time>
+                    {
+                        entry.data.author && (
+                            <span class="flex items-center">
+                                <svg
+                                    class="mr-1.5 h-5 w-5 text-ppme-blue-500"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                    />
+                                </svg>
+                                {entry.data.author}
+                            </span>
+                        )
+                    }
+                </div>
+            </header>
+
+            {
+                entry.data.image && (
+                    <div class="mb-10 overflow-hidden rounded-lg shadow-sm">
+                        <img
+                            src={entry.data.image}
+                            alt={entry.data.title}
+                            class="w-full object-cover"
+                        />
+                    </div>
+                )
+            }
+
+            <div
+                class="prose-headings:text-ppme-blue-900 prose-a:text-ppme-blue-600 hover:prose-a:text-ppme-blue-700"
+            >
+                <Content />
+            </div>
+        </article>
+    </div>
+</Layout>
