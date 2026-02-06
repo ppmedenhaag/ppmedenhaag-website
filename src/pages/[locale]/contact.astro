@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/contact-form.astro";
+import { locales, defaultLocale } from "../../data/i18n";
+
+export function getStaticPaths() {
+  return Object.keys(locales)
+    .filter((lang) => lang !== defaultLocale)
+    .map((lang) => ({ params: { locale: lang } }));
+}
+---
+
+<Layout title="Contact">
+  <div class="mx-auto max-w-7xl py-8 px-2 md:px-4">
+    <ContactForm />
+  </div>
+</Layout>
+
+<script>
+  window.onbeforeunload = () => {
+    for (const form of document.getElementsByTagName("form")) {
+      form.reset();
+    }
+  };
+</script>

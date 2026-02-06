@@ -1,10 +1,11 @@
 ---
-import { getLocale } from "astro-i18n-aut";
 import { Image } from "astro:assets";
 import { CTA_CONFIG } from "../data/config";
 import { UI_CONFIG } from "../data/ui";
-import { getLang, useTranslations } from "../utils/lang";
-const locale = getLang(Astro.url);
+import { useTranslations } from "../utils/lang";
+import { defaultLocale, type LangOptions } from "../data/i18n";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 const t = useTranslations(locale);
 ---
 

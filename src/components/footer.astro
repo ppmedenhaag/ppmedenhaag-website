@@ -1,5 +1,5 @@
 ---
-import { getLang } from "../utils/lang";
+import { defaultLocale, type LangOptions } from "../data/i18n";
 
 const headerLinks = {
   activities: { nl: "Activiteiten", id: "Kegiatan", en: "Activities" },
@@ -90,7 +90,7 @@ const navigation = {
     },
   ],
 };
-const locale = getLang(Astro.url);
+const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 ---
 
 <footer aria-labelledby="footer-heading" class="bg-ppme-blue-50/10">
@@ -166,5 +166,4 @@ const locale = getLang(Astro.url);
       </div>
     </div>
   </div>
-
 </footer>

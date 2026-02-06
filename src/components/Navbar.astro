@@ -4,45 +4,31 @@ import { getLang } from "../utils/lang";
 import { menuData, defaultLocale } from "../data/i18n";
 import { LANG_LIST } from "../data/i18n";
 
-const locale = getLang(Astro.url);
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { LangOptions } from "../data/i18n";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 const currentPath = new URL(Astro.url).pathname;
-const localMenu = menuData[locale];
-let langLinks = undefined;
-if (locale === defaultLocale) {
-  langLinks = LANG_LIST.map((a) => {
-    let path = "";
-    if (a.code === locale) {
-      path = currentPath;
-    } else {
-      path = `/${a.code}${currentPath}`;
-    }
-    const retVal = {
-      name: a.name,
-      code: a.code,
-      flagUrl: a.flagUrl,
-      path: path,
-    };
 
-    return retVal;
-  });
-} else {
-  langLinks = LANG_LIST.map((a) => {
-    let path = "";
-    if (a.code === locale) {
-      path = currentPath;
-    } else {
-      path = `/${a.code}${currentPath.substring(3)}`;
-    }
-    const retVal = {
-      name: a.name,
-      code: a.code,
-      flagUrl: a.flagUrl,
-      path: path,
-    };
-
-    return retVal;
-  });
+// Clean current path to get the "route" without locale
+// e.g. /en/about -> /about, /about -> /about
+let route = currentPath;
+if (locale !== defaultLocale && route.startsWith(`/${locale}`)) {
+  route = route.slice(locale.length + 1);
 }
+// Ensure leading slash
+if (!route.startsWith("/")) route = "/" + route;
+
+const localMenu = menuData[locale as keyof typeof menuData];
+
+const langLinks = LANG_LIST.map((a) => {
+  return {
+    name: a.name,
+    code: a.code,
+    flagUrl: a.flagUrl,
+    path: getRelativeLocaleUrl(a.code, route),
+  };
+});
 ---
 
 <NavbarExample

@@ -2,13 +2,14 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/footer.astro";
-import { getLocale } from "astro-i18n-aut";
+import { defaultLocale } from "../data/i18n";
+
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-const currentLocale = getLocale(Astro.url);
+const currentLocale = Astro.currentLocale ?? defaultLocale;
 ---
 
 <!doctype html>
@@ -21,9 +22,8 @@ const currentLocale = getLocale(Astro.url);
     <title>{title}</title>
   </head>
   <body>
-
     <Navbar />
     <slot />
-<Footer/>
+    <Footer />
   </body>
 </html>

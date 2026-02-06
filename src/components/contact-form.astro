@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import { getLang, useTranslations } from "../utils/lang";
+import { useTranslations } from "../utils/lang";
 import contactImage from "../assets/contact.webp";
 import { SubjectData } from "../data/contact";
-const locale = getLang(Astro.url);
+import { defaultLocale, type LangOptions } from "../data/i18n";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 const t = useTranslations(locale);
 const subjects = SubjectData[locale];
 ---

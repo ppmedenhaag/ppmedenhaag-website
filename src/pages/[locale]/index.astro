@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/cta.astro";
+import { locales, defaultLocale } from "../../data/i18n";
+
+export function getStaticPaths() {
+  return Object.keys(locales)
+    .filter((lang) => lang !== defaultLocale)
+    .map((lang) => ({ params: { locale: lang } }));
+}
+---
+
+<Layout title="Index">
+  <CTA />
+</Layout>
