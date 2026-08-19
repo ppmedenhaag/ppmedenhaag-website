@@ -1,11 +1,17 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
+import { defaultLocale } from "../../../data/i18n";
 
 export async function getStaticPaths() {
-    const events = await getCollection("events");
+    // Excludes nl — it has its own unprefixed route at src/pages/event/[...slug].astro.
+    // Without this filter this route would ALSO generate /nl/event/... URLs, which
+    // Hugo's site never had. See .migration/02-content-migration.md in ppmedenhaag-website.
+    const events = await getCollection("event", ({ id, data }) => {
+        return !id.startsWith(`${defaultLocale}/`) && !data.draft;
+    });
     return events.map((entry) => {
-        const [locale, ...slugParts] = entry.slug.split("/");
+        const [locale, ...slugParts] = entry.id.split("/");
         return {
             params: { locale, slug: slugParts.join("/") },
             props: { entry },
@@ -14,7 +20,8 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { locale } = Astro.params;
+const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
@@ -31,54 +38,17 @@ const { Content } = await entry.render();
                 <div
                     class="flex flex-wrap items-center gap-4 text-sm text-gray-500"
                 >
-                    <time
-                        datetime={entry.data.date.toISOString()}
-                        class="flex items-center"
-                    >
-                        <svg
-                            class="mr-1.5 h-5 w-5 text-ppme-blue-500"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                            ></path>
-                        </svg>
+                    <time datetime={entry.data.date.toISOString()}>
                         {
-                            entry.data.date.toLocaleDateString(
-                                Astro.currentLocale,
-                                {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric",
-                                },
-                            )
+                            entry.data.date.toLocaleDateString(locale, {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })
                         }
                     </time>
-                    {
-                        entry.data.author && (
-                            <span class="flex items-center">
-                                <svg
-                                    class="mr-1.5 h-5 w-5 text-ppme-blue-500"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                    />
-                                </svg>
-                                {entry.data.author}
-                            </span>
-                        )
-                    }
+                    {entry.data.location && <span>{entry.data.location}</span>}
+                    {entry.data.duration && <span>{entry.data.duration}</span>}
                 </div>
             </header>
 
@@ -86,7 +56,7 @@ const { Content } = await entry.render();
                 entry.data.image && (
                     <div class="mb-10 overflow-hidden rounded-lg shadow-sm">
                         <img
-                            src={entry.data.image}
+                            src={`/${entry.data.image}`}
                             alt={entry.data.title}
                             class="w-full object-cover"
                         />
@@ -99,6 +69,24 @@ const { Content } = await entry.render();
             >
                 <Content />
             </div>
+
+            {
+                entry.data.speaker && entry.data.speaker.length > 0 && (
+                    <div class="mt-10 border-t border-ppme-blue-100 pt-8">
+                        <h2 class="text-lg font-semibold text-ppme-blue-900 mb-4">
+                            Speakers
+                        </h2>
+                        <ul class="flex flex-wrap gap-4">
+                            {entry.data.speaker.map((s) => (
+                                <li class="text-sm text-gray-700">
+                                    <span class="font-semibold">{s.name}</span>
+                                    {s.designation && <span> — {s.designation}</span>}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            }
         </article>
     </div>
 </Layout>

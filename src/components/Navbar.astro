@@ -25,10 +25,11 @@ const localMenu = menuData[locale as keyof typeof menuData];
 const langLinksPromises = LANG_LIST.map(async (a) => {
   let shouldInclude = true;
 
-  // Configuration mapping route prefixes to content collection names
-  // Add new sections here, e.g., "/blog/": "blog"
-  const contentMap: Record<string, "events"> = {
-    "/event/": "events",
+  // Configuration mapping route prefixes to content collection names.
+  // Add new sections here as they're migrated (about, dakwah, ibadah, ...).
+  const contentMap: Record<string, "event" | "blog"> = {
+    "/event/": "event",
+    "/blog/": "blog",
   };
 
   for (const [prefix, collectionName] of Object.entries(contentMap)) {
