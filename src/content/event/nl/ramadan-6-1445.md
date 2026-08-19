@@ -12,7 +12,7 @@ bg_image: "images/backgrounds/page-title.jpg"
 # meta description
 description : ""
 # Event image
-image: "/images/blog/romadhoon-1445/program-1.jpeg"
+image: "images/blog/romadhoon-1445/program-1.jpeg"
 # location
 location: "Masjid Al Hikmah"
 

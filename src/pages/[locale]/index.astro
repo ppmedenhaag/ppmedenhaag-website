@@ -1,15 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import CTA from "../../components/cta.astro";
-import { locales, defaultLocale } from "../../data/i18n";
+import Homepage from "../../components/Homepage.astro";
+import { locales, defaultLocale, type LangOptions } from "../../data/i18n";
 
 export function getStaticPaths() {
   return Object.keys(locales)
     .filter((lang) => lang !== defaultLocale)
     .map((lang) => ({ params: { locale: lang } }));
 }
+
+const { locale } = Astro.params as { locale: LangOptions };
 ---
 
-<Layout title="Index">
-  <CTA />
+<Layout title="PPME Den Haag">
+  <Homepage locale={locale} />
 </Layout>

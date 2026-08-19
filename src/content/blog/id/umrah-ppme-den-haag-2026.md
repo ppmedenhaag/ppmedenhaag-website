@@ -3,7 +3,7 @@ title: "Umrah PPME Den Haag 2026"
 draft: false
 date: "2026-06-13T00:00:00+02:00"
 description: ""
-image: "/images/blog/umrah-2026.webp"
+image: "images/blog/umrah-2026.webp"
 author: "PPME Den Haag"
 categories: ["Blog"]
 tags: ["Umrah","Oktober"]

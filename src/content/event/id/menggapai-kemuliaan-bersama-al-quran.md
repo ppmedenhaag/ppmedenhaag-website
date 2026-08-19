@@ -12,7 +12,7 @@ bg_image: "images/backgrounds/page-title.jpg"
 # meta description
 description : ""
 # Event image
-image: "/images/events/menggapai-kemuliaan-bersama-al-quran.webp"
+image: "images/events/menggapai-kemuliaan-bersama-al-quran.webp"
 # location
 location: "Masjid Al Hikmah"
 

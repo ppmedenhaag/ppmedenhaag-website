@@ -1,0 +1,127 @@
+homepage:
+  ################################# Slider #####################################
+  slider:
+    enable : false
+    bg_image : "images/banner/banner-1.jpg"
+    slider_item:
+      # slider item loop
+      - title : "Banner 1"
+        content : "Banner 1"
+        animation_in : "left"
+        animation_out : "right"
+        # available animation : left, right, up, down
+        button:
+          enable : true
+          label : "Banner1"
+          link : "#"
+
+      - title : "Banner 1"
+        content : "Banner 1"
+        animation_in : "left"
+        animation_out : "right"
+        # available animation : left, right, up, down
+        button:
+          enable : true
+          label : "Banner1"
+          link : "#"
+
+  ############################## about ##################################
+  about:
+    enable : true
+    title : "PPME Den Haag"
+    image : "images/about/about-ppme.webp"
+    content : "PPME Den Haag is een islamitische vereniging gevestigd in de Moskee Al Hikmah te Den Haag. Een vereniging waarin een ieder, individueel of in groepsverband, hun liefde voor Allah S.W.T. kunnen uiten en ook uitdragen. Laten zien aan de buitenwereld hoe mooi de Islam is, oftewel Da’wah doen.                                                                  Saamhorigheid en liefde zijn de sleutelwoorden binnen de vereniging."
+    button:
+      enable : true
+      label : "Lees Meer"
+      link : "about/"
+
+
+  shodaqoh:
+    enable : true
+    title : "Shodaqah/Donatie via iDEAL"
+
+  ########################## Call to action ############################
+  cta:
+    enable : true
+    subtitle : "Zaterdag 22 augustus 2026"
+    title : "Nongkrong Sessie: De rol van islam in de Indonesische onafhankelijkheid"
+    button:
+      enable : true
+      label : "Lees Meer"
+      link : "event/nongkrong-sessie-2/"
+    youtube:
+      enable : false
+      title : ""
+      id : "-1HiLtHLAGk"
+    img:
+      enable: true
+      src: "/images/events/nongkrong-sessie-20260822.webp"
+      desc: "Nongkrong sessie in de Al-Hikmah-moskee"
+
+  # Vorige CTA - Umrah 2026 (terugzetten na 22 augustus 2026)
+  # cta:
+  #   enable : true
+  #   subtitle : "8 & 16 oktober 2026"
+  #   title : "Umrah PPME Den Haag 2026"
+  #   button:
+  #     enable : true
+  #     label : "Lees Meer"
+  #     link : "blog/umrah-ppme-den-haag-2026/"
+  #   youtube:
+  #     enable : false
+  #     title : ""
+  #     id : "-1HiLtHLAGk"
+  #   img:
+  #     enable: true
+  #     src: "/images/blog/umrah-2026.webp"
+  #     desc: "Umrah PPME Den Haag 2026"
+
+  prayer_times:
+    enable : true
+    link : "https://sholat.ppmedenhaag.nl/nl"
+
+
+  ######################## Vision Mission #############################
+  vision_mission:
+    enable : false
+    bg_image : "images/backgrounds/success-story.jpg"
+    vision_title : "Visie PPME"
+    mission_title : "Missie PPME"
+    vision : "Onze visie is om te streven naar een vereniging die toegankelijk is voor alle moslims en die met elkaar verbroedering nastreeft. Een vereniging die bestaat uit een hechte gemeenschap, waarin zowel jong als oud zich thuis voelt, die met elkaar de islam actief, bewust en liefdevol beleeft.<br/>We zijn een moderne en toekomstgerichte vereniging die progressie nastreeft en waar mogelijk zetten we technologie in om onze leden te ondersteunen en te faciliteren.<br/>Toekomstgericht betekent ook dat we, naast het actief,bewust en liefdevol beleven van de islam, actief onze bijdrage willen leveren aan een volhoudbare en betrokken samenleving. PPME staat midden in de samenleving."
+    mission : "Onze missie is om – in de lijn van Ahlus Sunnah wal Djama’ah – onze leden te ondersteunen bij hun persoonlijke en religieuze ontwikkeling. Bovendien willen we het positieve beeld over de islam verspreiden en begrip voor de islam versterken en laten zien dat de Islam toegankelijk is voor alle mensen.<br/>Met de mogelijkheden die wij als gemeenschap hebben willen we een belangrijke bijdrage leveren aan de maatschappij. Zo willen wij werken aan de ontwikkeling van actieve en bewuste moslims die hun geloof volgens de leer van Ahlus Sunnah wal Djama’ah belijden, bruggen bouwen en daarmee een positieve impact maken op de maatschappij."
+
+
+  ############################# event ################################
+  event:
+    enable : true
+    title : "Evenementen"
+    # event item comes from "content/**/event" folder.
+
+    
+  ########################### funfacts ############################
+  funfacts:
+    enable : true
+    funfact_item:
+      # funfact item loop
+      - name : "Leden (Families)"
+        count : "201"
+
+      # funfact item loop
+      - name : "Kinderen die de Koran leren"
+        count : "75"
+
+      # funfact item loop
+      - name : "Jaren van actieve gemeenschap"
+        count : "53"
+
+
+  # funfact is for about page
+
+
+
+  ############################# blog ################################
+  blog:
+    enable : true
+    title : "Nieuws"
+    # blog item comes from "content/**/blog" folder.

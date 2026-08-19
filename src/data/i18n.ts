@@ -83,7 +83,7 @@ export const menuData  = {
       links: [
         {
           text: "Menjadi Mualaf",
-          href: "/id//ibadah/toetreden-islam/",
+          href: "/id/ibadah/toetreden-islam/",
         },
         {
           text: "Zakat, Infaq dan Sadaqah",
@@ -91,7 +91,7 @@ export const menuData  = {
         },
         {
           text: "Kelahiran",
-          href: "/id//ibadah/geboorte/",
+          href: "/id/ibadah/geboorte/",
         },
         {
           text: "Kematian",
@@ -103,7 +103,7 @@ export const menuData  = {
         },
         {
           text: "Jadwal Sholat (Den Haag)",
-          href: "/id/forms/schedule-sholat-den-haag-2024.pdf",
+          href: "/forms/schedule-sholat-den-haag-2024.pdf",
         },
       ],
     },
@@ -118,7 +118,7 @@ export const menuData  = {
         },
         {
           text: "Keanggotaan",
-          href: "/about/about-1/",
+          href: "/id/about/about-1/",
         },
         {
           text: "Hubungi Kami",
@@ -155,7 +155,7 @@ export const menuData  = {
         },
         {
           text: "Prayer Times (Den Haag)",
-          href: "/en/forms/schedule-sholat-den-haag-2024.pdf",
+          href: "/forms/schedule-sholat-den-haag-2024.pdf",
         },
       ],
     },
@@ -166,11 +166,11 @@ export const menuData  = {
       links: [
         {
           text: "Overzicht",
-          href: "/about/",
+          href: "/en/about/",
         },
         {
           text: "Lidmaatschap",
-          href: "/about/about-1/",
+          href: "/en/about/about-1/",
         },
         {
           text: "Contact Us",

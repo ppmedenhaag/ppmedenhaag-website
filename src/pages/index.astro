@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import CTA from "../components/cta.astro";
+import Homepage from "../components/Homepage.astro";
+import { defaultLocale } from "../data/i18n";
 ---
 
-<Layout title="Index">
-  <CTA />
+<Layout title="PPME Den Haag">
+  <Homepage locale={defaultLocale} />
 </Layout>

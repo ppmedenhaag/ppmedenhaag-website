@@ -1,0 +1,256 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../utils/lang";
+import { stripMarkdown, truncateText } from "../utils/text";
+import type { LangOptions } from "../data/i18n";
+
+interface Props {
+  locale: LangOptions;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const homepageEntry = await getEntry(`homepage-${locale}`, "homepage");
+if (!homepageEntry) {
+  throw new Error(`Missing homepage entry for locale "${locale}"`);
+}
+const home = homepageEntry.data;
+
+const events = (
+  await getCollection("event", ({ id, data }) => {
+    return id.startsWith(`${locale}/`) && !data.draft;
+  })
+)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const posts = (
+  await getCollection("blog", ({ id, data }) => {
+    return id.startsWith(`${locale}/`) && !data.draft;
+  })
+)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+{
+  home.about.enable && (
+    <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-8 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-ppme-blue-900 sm:text-4xl">
+            {home.about.title}
+          </h2>
+          <p class="mt-4 whitespace-pre-line text-base text-gray-600">
+            {home.about.content}
+          </p>
+        </div>
+        <img
+          class="w-full rounded-lg object-cover"
+          src={`/${home.about.image}`}
+          alt={home.about.title}
+        />
+      </div>
+    </section>
+  )
+}
+
+{
+  home.cta.enable && (
+    <section class="bg-ppme-blue-700 py-12">
+      <div class="mx-auto grid max-w-3xl grid-cols-1 justify-items-center space-y-2 px-4 text-center">
+        <span class="text-xl font-semibold text-ppme-blue-200 lg:text-2xl">
+          {home.cta.subtitle}
+        </span>
+        <span class="text-2xl font-bold text-ppme-blue-100 lg:text-4xl">
+          {home.cta.title}
+        </span>
+        {home.cta.img.enable && (
+          <img
+            class="w-full max-w-xl rounded-lg px-1 py-2 lg:py-3"
+            src={home.cta.img.src}
+            alt={home.cta.img.desc}
+          />
+        )}
+        {home.cta.button.enable && (
+          <a
+            href={getRelativeLocaleUrl(locale, home.cta.button.link)}
+            class="mt-2 min-w-36 rounded-md bg-ppme-blue-100 px-3 py-2 text-center text-base font-semibold text-ppme-blue-800 shadow-sm hover:bg-ppme-blue-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ppme-blue-100"
+          >
+            {home.cta.button.label}
+          </a>
+        )}
+      </div>
+    </section>
+  )
+}
+
+{
+  home.shodaqoh?.enable && (
+    <section class="bg-ppme-blue-50 py-4">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-2 px-4 text-center">
+        <span class="font-semibold text-ppme-blue-800">
+          {home.shodaqoh.title}
+        </span>
+        <a
+          href="https://www.ing.nl/payreq/m/?trxid=xbLdUJmu9BkHK2CV8ubHXWE5AIgmlSkv"
+          class="rounded-md bg-ppme-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-ppme-blue-700"
+        >
+          PPME Den Haag
+        </a>
+      </div>
+    </section>
+  )
+}
+
+{
+  home.prayer_times.enable && (
+    <section class="mx-auto max-w-3xl px-4 py-4">
+      <iframe
+        class="h-32 w-full"
+        src={home.prayer_times.link}
+        title="Jadwal Sholat"
+      />
+    </section>
+  )
+}
+
+{
+  home.event.enable && events.length > 0 && (
+    <section class="bg-gray-50 py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex items-center justify-between">
+          <h2 class="text-2xl font-bold tracking-tight text-ppme-blue-900 sm:text-3xl">
+            {home.event.title}
+          </h2>
+          <a
+            href={getRelativeLocaleUrl(locale, "event/")}
+            class="hidden rounded-md border border-ppme-blue-600 px-3 py-1.5 text-sm font-semibold text-ppme-blue-700 hover:bg-ppme-blue-50 sm:inline-block"
+          >
+            {t("homepage.seeAll")}
+          </a>
+        </div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {events.map((event) => (
+            <article class="flex flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl">
+              {event.data.image && (
+                <img
+                  class="aspect-[4/3] w-full object-cover"
+                  src={`/${event.data.image}`}
+                  alt={event.data.title}
+                />
+              )}
+              <div class="flex flex-1 flex-col justify-between p-6">
+                <div class="flex-1">
+                  <a
+                    href={getRelativeLocaleUrl(
+                      locale,
+                      `event/${event.id.split("/").slice(1).join("/")}`,
+                    )}
+                  >
+                    <p class="text-xl font-semibold text-gray-900">
+                      {event.data.title}
+                    </p>
+                    <p class="mt-3 line-clamp-3 text-base text-gray-500">
+                      {event.data.description ||
+                        truncateText(stripMarkdown(event.body ?? ""), 100)}
+                    </p>
+                  </a>
+                </div>
+                <time
+                  class="mt-6 block text-sm text-gray-500"
+                  datetime={event.data.date.toISOString()}
+                >
+                  {event.data.date.toLocaleDateString(locale, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="mt-8 text-center sm:hidden">
+          <a
+            href={getRelativeLocaleUrl(locale, "event/")}
+            class="inline-block rounded-md border border-ppme-blue-600 px-3 py-1.5 text-sm font-semibold text-ppme-blue-700 hover:bg-ppme-blue-50"
+          >
+            {t("homepage.seeAll")}
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  home.blog.enable && posts.length > 0 && (
+    <section class="py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex items-center justify-between">
+          <h2 class="text-2xl font-bold tracking-tight text-ppme-blue-900 sm:text-3xl">
+            {home.blog.title}
+          </h2>
+          <a
+            href={getRelativeLocaleUrl(locale, "blog/")}
+            class="hidden rounded-md border border-ppme-blue-600 px-3 py-1.5 text-sm font-semibold text-ppme-blue-700 hover:bg-ppme-blue-50 sm:inline-block"
+          >
+            {t("homepage.seeAll")}
+          </a>
+        </div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <article class="flex flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl">
+              {post.data.image && (
+                <img
+                  class="aspect-[4/3] w-full object-cover"
+                  src={`/${post.data.image}`}
+                  alt={post.data.title}
+                />
+              )}
+              <div class="flex flex-1 flex-col justify-between p-6">
+                <div class="flex-1">
+                  <a
+                    href={getRelativeLocaleUrl(
+                      locale,
+                      `blog/${post.id.split("/").slice(1).join("/")}`,
+                    )}
+                  >
+                    <p class="text-xl font-semibold text-gray-900">
+                      {post.data.title}
+                    </p>
+                    <p class="mt-3 line-clamp-3 text-base text-gray-500">
+                      {post.data.description ||
+                        truncateText(stripMarkdown(post.body ?? ""), 100)}
+                    </p>
+                  </a>
+                </div>
+                <time
+                  class="mt-6 block text-sm text-gray-500"
+                  datetime={post.data.date.toISOString()}
+                >
+                  {post.data.date.toLocaleDateString(locale, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="mt-8 text-center sm:hidden">
+          <a
+            href={getRelativeLocaleUrl(locale, "blog/")}
+            class="inline-block rounded-md border border-ppme-blue-600 px-3 py-1.5 text-sm font-semibold text-ppme-blue-700 hover:bg-ppme-blue-50"
+          >
+            {t("homepage.seeAll")}
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}

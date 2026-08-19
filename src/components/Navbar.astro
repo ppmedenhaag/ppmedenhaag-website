@@ -27,9 +27,11 @@ const langLinksPromises = LANG_LIST.map(async (a) => {
 
   // Configuration mapping route prefixes to content collection names.
   // Add new sections here as they're migrated (about, dakwah, ibadah, ...).
-  const contentMap: Record<string, "event" | "blog"> = {
+  const contentMap: Record<string, "event" | "blog" | "ibadah" | "about"> = {
     "/event/": "event",
     "/blog/": "blog",
+    "/ibadah/": "ibadah",
+    "/about/": "about",
   };
 
   for (const [prefix, collectionName] of Object.entries(contentMap)) {
