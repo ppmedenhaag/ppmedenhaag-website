@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/inter";
-import "../styles/global.css";
+import globalCss from "../styles/global.css?url";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/footer.astro";
 import { defaultLocale } from "../data/i18n";
@@ -30,6 +30,7 @@ const section = segments[0] ?? "page";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#034ea2" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href={globalCss} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
