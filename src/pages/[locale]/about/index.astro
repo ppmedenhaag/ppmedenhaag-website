@@ -1,5 +1,6 @@
 ---
 import { getEntry, render } from "astro:content";
+import VisionMission from "../../../components/VisionMission.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { locales, defaultLocale, type LangOptions } from "../../../data/i18n";
 
@@ -19,22 +20,23 @@ const { Content } = await render(overview);
 
 const homepageEntry = await getEntry(`homepage-${locale}`, "homepage");
 const funfacts = homepageEntry?.data.funfacts;
+const visionMission = homepageEntry?.data.vision_mission;
 ---
 
 <Layout title={overview.data.title}>
-    <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         <article
-            class="prose lg:prose-xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-sm border border-ppme-blue-100"
+            class="prose prose-brand lg:prose-xl page-article max-w-none min-w-0"
         >
             <h1
-                class="text-3xl font-bold tracking-tight text-ppme-blue-900 sm:text-4xl mb-8"
+                class="page-title title-rule mb-10"
             >
                 {overview.data.title}
             </h1>
 
             {
                 overview.data.image && (
-                    <div class="mb-10 overflow-hidden rounded-lg shadow-sm">
+                    <div class="mb-10 overflow-hidden border border-slate-200">
                         <img
                             src={`/${overview.data.image}`}
                             alt={overview.data.title}
@@ -45,7 +47,7 @@ const funfacts = homepageEntry?.data.funfacts;
             }
 
             <div
-                class="prose-headings:text-ppme-blue-900 prose-a:text-ppme-blue-600 hover:prose-a:text-ppme-blue-700"
+                
             >
                 <Content />
             </div>
@@ -54,18 +56,21 @@ const funfacts = homepageEntry?.data.funfacts;
 
     {
         funfacts?.enable && (
-            <section class="bg-ppme-blue-700 py-12">
+            <section class="relative isolate overflow-hidden bg-brand-darker py-14">
+            <div class="pointer-events-none absolute -top-24 right-0 -z-10 size-80 rounded-full bg-brand/50 blur-3xl" aria-hidden="true"></div>
                 <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 text-center sm:grid-cols-3">
                     {funfacts.funfact_item.map((item) => (
                         <div>
-                            <p class="text-4xl font-bold text-white">
+                            <p class="text-4xl font-bold tracking-tight text-white">
                                 {item.count}
                             </p>
-                            <p class="mt-2 text-ppme-blue-100">{item.name}</p>
+                            <p class="eyebrow mt-2 !text-brand-200">{item.name}</p>
                         </div>
                     ))}
                 </div>
             </section>
         )
     }
+
+    <VisionMission vm={visionMission} />
 </Layout>

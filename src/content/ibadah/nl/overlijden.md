@@ -42,7 +42,7 @@ De Commissie stelt een team samen die verantwoordelijk is voor de uitvoer van de
 
 De Commissie stelt daarnaast een overlijdenspakket beschikbaar. Hierin zitten alle benodigdheden voor het wassen en inwikkelen van de overledene. De kosten zie je in het overzicht hieronder:
 
-<table class="table table-responsive">
+<table>
   <thead>
     <tr>
       <th scope="col">Islamitische uitvaart</th>
@@ -72,7 +72,7 @@ De Commissie stelt daarnaast een overlijdenspakket beschikbaar. Hierin zitten al
     <tr>
       <th scope="row">Reiskosten</th>
       <td>Reiskostenvergoeding gegeven door PPME Den haag aan de vrijwilligers van de religieuze begeleiding</td>
-      <td>€ 0,23/km <p class="font-italic">(voor alle deelnemers van de religieuze begeleiding)</p></td>
+      <td>€ 0,23/km <p class="italic">(voor alle deelnemers van de religieuze begeleiding)</p></td>
     </tr>
   </tbody>
 </table>

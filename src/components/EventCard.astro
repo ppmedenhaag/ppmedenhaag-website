@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import type { CollectionEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { LangOptions } from "../data/i18n";
+import { dateBadge, eventSlug, formatDate, plainInline } from "../utils/event";
+import { stripMarkdown, truncateText } from "../utils/text";
+
+interface Props {
+  event: CollectionEntry<"event">;
+  locale: LangOptions;
+}
+const { event, locale } = Astro.props;
+const badge = dateBadge(event.data.date, locale);
+const href =getRelativeLocaleUrl(locale, `event/${eventSlug(event)}/`);
+---
+
+<article class="tile group reveal">
+  {
+    event.data.image && (
+      <a href={href} class="tile-media" tabindex="-1" aria-hidden="true">
+        <img src={`/${event.data.image}`} alt="" loading="lazy" />
+        <span class="date-badge" aria-hidden="true">
+          <span class="date-badge-day">{badge.day}</span>
+          <span class="date-badge-month">{badge.month}</span>
+        </span>
+      </a>
+    )
+  }
+  <div class="flex flex-1 flex-col p-5 sm:p-6">
+    <time
+      class="eyebrow"
+      datetime={event.data.date.toISOString()}
+    >
+      {formatDate(event.data.date, locale)}
+    </time>
+    <h2 class="mt-2">
+      <a href={href} class="tile-title tile-title-link">{event.data.title}</a>
+    </h2>
+    {
+      event.data.location && (
+        <p class="mt-2 flex items-center gap-1.5 text-sm font-medium text-brand">
+          <Icon name="heroicons:map-pin" class="size-4 shrink-0" aria-hidden="true" />
+          <span class="truncate">{plainInline(event.data.location)}</span>
+        </p>
+      )
+    }
+    <p class="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">
+      {
+        event.data.description ||
+          truncateText(stripMarkdown(event.body ?? ""), 100)
+      }
+    </p>
+  </div>
+</article>

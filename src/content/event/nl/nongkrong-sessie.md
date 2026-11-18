@@ -37,9 +37,9 @@ Daarnaast is er natuurlijk genoeg tijd om elkaar beter te leren kennen en de ban
 📍 Moskee Al-Hikmah – Medlerstraat 4, Den Haag<br/>
 👥 Voor broeders & zusters<br/>
 
-<div class="row py-1">
-      <div class="col-12 text-center">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc978Be7VSP8DvkgH7GvOAtC3g8FfXzwhPlMRAgkRyzfi6-og/viewform" type="button" class="btn-sm btn-primary">Aanmelden Google Form</a>
+<div class="py-1">
+      <div class="text-center">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc978Be7VSP8DvkgH7GvOAtC3g8FfXzwhPlMRAgkRyzfi6-og/viewform" type="button" class="btn btn-primary btn-sm">Aanmelden Google Form</a>
       </div>   
 </div>
 

@@ -36,27 +36,27 @@ Every box we send delivers joy, dignity and hope to those who need it most. The 
 
 
 <div>
-<table class="table" style="width: 100%; border-collapse: collapse;">
+<table style="width: 100%; border-collapse: collapse;">
 <thead>
-<tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+<tr class="row-muted">
 <th style="padding: 12px;">Package</th>
 <th style="padding: 12px;">Price</th>
 </tr>
 </thead>
 <tbody>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;">🍱 <strong>Iftar Box</strong></td>
 <td style="padding: 12px;">€ 4.00 / box</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;">🎒 <strong>School Kit</strong></td>
 <td style="padding: 12px;">€ 16.75 / box</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;">📦 <strong>Food Package</strong></td>
 <td style="padding: 12px;">€ 19.25 / box</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;">🕌 <strong>Worship Package</strong></td>
 <td style="padding: 12px;">€ 24.00 / box</td>
 </tr>

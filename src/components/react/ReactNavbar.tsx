@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CloseButton,
   Dialog,
+  DialogBackdrop,
   DialogPanel,
   Disclosure,
   DisclosureButton,
@@ -15,262 +16,310 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { menuData, type LangOptions, defaultLocale } from "../../data/i18n.ts";
+import Search, { type SearchLabels } from "./Search.tsx";
+
+interface LangLink {
+  name: string;
+  code: LangOptions;
+  path: string;
+}
 
 interface NavProps {
   locale: LangOptions;
   currentPath: string;
   menu: (typeof menuData)[LangOptions];
-  langLinks: { name: string; code: LangOptions; flagUrl: string; path: string }[];
+  langLinks: LangLink[];
+  searchLabels: SearchLabels;
+}
+
+type MenuItem = NavProps["menu"][number];
+
+const norm = (p: string) => (p.endsWith("/") ? p : p + "/");
+
+/** A link is active when the current page is that page or lives beneath it. */
+function isActive(currentPath: string, href?: string) {
+  if (!href || href.endsWith(".pdf")) return false;
+  const cur = norm(currentPath);
+  const target = norm(href);
+  // Home links ("/" or "/id/") only match exactly.
+  if (target === "/" || /^\/[a-z]{2}\/$/.test(target)) return cur === target;
+  return cur.startsWith(target);
+}
+
+function groupActive(currentPath: string, item: MenuItem) {
+  return (
+    isActive(currentPath, (item as any).href) ||
+    ((item as any).links ?? []).some((l: any) => isActive(currentPath, l.href))
+  );
+}
+
+/**
+ * Always-visible language switcher: every available translation is shown as a
+ * segmented pill (language code). Only translations that exist are linked.
+ */
+function LanguageSwitcher({
+  links,
+  current,
+  showNames = false,
+  className = "",
+}: {
+  links: LangLink[];
+  current: LangOptions;
+  showNames?: boolean;
+  className?: string;
+}) {
+  return (
+    <div
+      role="group"
+      aria-label="Language"
+      className={`inline-flex items-center gap-0.5 rounded-full bg-white/80 p-1 ring-1 ring-slate-200 ${className}`}
+    >
+      {links.map((l) => {
+        const active = l.code === current;
+        return (
+          <a
+            key={l.code}
+            href={l.path}
+            hrefLang={l.code}
+            lang={l.code}
+            aria-current={active ? "true" : undefined}
+            title={l.name}
+            className={`flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
+              showNames ? "flex-1 justify-center py-2 text-sm" : ""
+            } ${
+              active
+                ? "bg-brand text-white shadow-sm"
+                : "text-slate-600 hover:bg-brand-50 hover:text-brand-dark"
+            }`}
+          >
+            <span>{l.code}</span>
+          </a>
+        );
+      })}
+    </div>
+  );
 }
 
 export default function NavbarExample(params: NavProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [country, setCountry] = useState(
-    params.langLinks.find((l) => l.code === params.locale)
-  );
+  const [scrolled, setScrolled] = useState(false);
+  const { menu: localMenu, currentPath, locale } = params;
+  const home = locale === defaultLocale ? "/" : `/${locale}/`;
 
-  const localMenu = params.menu;
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const focusRing =
+    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
 
   return (
-    <header className="bg-ppme-blue-50 ">
-
+    <header
+      className={`sticky top-0 z-40 border-b backdrop-blur-md transition-all duration-300 ${
+        scrolled
+          ? "border-slate-200/80 bg-white/85 shadow-sm shadow-brand/5"
+          : "border-slate-200/60 bg-white/70"
+      }`}
+    >
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center gap-x-2 px-4 sm:gap-x-4 py-2 sm:px-6 lg:px-8"
       >
-        <div className="flex lg:flex-1">
-          <a href={params.locale === defaultLocale ? "/" : `/${params.locale}/`} className="-m-1.5 p-1.5">
-            <span className="sr-only">PPME Den Haag</span>
-            <img
-              alt=""
-              src="/ppme-logo.svg"
-              className="w-24 lg:w-32 h-12 lg:h-16"
-            />
-          </a>
-        </div>
+        {/* Logo */}
+        <a href={home} className={`-m-1.5 shrink-0 rounded-md p-1.5 ${focusRing}`}>
+          <span className="sr-only">PPME Den Haag</span>
+          <img
+            alt=""
+            src="/ppme-logo.svg"
+            className="h-10 w-20 sm:h-12 sm:w-24 lg:h-14 lg:w-28"
+          />
+        </a>
 
-        <PopoverGroup className="mx-auto lg:order-last">
-          <Popover className="relative">
-            <PopoverButton className="w-28 flex flex-nowrap items-center gap-x-1 font-semibold leading-6 text-ppme-blue-900 px-2 py-1 bg-ppme-blue-100 border border-ppme-blue-200 rounded-md">
-              <img
-                className="h-6 w-auto mr-1.5 rounded-md"
-                src={country?.flagUrl}
-                alt=""
-              />
-              <span className="grow text-left">
-                {country?.code?.toUpperCase()}
-              </span>
-              <ChevronDownIcon
-                aria-hidden="true"
-                className="h-5 w-5 flex-none text-ppme-blue-900"
-              />
-            </PopoverButton>
+        {/* Desktop menu */}
+        <PopoverGroup className="ml-6 hidden flex-1 items-center gap-x-1 lg:flex">
+          {localMenu?.map((item) => {
+            const { text } = item;
+            const href = (item as any).href as string | undefined;
+            const links = (item as any).links as
+              | { text: string; href: string }[]
+              | undefined;
+            const active = groupActive(currentPath, item);
+            const base = `relative rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${focusRing} ${
+              active
+                ? "text-brand after:absolute after:inset-x-3 after:-bottom-[9px] after:h-0.5 after:rounded-full after:bg-brand"
+                : "text-slate-700 hover:bg-brand-50 hover:text-brand-dark"
+            }`;
 
-            <PopoverPanel
-              transition
-              className="absolute -left-8 top-full z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
-            >
-              <div className="p-1">
-                {params.langLinks.filter((l) => l.code !== params.locale).map(
-                  (item) => (
-                    <div
-                      key={item.code}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-1 text-md leading-6 hover:bg-ppme-blue-400  m-1"
-                    >
-                      <CloseButton className="flex flex-nowrap items-center mx-2">
-                        <img
-                          className="h-6 w-auto mr-1.5 rounded-md"
-                          src={item.flagUrl}
-                          alt=""
-                        />
-                        <a
-                          href={item.path}
-                          className="block font-semibold text-ppme-blue-900 hover:text-white py-1 px-2"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                      </CloseButton>
-                    </div>
-                  )
-                )}
-              </div>
-            </PopoverPanel>
-          </Popover>
-        </PopoverGroup>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-ppme-blue-700"
-          >
-            <span className="sr-only">Menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
-        </div>
-
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12 items-center">
-          {localMenu?.map(({ text, href, links }) => (
-            <div key={text} className="">
-              {links?.length ? (
-                <Popover className="relative">
-                  <PopoverButton className="flex items-center gap-x-1 font-semibold leading-6 text-ppme-blue-900 px-2 py-1">
-                    {text}
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="h-5 w-5 flex-none text-ppme-blue-900"
-                    />
-                  </PopoverButton>
-
-                  <PopoverPanel
-                    transition
-                    className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-ppme-blue-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
-                  >
-                    <div className="p-4">
-                      {links.map((item) => (
-                        <div
-                          key={item.text}
-                          className="group relative flex items-center gap-x-6 rounded-lg p-2 text-md leading-6 hover:bg-ppme-blue-50 my-1 mx-2"
-                        >
-                          <div className="flex-auto">
-                            <a
-                              href={item.href}
-                              className="block font-semibold text-ppme-blue-900 py-1 px-2"
-                            >
-                              {item.text}
-                              <span className="absolute inset-0" />
-                            </a>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </PopoverPanel>
-                </Popover>
-              ) : (
-                <a
-                  href={href}
-                  className="font-semibold leading-6 text-ppme-blue-900 py-1 px-2"
+            return links?.length ? (
+              <Popover key={text} className="relative">
+                <PopoverButton
+                  className={`${base} inline-flex items-center gap-x-1 data-open:bg-brand-50 data-open:text-brand-dark`}
                 >
                   {text}
-                </a>
-              )}
-            </div>
-          ))}
+                  <ChevronDownIcon
+                    aria-hidden="true"
+                    className="h-4 w-4 text-slate-400 transition-transform duration-200 in-data-open:rotate-180"
+                  />
+                </PopoverButton>
+                <PopoverPanel
+                  transition
+                  anchor={{ to: "bottom start", gap: 8 }}
+                  className="z-50 w-64 origin-top rounded-lg border border-slate-200 bg-white/95 p-1.5 shadow-lg shadow-brand/10 backdrop-blur-md transition duration-150 ease-out data-closed:-translate-y-1 data-closed:scale-95 data-closed:opacity-0"
+                >
+                  {links.map((l) => {
+                    const a = isActive(currentPath, l.href);
+                    return (
+                      <CloseButton
+                        key={l.href}
+                        as="a"
+                        href={l.href}
+                        aria-current={a ? "page" : undefined}
+                        className={`block rounded-md px-3 py-2 text-sm font-medium transition-colors ${focusRing} ${
+                          a
+                            ? "bg-brand-50 font-semibold text-brand"
+                            : "text-slate-700 hover:bg-brand-50 hover:text-brand-dark"
+                        }`}
+                      >
+                        {l.text}
+                      </CloseButton>
+                    );
+                  })}
+                </PopoverPanel>
+              </Popover>
+            ) : (
+              <a
+                key={text}
+                href={href}
+                aria-current={active ? "page" : undefined}
+                className={base}
+              >
+                {text}
+              </a>
+            );
+          })}
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+
+        {/* Search: icon on mobile, field-style button on desktop */}
+        <div className="ml-auto flex items-center lg:ml-0">
+          <Search locale={locale} labels={params.searchLabels} />
+        </div>
+
+        {/* Language switcher: always visible (desktop + mobile) */}
+        <LanguageSwitcher links={params.langLinks} current={locale} />
+
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(true)}
+          aria-label="Menu"
+          aria-expanded={mobileMenuOpen}
+          className={`-mr-1 inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-brand-50 hover:text-brand lg:hidden ${focusRing}`}
+        >
+          <Bars3Icon aria-hidden="true" className="h-7 w-7" />
+        </button>
       </nav>
+
+      {/* Mobile slide-over */}
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
-        className="lg:hidden"
+        className="relative z-50 lg:hidden"
       >
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-ppme-blue-50 px-6 py-1.5 sm:max-w-sm sm:ring-1 sm:ring-ppme-blue-900/10">
-          <div className="flex items-center justify-between">
-            <a href={params.locale === defaultLocale ? "/" : `/${params.locale}/`} className="-m-1.5 p-1.5">
+        <DialogBackdrop
+          transition
+          className="fixed inset-0 bg-brand-darkest/40 backdrop-blur-sm transition-opacity duration-200 data-closed:opacity-0"
+        />
+        <DialogPanel
+          transition
+          className="fixed inset-y-0 right-0 flex w-full max-w-sm flex-col overflow-y-auto border-l border-slate-200 bg-white shadow-2xl transition duration-200 ease-out data-closed:translate-x-full"
+        >
+          <div className="flex items-center justify-between border-b border-slate-200 bg-brand-50/60 px-4 py-2">
+            <a href={home} className={`-m-1.5 rounded-md p-1.5 ${focusRing}`}>
               <span className="sr-only">PPME Den Haag</span>
-              <img alt="" src="/ppme-logo.svg" className="h-12 w-24" />
+              <img alt="" src="/ppme-logo.svg" className="h-10 w-20" />
             </a>
-            <PopoverGroup className="sm:hidden">
-              <Popover className="relative">
-                <PopoverButton className="w-28 flex flex-nowrap items-center gap-x-1 font-semibold leading-6 text-ppme-blue-900 px-2 py-1 bg-ppme-blue-100 border border-ppme-blue-200 rounded-md">
-                  <img
-                    className="h-6 w-auto mr-1.5 rounded-md"
-                    src={country?.flagUrl}
-                    alt=""
-                  />
-                  <span className="grow text-left">
-                    {country?.code?.toUpperCase()}
-                  </span>
-                  <ChevronDownIcon
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-none text-ppme-blue-900"
-                  />
-                </PopoverButton>
-
-                <PopoverPanel
-                  transition
-                  className="absolute top-full -left-8 z-10 mt-3 w-48 overflow-hidden rounded-md bg-ppme-blue-100 shadow-lg ring-1 ring-ppme-blue-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
-                >
-                  <div className="px-2 py-1">
-                    {params.langLinks.filter((l) => l.code !== params.locale).map(
-                      (item) => (
-                        <div
-                          key={item.code}
-                          className="group relative flex items-center gap-x-6 rounded-lg px-2 py-1 text-md leading-6 hover:bg-ppme-blue-200/50 my-1 mx-2"
-                        >
-                          <CloseButton className="flex flex-nowrap items-center mx-2">
-                            <img
-                              className="h-6 w-auto mr-1.5 rounded-md"
-                              src={item.flagUrl}
-                              alt=""
-                            />
-                            <a
-                              href={item.path}
-                              className="block font-semibold text-ppme-blue-900 py-1 px-2"
-                            >
-                              {item.name}
-                              <span className="absolute inset-0" />
-                            </a>
-                          </CloseButton>
-                        </div>
-                      )
-                    )}
-                  </div>
-                </PopoverPanel>
-              </Popover>
-            </PopoverGroup>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-ppme-blue-700"
+              aria-label="Close menu"
+              className={`-mr-1 rounded-lg p-2 text-slate-700 hover:bg-brand-100 ${focusRing}`}
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+              <XMarkIcon aria-hidden="true" className="h-7 w-7" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-ppme-blue-500/10">
-              <div className="space-y-2 py-6">
-                {localMenu?.map(({ text, href, links }) => (
-                  <div key={text}>
-                    {links?.length ? (
-                      <Disclosure as="div" className="-mx-3">
-                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50">
-                          {text}
-                          <ChevronDownIcon
-                            aria-hidden="true"
-                            className="h-5 w-5 flex-none group-data-open:rotate-180"
-                          />
-                        </DisclosureButton>
-                        <DisclosurePanel className="mt-2 space-y-2">
-                          {links.map((item) => (
-                            <CloseButton
-                              key={item.text}
-                              as="a"
-                              href={item.href}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50"
-                            >
-                              {item.text}
-                            </CloseButton>
-                          ))}
-                        </DisclosurePanel>
-                      </Disclosure>
-                    ) : (
-                      <CloseButton as="a"
-                        href={href}
-                        key={text}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-ppme-blue-900 hover:bg-ppme-blue-50"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {text}
-                      </CloseButton>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+
+          {/* Language choice, large and prominent */}
+          <div className="border-b border-slate-200 px-4 py-4">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+              Language
+            </p>
+            <LanguageSwitcher
+              links={params.langLinks}
+              current={locale}
+              showNames
+              className="flex w-full"
+            />
+          </div>
+
+          <div className="flex-1 space-y-1 px-3 py-4">
+            {localMenu?.map((item) => {
+              const { text } = item;
+              const href = (item as any).href as string | undefined;
+              const links = (item as any).links as
+                | { text: string; href: string }[]
+                | undefined;
+              const active = groupActive(currentPath, item);
+              const row = `flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-semibold transition-colors ${focusRing} ${
+                active
+                  ? "bg-brand-50 text-brand"
+                  : "text-slate-800 hover:bg-brand-50 hover:text-brand-dark"
+              }`;
+
+              return links?.length ? (
+                <Disclosure key={text} as="div" defaultOpen={active}>
+                  <DisclosureButton className={`group ${row}`}>
+                    {text}
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none transition-transform duration-200 group-data-open:rotate-180"
+                    />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-1 space-y-1 border-l-2 border-slate-200 pl-3 ml-4">
+                    {links.map((l) => {
+                      const a = isActive(currentPath, l.href);
+                      return (
+                        <a
+                          key={l.href}
+                          href={l.href}
+                          aria-current={a ? "page" : undefined}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`block rounded-lg px-3 py-2.5 text-sm font-medium ${focusRing} ${
+                            a
+                              ? "bg-brand-50 font-semibold text-brand"
+                              : "text-slate-600 hover:bg-brand-50 hover:text-brand-dark"
+                          }`}
+                        >
+                          {l.text}
+                        </a>
+                      );
+                    })}
+                  </DisclosurePanel>
+                </Disclosure>
+              ) : (
+                <a
+                  key={text}
+                  href={href}
+                  aria-current={active ? "page" : undefined}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={row}
+                >
+                  {text}
+                </a>
+              );
+            })}
           </div>
         </DialogPanel>
       </Dialog>

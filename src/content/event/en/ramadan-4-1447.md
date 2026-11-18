@@ -31,13 +31,13 @@ May Allah SWT grant you health, patience and an abundance of love. May Allah acc
 
 Allow us to announce the program for Ramadan, Saturday 4 Ramadan 1447 / 21 February 2026.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ swipe right on the table below to view it in full)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Time</th>
+<th class="sticky-col">Time</th>
 <th ><span class="text-nowrap">Middle Room Ground Floor</span ><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Large Room Ground Floor</span><br/><span class="text-nowrap">"Al Ittihaad"</span></th>
 <th><span class="text-nowrap">Small Room Ground Floor</span><br/><span class="text-nowrap">"Ramadan Kidz"</span></th>
@@ -45,38 +45,38 @@ Allow us to announce the program for Ramadan, Saturday 4 Ramadan 1447 / 21 Febru
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.00 - 17.40</td>
+<td class="text-nowrap sticky-col">17.00 - 17.40</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Iqbal</th>
 <th>Ustadzah Saida</th>
 <th>Ustadzah Samira</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.40 - 18.12</td>
-<th colspan="4" class="table-success">Tadarus</th>
+<td class="text-nowrap sticky-col">17.40 - 18.12</td>
+<th colspan="4" class="row-success">Tadarus</th>
 </tr>
 <tr >
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.12 - 18.40</td>
-<th colspan="4" class="table-primary">Iftar & Maghrib</th>
+<td class="text-nowrap sticky-col">18.12 - 18.40</td>
+<th colspan="4" class="row-brand">Iftar & Maghrib</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.40 - 19.10</td>
-<th colspan="4" class="table-info">Dinner</th>
+<td class="text-nowrap sticky-col">18.40 - 19.10</td>
+<th colspan="4" class="row-info">Dinner</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.10 - 19.45</td>
+<td class="text-nowrap sticky-col">19.10 - 19.45</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Iqbal</th>
 <th>&nbsp;</th>
 <th>Ustadzah Samira</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.58 - Finished</td>
-<th colspan="4" class="table-primary">Isya & Tarawih</th>
+<td class="text-nowrap sticky-col">19.58 - Finished</td>
+<th colspan="4" class="row-brand">Isya & Tarawih</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ swipe right on the table above to view it in full)
 </div>
 <br/>

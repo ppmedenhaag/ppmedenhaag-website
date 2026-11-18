@@ -15,39 +15,34 @@ author: "PPME Den Haag"
 type: "about"
 ---
 
-
-
 ## Keanggotaan
-Sejak berdirinya PPME pada tahun 1970-an, Anda dapat bergabung sebagai anggota. Dalam PPME kami memiliki berbagai cabang, seperti di Amsterdam dan Breda.
+Sejak PPME berdiri pada tahun 1970-an, Anda dapat bergabung sebagai anggota. PPME memiliki beberapa cabang, seperti di Amsterdam dan Breda.
 
-Dengan keanggotaan yang Anda bayar setiap bulan, Anda mendukung asosiasi. Hal ini memungkinkan kami untuk terus menawarkan program berkualitas tinggi, terkini, dan luas. Baik secara agama maupun sosial.
+**Iuran bulanan** Anda mendukung perkumpulan ini dan memungkinkan kami terus menawarkan program yang berkualitas, terkini, dan beragam, baik di bidang keagamaan maupun sosial.
 
-Tiga jenis keanggotaan yang kami miliki dan biaya terkait:
+Kami memiliki tiga jenis keanggotaan:
 
-
-| Jenis | Beaya |
+| Jenis | Biaya |
 |------|-----|
-| Keanggotaan Keluarga<br/>(semua orang terdaftar di satu alamat) | € 15 |
+| Keanggotaan Keluarga<br/>(semua orang yang terdaftar di satu alamat) | € 15 |
 | Anggota individu | € 7,50 |
 | Pelajar | € 7,50 |
 
-* Besarnya iuran ditentukan dalam Rapat Anggota (ALV) 
+* Besarnya iuran ditentukan dalam Rapat Anggota (ALV).
 
 ### Bergabung
-Jika Anda ingin menjadi anggota, mampirlah ke salah satu program Sabtu kami. Mereka mulai dari jam 4 sore. Membawa [formulir pendaftaran 📝](/forms/Aanmeldformulier-ID-v2.pdf) yang sudah diisi dan fotokopi paspor atau bukti identitas diri lainnya yang masih berlaku.
-
-
+Untuk menjadi anggota, mampirlah ke salah satu **program Sabtu** kami yang dimulai pukul 16.00. Bawa [formulir pendaftaran 📝](/forms/Aanmeldformulier-ID-v2.pdf) yang sudah diisi dan fotokopi paspor atau bukti identitas lain yang masih berlaku.
 
 <img src="/images/about/membership.id.jpeg" style="display: block;  margin-left: auto;  margin-right: auto; width:90%"/>
 
 ### Pengaturan Pembayaran
-Apakah Anda ingin menjadi anggota asosiasi, tetapi merasa keberatan dengan biaya keanggotaan bulanan? Kita dapat mendiskusikan cara lain untuk membayar iuran Anda. Misalkan pembayaran sebagian atau gunakan keahlian, keterampilan, pengetahuan, dan pemikiran Anda untuk kegiatan PPME Den Haag. Kita bisa berdiskusi bersama untuk melihat opsi apa yang mungkin diambil.
+Ingin menjadi anggota tetapi keberatan dengan iuran bulanan? **Mari berdiskusi.** Ada cara lain untuk membayar iuran, misalnya pembayaran sebagian, atau menyumbangkan keahlian, keterampilan, dan pemikiran Anda untuk kegiatan PPME Den Haag. Kami senang melihat bersama opsi yang memungkinkan.
 
 ### Anggota Kehormatan
-Di dalam PPME Den Haag kami juga memiliki anggota kehormatan. Ini direkomendasikan oleh dewan asosiasi. Dalam GMM tersebut, pengurus menyampaikan motivasi untuk anggota kehormatan ini. Diputuskan dalam konsultasi dengan anggota apakah akan menerima keanggotaan kehormatan atau tidak.
+PPME Den Haag juga memiliki anggota kehormatan. Mereka diusulkan oleh pengurus, yang menyampaikan alasannya dalam Rapat Anggota (ALV). Para anggota kemudian memutuskan bersama apakah keanggotaan kehormatan diterima.
 
-Apakah Anda memiliki pertanyaan?
-Kirim email ke email  {{< param email >}}.
+Ada pertanyaan?
+Kirim email ke [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
 
 ### Formulir Penting
-* [Form pendaftaran anggota](/forms/Aanmeldformulier-ID-v2.pdf)
+* [Formulir pendaftaran anggota](/forms/Aanmeldformulier-ID-v2.pdf)

@@ -1,43 +1,442 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+/* Markdown bodies contain raw HTML with Tailwind utilities (lg:hidden, overflow-x-auto, ...). */
+@source "../content";
 
+/*
+ * PPME Den Haag design system. Brand tokens are shared with the event-registration app
+ * (event-registration/web/app/app.css). See .claude/skills/ppme-visual-design/SKILL.md.
+ * Logo blue: HEX #034EA2 · RGB 3/78/162 · CMYK 100/80/0/0.
+ */
 @theme {
-    --color-ppme-blue-50: #f0f6ff;
-    --color-ppme-blue-100: #e1edfd;
-    --color-ppme-blue-200: #bcdafb;
-    --color-ppme-blue-300: #81bef8;
-    --color-ppme-blue-400: #3e9df2;
-    --color-ppme-blue-500: #157fe2;
-    --color-ppme-blue-600: #0863c1;
-    --color-ppme-blue-700: #08509f;
-    --color-ppme-blue-800: #0b4481;
-    --color-ppme-blue-900: #0f396b;
-    --color-ppme-blue-950: #0a2547;
+    /* Inter is self-hosted (@fontsource-variable/inter, imported in Layout.astro): no third-party font requests. */
+    --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
 
+    --color-brand: #034ea2;
+    --color-brand-dark: #023771;
+    --color-brand-50: #ebf1f8;
+    --color-brand-100: #d7e3f0;
+    --color-brand-200: #b3cae3;
+    --color-brand-300: #81a6d0;
+    --color-brand-400: #4f83be;
+    --color-brand-darker: #022954;
+    --color-brand-darkest: #011c3b;
+
+    /* Back-compat aliases: existing ppme-blue-* utilities map onto the same ramp. */
+    --color-ppme-blue-50: var(--color-brand-50);
+    --color-ppme-blue-100: var(--color-brand-100);
+    --color-ppme-blue-200: var(--color-brand-200);
+    --color-ppme-blue-300: var(--color-brand-300);
+    --color-ppme-blue-400: var(--color-brand-400);
+    --color-ppme-blue-500: #2968b0;
+    --color-ppme-blue-600: var(--color-brand);
+    --color-ppme-blue-700: #034289;
+    --color-ppme-blue-800: var(--color-brand-dark);
+    --color-ppme-blue-900: var(--color-brand-darker);
+    --color-ppme-blue-950: var(--color-brand-darkest);
+
+    --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Light-only UI, as in the registration app. */
+html {
+    color-scheme: light;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply bg-slate-50 text-slate-700 antialiased;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: var(--color-brand-200);
+    color: var(--color-brand-darkest);
+}
+
+/* ------------------------------------------------------------------ */
+/* Backdrop, typography helpers                                        */
+/* ------------------------------------------------------------------ */
+/* Title gradient: neutral base into the brand blue (well above AA on white / slate-50). */
+@utility text-gradient-brand {
+    background-image: linear-gradient(to right, var(--color-slate-900), var(--color-brand-dark) 55%, var(--color-slate-800));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 @layer components {
-    .prose table {
-        @apply w-full text-left border border-gray-200 my-4 overflow-hidden shadow-sm;
+    /* Neutral slate with a faint brand glow at the top and a fine grid that fades out. */
+    .app-backdrop {
+        background-color: var(--color-slate-50);
+        background-image:
+            radial-gradient(60rem 28rem at 15% -8rem, rgb(3 78 162 / 0.11), transparent 70%),
+            radial-gradient(40rem 22rem at 95% -6rem, rgb(3 78 162 / 0.07), transparent 70%);
+        background-repeat: no-repeat;
     }
 
-    .prose thead {
-        @apply text-ppme-blue-900 border border-gray-200;
+    /* Interlaced strapwork: hollow ribbon bands tracing an 8-point star (khatam) lattice with nested stars, diamonds and connectors; 360px tile, very faint, faded out downward. */
+    .app-grid {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cdefs%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='80' height='80'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2.4' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3Cg fill='none' stroke='%23000' stroke-width='0.8' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='80' height='80' fill='%23034EA2' fill-opacity='.045' mask='url(%23m)'/%3E%3C/svg%3E");
+        background-size: 360px 360px;
+        mask-image: linear-gradient(to bottom, black, transparent 26rem);
     }
 
-    .prose th {
-        @apply p-4 font-semibold text-sm uppercase tracking-wider border border-gray-200;
+    .app-grid-light {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cdefs%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='80' height='80'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2.4' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3Cg fill='none' stroke='%23000' stroke-width='0.8' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='80' height='80' fill='%23FFFFFF' fill-opacity='.05' mask='url(%23m)'/%3E%3C/svg%3E");
     }
 
-    .prose tbody tr {
-        @apply border border-gray-200 hover:bg-ppme-blue-50/50 transition-colors;
+    .eyebrow {
+        @apply text-[11px] font-semibold tracking-[0.14em] text-slate-500 uppercase;
     }
 
-    .prose tbody tr:last-child {
-        @apply border-b-0;
+    .page-title {
+        @apply text-gradient-brand pb-1 text-4xl font-extrabold tracking-tight sm:text-5xl;
     }
 
-    .prose td {
-        @apply p-4 text-gray-700 text-sm align-top border border-gray-200;
+    /* Bold section heading (homepage Events / News), like the old site. */
+    .section-heading {
+        @apply text-3xl font-extrabold tracking-tight text-brand-darker sm:text-4xl;
+    }
+
+    /* Short brand rule under section headings. */
+    .title-rule {
+        @apply relative pb-3;
+    }
+    .title-rule::after {
+        content: "";
+        @apply absolute bottom-0 left-0 h-0.5 w-12 rounded-full bg-brand;
+    }
+
+    .section {
+        @apply mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8;
+    }
+
+    /* ---------------- Buttons (mirrors buttonClass() in the registration app) ---------------- */
+    .btn {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap select-none;
+        @apply transition-all duration-200 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:outline-none;
+    }
+    .btn-sm {
+        @apply min-h-9 px-3 py-1.5 text-[13px];
+    }
+    .btn-lg {
+        @apply min-h-12 px-6 py-3 text-[15px];
+    }
+    .btn-primary {
+        @apply bg-brand text-white shadow-sm shadow-brand/20 hover:bg-brand-dark;
+    }
+    .btn-secondary {
+        @apply border border-slate-300 bg-white text-slate-700 hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900;
+    }
+    .btn-ghost {
+        @apply text-brand hover:bg-brand-50 hover:text-brand-dark;
+    }
+    /* On dark brand bands */
+    .btn-inverse {
+        @apply bg-white text-brand-dark shadow-sm hover:bg-brand-50 focus-visible:ring-white focus-visible:ring-offset-brand-darker;
+    }
+    .btn-outline-inverse {
+        @apply border border-white/40 text-white hover:border-white hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-brand-darker;
+    }
+
+    /* ---------------- Flat bordered tile (cards) ---------------- */
+    .tile {
+        @apply relative flex flex-col overflow-hidden border border-slate-200 bg-white;
+        @apply transition-all duration-300 ease-out-soft hover:border-brand/40 hover:shadow-md hover:shadow-brand/5;
+    }
+    .tile-media {
+        @apply relative block aspect-[4/3] overflow-hidden bg-brand-50;
+    }
+    /* Event date overlay, top-left corner of the card image. */
+    .date-badge {
+        @apply absolute top-0 left-0 flex min-w-16 flex-col items-center bg-brand px-3 py-2 leading-none text-white uppercase;
+    }
+    .date-badge-day {
+        @apply text-3xl font-extrabold tracking-tight;
+    }
+    .date-badge-month {
+        @apply mt-1 text-sm font-extrabold tracking-wide;
+    }
+    .tile-media img {
+        @apply h-full w-full object-cover transition-transform duration-500 ease-out-soft group-hover:scale-[1.03];
+    }
+    .tile-title {
+        @apply text-lg leading-snug font-semibold text-slate-900 transition-colors group-hover:text-brand;
+    }
+    .tile-link {
+        @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand-dark;
+    }
+    .tile-link .arrow {
+        @apply transition-transform duration-200 group-hover:translate-x-0.5;
+    }
+    /* Whole-tile click target via the title link. */
+    .tile-title-link::after {
+        content: "";
+        @apply absolute inset-0;
+    }
+
+    /* ---------------- Flat callout with left accent rule ---------------- */
+    .callout {
+        @apply flex gap-3 border-l-2 border-brand bg-brand-50/60 px-4 py-3 text-sm leading-relaxed text-slate-700;
+    }
+
+    /* ---------------- Article surface (detail pages) ---------------- */
+    .page-article {
+        @apply mx-auto max-w-none border border-slate-200 bg-white p-6 md:p-10;
+    }
+    .page-article > header {
+        @apply mb-8 border-b border-slate-200 pb-8;
+    }
+
+    /* Prose accents shared by every article */
+    .prose-brand {
+        @apply prose-slate prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-slate-900;
+        @apply prose-a:font-medium prose-a:text-brand prose-a:underline-offset-2;
+        @apply prose-img:rounded-md prose-blockquote:border-brand prose-blockquote:text-slate-600 prose-strong:text-slate-900;
+    }
+
+    .prose-brand a:hover {
+        color: var(--color-brand-dark);
+    }
+
+    /* Form controls (contact form) */
+    .field {
+        @apply block w-full rounded-lg border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-xs placeholder:text-slate-500;
+        @apply transition-colors focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none;
+    }
+    .field-label {
+        @apply mb-1.5 block text-sm font-medium text-slate-700;
     }
 }
+
+/* ------------------------------------------------------------------ */
+/* Animation                                                           */
+/* ------------------------------------------------------------------ */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes sheen {
+    from { transform: translateX(-120%) skewX(-18deg); }
+    to { transform: translateX(260%) skewX(-18deg); }
+}
+@keyframes float-slow {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -10px, 0); }
+}
+
+@layer utilities {
+    .animate-fade-up {
+        animation: fade-up 0.6s var(--ease-out-soft) both;
+        animation-delay: calc(var(--i, 0) * 70ms);
+    }
+    .animate-float-slow {
+        animation: float-slow 9s ease-in-out infinite;
+    }
+
+    /* Scroll reveal: progressive enhancement. Content is visible by default. */
+    @supports (animation-timeline: view()) {
+        .reveal {
+            animation: fade-up linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 35%;
+        }
+    }
+
+    /* One-shot diagonal shine on primary dark bands / hero buttons. */
+    .shine {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+    }
+    .shine::after {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 28%;
+        background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.28), transparent);
+        transform: translateX(-120%) skewX(-18deg);
+        pointer-events: none;
+        z-index: -1;
+    }
+    .shine:hover::after {
+        animation: sheen 0.9s var(--ease-out-soft);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Tabler icons (gap-fillers) use a 2px stroke; match Heroicons outline (1.5px). */
+svg[data-icon^="tabler:"] g {
+    stroke-width: 1.5;
+}
+
+/* Visible keyboard focus everywhere that doesn't set its own ring. */
+:where(a, button, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Migrated Hugo content (.prose)                                      */
+/*                                                                     */
+/* IMPORTANT: everything below is deliberately UNLAYERED. Tailwind v4's  */
+/* typography plugin emits `.prose a { color }` etc. in the `utilities`  */
+/* layer; rules in `@layer components` lose to it regardless of          */
+/* specificity (that made button text dark on blue). Unlayered CSS beats */
+/* every layer, so the content fixes live here.                          */
+/* ------------------------------------------------------------------ */
+
+/* Tables (raw HTML tables, e.g. prayer-time schedules) */
+.prose table {
+    @apply my-4 w-full border border-slate-200 text-left;
+}
+.prose thead {
+    @apply border-b border-slate-200 bg-brand-50 text-brand-dark;
+}
+.prose th {
+    @apply border border-slate-200 p-4 text-sm font-semibold tracking-wider uppercase;
+}
+.prose tbody tr {
+    @apply border border-slate-200 transition-colors hover:bg-brand-50/50;
+}
+.prose tbody tr:last-child {
+    @apply border-b-0;
+}
+.prose td {
+    @apply border border-slate-200 p-4 align-top text-sm text-slate-700;
+}
+
+/*
+ * Content components for raw HTML inside Markdown (scoped to .prose so they cannot leak into the UI).
+ * Class names are PPME's own; layout helpers (block, hidden, lg:hidden, overflow-x-auto, text-center ...)
+ * are plain Tailwind utilities that Tailwind picks up from src/content.
+ *   .btn .btn-primary [.btn-sm]   link button          .badge [.badge-success|-warning|-danger]   chip
+ *   .callout [.callout-success]   flat note            .accordion-item/-trigger/-panel/-body       accordion (Layout.astro script)
+ *   .table-compact                tighter cells        .row-muted/-brand/-info/-success            tinted table rows
+ *   .sticky-col                   sticky first column on scrolling tables
+ */
+.prose .table-compact th,
+.prose .table-compact td { padding: 0.5rem 0.75rem; }
+.prose .row-muted { background-color: var(--color-slate-50); }
+.prose .row-success { background-color: var(--color-emerald-100) !important; }
+.prose .row-brand { background-color: var(--color-brand-100) !important; }
+.prose .row-info { background-color: var(--color-brand-50) !important; }
+.prose .sticky-col { position: sticky; left: 0; background-color: #fff; }
+.prose iframe { max-width: 100%; }
+
+/* Buttons: any <a class="btn btn-primary [btn-sm]"> inside content. White on brand, 44px tall. */
+.prose a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none;
+    text-transform: none;
+    color: #fff;
+    background: var(--color-brand);
+    box-shadow: 0 1px 2px rgb(3 78 162 / 0.25);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.prose a.btn:visited { color: #fff; }
+.prose a.btn:hover {
+    color: #fff;
+    background: var(--color-brand-dark);
+    text-decoration: none;
+}
+.prose a.btn:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+}
+.prose a.btn-sm { min-height: 2.25rem; padding: 0.375rem 1rem; font-size: 0.8125rem; }
+.prose a.btn-secondary {
+    color: var(--color-brand-dark);
+    background: #fff;
+    border: 1px solid var(--color-slate-300);
+    box-shadow: none;
+}
+.prose a.btn-secondary:hover { color: var(--color-brand); background: var(--color-brand-50); border-color: var(--color-brand-200); }
+.prose a.btn-secondary:visited { color: var(--color-brand-dark); }
+
+/* Badges: flat tinted chips with AA-contrast text. */
+.prose .badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    margin: 0.15rem 0;
+    border: 1px solid var(--color-brand-200);
+    border-radius: 9999px;
+    background: var(--color-brand-50);
+    color: var(--color-brand-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.prose .badge-success { background: var(--color-emerald-50); border-color: var(--color-emerald-200); color: var(--color-emerald-800); }
+.prose .badge-warning { background: var(--color-amber-50); border-color: var(--color-amber-200); color: var(--color-amber-900); }
+.prose .badge-danger  { background: var(--color-red-50); border-color: var(--color-red-200); color: var(--color-red-800); }
+
+/* Callouts: flat note with a left accent rule (.callout is flex in components; block here for HTML content). */
+.prose .callout {
+    display: block;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-left: 2px solid var(--color-brand);
+    background: var(--color-brand-50);
+    color: var(--color-brand-darker);
+}
+.prose .callout p:last-child { margin-bottom: 0; }
+.prose .callout-success { background: var(--color-emerald-50); border-left-color: var(--color-emerald-600); color: var(--color-emerald-900); }
+
+/* Accordion. Toggled by the script in Layout.astro (data-accordion-* attributes). */
+.prose .accordion-item {
+    margin: 0 0 0.5rem;
+    border: 1px solid var(--color-slate-200);
+    background: #fff;
+}
+.prose .accordion-trigger {
+    position: relative;
+    margin: 0;
+    padding: 0.75rem 2.75rem 0.75rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    background: var(--color-brand-50);
+    color: var(--color-brand-darker);
+    transition: background-color 0.2s;
+}
+.prose .accordion-trigger:hover { background: var(--color-brand-100); }
+.prose .accordion-trigger p { margin: 0 0 0.25rem; font-weight: 600; }
+.prose .accordion-trigger:focus-visible { outline: 2px solid var(--color-brand); outline-offset: -2px; }
+.prose .accordion-trigger::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1.1rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-right: 2px solid var(--color-brand);
+    border-bottom: 2px solid var(--color-brand);
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform 0.25s var(--ease-out-soft);
+}
+.prose .accordion-trigger[aria-expanded="true"]::after { transform: translateY(-30%) rotate(225deg); }
+.prose .accordion-body { padding: 1rem; border-top: 1px solid var(--color-slate-200); }
+.prose .accordion-panel:not(.is-open) { display: none; }

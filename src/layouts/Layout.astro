@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/inter";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/footer.astro";
@@ -6,24 +7,91 @@ import { defaultLocale } from "../data/i18n";
 
 export interface Props {
   title: string;
+  /** Include this page in the site search index (Pagefind). Off for the homepage and listing pages. */
+  searchable?: boolean;
+  /** Publish date (posts) or event date (events): shown in search results and used to sort them. */
+  date?: Date;
 }
 
-const { title } = Astro.props;
+const { title, searchable = true, date } = Astro.props;
+const isoDate = date ? date.toISOString().slice(0, 10) : undefined;
 const currentLocale = Astro.currentLocale ?? defaultLocale;
+
+// Search facet: first path segment without the locale prefix (event, blog, ibadah, ...).
+const segments = Astro.url.pathname.split("/").filter(Boolean);
+if (segments[0] === currentLocale && currentLocale !== defaultLocale) segments.shift();
+const section = segments[0] ?? "page";
 ---
 
 <!doctype html>
 <html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#034ea2" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col">
     <Navbar />
-    <slot />
+    <div class="app-backdrop relative flex-1">
+      <div
+        class="app-grid pointer-events-none absolute inset-x-0 top-0 h-[26rem]"
+        aria-hidden="true"
+      ></div>
+      <main
+        class="relative"
+        data-pagefind-body={searchable ? "" : undefined}
+        data-pagefind-filter={searchable ? "section[data-section], lang[data-lang]" : undefined}
+        data-pagefind-sort={searchable && isoDate ? "date[data-date]" : undefined}
+        data-pagefind-meta={searchable && isoDate ? "date[data-date]" : undefined}
+        data-date={isoDate}
+        data-section={section}
+        data-lang={currentLocale}
+      >
+        <slot />
+      </main>
+    </div>
     <Footer />
   </body>
 </html>
+
+<script>
+  // Accordion for Markdown content: <div class="accordion-trigger" data-accordion-trigger data-accordion-target="#id" data-accordion-group="#group">.
+  document
+    .querySelectorAll<HTMLElement>("[data-accordion-trigger]")
+    .forEach((trigger) => {
+      trigger.setAttribute("role", "button");
+      trigger.tabIndex = 0;
+      trigger.setAttribute("aria-expanded", "false");
+      const toggle = () => {
+        const target = document.querySelector<HTMLElement>(
+          trigger.dataset.accordionTarget ?? "",
+        );
+        if (!target) return;
+        const open = !target.classList.contains("is-open");
+        if (open && trigger.dataset.accordionGroup) {
+          document
+            .querySelectorAll<HTMLElement>(
+              `${trigger.dataset.accordionGroup} .accordion-panel.is-open`,
+            )
+            .forEach((el) => {
+              el.classList.remove("is-open");
+              document
+                .querySelector(`[data-accordion-target="#${el.id}"]`)
+                ?.setAttribute("aria-expanded", "false");
+            });
+        }
+        target.classList.toggle("is-open", open);
+        trigger.setAttribute("aria-expanded", String(open));
+      };
+      trigger.addEventListener("click", toggle);
+      trigger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+</script>

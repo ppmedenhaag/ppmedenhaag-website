@@ -28,31 +28,28 @@ const navigation = {
       { name: "Birth", href: "/en/ibadah/geboorte/" },
       { name: "Passing Away", href: "/en/ibadah/overlijden/" },
       { name: "Zakat, Infaq and Sadaqah", href: "/en/ibadah/sadaqah/" },
-      {
-        name: "Prayer Schedule 2025 (Den Haag)",
-        href: "/forms/schedule-sholat-den-haag-2025.pdf",
-      },
+      { name: "Prayer Times (Den Haag)", href: "/en/ibadah/gebedstijden/" },
     ],
   },
   support: {
     nl: [
       { name: "Evenementen", href: "/event/" },
       { name: "Blog", href: "/blog/" },
-      { name: "Gebedstijden", href: "/forms/schedule-sholat-den-haag-2024.pdf" },
+      { name: "Gebedstijden", href: "/ibadah/gebedstijden/" },
       { name: "Contact", href: "/contact/" },
       { name: "Over Ons", href: "/about/" },
     ],
     id: [
       { name: "Event", href: "/id/event/" },
       { name: "Blog", href: "/id/blog/" },
-      { name: "Jadwal Sholat", href: "/forms/schedule-sholat-den-haag-2024.pdf" },
+      { name: "Jadwal Sholat", href: "/id/ibadah/gebedstijden/" },
       { name: "Kontak", href: "/id/contact/" },
       { name: "Tentang Kami", href: "/id/about/" },
     ],
     en: [
       { name: "Events", href: "/en/event/" },
       { name: "Blog", href: "/en/blog/" },
-      { name: "Prayer Schedule", href: "/forms/schedule-sholat-den-haag-2024.pdf" },
+      { name: "Prayer Times", href: "/en/ibadah/gebedstijden/" },
       { name: "Contact", href: "/en/contact/" },
       { name: "About Us", href: "/en/about/" },
     ],
@@ -96,77 +93,126 @@ const navigation = {
 const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 ---
 
-<footer aria-labelledby="footer-heading" class="bg-ppme-blue-50/10">
+<footer
+  aria-labelledby="footer-heading"
+  class="relative overflow-hidden bg-brand-darker text-brand-100"
+>
+  <div
+    class="pointer-events-none absolute -top-40 -right-40 size-[28rem] rounded-full bg-brand/40 blur-3xl"
+    aria-hidden="true"
+  >
+  </div>
+  <div class="h-0.5 bg-gradient-to-r from-brand-400 via-brand-200 to-brand-400"></div>
   <h2 id="footer-heading" class="sr-only">Footer</h2>
-  <div class="mx-auto max-w-7xl px-6 pb-8 pt-12 sm:pt-24 lg:px-8 lg:pt-16">
+  <div class="relative mx-auto max-w-7xl px-4 pt-12 pb-8 sm:px-6 lg:px-8 lg:pt-16">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="space-y-4 md:space-y-8">
-        <img alt="PPME Den Haag" src="/ppme-logo.svg" class="h-[70px]" />
-        <div class="px-1 flex space-x-2 items-center">
-          <img src="/icons/address.svg" class="h-6" />
-          <div
-            class="text-base font-semibold text-ppme-blue-700 grid grid-cols-1"
+      <div class="space-y-6">
+        <a
+          href={locale === defaultLocale ? "/" : `/${locale}/`}
+          class="inline-block rounded-full bg-white px-6 py-2.5 transition-opacity hover:opacity-90"
+        >
+          <img alt="PPME Den Haag" src="/ppme-logo.svg" class="h-14 w-auto" />
+        </a>
+        <div class="flex items-start gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="mt-0.5 size-5 shrink-0 text-brand-300"
+            aria-hidden="true"
           >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+            ></path>
+          </svg>
+          <div class="grid grid-cols-1 text-sm leading-relaxed font-medium text-white">
+            <span>Masjid Al Hikmah</span>
             <span>Heeswijkplein 170</span>
             <span>2531 HK Den Haag</span>
           </div>
         </div>
-        <div class="flex space-x-4 md:space-x-8">
+        <ul role="list" class="flex flex-wrap gap-3">
           {
             navigation.social.map((item) => (
-              <a
-                href={item.href}
-                class="border border-ppme-blue-50 hover:border-ppme-blue-700 p-1 rounded-md hober:bg-white"
-              >
-                <span class="sr-only">{item.name}</span>
-                <img src={item.icon} class="h-6 w-6 md:h-8 md:w-8" />
-              </a>
+              <li>
+                <a
+                  href={item.href}
+                  class="group flex size-10 items-center justify-center border border-white/20 bg-white/5 transition-all duration-200 hover:-translate-y-0.5 hover:border-white hover:bg-white focus-visible:outline-white"
+                >
+                  <span class="sr-only">{item.name}</span>
+                  <img
+                    src={item.icon}
+                    alt=""
+                    class="size-5 brightness-0 invert transition-[filter] duration-200 group-hover:brightness-100 group-hover:invert-0"
+                  />
+                </a>
+              </li>
             ))
           }
+        </ul>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 xl:col-span-2 xl:mt-0">
+        <div>
+          <h3 class="text-[11px] font-semibold tracking-[0.14em] text-brand-300 uppercase">
+            {headerLinks.activities[locale]}
+          </h3>
+          <ul role="list" class="mt-4 divide-y divide-white/10 border-t border-white/10">
+            {
+              navigation.ibadah[locale].map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group flex items-center justify-between py-2.5 text-sm font-medium text-brand-100 transition-colors hover:text-white"
+                  >
+                    {item.name}
+                    <span
+                      class="text-brand-300 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100"
+                      aria-hidden="true">→</span
+                    >
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-[11px] font-semibold tracking-[0.14em] text-brand-300 uppercase">
+            {headerLinks.support[locale]}
+          </h3>
+          <ul role="list" class="mt-4 divide-y divide-white/10 border-t border-white/10">
+            {
+              navigation.support[locale].map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group flex items-center justify-between py-2.5 text-sm font-medium text-brand-100 transition-colors hover:text-white"
+                  >
+                    {item.name}
+                    <span
+                      class="text-brand-300 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100"
+                      aria-hidden="true">→</span
+                    >
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
-      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-lg font-semibold text-zinc-600">
-              {headerLinks.activities[locale]}
-            </h3>
-            <ul role="list" class="mt-4 space-y-1 md:space-y-3 pl-4 md:pl-0">
-              {
-                navigation.ibadah[locale].map((item) => (
-                  <li>
-                    <a
-                      href={item.href}
-                      class="text-base text-ppme-blue-700 hover:text-ppme-blue-600 font-semibold  hover:underline"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="mt-10 md:mt-0">
-            <h3 class="text-lg font-semibold text-zinc-600">
-              {headerLinks.support[locale]}
-            </h3>
-            <ul role="list" class="mt-4 space-y-1 md:space-y-3 pl-4 md:pl-0">
-              {
-                navigation.support[locale].map((item) => (
-                  <li>
-                    <a
-                      href={item.href}
-                      class="text-base text-ppme-blue-700 hover:text-ppme-blue-600 font-semibold hover:underline"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div
+      class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-brand-200 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© {new Date().getFullYear()} PPME Den Haag</p>
+      <p>Masjid Al Hikmah · Den Haag</p>
     </div>
   </div>
 </footer>

@@ -65,5 +65,5 @@ Jazakumullahu khoiron katsiron…
 Wassalam, 
 
 [SGB Utrecht](https://linktr.ee/sgbutrecht)<br/>
-[PPME Den Haag](www.ppmedenhaag.nl)<br/>
+[PPME Den Haag](https://www.ppmedenhaag.nl)<br/>
 [Rumah Tajwid](https://linktr.ee/rumahtajwid)<br/>

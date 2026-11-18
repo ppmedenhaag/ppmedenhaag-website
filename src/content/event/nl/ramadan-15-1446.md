@@ -32,13 +32,13 @@ Hierbij het programma voor zaterdag 15 Ramadan.
 Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze ibadah accepteren en ons naar een hogere niveau van imaan brengen, amiin.
 
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ scroll naar rechts om de resterende tabel te zien)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Tijd</th>
+<th class="sticky-col">Tijd</th>
 <th ><span class="text-nowrap">Ruimte Beneden 1</span ><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Ruimte Beneden 2</span><br/><span class="text-nowrap">"Al Ittihaad Dames"</span></th>
 <th><span class="text-nowrap">Ruimte Beneden 3</span><br/><span class="text-nowrap">"Ramadhan Kidz"</span></th>
@@ -47,7 +47,7 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.00 - 18.20</td>
+<td class="text-nowrap sticky-col">17.00 - 18.20</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Faturrahman</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>&nbsp;</th>
@@ -56,7 +56,7 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 </tr>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.30 - 18.20</td>
+<td class="text-nowrap sticky-col">17.30 - 18.20</td>
 <th style="font-weight: bold;">&nbsp;</th>
 <th>&nbsp;</th>
 <th>Bpk. Halid & Ibu Dida</th>
@@ -65,19 +65,19 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 </tr>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.20 - 18.53</td>
-<th colspan="5" class="table-success">Tadarus</th>
+<td class="text-nowrap sticky-col">18.20 - 18.53</td>
+<th colspan="5" class="row-success">Tadarus</th>
 </tr>
 <tr >
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.53 - 19.20</td>
-<th colspan="5" class="table-primary">Iftar & Maghrib*</th>
+<td class="text-nowrap sticky-col">18.53 - 19.20</td>
+<th colspan="5" class="row-brand">Iftar & Maghrib*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.20 - 19.50</td>
-<th colspan="5" class="table-info">Eten*</th>
+<td class="text-nowrap sticky-col">19.20 - 19.50</td>
+<th colspan="5" class="row-info">Eten*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.50 - 20.30</td>
+<td class="text-nowrap sticky-col">19.50 - 20.30</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Faturrahman</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>----</th>
@@ -85,12 +85,12 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 <th><span class="text-nowrap">Samira I. Ibrahim</span><br/><span style="font-weight: normal">De kracht van intentie</span></th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.40 - 22.30</td>
-<th colspan="5" class="table-primary">Isya & Tarawih*</th>
+<td class="text-nowrap sticky-col">20.40 - 22.30</td>
+<th colspan="5" class="row-brand">Isya & Tarawih*</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ scroll naar rechts om de resterende tabel te zien)
 </div>
 <br/>

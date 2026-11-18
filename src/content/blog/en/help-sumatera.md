@@ -41,7 +41,7 @@ IBAN **NL26 INGB 0002 1661 44**<br/>
 In the name of: PPME Den Haag<br/>
 
 
-<p class="alert alert-primary text-center">Total donations as of Sunday <span style="font-weight:bold">4 January 2026</span> amount to €
+<p class="callout text-center">Total donations as of Sunday <span style="font-weight:bold">4 January 2026</span> amount to €
 <span style="font-weight:bold">6060</span>.</p>
 
 May Allah reward every good deed we do with multiplied rewards and make us among His servants who care for others. Aamin.

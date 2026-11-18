@@ -34,13 +34,13 @@ Kami, sebagai anggota dewan dan komite, memohon maaf atas kesalahan dan kekurang
 
 Berikut adalah program untuk Sabtu pertama Ramadhan.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ geser ke kanan di tabel berikut untuk melihat secara lengkap)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Waktu</th>
+<th class="sticky-col">Waktu</th>
 <th ><span class="text-nowrap">Ruang Bawah 1</span ><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 2</span><br/><span class="text-nowrap">"Al Ittihaad Wanita"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 3</span><br/><span class="text-nowrap">"Ramadhan Kidz"</span></th>
@@ -49,7 +49,7 @@ Berikut adalah program untuk Sabtu pertama Ramadhan.
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.00 - 18.00</td>
+<td class="text-nowrap sticky-col">17.00 - 18.00</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Nashir</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>Ustadzah Saida</th>
@@ -57,32 +57,32 @@ Berikut adalah program untuk Sabtu pertama Ramadhan.
 <th><span class="text-nowrap">Ustadz M. Azam</span><br/><span style="font-weight: normal;">Pencarian spiritualitas; Perjalanan ke Tarim</span></th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.00 - 18.29</td>
-<th colspan="5" class="table-success">Tadarus</th>
+<td class="text-nowrap sticky-col">18.00 - 18.29</td>
+<th colspan="5" class="row-success">Tadarus</th>
 </tr>
 <tr >
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.29 - 19.00</td>
-<th colspan="5" class="table-primary">Iftar & Maghrib*</th>
+<td class="text-nowrap sticky-col">18.29 - 19.00</td>
+<th colspan="5" class="row-brand">Iftar & Maghrib*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.00 - 19.30</td>
-<th colspan="5" class="table-info">Makan*</th>
+<td class="text-nowrap sticky-col">19.00 - 19.30</td>
+<th colspan="5" class="row-info">Makan*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.30 - 20.00</td>
+<td class="text-nowrap sticky-col">19.30 - 20.00</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Nashir</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>&nbsp;</th>
-<th style="" ><span style="font-weight: bold;">Ustadz Fauzi</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
+<th ><span style="font-weight: bold;">Ustadz Fauzi</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>Ustadz M. Azam<br/><span style="font-weight: normal;">Pencarian spiritualitas; Perjalanan ke Tarim</span></th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.14 - 22.00</td>
-<th colspan="5" class="table-primary">Isya & Tarawih*</th>
+<td class="text-nowrap sticky-col">20.14 - 22.00</td>
+<th colspan="5" class="row-brand">Isya & Tarawih*</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ geser ke kanan di tabel diatas untuk melihat secara lengkap)
 </div>
 <br/>

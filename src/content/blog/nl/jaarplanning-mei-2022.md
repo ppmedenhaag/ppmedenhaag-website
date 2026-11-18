@@ -32,9 +32,9 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
 
 ##### Activiteiten en begroting
 <div style="overflow-x: auto;white-space: nowrap;">
-<table class="table-light">
-    <tbody class="table-light">
-        <tr class="table-primary">
+<table class="row-muted">
+    <tbody class="row-muted">
+        <tr class="row-brand">
             <td>
                 <p><strong>Maand</strong></p>
             </td>
@@ -51,7 +51,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p><strong>Geschatte<br/>kosten<br/>(Euro)</strong></p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>21 Mei 2022/</p>
                 <p>20 Syawal 1443</p>
@@ -69,7 +69,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>165,00</p>
             </td>
         </tr>
-        <tr class="table-primary">
+        <tr class="row-brand">
             <td colspan="4">
                 <p>
                     <strong><em>Totale geschatte kosten voor &ldquo;51 Jaar PPME&rdquo; presentatie</em></strong>
@@ -81,7 +81,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 </p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td rowspan="6">
                 <p>11 Juni 2022/</p>
                 <p>12 Dzul Qadah 1443</p>
@@ -104,7 +104,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>1000,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Materialen (huur meubels enz.)</p>
             </td>
@@ -112,7 +112,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>500,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Workshop Kalligrafie</p>
             </td>
@@ -120,7 +120,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>50,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Workshop Fotografie</p>
             </td>
@@ -128,7 +128,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>50,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Workshop Essay</p>
             </td>
@@ -136,7 +136,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>50,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Schoonmaak</p>
             </td>
@@ -144,7 +144,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>75,00</p>
             </td>
         </tr>
-        <tr class="table-primary">
+        <tr class="row-brand">
             <td colspan="4">
                 <p>
                     <strong><em>Totale geschatte kosten voor &ldquo;Open House&rdquo;</em></strong>
@@ -156,7 +156,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 </p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td rowspan="3">
                 <p>26-28 Augustus 2022/</p>
                 <p>28-30 Muharram 1444</p>
@@ -175,7 +175,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>300,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Reiskosten</p>
             </td>
@@ -183,7 +183,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>200,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Kantoorartikelen</p>
             </td>
@@ -191,7 +191,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>100,00</p>
             </td>
         </tr>
-        <tr class="table-primary">
+        <tr class="row-brand">
             <td colspan="4">
                 <p>
                     <strong><em>Totale geschatte kosten voor &ldquo;51 Jaar PK&rdquo;</em></strong>
@@ -203,7 +203,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 </p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>8 Oktober 2022/</p>
                 <p>12 Rabi&rsquo;ul Awal 1444</p>
@@ -224,7 +224,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>100,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td colspan="4">
                 <p>
                     <strong><em>Totale geschatte kosten &ldquo;51 Jaar PPME Leiderschap&rdquo;
@@ -237,7 +237,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 </p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td rowspan="2">
                 <p>14-23 Oktober 2022/</p>
                 <p>18-27 Rabi&rsquo;ul Awal 1444</p>
@@ -255,7 +255,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>100,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Catering tijdens manasik Umroh<br/>(ongeveer 20 pers.)</p>
             </td>
@@ -263,7 +263,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>100,00</p>
             </td>
         </tr>
-        <tr  class="table-primary">
+        <tr  class="row-brand">
             <td colspan="4" >
                 <p>
                     <strong><em>Totale geschatte kosten Umrah PPME Den Haag</em></strong>
@@ -275,7 +275,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 </p>
             </td>
         </tr>
-        <tr  class="table-light">
+        <tr  class="row-muted">
             <td rowspan="2">
                 <p>14 Januari 2022/</p>
                 <p>11 Jumadil Akhir 1444</p>
@@ -296,7 +296,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>75,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Vergoeding spreker Nederlands</p>
             </td>
@@ -304,7 +304,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>75,00</p>
             </td>
         </tr>
-        <tr class="table-primary">
+        <tr class="row-brand">
             <td colspan="4">
                 <p>
                     <strong><em>Totale geschatte kosten Lezing over Adhab en Akhlaq</em></strong>
@@ -316,7 +316,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 </p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td rowspan="5">
                 <p>7 Mei 2023/</p>
                 <p>17 Syawal 1444</p>
@@ -340,7 +340,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>2000,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Zaalhuur<br/>(bijv. gymzaal naast Al-Hikmah <br/>voor 3 uurtjes)</p>
             </td>
@@ -348,7 +348,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>200,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Presentjes</p>
             </td>
@@ -356,7 +356,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>1000,00</p>
             </td>
         </tr>
-        <tr class="table-light">
+        <tr class="row-muted">
             <td>
                 <p>Gooediebag voor aanwezigen<br/>(ongeveer 200 pers.)</p>
             </td>
@@ -364,11 +364,11 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 <p>1000,00</p>
             </td>
         </tr>
-        <tr  class="table-light">
+        <tr  class="row-muted">
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
-        <tr class="table-primary">
+        <tr class="row-brand">
             <td colspan="4">
                 <p>
                     <strong><em>Totale geschatte kosten Halal Bi Halal 2023</em></strong>
@@ -380,7 +380,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
                 </p>
             </td>
         </tr>
-        <tr  class="table-primary">
+        <tr  class="row-brand">
             <td colspan="4">
                 Totale geschatte kosten herdenking 51 Jaar PPME<br/>
                 Mei 2022-Mei 2023/Syawal 1443-Syawal 1444

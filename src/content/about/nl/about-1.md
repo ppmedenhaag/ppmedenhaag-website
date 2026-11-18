@@ -16,13 +16,11 @@ type: "about"
 ---
 
 ## Lidmaatschap
-Sinds de oprichting van de PPME in de jaren ’70 kun je je als lid aan sluiten. Binnen de PPME hebben we verschillende vestigingen zoals in Amsterdam en Breda. 
+Sinds de oprichting van de PPME in de jaren '70 kun je je als lid aansluiten. De PPME heeft verschillende vestigingen, zoals in Amsterdam en Breda.
 
-Met een lidmaatschap die je maandelijks betaalt, steun je de vereniging. We kunnen hiermee een kwalitatief, actueel en breed programma blijven aanbieden. Zowel op religieus als op sociaal gebied. 
+Met je **maandelijkse contributie** steun je de vereniging. Zo kunnen we een kwalitatief, actueel en breed programma blijven aanbieden, zowel op religieus als op sociaal gebied.
 
-De drie soorten lidmaatschappen die wij hebben en de bijbehorende kosten:
-
-
+We hebben drie soorten lidmaatschap:
 
 |  | Kosten |
 |------|-----|
@@ -30,25 +28,22 @@ De drie soorten lidmaatschappen die wij hebben en de bijbehorende kosten:
 | Individueel lid (18+) | € 7,50 |
 | Student | € 7,50 |
 
-* De hoogte van de contributie wordt vastgesteld tijdens de jaarlijkse Algemene Ledenvergadering (ALV).  
+* De hoogte van de contributie wordt vastgesteld tijdens de jaarlijkse Algemene Ledenvergadering (ALV).
 
 ### Lid worden
-Als je lid wil worden, kom dan langs tijdens een van onze zaterdagprogramma’s. Die beginnen vanaf 16.00 uur. Neem een ingevuld [registratieformulier📝](/forms/Aanmeldformulier-NL-v2.pdf) mee en een kopie van een paspoort of ander geldig legitimatiebewijs. 
-
+Wil je lid worden? Kom dan langs tijdens een van onze **zaterdagprogramma's**, die om 16.00 uur beginnen. Neem een ingevuld [registratieformulier 📝](/forms/Aanmeldformulier-NL-v2.pdf) mee en een kopie van je paspoort of een ander geldig legitimatiebewijs.
 
 <br/>
 <img src="/images/about/membership.nl.jpeg" style="display: block;  margin-left: auto;  margin-right: auto; width:90%"/>
 
 ### Betalingsregeling
-Ben of word je graag lid van de vereniging, maar zit je in een lastige financiële situatie? Kom met ons in gesprek. Er zijn andere manieren om  je contributie te voldoen. Denk aan een gedeeltelijke betaling of je skills, vaardigheden, kennis en gedachten inzetten voor de activiteiten van de PPME Den Haag. We denken graag met je mee om te kijken wat mogelijk is.  
+Wil je graag lid worden, maar zit je in een lastige financiële situatie? **Neem contact met ons op.** Er zijn andere manieren om je contributie te voldoen, zoals gedeeltelijke betaling of het inzetten van je skills, vaardigheden en kennis voor de activiteiten van de PPME Den Haag. We denken graag met je mee over wat mogelijk is.
 
 ### Erelid
-Binnen de PPME Den Haag hebben we ook ereleden. Die worden door het bestuur van de vereniging aangedragen. Tijdens de ALV presenteert het bestuur de motivatie voor dit erelid. Samen met de leden wordt beslist of het erelidmaatschap wordt aangenomen.
+Binnen de PPME Den Haag hebben we ook ereleden. Zij worden door het bestuur voorgedragen, dat tijdens de ALV de motivatie toelicht. Samen met de leden wordt besloten of het erelidmaatschap wordt aangenomen.
 
-Heb je nog vragen? 
-Stuur een mail naar e-mail {{< param email >}}.
-
-
+Heb je nog vragen?
+Stuur een mail naar [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
 
 ### Belangrijke formulieren
-* [registratieformulier](/forms/Aanmeldformulier-NL-v2.pdf)
+* [Registratieformulier](/forms/Aanmeldformulier-NL-v2.pdf)

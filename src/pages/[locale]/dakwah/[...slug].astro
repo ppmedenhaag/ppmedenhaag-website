@@ -1,0 +1,71 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import { defaultLocale } from "../../../data/i18n";
+
+export async function getStaticPaths() {
+    // Excludes nl — see the same note in [locale]/blog/[...slug].astro.
+    const pages = await getCollection("dakwah", ({ id, data }) => {
+        return !id.startsWith(`${defaultLocale}/`) && !data.draft;
+    });
+    return pages.map((entry) => {
+        const [locale, ...slugParts] = entry.id.split("/");
+        return {
+            params: { locale, slug: slugParts.join("/") },
+            props: { entry },
+        };
+    });
+}
+
+const { entry } = Astro.props;
+const { locale } = Astro.params;
+const { Content } = await render(entry);
+---
+
+<Layout title={entry.data.title} date={entry.data.date}>
+    <div class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+        <article
+            class="prose prose-brand lg:prose-xl page-article max-w-none min-w-0"
+        >
+            <header class="mb-8 border-b border-slate-200 pb-8">
+                <h1
+                    class="page-title title-rule mb-6"
+                >
+                    {entry.data.title}
+                </h1>
+                <div
+                    class="flex flex-wrap items-center gap-4 text-sm text-slate-500"
+                >
+                    <time datetime={entry.data.date.toISOString()}>
+                        {
+                            entry.data.date.toLocaleDateString(locale, {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })
+                        }
+                    </time>
+                    {entry.data.author && <span>{entry.data.author}</span>}
+                </div>
+            </header>
+
+            {
+                entry.data.image && (
+                    <div class="mb-10 overflow-hidden border border-slate-200">
+                        <img
+                            src={`/${entry.data.image}`}
+                            alt={entry.data.title}
+                            class="w-full object-cover"
+                        />
+                    </div>
+                )
+            }
+
+            <div
+                
+            >
+                <Content />
+            </div>
+        </article>
+    </div>
+</Layout>

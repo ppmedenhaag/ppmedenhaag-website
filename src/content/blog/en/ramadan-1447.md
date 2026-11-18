@@ -25,13 +25,13 @@ The blessed month of Ramadan 1447 is a time for reflection, spiritual growth, an
 
 Note: sessions are in Netherlands language 🇳🇱
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ scroll to right to view the full table content)
 </div>
-<div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-<table class="table" style="min-width: 900px; width: 100%; border-collapse: collapse;">
+<div class="overflow-x-auto" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<table style="min-width: 900px; width: 100%; border-collapse: collapse;">
 <thead>
-<tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+<tr class="row-muted">
 <th style="padding: 12px; width: 15%;">Date</th>
 <th style="padding: 12px; width: 25%;">Sessions</th>
 <th style="padding: 12px; width: 20%;">Speaker</th>
@@ -39,7 +39,7 @@ Note: sessions are in Netherlands language 🇳🇱
 </tr>
 </thead>
 <tbody>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>4 Ramadan</strong>
 
 
@@ -54,7 +54,7 @@ Note: sessions are in Netherlands language 🇳🇱
 <td style="padding: 12px;">Samira I. Ibrahim</td>
 <td style="padding: 12px;">The Light of Guidance</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>11 Ramadan</strong>
 
 
@@ -69,7 +69,7 @@ Note: sessions are in Netherlands language 🇳🇱
 <td style="padding: 12px;">Muhammad Azam</td>
 <td style="padding: 12px;">Deeper meaning of لَا إِلٰهَ إِلَّا ٱللَّٰهُ</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>18 Ramadan</strong>
 
 
@@ -84,7 +84,7 @@ Note: sessions are in Netherlands language 🇳🇱
 <td style="padding: 12px;">Muhammad Idoe</td>
 <td style="padding: 12px;">Tafsīr surat al-Qadr</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>25 Ramadan</strong>
 
 

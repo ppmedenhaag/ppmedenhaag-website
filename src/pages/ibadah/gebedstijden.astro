@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PrayerYear from "../../components/PrayerYear.astro";
+import { defaultLocale } from "../../data/i18n";
+import { LATEST_YEAR, fill, prayerStrings } from "../../data/prayer";
+
+const title = fill(prayerStrings[defaultLocale].pageTitle, { year: LATEST_YEAR });
+---
+
+<Layout title={title}>
+  <PrayerYear locale={defaultLocale} />
+</Layout>

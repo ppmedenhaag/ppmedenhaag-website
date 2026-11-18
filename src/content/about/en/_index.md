@@ -9,24 +9,25 @@ image: "images/about/about-ppme.webp"
 description : ""
 ---
 
-### History of PPME 
+### History of PPME
 
-April 12, 1971. The birthday of PPME.
+**April 12, 1971** is the birthday of PPME.
 
-An Islamic organization founded by a group of about twenty Indonesian students who lived in the Netherlands and what was then West Germany. This group, of which the 4th President of Indonesia Abdurrachman Wahid was part, regularly met in the Netherlands to practice their faith together. From there arose a desire to set up something to represent the interests of Muslims in the Netherlands.
+PPME is an Islamic organization founded by about twenty Indonesian students living in the Netherlands and what was then West Germany. Among them was **Abdurrachman Wahid**, later the 4th President of Indonesia. The group met regularly in the Netherlands to practice their faith together, and from this grew a desire to create an organization that represents the interests of Muslims in the Netherlands.
 
-PPME stands for Persatuan Pemuda Muslim se-Eropa, in Dutch this is freely translated Association of Young Muslims in Europe. It mainly focuses on promoting the interests of Muslims in the Netherlands and Europe. And especially the Indonesian community. This made the Netherlands a Muslim community richer at that time, in addition to the Turkish, Moroccan, Surinamese and Pakistani communities that were already active at that time.
-
+PPME stands for **Persatuan Pemuda Muslim se-Eropa**, freely translated as *Association of Young Muslims in Europe*. It focuses mainly on promoting the interests of Muslims in the Netherlands and Europe, especially the **Indonesian community**. At the time, this added another Muslim community to the Turkish, Moroccan, Surinamese and Pakistani communities already active in the Netherlands.
 
 ### International Collaborations
-In order for the PPME to officially exist, it had to be approved and recognized by the Dutch state. This was a Royal Decree. Once approved and recognized, the social and religious activities began to turn. Meetings were organized in Germany, England, France and even Suriname. At that time, PPME became an exemplary organization until it was inaugurated as a “Central Governing Body”.
-There was increasing cooperation with the international community. For example, we attended conferences to exchange knowledge, for example, and we followed leadership training. This resulted in contacts with Islamic organizations from all over the world, for example Indonesia, the Middle East, the United States and Canada. In Europe, the PPME has had contacts with, among others, the Islamische Studentengemeinde (ISG) in West Germany, United Muslim Student Organization (UMSO), Islamic Center Geneva in Switzerland and Bilal Mosche in Germany.
+To exist officially, PPME had to be approved and recognized by the Dutch state, which happened by **Royal Decree**. Once recognized, its social and religious activities took off. Meetings were organized in Germany, England, France and even Suriname. PPME became a model organization and was eventually inaugurated as a "Central Governing Body".
+
+Cooperation with the international community kept growing. We attended conferences to exchange knowledge and took part in leadership training. This led to contacts with Islamic organizations around the world, including in Indonesia, the Middle East, the United States and Canada. In Europe, PPME has been in touch with, among others, the Islamische Studentengemeinde (ISG) in West Germany, the United Muslim Student Organization (UMSO), the Islamic Center Geneva in Switzerland and Bilal Moschee in Germany.
 
 ### News Bulletin
-A monthly bulletin was issued to keep PPME members informed. In this one could read about the developments within the worldwide Islamic community. The first bulletin was called “Al Falaah” which means “victory”. The idea for the title came from Abdurrachman Wahid interrupting a meeting to perform the azan, the call to prayer. He did this - as it should be - in a beautiful and intense way. The words al-falaah occur in the azan: "Haiyya'aal al-salaah... Haiyya'aal al-falaach". This is interpreted as “come to success”.
-To this day, the members of the various PPME branches are kept informed. Nowadays only more often through online channels such as Facebook and websites than the paper version. Where in the years after the foundation we mainly reported on international collaborations, nowadays we keep it closer to home. For example, 50 years after the founding of PPME, there are five departments in the cities of The Hague, Rotterdam, Amsterdam, Heemskerk and Breda. The total number of members consists of hundreds of families spread throughout the Netherlands.
+A monthly bulletin kept PPME members informed about developments in the worldwide Islamic community. The first bulletin was called **"Al Falaah"**, meaning "victory". The idea for the title came when Abdurrachman Wahid interrupted a meeting to perform the *azan*, the call to prayer, in a beautiful and intense way. The words *al-falaah* occur in the azan: "Hayya 'alas-salaah… Hayya 'alal-falaah", which is interpreted as "come to success".
 
+Members of the various PPME branches are still kept informed today, though now mostly through online channels such as Facebook and websites rather than on paper. Where we once reported mainly on international collaborations, we now keep it closer to home. Fifty years after its founding, PPME has **five branches**: The Hague, Rotterdam, Amsterdam, Heemskerk and Breda. Our members are **hundreds of families** spread across the Netherlands.
 
 ### PPME Connects
-PPME has played a positive role in society in many ways. In this way it knows how to connect different Muslim and non-Muslim communities and thus to propagate Islam in a positive way. The core activities of PPME are the fulfillment of dakwah, which means inviting to the knowledge of Islam. In addition, PPME performs Islamic social rituals such as ablution after a death, the celebration of important Islamic days and weddings.
-This was and has only been possible because of the many (voluntary) time and energy that our leaders, parents, aunts and uncles, young people, the Al-Moe'minoen group (part of the PPME of converted Dutch people) have given to this organization.
+PPME has played a positive role in society in many ways. It connects Muslim and non-Muslim communities and presents Islam in a positive light. Its core activity is **dakwah**: inviting people to learn about Islam. PPME also performs Islamic social rituals, such as the ritual washing after a death, the celebration of important Islamic days, and weddings.
+
+This has only been possible thanks to the (voluntary) time and energy of our leaders, parents, aunts and uncles, young people, and the **Al-Moe'minoen** group (the part of PPME made up of Dutch converts).

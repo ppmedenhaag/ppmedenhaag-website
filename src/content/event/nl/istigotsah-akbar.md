@@ -47,4 +47,4 @@ Wassalamu ‘alaykum warrohmatullohi wabarokatuh
 
 #### YouTube Video
 
-{{< youtube id="R-Y4dK1OkwQ" title="Istighotsah Akbar PPME" >}}
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:1.5rem 0"><iframe src="https://www.youtube-nocookie.com/embed/R-Y4dK1OkwQ" title="Istighotsah Akbar PPME" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>

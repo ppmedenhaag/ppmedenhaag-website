@@ -1,0 +1,20 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PrayerYear from "../../../components/PrayerYear.astro";
+import { defaultLocale, type LangOptions } from "../../../data/i18n";
+import { LATEST_YEAR, fill, prayerStrings } from "../../../data/prayer";
+
+export function getStaticPaths() {
+  // nl is the unprefixed default locale (src/pages/ibadah/gebedstijden.astro); never emit /nl/...
+  return (["id", "en"] as const)
+    .filter((locale) => locale !== defaultLocale)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as LangOptions;
+const title = fill(prayerStrings[locale].pageTitle, { year: LATEST_YEAR });
+---
+
+<Layout title={title}>
+  <PrayerYear locale={locale} />
+</Layout>

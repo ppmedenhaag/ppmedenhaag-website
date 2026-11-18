@@ -24,13 +24,13 @@ Assalamu'alaykum wa rahmatullahi wa barakaatuh, teman-teman remaja dan anggota P
 Bulan suci Ramadan 1447 adalah waktu untuk refleksi, pertumbuhan spiritual, dan mempererat tali silaturahmi. Untuk menginspirasi dan memperkuat iman para pemuda kita, kami dengan bangga mempersembahkan Program Ramadan Remaja di Masjid Al Hikmah. Selama empat hari Sabtu, kita akan mendalami Islam bersama berbagai narasumber, membahas topik mulai dari makna Syahadat hingga mempraktikkan iman dalam kehidupan sehari-hari. Baik Anda datang untuk mencari ilmu, suasana ukhuwah, atau berbuka puasa bersama, Anda sangat dipersilakan untuk mengikuti sesi edukatif ini.
 
 Perhatian: Kajian akan diberikan dalam bahasa Belanda 🇳🇱
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ geser ke kanan di tabel berikut untuk melihat secara lengkap)
 </div>
-<div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-<table class="table" style="min-width: 900px; width: 100%; border-collapse: collapse;">
+<div class="overflow-x-auto" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<table style="min-width: 900px; width: 100%; border-collapse: collapse;">
 <thead>
-<tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+<tr class="row-muted">
 <th style="padding: 12px; width: 15%;">Tanggal</th>
 <th style="padding: 12px; width: 25%;">Sesi</th>
 <th style="padding: 12px; width: 20%;">Pembicara</th>
@@ -38,7 +38,7 @@ Perhatian: Kajian akan diberikan dalam bahasa Belanda 🇳🇱
 </tr>
 </thead>
 <tbody>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>4 Ramadan</strong>
 
 
@@ -53,7 +53,7 @@ Perhatian: Kajian akan diberikan dalam bahasa Belanda 🇳🇱
 <td style="padding: 12px;">Samira I. Ibrahim</td>
 <td style="padding: 12px;">Cahaya Petunjuk (Het Licht van De Leiding)</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>11 Ramadan</strong>
 
 
@@ -68,7 +68,7 @@ Perhatian: Kajian akan diberikan dalam bahasa Belanda 🇳🇱
 <td style="padding: 12px;">Muhammad Azam</td>
 <td style="padding: 12px;">Makna mendalam dari لَا إِلٰهَ إِلَّا ٱللَّٰهُ</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>18 Ramadan</strong>
 
 
@@ -83,7 +83,7 @@ Perhatian: Kajian akan diberikan dalam bahasa Belanda 🇳🇱
 <td style="padding: 12px;">Muhammad Idoe</td>
 <td style="padding: 12px;">Tafsir surat al-Qadr</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>25 Ramadan</strong>
 
 

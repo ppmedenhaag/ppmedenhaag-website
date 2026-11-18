@@ -82,7 +82,6 @@ homepage:
 
   prayer_times:
     enable : true
-    link : "https://sholat.ppmedenhaag.nl/en"
 
   ######################## Vision Mission #############################
   vision_mission:

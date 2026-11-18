@@ -53,9 +53,9 @@ Een programma van PPME Den Haag in samenwerking met Al Fath Instituut.
 👥 Voor broeders, zusters en geïnteresseerden<br/>
 🎟️ Deelname is gratis, maar aanmelden is gewenst in verband met snacks en drinken.<br/>
 
-<div class="row py-1">
-      <div class="col-12 text-center">
-      <a href="https://forms.gle/owdp2B8yrbtDiH1i6" type="button" class="btn-sm btn-primary">Aanmelden Google Form</a>
+<div class="py-1">
+      <div class="text-center">
+      <a href="https://forms.gle/owdp2B8yrbtDiH1i6" type="button" class="btn btn-primary btn-sm">Aanmelden Google Form</a>
       </div>
 </div>
 

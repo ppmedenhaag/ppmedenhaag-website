@@ -1,0 +1,120 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import EventCard from "./EventCard.astro";
+import type { LangOptions } from "../data/i18n";
+import { formatDate, formatTime, getLocaleEvents, plainInline } from "../utils/event";
+import { useTranslations } from "../utils/lang";
+
+interface Props {
+  entry: CollectionEntry<"event">;
+  locale: LangOptions;
+}
+const { entry, locale } = Astro.props;
+const t = useTranslations(locale);
+const { Content } = await render(entry);
+const d = entry.data;
+const more = (await getLocaleEvents(locale))
+  .filter((e) => e.id !== entry.id)
+  .slice(0, 3);
+// [icon, label, value] — Heroicons outline via astro-icon.
+const meta = [
+  d.location && ["heroicons:map-pin", t("event.location"), plainInline(d.location)],
+  ["heroicons:calendar-days", t("event.date"), formatDate(d.date, locale)],
+  ["heroicons:clock", t("event.time"), formatTime(d.date, locale)],
+  d.duration && ["tabler:hourglass", t("event.duration"), d.duration],
+].filter(Boolean) as [string, string, string][];
+---
+
+<Layout title={d.title} date={d.date}>
+  <div class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article
+      class="prose prose-brand lg:prose-lg page-article max-w-none min-w-0"
+    >
+      <header class="mb-8 border-b border-slate-200 pb-8">
+        <h1
+          class="page-title title-rule mb-8"
+        >
+          {d.title}
+        </h1>
+        {
+          d.image && (
+            <img
+              src={`/${d.image}`}
+              alt={d.title}
+              class="w-full border border-slate-200 mb-6"
+            />
+          )
+        }
+        <dl class="not-prose grid grid-cols-1 divide-y divide-slate-200 border border-slate-200 bg-brand-50/40 text-sm sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+          {
+            meta.map(([icon, label, value]) => (
+              <div class="flex items-start gap-3 px-4 py-3">
+                <Icon
+                  name={icon}
+                  class="mt-0.5 size-5 shrink-0 text-brand"
+                  aria-hidden="true"
+                />
+                <div class="min-w-0">
+                  <dt class="eyebrow !text-brand">{label}</dt>
+                  <dd class="mt-1 font-medium break-words text-slate-800">{value}</dd>
+                </div>
+              </div>
+            ))
+          }
+        </dl>
+      </header>
+
+      <div
+        
+      >
+        <Content />
+      </div>
+
+      {
+        d.speaker && d.speaker.length > 0 && (
+          <div class="mt-10 border-t border-slate-200 pt-8 not-prose">
+            <h2 class="text-lg font-semibold text-slate-900 mb-4">
+              {t("event.speakers")}
+            </h2>
+            <ul class="grid gap-4 sm:grid-cols-2">
+              {d.speaker.map((s) => (
+                <li class="flex items-center gap-3 text-sm text-slate-700">
+                  <img
+                    src={`/${s.image}`}
+                    alt=""
+                    width="48"
+                    height="48"
+                    class="rounded-full ring-2 ring-brand-100"
+                  />
+                  <div>
+                    <p class="font-semibold">{s.name}</p>
+                    {s.designation && (
+                      <p class="text-slate-500">{s.designation}</p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </article>
+
+    {
+      more.length > 0 && (
+        <section class="mt-14" data-pagefind-ignore>
+          <h2 class="title-rule mb-8 text-2xl font-bold tracking-tight text-slate-900">
+            {t("event.more")}
+          </h2>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {more.map((e) => (
+              <EventCard event={e} locale={locale} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </div>
+</Layout>

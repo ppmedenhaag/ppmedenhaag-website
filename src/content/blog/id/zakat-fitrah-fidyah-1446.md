@@ -25,8 +25,8 @@ PPME Den Haag menerima dan menyalurkan Zakat Fitrah dan Fidyah **€ 10 per oran
 
 Pembayaran dapat dilakukan secara tunai di masjid Al Hikmah setiap hari Sabtu selama bulan Ramadan mulai pukul 17.00 hingga Isya atau melalu transfer ke rekening bank PPME Den Haag melalui tombol di bawah ini.
 
-<div class="col-12 text-center">
-<a href="https://www.ing.nl/de-ing/payreq?trxid=MCAxSpT8MKat2p8vysYKEeMLOlEwVB5A&flow-step=payment-request" type="button" class="btn btn-info" style="text-decoration:none;text-transform:none"><span>Pembayaran via iDEAL</span></a>
+<div class="text-center">
+<a href="https://www.ing.nl/de-ing/payreq?trxid=MCAxSpT8MKat2p8vysYKEeMLOlEwVB5A&flow-step=payment-request" type="button" class="btn btn-primary" style="text-decoration:none;text-transform:none"><span>Pembayaran via iDEAL</span></a>
 </div>
 
 

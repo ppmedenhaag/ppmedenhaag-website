@@ -53,7 +53,7 @@ field turns out to be optional in practice (e.g. `speaker[].designation` is miss
 some real entries), the schema reflects that rather than the content being "fixed" to
 match a stricter schema.
 
-**Sections migrated so far: `event`, `blog` only.** `about`, `contact`, `dakwah`,
+**Sections migrated so far: `event` (fully audited 2026-11-18: all nl/id/en entries, images, shortcodes, render), `blog` (audited 2026-11-18, `{{< ref >}}`/`{{< param email >}}` resolved), `dakwah`, `about`, `ibadah`.** `about`, `contact`, `dakwah`,
 `ibadah`, `notice`, `course`, `teacher`, `ramadhan-1444`, `author` are not yet ported —
 follow the same pattern (schema from real front matter, two route files per section,
 `nl/`-exclusion filter) when they are.
@@ -79,16 +79,58 @@ follow the same pattern (schema from real front matter, two route files per sect
 ## Styling
 
 Tailwind v4, CSS-first config (`@theme` block in `src/styles/global.css`) — no
-`tailwind.config.js`. Brand color scale is `ppme-blue-{50..950}`. `.prose table` rules
-in the same file target raw-HTML `<table>` markup (prayer-time schedules use this
-pattern in the Hugo source — preserve it if/when that content is ported).
+`tailwind.config.js`. Visual system: **`.claude/skills/ppme-visual-design`** (shared with the
+event-registration app: logo blue `#034EA2`, tokens `brand`/`brand-dark`/`brand-50..400`, `ppme-blue-*`
+kept as aliases; slate neutrals; Inter self-hosted via `@fontsource-variable/inter`; flat thin-bordered
+tiles, no heavy shadows/rounded-2xl/indigo). Shared classes live in `global.css`: `.btn*`, `.tile*`,
+`.page-title`, `.title-rule`, `.eyebrow`, `.section`, `.page-article`, `.prose-brand`, `.field`, `.callout`,
+`.app-backdrop`/`.app-grid` (applied in `Layout.astro`). Tailwind v4 gotcha: `@apply` cannot use custom
+classes or `group`; use `@utility` or put `group` in the markup. Rules that restyle migrated Markdown HTML (`.prose …` content components: buttons, badges, callouts, accordion, table rows) must stay **unlayered** at the bottom of `global.css` — typography's `utilities`-layer rules beat anything in `@layer components`. `.prose table` rules in the same file
+target raw-HTML `<table>` markup (prayer-time schedules use this pattern in the Hugo source — preserve it).
 
 React is available (`@astrojs/react`, `@headlessui/react`, `@heroicons/react`) for
 interactive islands (`src/components/react/*.tsx`, hydrated with `client:load` from a
 thin `.astro` wrapper, e.g. `Navbar.astro` → `ReactNavbar.tsx`). Keep this pattern for
 new interactive UI rather than reaching for a different framework.
 
+## Site search (Pagefind, build-time, no SaaS)
+
+- `npm run build` ends with `pagefind --site dist`, which indexes the **rendered HTML** (one index per `<html lang>`: nl/id/en)
+  into `dist/pagefind/`. Drafts, the `nl/` exclusion filter etc. therefore apply automatically.
+- `Layout.astro` puts `data-pagefind-body` on `<main>` plus `section` (first path segment) and `lang` filters. Pages that
+  shouldn't be indexed (homepage, event/blog listings, contact) pass `searchable={false}` — once any page has
+  `data-pagefind-body`, pages without it are skipped. New listing-style pages should do the same.
+- UI: `react/Search.tsx` (inside the Navbar island): icon button on mobile, field-style button on desktop, Ctrl/Cmd+K or `/`
+  opens a full-screen sheet (phones) / command-palette modal (`sm+`). Strings are `search.*` keys in `data/ui.ts`;
+  section labels are `search.section.<segment>` — add one when a new section is added.
+- "All languages" toggle uses `mergeIndex("/pagefind/./", {language})` (the `./` dodges Pagefind's same-path skip) and falls back
+  to current-language-only if that ever breaks after a Pagefind upgrade.
+- **Dev:** `npm run dev` serves the index from `dist/pagefind` (Vite plugin `pagefindDev` in `astro.config.mjs`). Run
+  `npm run build` once to create it; it is a snapshot, so rebuild to pick up content changes. Without it the dialog shows a hint.
+
+## Prayer times (replaces the old sholat.ppmedenhaag.nl iframe)
+
+- Times are **generated**: `src/data/prayer/base-winter-time.json` (one winter-time row per calendar day, incl.
+  29 Feb = rounded midpoint of 28 Feb/1 Mar) + `prayer/generate.ts` adds +1h in EU summer time (last Sunday of
+  March → day before last Sunday of October). Works for 2025 and every later year, no new file needed. Verified
+  identical to the old hand-made 2025 and 2026 tables (365/365 days) and 2024 Jun–Dec; 2024 Jan–Apr was an older table.
+- **Fallback flip:** `PUBLIC_PRAYER_SOURCE=manual` (build env var) or `DEFAULT` in `prayer/config.ts` switches to the
+  hand-maintained `prayer/gebedstijden-<year>.json` files (register them in `MANUAL_SCHEDULES` in `prayer.ts`).
+- The yearly page shows the build-time Amsterdam year (generated mode): **rebuild/redeploy on 1 January**
+  (e.g. a Cloudflare Pages deploy hook on a yearly cron). The homepage widget rolls over by itself.
+- Homepage island: `components/PrayerTimes.astro` → `react/PrayerTimes.tsx` (`client:visible`).
+- Yearly page: `/ibadah/gebedstijden/` (+ `/id/…`, `/en/…`) via `PrayerYear.astro`; static route files, no content entry
+  (Navbar's language switcher has an `isStaticPage` bypass for it).
+
 ## Known gaps (don't assume these are solved)
+
+- **Event Markdown conventions after the audit:** `{{< youtube >}}` was converted to raw
+  responsive `<iframe>` HTML and `{{< ref "blog/x" >}}` to a literal locale-prefixed path in
+  `src/content/event/**` (same done for blog and dakwah). Raw HTML in Markdown uses PPME's own
+  class names (`btn btn-primary btn-sm`, `badge badge-success`, `callout`, `accordion-*`, `row-brand`, `table-compact`,
+  `sticky-col`) plus plain Tailwind utilities (`lg:hidden`, `overflow-x-auto`); no Bootstrap names remain. They are styled by
+  the unlayered `.prose` rules at the bottom of `global.css`; `@source "../content"` lets Tailwind see utilities used in Markdown. `@tailwindcss/typography` is installed (it was missing, so `prose` did nothing).
+  Blog uses `PostList/PostCard/PostDetail.astro` + `utils/blog.ts` (author/category shown as plain text; Hugo's `/author/`, `/categories/`, `/tags/` taxonomy pages are NOT ported). Event pages share `EventDetail/EventList/EventCard.astro` + `utils/event.ts`.
 
 - **Hugo shortcodes are not converted.** Migrated content still contains literal
   `{{< youtube ... >}}`, `{{< ref ... >}}`, `{{< param email >}}` text in Markdown

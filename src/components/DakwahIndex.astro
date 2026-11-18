@@ -1,0 +1,61 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Layout from "../layouts/Layout.astro";
+import type { LangOptions } from "../data/i18n";
+import { useTranslations } from "../utils/lang";
+import { stripMarkdown, truncateText } from "../utils/text";
+
+interface Props {
+  locale: LangOptions;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const overview = await getEntry("dakwah-overview", locale);
+if (!overview) throw new Error(`Missing dakwah-overview entry for locale "${locale}"`);
+const { Content } = await render(overview);
+
+const pages = (
+  await getCollection("dakwah", ({ id, data }) => id.startsWith(`${locale}/`) && !data.draft)
+).sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+---
+
+<Layout title={overview.data.title}>
+  <div class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+    <h1 class="page-title title-rule mb-10">
+      {overview.data.title}
+    </h1>
+    <div class="prose prose-brand lg:prose-lg max-w-none mb-12">
+      <Content />
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        pages.map((p) => {
+          const href = getRelativeLocaleUrl(locale, `dakwah/${p.id.split("/").slice(1).join("/")}/`);
+          return (
+            <article class="tile group reveal">
+              {p.data.image && (
+                <a href={href} class="tile-media" tabindex="-1" aria-hidden="true">
+                  <img src={`/${p.data.image}`} alt="" loading="lazy" />
+                </a>
+              )}
+              <div class="flex flex-1 flex-col p-5 sm:p-6">
+                <h2>
+                  <a href={href} class="tile-title tile-title-link">{p.data.title}</a>
+                </h2>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 line-clamp-3">
+                  {p.data.description || truncateText(stripMarkdown(p.body ?? ""), 100)}
+                </p>
+                <span class="tile-link mt-5">
+                  {t("common.readMore")}
+                  <span class="arrow" aria-hidden="true">→</span>
+                </span>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>

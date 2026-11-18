@@ -1,0 +1,19 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import PrayerTimesIsland from "./react/PrayerTimes";
+import { PRAYER_PAGE_SLUG } from "../data/prayer";
+import type { LangOptions } from "../data/i18n";
+
+interface Props {
+  locale: LangOptions;
+}
+
+const { locale } = Astro.props;
+---
+
+{/* client:visible: the island (and its schedule JSON) only loads when scrolled into view. */}
+<PrayerTimesIsland
+  locale={locale}
+  scheduleHref={getRelativeLocaleUrl(locale, PRAYER_PAGE_SLUG)}
+  client:visible
+/>

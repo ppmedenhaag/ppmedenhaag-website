@@ -68,6 +68,6 @@ The overview below shows the costs for a wedding at PPME Den Haag:
 | Remote Location              | € 50        | € 50           | 
 | Administration               | € 75        | € 150          |
 
-Do you have any questions about the nikah? Mail to {{< param email >}}.
+Do you have any questions about the nikah? Mail to [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
 
 [Marriage Registration Form 📝](/forms/20210925-Checklist-trouwerij-PPME-Den-Haag.docx)

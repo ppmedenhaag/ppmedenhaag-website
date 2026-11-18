@@ -54,9 +54,9 @@ Acara ini digelar oleh PPME Den Haag bersama Al Fath Instituut.
 🗣️ Diskusi akan berlangsung dalam bahasa Belanda<br/>
 🎟️ Gratis, namun mohon mendaftar terlebih dahulu untuk keperluan konsumsi.<br/>
 
-<div class="row py-1">
-      <div class="col-12 text-center">
-      <a href="https://forms.gle/owdp2B8yrbtDiH1i6" type="button" class="btn-sm btn-primary">Daftar via Google Form</a>
+<div class="py-1">
+      <div class="text-center">
+      <a href="https://forms.gle/owdp2B8yrbtDiH1i6" type="button" class="btn btn-primary btn-sm">Daftar via Google Form</a>
       </div>
 </div>
 

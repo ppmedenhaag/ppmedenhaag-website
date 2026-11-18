@@ -33,41 +33,41 @@ Kami ingin merayakan "51 Tahun PPME" ini secara terbuka. Oleh karena itu, baik a
 
  
 ### Pendaftaran
-Bila Anda tertarik untuk mendaftarkan diri, kami mempersilahkan untuk mendaftar lewat <a href="{{< ref "contact" >}}">halaman kontak</a> lalu pilih “Daftar untuk event 51 tahun PPME”. Masukkan nama aktivitas yang Anda ingin ikuti di kolom pesan.
+Bila Anda tertarik untuk mendaftarkan diri, kami mempersilahkan untuk mendaftar lewat <a href="/id/contact/">halaman kontak</a> lalu pilih “Daftar untuk event 51 tahun PPME”. Masukkan nama aktivitas yang Anda ingin ikuti di kolom pesan.
 
-Apakah Anda ingin <a href="{{< ref "about/about-1" >}}">mendaftar</a> sebagai anggota di PPME Den Haag dan mungkin membantu mengatur kegiatan dan acara di masa mendatang? Anda sangat dipersilahkan!
+Apakah Anda ingin <a href="/id/about/about-1/">mendaftar</a> sebagai anggota di PPME Den Haag dan mungkin membantu mengatur kegiatan dan acara di masa mendatang? Anda sangat dipersilahkan!
  
 Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag! 
 
 
 ### Rencana Acara Memperingati 51 Tahun PPME
 
-<div class="d-lg-none">
-<p class="font-weight-lighter">* klik untuk melihat detail acara</p>
+<div class="lg:hidden">
+<p class="text-sm font-light text-slate-500">* klik untuk melihat detail acara</p>
 <div id="accordion">
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading1"  data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading1"  data-accordion-trigger data-accordion-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
           <p>Kick-off “51 tahun PPME”</p>
           📅 21 Mei 2022 / 20 Syawal 1443
     </div>
-    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
-      <div class="card-body">
-        <span class="badge badge-pill  badge-success">Tanpa Pendaftaran</span>
-        <span class="badge badge-pill badge-success">Terbuka untuk Umum</span>      
+    <div id="collapse1" class="accordion-panel" aria-labelledby="heading1" data-accordion-group="#accordion">
+      <div class="accordion-body">
+        <span class="badge badge-success">Tanpa Pendaftaran</span>
+        <span class="badge badge-success">Terbuka untuk Umum</span>      
         <p> Pembicara: <strong>Wati Chaeron</strong></p>
-        <p><a href="{{< ref "event/kickoff-51" >}}">Detail Acara</a></p>
+        <p><a href="/id/event/kickoff-51/">Detail Acara</a></p>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading2"  data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading2"  data-accordion-trigger data-accordion-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
           <p>Open House</p>
           📅 11 Juni 2022 / 12 Dzul Qadah 1443
     </div>
-    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-success">Terbuka untuk Umum</span>
-            <span class="badge badge-pill badge-warning">Maksimal 20 peserta per workshop.</span>
+    <div id="collapse2" class="accordion-panel" aria-labelledby="heading2" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Terbuka untuk Umum</span>
+            <span class="badge badge-warning">Maksimal 20 peserta per workshop.</span>
             <p>
             Open House:
             <ul>
@@ -76,76 +76,76 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
             <li>Beberapa Workshop</li>
             </ul>
             </p>
-            <p>⚠️ Pendaftaran melalui <a href="{{< ref "contact" >}}">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
+            <p>⚠️ Pendaftaran melalui <a href="/id/contact/">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading3"  data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading3"  data-accordion-trigger data-accordion-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
           <p>“51 tahun PK” PPME Pesantren Kilat</p>
           📅 26-28 Augustus 2022 /<br/>28-30 Muharram 1444
     </div>
-    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-warning">Untuk usia 13 - 30 tahun</span>
-            <p>⚠️ Pendaftaran melalui <a href="{{< ref "contact" >}}">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
+    <div id="collapse3" class="accordion-panel" aria-labelledby="heading3" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-warning">Untuk usia 13 - 30 tahun</span>
+            <p>⚠️ Pendaftaran melalui <a href="/id/contact/">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading4"  data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading4"  data-accordion-trigger data-accordion-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
           <p>Pelatihan: Etika kepemimpinan Nabi Muhammad saw.</p>
           📅 8 Oktober 2022 / 12 Rabi’ul Awal 1444
     </div>
-    <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-success">Terbuka untuk Umum</span>
+    <div id="collapse4" class="accordion-panel" aria-labelledby="heading4" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Terbuka untuk Umum</span>
             <p>Pembicara <strong>Mr. Umar Mirza</strong>            </p>
-            <p>⚠️ Pendaftaran melalui <a href="{{< ref "contact" >}}">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
+            <p>⚠️ Pendaftaran melalui <a href="/id/contact/">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading5"  data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading5"  data-accordion-trigger data-accordion-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
           <p>Umrah PPME Den Haag</p>
           📅 14-23 Oktober 2022 /<br/> 18-27 Rabi’ul Awal 1444
     </div>
-    <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-success">Terbuka untuk Umum</span>
+    <div id="collapse5" class="accordion-panel" aria-labelledby="heading5" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Terbuka untuk Umum</span>
             <p>Pendamping dengan bahasa Indonesia: bpk. <strong>Nur Hasyim Subadi</strong>.<br/>
             Pendamping dengan bahasa Belanda: Mr. <strong>Ronald Kroon</strong></p>
-            <p>⚠️ Pendaftaran melalui <a href="{{< ref "contact" >}}">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
+            <p>⚠️ Pendaftaran melalui <a href="/id/contact/">halaman kontak</a>.<br/>Pilih subyek “PPME 51 tahun"</p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading6"  data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading6"  data-accordion-trigger data-accordion-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
           <p>Ceramah: “Adhab dan akhlaq berjamaah di dalam masjid”</p>
           📅 14 Januari 2023 /<br/>11 Jumadil Akhir 1444
     </div>
-    <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill  badge-success">Tanpa Pendaftaran</span>
-            <span class="badge badge-pill badge-success">Terbuka untuk Umum</span>
+    <div id="collapse6" class="accordion-panel" aria-labelledby="heading6" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Tanpa Pendaftaran</span>
+            <span class="badge badge-success">Terbuka untuk Umum</span>
             <p>Penceramah dalam bhasa Indonesia: <strong>E. Ainun Nadjib</strong><br/>Penceramah dalam bahasa Belanda: Mrs. <strong>Anne Dijk</strong> (Fahm Instituut)
 </p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading7"  data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading7"  data-accordion-trigger data-accordion-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
           <p>Penutup sama Halal bi Halal</p>
           📅 7 Mei 2023 / 17 Syawal 1444
     </div>
-    <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill  badge-success">Tanpa Pendaftaran</span>
-            <span class="badge badge-pill badge-success">Terbuka untuk Umum</span>
+    <div id="collapse7" class="accordion-panel" aria-labelledby="heading7" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Tanpa Pendaftaran</span>
+            <span class="badge badge-success">Terbuka untuk Umum</span>
             <p>Pameran lokakarya fotografi, kaligrafi, dan esai sebelumnya</p>
       </div>
     </div>
@@ -154,10 +154,10 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
 </div>
 
 </div>
-<div class="d-none d-lg-block">
-    <table class="table">
+<div class="hidden lg:block">
+    <table>
         <thead>
-            <tr class="table-primary">
+            <tr class="row-brand">
                 <td>
                     <p><span>Tanggal</span>
                     </p>
@@ -187,7 +187,7 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
                 </td>
                 <td>
                     <p><span>Kick-off &ldquo;51 tahun PPME&rdquo;</span></p>
-                    <p><a href="{{< ref "event/kickoff-51" >}}">Detail Acara</a></p>
+                    <p><a href="/id/event/kickoff-51/">Detail Acara</a></p>
                 </td>
                 <td>
                     <p><span>Wati Chaeron</span></p>
@@ -237,7 +237,7 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
                 <td rowspan="6">
                     <p><span>Ya,
                             melalui </span><a
-                            href="{{< ref "contact" >}}"><span>halaman kontak</span></a><span>.
+                            href="/id/contact/"><span>halaman kontak</span></a><span>.
                             Pilih subyek &ldquo;PPME 51 tahun&rdquo;</span></p>
                 </td>
             </tr>
@@ -264,7 +264,7 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
                 <td rowspan="3">
                     <p><span>Ya,
                             melalui </span><a
-                            href="{{< ref "contact" >}}"><span>halaman kontak</span></a><span>.
+                            href="/id/contact/"><span>halaman kontak</span></a><span>.
                             Pilih subyek &ldquo;PPME 51 tahun&rdquo;</span></p>
                 </td>
             </tr>
@@ -288,7 +288,7 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
                 <td>
                     <p><span>Ya,
                             melalui </span><a
-                            href="{{< ref "contact" >}}"><span>halaman kontak</span></a><span>.
+                            href="/id/contact/"><span>halaman kontak</span></a><span>.
                             Pilih subyek &ldquo;PPME 51 tahun&rdquo;</span></p>
                 </td>
             </tr>
@@ -311,7 +311,7 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
                 <td rowspan="2">
                     <p><span>Ya,
                             melalui </span><a
-                            href="{{< ref "contact" >}}"><span>halaman kontak</span></a><span>.
+                            href="/id/contact/"><span>halaman kontak</span></a><span>.
                             Pilih subyek &ldquo;PPME 51 tahun&rdquo;</span></p>
                 </td>
             </tr>

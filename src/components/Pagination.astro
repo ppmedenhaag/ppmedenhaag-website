@@ -1,0 +1,135 @@
+---
+import type { LangOptions } from "../data/i18n";
+import { useTranslations } from "../utils/lang";
+
+interface Props {
+  locale: LangOptions;
+  /** CSS selector of the grid whose direct children are paginated */
+  target: string;
+}
+const { locale, target } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<nav
+  data-pagination
+  data-target={target}
+  aria-label={t("common.pagination")}
+  data-label-page={t("common.page")}
+  data-label-prev={t("common.prev")}
+  data-label-next={t("common.next")}
+  class="mt-12 hidden items-center justify-center gap-1.5 text-sm"
+>
+</nav>
+
+<script>
+  // 24 per page from the lg breakpoint (3 columns), 8 below it.
+  const DESKTOP = window.matchMedia("(min-width: 1024px)");
+  const size = () => (DESKTOP.matches ? 24 : 8);
+
+  const nav = document.querySelector<HTMLElement>("[data-pagination]")!;
+  const grid = document.querySelector<HTMLElement>(nav.dataset.target!)!;
+  const items = Array.from(grid.children) as HTMLElement[];
+  const L = nav.dataset;
+
+  const base =
+    "inline-flex h-10 min-w-10 items-center justify-center rounded-lg px-3 font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2";
+  const idle = "text-slate-700 hover:bg-brand-50 hover:text-brand border border-slate-200 bg-white";
+  const active = "bg-brand border border-brand text-white shadow-sm shadow-brand/20";
+  const off = "text-slate-300 pointer-events-none";
+
+  const total = () => Math.max(1, Math.ceil(items.length / size()));
+  const fromUrl = () => {
+    const p = parseInt(new URLSearchParams(location.search).get("page") || "1", 10);
+    return Number.isFinite(p) ? Math.min(Math.max(p, 1), total()) : 1;
+  };
+
+  /** 1 … 4 5 [6] 7 8 … 20 */
+  function range(cur: number, n: number): (number | "…")[] {
+    if (n <= 7) return Array.from({ length: n }, (_, i) => i + 1);
+    const pages = new Set([1, n, cur - 1, cur, cur + 1]);
+    if (cur <= 3) [2, 3, 4].forEach((x) => pages.add(x));
+    if (cur >= n - 2) [n - 1, n - 2, n - 3].forEach((x) => pages.add(x));
+    const sorted = [...pages].filter((x) => x >= 1 && x <= n).sort((a, b) => a - b);
+    const out: (number | "…")[] = [];
+    sorted.forEach((x, i) => {
+      if (i && x - sorted[i - 1] > 1) out.push("…");
+      out.push(x);
+    });
+    return out;
+  }
+
+  function btn(label: string, page: number, cls: string, aria: string, current = false) {
+    const a = document.createElement("a");
+    a.href = `?page=${page}`;
+    a.dataset.page = String(page);
+    a.className = `${base} ${cls}`;
+    a.textContent = label;
+    a.setAttribute("aria-label", aria);
+    if (current) a.setAttribute("aria-current", "page");
+    return a;
+  }
+
+  function render(page: number, scroll = false) {
+    const s = size();
+    items.forEach((el, i) => {
+      el.hidden = i < (page - 1) * s || i >= page * s;
+    });
+
+    const n = total();
+    nav.replaceChildren();
+    nav.classList.toggle("hidden", n <= 1);
+    nav.classList.toggle("flex", n > 1);
+    if (n <= 1) return;
+
+    const prev = btn("‹", Math.max(1, page - 1), `${idle} ${page === 1 ? off : ""}`, L.labelPrev!);
+    const next = btn("›", Math.min(n, page + 1), `${idle} ${page === n ? off : ""}`, L.labelNext!);
+    if (page === 1) prev.setAttribute("aria-disabled", "true");
+    if (page === n) next.setAttribute("aria-disabled", "true");
+    nav.append(prev);
+
+    const frag = range(page, n);
+    // Mobile: compact "‹ 2 / 5 ›"; numbered list from sm up.
+    const status = document.createElement("span");
+    status.className = "px-3 text-slate-600 sm:hidden";
+    status.textContent = `${page} / ${n}`;
+    nav.append(status);
+
+    frag.forEach((p) => {
+      if (p === "…") {
+        const d = document.createElement("span");
+        d.className = "hidden px-1 text-slate-500 sm:inline";
+        d.textContent = "…";
+        nav.append(d);
+      } else {
+        const b = btn(String(p), p, `hidden sm:inline-flex ${p === page ? active : idle}`, `${L.labelPage} ${p}`, p === page);
+        nav.append(b);
+      }
+    });
+    nav.append(next);
+
+    if (scroll) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function go(page: number, push = true) {
+    const url = new URL(location.href);
+    if (page === 1) url.searchParams.delete("page");
+    else url.searchParams.set("page", String(page));
+    if (push) history.pushState(null, "", url);
+    render(page, push);
+  }
+
+  nav.addEventListener("click", (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLAnchorElement>("a[data-page]");
+    if (!a || a.getAttribute("aria-disabled")) {
+      if (a) e.preventDefault();
+      return;
+    }
+    e.preventDefault();
+    go(parseInt(a.dataset.page!, 10));
+  });
+  addEventListener("popstate", () => render(fromUrl()));
+  DESKTOP.addEventListener("change", () => go(1, false));
+
+  render(fromUrl());
+</script>

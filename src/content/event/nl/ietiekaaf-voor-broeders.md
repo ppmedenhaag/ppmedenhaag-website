@@ -170,7 +170,7 @@ Samen komen we bijeen voor kennis, reflectie en versterking van onze broederscha
   .ppme-wrap tbody tr:nth-child(odd)  td { background: var(--pp-row-odd); }
   .ppme-wrap tbody tr:nth-child(even) td { background: var(--pp-row-even); }
   .ppme-wrap tbody tr.pp-prayer td    { background: linear-gradient(90deg, #c4d4ec, #bdd0ef); }
-  .ppme-wrap tbody tr.pp-prayer td.pp-time { color: var(--pp-gold); font-weight: 800; }
+  .ppme-wrap tbody tr.pp-prayer td.pp-time { color: #5c4200; font-weight: 800; }
 
   .ppme-wrap td {
     padding: 0.75rem 1rem;
@@ -199,7 +199,7 @@ Samen komen we bijeen voor kennis, reflectie en versterking van onze broederscha
     margin-right: 4px;
     vertical-align: middle;
   }
-  .ppme-wrap tr.pp-prayer .pp-dot { background: var(--pp-gold); }
+  .ppme-wrap tr.pp-prayer .pp-dot { background: #5c4200; }
 
   .ppme-wrap td.pp-act { font-weight: 500; }
   .ppme-wrap td.pp-act em {
@@ -233,7 +233,7 @@ Samen komen we bijeen voor kennis, reflectie en versterking van onze broederscha
   }
 </style>
 
-<div class="ppme-wrap">
+<div class="ppme-wrap not-prose">
 
   <div class="ppme-header">
     <div class="ppme-logo">PPME<br>Rotterdam</div>

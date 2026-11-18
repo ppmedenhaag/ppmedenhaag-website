@@ -46,7 +46,7 @@ The Commission also makes a death package available. It contains all the necessi
 
  
 
-<table class="table table-responsive">
+<table>
   <thead>
     <tr>
       <th scope="col">Islamic funeral</th>
@@ -76,7 +76,7 @@ The Commission also makes a death package available. It contains all the necessi
     <tr>
       <th scope="row">Travel expenses</th>
       <td>Travel allowance given by PPME The Hague to the volunteers of the religious guidance</td>
-      <td>€ 0,23/km <p class="font-italic">(for all participants of religious guidance)</p></td>
+      <td>€ 0,23/km <p class="italic">(for all participants of religious guidance)</p></td>
     </tr>
   </tbody>
 </table>

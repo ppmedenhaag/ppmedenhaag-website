@@ -33,13 +33,13 @@ Semoga Allah SWT melimpahkan kesehatan, kesabaran dan banyak rahmat. Semoga Alla
 
 Berikut adalah program untuk Sabtu-Minggu 22-23 Ramadan.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ geser ke kanan di tabel berikut untuk melihat secara lengkap)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Waktu</th>
+<th class="sticky-col">Waktu</th>
 <th ><span class="text-nowrap">Ruang Bawah 1</span ><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 2</span><br/><span class="text-nowrap">"Al Ittihaad Wanita"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 3</span><br/><span class="text-nowrap">"Ramadan Kidz"</span></th>
@@ -48,7 +48,7 @@ Berikut adalah program untuk Sabtu-Minggu 22-23 Ramadan.
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">16.45 - 17.30</td>
+<td class="text-nowrap sticky-col">16.45 - 17.30</td>
 <td >&nbsp;</td>
 <th>Khatam Qur'an</th>
 <td >&nbsp;</td>
@@ -58,7 +58,7 @@ Berikut adalah program untuk Sabtu-Minggu 22-23 Ramadan.
 </tr>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.30 - 18.35</td>
+<td class="text-nowrap sticky-col">17.30 - 18.35</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Khatam Qur'an</th>
 <th>Bpk. Halid & Ibu Dida</th>
@@ -67,19 +67,19 @@ Berikut adalah program untuk Sabtu-Minggu 22-23 Ramadan.
 </tr>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.35 - 19.06</td>
-<th colspan="5" class="table-success">Tadarus</th>
+<td class="text-nowrap sticky-col">18.35 - 19.06</td>
+<th colspan="5" class="row-success">Tadarus</th>
 </tr>
 <tr >
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.06 - 19.35</td>
-<th colspan="5" class="table-primary">Iftar & Maghrib*</th>
+<td class="text-nowrap sticky-col">19.06 - 19.35</td>
+<th colspan="5" class="row-brand">Iftar & Maghrib*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.35 - 20.10</td>
-<th colspan="5" class="table-info">Makan*</th>
+<td class="text-nowrap sticky-col">19.35 - 20.10</td>
+<th colspan="5" class="row-info">Makan*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.10 - 20.45</td>
+<td class="text-nowrap sticky-col">20.10 - 20.45</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Nashir</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>----</th>
@@ -87,16 +87,16 @@ Berikut adalah program untuk Sabtu-Minggu 22-23 Ramadan.
 <th><span class="text-nowrap">PPME Young Ummah</span><br/><span style="font-weight: normal">Presentatie</span></th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.54 - 21.45</td>
-<th colspan="5" class="table-primary">Isya & Tarawih*</th>
+<td class="text-nowrap sticky-col">20.54 - 21.45</td>
+<th colspan="5" class="row-brand">Isya & Tarawih*</th>
 </tr>
 <tr >
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">21.45 - 06.40</td>
-<th colspan="5" class="table-primary">I'tikaaf</th>
+<td class="text-nowrap sticky-col">21.45 - 06.40</td>
+<th colspan="5" class="row-brand">I'tikaaf</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ scroll naar rechts om de resterende tabel te zien)
 </div>
 <br/>
@@ -124,7 +124,7 @@ Berikut adalah permohonan pembayaran SHODAQOH  Insyaa Allah.
 Semoga Allah SWT menerima amal baiknya.<br/>
 
 
-<a href="https://www.ing.nl/payreq/m/?trxid=p174zdu9GeqBiRi3OGqFYnvhHhYze7Ox" type="button" class="btn-sm btn-info ">Shodaqoh via iDEAL</a>
+<a href="https://www.ing.nl/payreq/m/?trxid=p174zdu9GeqBiRi3OGqFYnvhHhYze7Ox" type="button" class="btn btn-primary btn-sm">Shodaqoh via iDEAL</a>
 <br/>Jazakumullah khayran khatsiron.
 <br/>
 <br/>

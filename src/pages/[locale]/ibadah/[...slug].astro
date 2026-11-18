@@ -22,19 +22,19 @@ const { locale } = Astro.params;
 const { Content } = await render(entry);
 ---
 
-<Layout title={entry.data.title}>
-    <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+<Layout title={entry.data.title} date={entry.data.date}>
+    <div class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         <article
-            class="prose lg:prose-xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-sm border border-ppme-blue-100"
+            class="prose prose-brand lg:prose-xl page-article max-w-none min-w-0"
         >
-            <header class="mb-8 border-b border-ppme-blue-100 pb-8">
+            <header class="mb-8 border-b border-slate-200 pb-8">
                 <h1
-                    class="text-3xl font-bold tracking-tight text-ppme-blue-900 sm:text-4xl mb-4"
+                    class="page-title title-rule mb-6"
                 >
                     {entry.data.title}
                 </h1>
                 <div
-                    class="flex flex-wrap items-center gap-4 text-sm text-gray-500"
+                    class="flex flex-wrap items-center gap-4 text-sm text-slate-500"
                 >
                     <time datetime={entry.data.date.toISOString()}>
                         {
@@ -51,7 +51,7 @@ const { Content } = await render(entry);
 
             {
                 entry.data.image && (
-                    <div class="mb-10 overflow-hidden rounded-lg shadow-sm">
+                    <div class="mb-10 overflow-hidden border border-slate-200">
                         <img
                             src={`/${entry.data.image}`}
                             alt={entry.data.title}
@@ -62,7 +62,7 @@ const { Content } = await render(entry);
             }
 
             <div
-                class="prose-headings:text-ppme-blue-900 prose-a:text-ppme-blue-600 hover:prose-a:text-ppme-blue-700"
+                
             >
                 <Content />
             </div>

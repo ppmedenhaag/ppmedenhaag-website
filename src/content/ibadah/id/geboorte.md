@@ -24,4 +24,4 @@ Kelahiran  anak merupakan  anugrah dan amanah yang di berikan kepada Allah SWT b
 
 PPME Denhaag dengan senang hati turut membantu para orang tua yang berbahagia dan beryukur untuk melaksanakan ibadah Aqiqah  bayinya yang tercinta. Acara Aqigah  akan di laksanakan pada saat pengajian rutin kami setiap hari sabtu malam.
 
-Silahkan mendaftarkan anak anda langsung untuk acara Aqiqah atau menghubungi kami untuk informasi lebih lanjut melalui email: {{< param email >}} 
+Silahkan mendaftarkan anak anda langsung untuk acara Aqiqah atau menghubungi kami untuk informasi lebih lanjut melalui email: [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl) 

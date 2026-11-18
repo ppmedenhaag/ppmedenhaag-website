@@ -33,13 +33,13 @@ May Allah SWT grant you health, patience, and many blessings. May Allah accept o
 
 Below is the program for Saturday, **18 Ramadan 1447**.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ swipe right on the table below to view in full)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Time</th>
+<th class="sticky-col">Time</th>
 <th><span class="text-nowrap">Lower Room Medium</span><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Upper Room</span><br/><span class="text-nowrap">"Al Ittihaad"</span></th>
 <th><span class="text-nowrap">Lower Room Small</span><br/><span class="text-nowrap">"Ramadan Kidz"</span></th>
@@ -47,45 +47,45 @@ Below is the program for Saturday, **18 Ramadan 1447**.
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">16.30 - 18.00</td>
+<td class="text-nowrap sticky-col">16.30 - 18.00</td>
 <th>&nbsp;</th>
 <th>Khatam Qur'an</th>
 <th>&nbsp;</th>
 <th>&nbsp;</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.15 - 18.00</td>
+<td class="text-nowrap sticky-col">17.15 - 18.00</td>
 <th>Al Moe'minoen</th>
 <th>Khatam Qur'an</th>
 <th>Halid &amp; Nadia</th>
 <th>Ust. M. Idoe</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.10 - 18.39</td>
-<th colspan="4" class="table-success">Tadarus (Quran Recitation)</th>
+<td class="text-nowrap sticky-col">18.10 - 18.39</td>
+<th colspan="4" class="row-success">Tadarus (Quran Recitation)</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.39 - 19.10</td>
-<th colspan="4" class="table-primary">Iftar &amp; Maghrib</th>
+<td class="text-nowrap sticky-col">18.39 - 19.10</td>
+<th colspan="4" class="row-brand">Iftar &amp; Maghrib</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.10 - 19.40</td>
-<th colspan="4" class="table-info">Dinner</th>
+<td class="text-nowrap sticky-col">19.10 - 19.40</td>
+<th colspan="4" class="row-info">Dinner</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.40 - 20.10</td>
+<td class="text-nowrap sticky-col">19.40 - 20.10</td>
 <th>Al Moe'minoen</th>
 <th>Ustad A. Firmansyah</th>
 <th>&nbsp;</th>
 <th>Ust. M. Idoe</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.25 - Finish</td>
-<th colspan="4" class="table-primary">Isha &amp; Tarawih</th>
+<td class="text-nowrap sticky-col">20.25 - Finish</td>
+<th colspan="4" class="row-brand">Isha &amp; Tarawih</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ swipe right on the table above to view in full)
 </div>
 <br/>
@@ -109,8 +109,8 @@ Let us maintain adab (etiquette) and a warm sense of community with smiles and r
 
 Wassalamu'alaikum wa rahmatullahi wa barakaatuh
 
-<div class="row py-1">
-      <div class="col-12 text-center">
-      <a href="https://www.ing.nl/payreq/m/?trxid=xbLdUJmu9BkHK2CV8ubHXWE5AIgmlSkv" type="button" class="btn-sm btn-info">Sadaqah PPME Den Haag</a>
+<div class="py-1">
+      <div class="text-center">
+      <a href="https://www.ing.nl/payreq/m/?trxid=xbLdUJmu9BkHK2CV8ubHXWE5AIgmlSkv" type="button" class="btn btn-primary btn-sm">Sadaqah PPME Den Haag</a>
       </div>   
 </div>

@@ -38,10 +38,10 @@ Mba Wati sluit de kick-off af met een bijzonder gesprek met **Arif Widyantoro**,
 
 U kunt deelnemen aan de kick-off via Zoom. De link hiervoor is inmiddels verspreid. Heeft u geen link? Er wordt een livestream opgezet via YouTube zodat u live kunt meekijken. De video wordt opgeslagen zodat u hem ook kunt terugkijken. 
 
-Bekijk <a href="{{< ref "blog/ppme-51">}}">hier</a> ook de andere activiteiten.
+Bekijk <a href="/blog/ppme-51/">hier</a> ook de andere activiteiten.
 
 Wassalamu'alaykum wa rahmatullahi wa barakaatuh
 
 #### YouTube Video
 
-{{< youtube id="SjsjfBaI96g" title="Kickoff 51 jaar PPME" >}}
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:1.5rem 0"><iframe src="https://www.youtube-nocookie.com/embed/SjsjfBaI96g" title="Kickoff 51 jaar PPME" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>

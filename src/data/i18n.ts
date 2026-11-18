@@ -8,19 +8,16 @@ export const locales = {
 
 export const LANG_LIST = [
   {
-    name: "Nederland",
+    name: "Nederlands",
     code: "nl" as LangOptions,
-    flagUrl: "/flags/nl.svg",
   },
   {
-    name: "Indonesia",
+    name: "Bahasa Indonesia",
     code: "id" as LangOptions,
-    flagUrl: "/flags/id.svg",
   },
   {
     name: "English",
     code: "en" as LangOptions,
-    flagUrl: "/flags/gb.svg",
   },
 ];
 
@@ -51,8 +48,8 @@ export const menuData  = {
           href: "/ibadah/islamitisch-trouwen/",
         },
         {
-          text: "Gebedstijden 2024 (Den Haag)",
-          href: "/forms/schedule-sholat-den-haag-2024.pdf",
+          text: "Gebedstijden (Den Haag)",
+          href: "/ibadah/gebedstijden/",
         },
       ],
     },
@@ -103,7 +100,7 @@ export const menuData  = {
         },
         {
           text: "Jadwal Sholat (Den Haag)",
-          href: "/forms/schedule-sholat-den-haag-2024.pdf",
+          href: "/id/ibadah/gebedstijden/",
         },
       ],
     },
@@ -155,7 +152,7 @@ export const menuData  = {
         },
         {
           text: "Prayer Times (Den Haag)",
-          href: "/forms/schedule-sholat-den-haag-2024.pdf",
+          href: "/en/ibadah/gebedstijden/",
         },
       ],
     },

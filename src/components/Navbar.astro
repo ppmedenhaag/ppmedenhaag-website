@@ -1,6 +1,7 @@
 ---
 import NavbarExample from "./react/ReactNavbar";
-import { getLang } from "../utils/lang";
+import { getLang, useTranslations } from "../utils/lang";
+import { ui } from "../data/ui";
 import { menuData, defaultLocale } from "../data/i18n";
 import { LANG_LIST } from "../data/i18n";
 
@@ -20,6 +21,13 @@ if (locale !== defaultLocale && route.startsWith(`/${locale}`)) {
 // Ensure leading slash
 if (!route.startsWith("/")) route = "/" + route;
 
+const t = useTranslations(locale);
+const searchLabels = Object.fromEntries(
+  Object.keys(ui[defaultLocale])
+    .filter((k) => k.startsWith("search."))
+    .map((k) => [k, t(k as keyof (typeof ui)[LangOptions])]),
+);
+
 const localMenu = menuData[locale as keyof typeof menuData];
 
 const langLinksPromises = LANG_LIST.map(async (a) => {
@@ -27,14 +35,19 @@ const langLinksPromises = LANG_LIST.map(async (a) => {
 
   // Configuration mapping route prefixes to content collection names.
   // Add new sections here as they're migrated (about, dakwah, ibadah, ...).
-  const contentMap: Record<string, "event" | "blog" | "ibadah" | "about"> = {
+  const contentMap: Record<string, "event" | "blog" | "ibadah" | "about" | "dakwah"> = {
     "/event/": "event",
     "/blog/": "blog",
     "/ibadah/": "ibadah",
     "/about/": "about",
+    "/dakwah/": "dakwah",
   };
 
+  // Code-driven pages that exist in every locale without a content entry.
+  const isStaticPage = route === "/ibadah/gebedstijden/";
+
   for (const [prefix, collectionName] of Object.entries(contentMap)) {
+    if (isStaticPage) break;
     if (route.startsWith(prefix) && route.length > prefix.length) {
       // Extract slug
       let slug = route.slice(prefix.length);
@@ -58,7 +71,6 @@ const langLinksPromises = LANG_LIST.map(async (a) => {
   return {
     name: a.name,
     code: a.code,
-    flagUrl: a.flagUrl,
     path: getRelativeLocaleUrl(a.code, route),
   };
 });
@@ -73,5 +85,6 @@ const langLinks = (await Promise.all(langLinksPromises)).filter(
   currentPath={currentPath}
   menu={localMenu}
   langLinks={langLinks}
+  searchLabels={searchLabels}
   client:load
 />

@@ -1,0 +1,119 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import type { LangOptions } from "../data/i18n";
+import { formatPostDate, getLocalePosts, postSlug } from "../utils/blog";
+import { useTranslations } from "../utils/lang";
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+  locale: LangOptions;
+}
+const { entry, locale } = Astro.props;
+const t = useTranslations(locale);
+const { Content } = await render(entry);
+const d = entry.data;
+const latest = (await getLocalePosts(locale))
+  .filter((p) => p.id !== entry.id)
+  .slice(0, 3);
+const postUrl = (p: CollectionEntry<"blog">) =>
+  getRelativeLocaleUrl(locale, `blog/${postSlug(p)}/`);
+---
+
+<Layout title={d.title} date={d.date}>
+  <div
+    class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:grid lg:grid-cols-[1fr_20rem] lg:gap-10"
+  >
+    <article
+      class="prose prose-brand lg:prose-lg page-article max-w-none min-w-0"
+    >
+      <header class="mb-8 border-b border-slate-200 pb-8">
+        <h1
+          class="page-title title-rule mb-8"
+        >
+          {d.title}
+        </h1>
+        {
+          d.image && (
+            <img
+              src={`/${d.image}`}
+              alt={d.title}
+              class="w-full border border-slate-200 mb-6"
+            />
+          )
+        }
+        <p
+          class="not-prose flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600"
+        >
+          {
+            d.author && (
+              <span class="inline-flex items-center gap-1.5">
+                <Icon name="heroicons:user" class="size-4 text-brand" aria-hidden="true" />
+                <strong class="font-semibold text-slate-800">{t("blog.postedBy")}:</strong> {d.author}
+              </span>
+            )
+          }
+          <span class="inline-flex items-center gap-1.5">
+            <Icon name="heroicons:calendar-days" class="size-4 text-brand" aria-hidden="true" />
+            <strong class="font-semibold text-slate-800">{t("blog.date")}:</strong>
+            <time datetime={d.date.toISOString()}>
+              {formatPostDate(d.date, locale)}
+            </time>
+          </span>
+          {
+            d.categories && d.categories.length > 0 && (
+              <span class="inline-flex items-center gap-1.5">
+                <Icon name="heroicons:tag" class="size-4 text-brand" aria-hidden="true" />
+                <strong class="font-semibold text-slate-800">{t("blog.category")}:</strong> {d.categories.join(", ")}
+              </span>
+            )
+          }
+        </p>
+      </header>
+      <div
+        
+      >
+        <Content />
+      </div>
+    </article>
+
+    {
+      latest.length > 0 && (
+        <aside class="mt-10 lg:mt-0" data-pagefind-ignore>
+          <h2 class="eyebrow mb-4">
+            {t("blog.latest")}
+          </h2>
+          <ul class="space-y-4">
+            {latest.map((p) => (
+              <li class="group flex gap-3 border-b border-slate-200 pb-4">
+                {p.data.image && (
+                  <a href={postUrl(p)} tabindex="-1" aria-hidden="true">
+                    <img
+                      src={`/${p.data.image}`}
+                      alt=""
+                      class="h-16 w-16 border border-slate-200 object-cover"
+                      loading="lazy"
+                    />
+                  </a>
+                )}
+                <div>
+                  <a
+                    href={postUrl(p)}
+                    class="font-medium text-slate-900 transition-colors hover:text-brand"
+                  >
+                    {p.data.title}
+                  </a>
+                  <p class="text-xs text-slate-500">
+                    {formatPostDate(p.data.date, locale)}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+  </div>
+</Layout>

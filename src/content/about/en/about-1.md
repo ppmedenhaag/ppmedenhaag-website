@@ -16,10 +16,11 @@ type: "about"
 ---
 
 ## Membership
-Since the establishment of PPME in the 1970s, you can join as a member. In PPME we have various branches, such as in Amsterdam and Breda.
-With a membership that you pay for each month, you support the association. This allows us to continue to offer high quality, current and broad programs. Both religiously and socially.
+Since PPME was founded in the 1970s, you can join as a member. PPME has several branches, such as in Amsterdam and Breda.
 
-The three types of membership we have and the associated fees:
+Your **monthly membership fee** supports the association and allows us to keep offering high-quality, current and varied programs, both religious and social.
+
+We have three types of membership:
 
 | Type | Fee |
 |------|-----|
@@ -27,20 +28,19 @@ The three types of membership we have and the associated fees:
 | Individual membership | € 7,50 |
 | Student | € 7,50 |
 
-* The amount of the contribution is determined at the Members' Meeting (ALV)
+* The fee is determined at the Members' Meeting (ALV).
 
 ### Join
-If you want to become a member, stop by one of our Saturday programs. They start at 4pm. Bring the completed [registration form 📝](/forms/Aanmeldformulier-NL-v2.pdf) and a photocopy of your passport or other valid proof of identity.
-
+To become a member, stop by one of our **Saturday programs**, which start at 4 pm. Bring the completed [registration form 📝](/forms/Aanmeldformulier-NL-v2.pdf) and a photocopy of your passport or other valid ID.
 
 ### Payment Options
-Do you want to become a member of an association, but are you in a difficult financial situation? We can discuss the options. There are other ways to pay your dues. Think about partial payments or use your expertise, skills, knowledge and thinking for PPME Den Haag activities. We would love to discuss with you to see the possible options.
+Would you like to join but are in a difficult financial situation? **Talk to us.** There are other ways to pay your dues, such as partial payments, or contributing your expertise and skills to PPME Den Haag activities. We would be glad to look at the options with you.
 
-### Honorary member
-Within PPME The Hague we also have honorary members. This is recommended by the association board. In the GMM, the management conveyed the motivation for this honorary member. It is decided in consultation with members whether to accept honorary membership or not.
+### Honorary Members
+PPME Den Haag also has honorary members. They are nominated by the board, which presents its motivation at the General Members' Meeting (ALV). The members then decide together whether to accept the honorary membership.
 
 Do you have any questions?
-Send email to email {{< param email >}}.
+Send an email to [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
 
 ### Important Forms
 * [Registration form](/forms/Aanmeldformulier-NL-v2.pdf)

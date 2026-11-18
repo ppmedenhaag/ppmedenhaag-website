@@ -42,7 +42,7 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 
 
 
-<h6 class="alert alert-primary">
+<h6 class="callout">
   Sessie 1: Stress & Islam
 </h6>
 
@@ -52,7 +52,7 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 |Tijd| **17.00 - 18.10**|
 
 <br/>
-<h6 class="alert alert-primary">
+<h6 class="callout">
   Sessie 2: Wees op deze wereld als een reiziger
 </h6>
 
@@ -63,7 +63,7 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 
 <br/>
 
-<h6 class="alert alert-success">
+<h6 class="callout callout-success">
  Locatie: Gebedsruimte boven
 </h6>
 

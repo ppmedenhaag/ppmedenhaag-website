@@ -1,0 +1,177 @@
+---
+import {
+  INTL_TAG,
+  PRAYER_NAMES,
+  TIME_ZONE,
+  LATEST_YEAR,
+  getSchedule,
+  lastSunday,
+  prayerStrings,
+  fill,
+} from "../data/prayer";
+import type { LangOptions } from "../data/i18n";
+
+interface Props {
+  locale: LangOptions;
+}
+
+const { locale } = Astro.props;
+
+const s = prayerStrings[locale];
+const tag = INTL_TAG[locale];
+// UTC for every build-time date: weekdays/months must not depend on the build machine's zone.
+const monthName = new Intl.DateTimeFormat(tag, { month: "long", timeZone: "UTC" });
+const weekdayShort = new Intl.DateTimeFormat(tag, { weekday: "short", timeZone: "UTC" });
+const weekdayLong = new Intl.DateTimeFormat(tag, { weekday: "long", timeZone: "UTC" });
+
+function buildYear(year: number) {
+  const schedule = getSchedule(year)!;
+  const dstStartDay = lastSunday(year, 2);
+  const dstEndDay = lastSunday(year, 9);
+  return {
+    year,
+    title: fill(s.pageTitle, { year }),
+    months: schedule.months.map((days, m) => ({
+      n: m + 1,
+      name: monthName.format(new Date(Date.UTC(year, m, 1))),
+      days: days.map((times, d) => {
+        const date = new Date(Date.UTC(year, m, d + 1));
+        const dst =
+          m === 2 && d + 1 === dstStartDay
+            ? s.dstStart
+            : m === 9 && d + 1 === dstEndDay
+              ? s.dstEnd
+              : undefined;
+        return {
+          day: d + 1,
+          iso: `${year}-${String(m + 1).padStart(2, "0")}-${String(d + 1).padStart(2, "0")}`,
+          short: weekdayShort.format(date),
+          long: weekdayLong.format(date),
+          friday: date.getUTCDay() === 5,
+          dst,
+          times,
+        };
+      }),
+    })),
+  };
+}
+
+// Build year + the next one: a deploy any time during year Y keeps the page correct through
+// year Y+1 without a rebuild. The inline script below reveals the panel matching today's year.
+const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(buildYear);
+---
+
+{
+  panels.map((p, i) => (
+<div
+    class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8"
+    data-year-panel={p.year}
+    data-title={p.title}
+    hidden={i > 0}
+  >
+  <header class="mb-8 border-b border-slate-200 pb-8">
+    <h1 class="page-title title-rule mb-4">{p.title}</h1>
+    <p class="text-slate-600">{s.pageIntro}</p>
+    <blockquote class="callout mt-6 text-sm text-slate-700">
+      <p>{s.verse}</p>
+      <footer class="mt-1 text-xs text-slate-500">{s.verseSource}</footer>
+    </blockquote>
+
+    <nav aria-label={s.months} class="mt-6 grid grid-cols-3 gap-2 sm:grid-cols-6 print:hidden">
+      {
+        p.months.map((m) => (
+          <a href={`#m-${p.year}-${m.n}`} class="btn btn-sm btn-secondary w-full capitalize">
+            {m.name}
+          </a>
+        ))
+      }
+    </nav>
+  </header>
+
+  <div class="space-y-10">
+    {
+      p.months.map((m) => (
+        <section
+          class="scroll-mt-24 break-inside-avoid"
+          aria-labelledby={`m-${p.year}-${m.n}`}
+        >
+          <h2
+            id={`m-${p.year}-${m.n}`}
+            class="mb-3 scroll-mt-24 text-xl font-bold tracking-tight text-slate-900 capitalize"
+          >
+            {m.name} {p.year}
+          </h2>
+          <div class="overflow-x-auto border border-slate-200 bg-white">
+            <table class="w-full border-collapse text-xs tabular-nums sm:text-sm">
+              <thead class="bg-slate-50 text-xs text-slate-600">
+                <tr>
+                  <th scope="col" class="px-2 py-2 text-left font-semibold sm:px-3">
+                    {s.date}
+                  </th>
+                  {PRAYER_NAMES.map((p) => (
+                    <th scope="col" class="px-0.5 py-2 text-center text-[10px] font-semibold sm:px-2 sm:text-xs">
+                      {p}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                {m.days.map((d) => (
+                  <tr
+                    data-date={d.iso}
+                    class:list={[
+                      "aria-[current=date]:bg-brand aria-[current=date]:text-white",
+                      d.friday && "bg-brand-50/60",
+                    ]}
+                    title={d.friday ? s.jumuah : undefined}
+                  >
+                    <th scope="row" class="px-2 py-1.5 text-left font-medium whitespace-nowrap sm:px-3">
+                      <span class="inline-block w-5 font-bold sm:w-7">{d.day}</span>
+                      <span class="font-normal opacity-80">
+                        <span class="sm:hidden">{d.short}</span>
+                        <span class="hidden sm:inline">{d.long}</span>
+                      </span>
+                      {d.dst && (
+                        <span class="mt-0.5 block w-fit border border-current px-1 py-px text-[9px] leading-tight font-semibold uppercase sm:ml-2 sm:mt-0 sm:inline-block sm:text-[10px]">
+                          {d.dst}
+                        </span>
+                      )}
+                    </th>
+                    {d.times.map((t) => (
+                      <td class="px-0.5 py-1.5 text-center sm:px-2">{t}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))
+    }
+  </div>
+
+  <p class="mt-8 text-sm text-slate-500">{s.note}</p>
+</div>
+  ))
+}
+
+<script define:vars={{ tz: TIME_ZONE }}>
+  // Static page, so "today" is resolved in the browser (Amsterdam date): show the panel for the
+  // current year (fallback: the last one) and mark today's row.
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: tz,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+  const panels = [...document.querySelectorAll("[data-year-panel]")];
+  const current =
+    panels.find((el) => el.dataset.yearPanel === today.slice(0, 4)) ?? panels[panels.length - 1];
+  if (current) {
+    panels.forEach((el) => (el.hidden = el !== current));
+    document.title = current.dataset.title ?? document.title;
+    // Honour a #m-<year>-<n> link that points at a panel that was hidden at load time.
+    if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+  }
+  document.querySelector(`tr[data-date="${today}"]`)?.setAttribute("aria-current", "date");
+</script>

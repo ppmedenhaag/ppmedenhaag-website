@@ -33,13 +33,13 @@ Semoga Allah SWT melimpahkan kesehatan, kesabaran dan banyak rahmat. Semoga Alla
 
 Berikut adalah program untuk Sabtu 15 Ramadan.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ geser ke kanan di tabel berikut untuk melihat secara lengkap)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Waktu</th>
+<th class="sticky-col">Waktu</th>
 <th ><span class="text-nowrap">Ruang Bawah 1</span ><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 2</span><br/><span class="text-nowrap">"Al Ittihaad Wanita"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 3</span><br/><span class="text-nowrap">"Ramadan Kidz"</span></th>
@@ -48,7 +48,7 @@ Berikut adalah program untuk Sabtu 15 Ramadan.
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.00 - 18.20</td>
+<td class="text-nowrap sticky-col">17.00 - 18.20</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Faturrahman</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>&nbsp;</th>
@@ -57,7 +57,7 @@ Berikut adalah program untuk Sabtu 15 Ramadan.
 </tr>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.30 - 18.20</td>
+<td class="text-nowrap sticky-col">17.30 - 18.20</td>
 <th style="font-weight: bold;">&nbsp;</th>
 <th>&nbsp;</th>
 <th>Bpk. Halid & Ibu Dida</th>
@@ -66,19 +66,19 @@ Berikut adalah program untuk Sabtu 15 Ramadan.
 </tr>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.20 - 18.53</td>
-<th colspan="5" class="table-success">Tadarus</th>
+<td class="text-nowrap sticky-col">18.20 - 18.53</td>
+<th colspan="5" class="row-success">Tadarus</th>
 </tr>
 <tr >
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.53 - 19.20</td>
-<th colspan="5" class="table-primary">Iftar & Maghrib*</th>
+<td class="text-nowrap sticky-col">18.53 - 19.20</td>
+<th colspan="5" class="row-brand">Iftar & Maghrib*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.20 - 19.50</td>
-<th colspan="5" class="table-info">Makan*</th>
+<td class="text-nowrap sticky-col">19.20 - 19.50</td>
+<th colspan="5" class="row-info">Makan*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.50 - 20.30</td>
+<td class="text-nowrap sticky-col">19.50 - 20.30</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Faturrahman</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>----</th>
@@ -86,12 +86,12 @@ Berikut adalah program untuk Sabtu 15 Ramadan.
 <th><span class="text-nowrap">Samira I. Ibrahim</span><br/><span style="font-weight: normal">De kracht van intentie</span></th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.40 - 22.30</td>
-<th colspan="5" class="table-primary">Isya & Tarawih*</th>
+<td class="text-nowrap sticky-col">20.40 - 22.30</td>
+<th colspan="5" class="row-brand">Isya & Tarawih*</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ scroll naar rechts om de resterende tabel te zien)
 </div>
 <br/>

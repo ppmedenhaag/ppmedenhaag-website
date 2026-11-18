@@ -49,7 +49,7 @@ const blogSchema = z.object({
 // distinct shape, breaking `entry.data.speaker` / `.location` / `.author` etc.
 // across both call sites.
 function sectionCollection<TSchema extends ReturnType<typeof z.object>>(
-  section: "event" | "blog" | "ibadah" | "about",
+  section: "event" | "blog" | "ibadah" | "about" | "dakwah",
   schema: TSchema,
 ) {
   return defineCollection({
@@ -77,14 +77,17 @@ const aboutOverviewSchema = z.object({
   image: z.string().optional(),
 });
 
-const aboutOverview = defineCollection({
-  loader: glob({
-    pattern: "*/_index.md",
-    base: "./src/content/about",
-    generateId: ({ entry }) => entry.replace(/\/_index\.md$/, ""),
-  }),
-  schema: aboutOverviewSchema,
-});
+function overviewCollection(section: "about" | "dakwah") {
+  return defineCollection({
+    loader: glob({
+      pattern: "*/_index.md",
+      base: `./src/content/${section}`,
+      generateId: ({ entry }) => entry.replace(/\/_index\.md$/, ""),
+    }),
+    schema: aboutOverviewSchema,
+  });
+}
+const aboutOverview = overviewCollection("about");
 
 // Mirrors data/<locale>/homepage.yml in the Hugo source (see
 // .migration/06-data-i18n-strings.md for the key-by-key usage audit this schema is
@@ -146,7 +149,7 @@ const homepageSchema = z.object({
       desc: z.string(),
     }),
   }),
-  prayer_times: z.object({ enable: z.boolean(), link: z.url() }),
+  prayer_times: z.object({ enable: z.boolean() }),
   vision_mission: z
     .object({
       enable: z.boolean(),
@@ -185,6 +188,9 @@ export const collections = {
   // Same front matter shape as blog/ibadah ("post"-style) — about-1.md ("Lidmaatschap").
   about: sectionCollection("about", blogSchema),
   "about-overview": aboutOverview,
+  // Dakwah: same shapes as about (post-style entries + per-locale _index overview).
+  dakwah: sectionCollection("dakwah", blogSchema),
+  "dakwah-overview": overviewCollection("dakwah"),
   "homepage-nl": homepageCollection("nl"),
   "homepage-id": homepageCollection("id"),
   "homepage-en": homepageCollection("en"),

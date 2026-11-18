@@ -33,13 +33,13 @@ Semoga Allah SWT melimpahkan kesehatan, kesabaran dan banyak rahmat. Semoga Alla
 
 Berikut adalah program untuk Sabtu 8 Ramadan.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ geser ke kanan di tabel berikut untuk melihat secara lengkap)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Waktu</th>
+<th class="sticky-col">Waktu</th>
 <th ><span class="text-nowrap">Ruang Bawah 1</span ><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 2</span><br/><span class="text-nowrap">"Al Ittihaad Wanita"</span></th>
 <th><span class="text-nowrap">Ruang Bawah 3</span><br/><span class="text-nowrap">"Ramadan Kidz"</span></th>
@@ -48,7 +48,7 @@ Berikut adalah program untuk Sabtu 8 Ramadan.
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.00 - 18.10</td>
+<td class="text-nowrap sticky-col">17.00 - 18.10</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Rafly</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>Ustadzah Saida</th>
@@ -56,32 +56,32 @@ Berikut adalah program untuk Sabtu 8 Ramadan.
 <th><span class="text-nowrap">Ai Lien Djie</span><br/><span style="font-weight: normal;">Stress & Islam</span></th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.10 - 18.41</td>
-<th colspan="5" class="table-success">Tadarus</th>
+<td class="text-nowrap sticky-col">18.10 - 18.41</td>
+<th colspan="5" class="row-success">Tadarus</th>
 </tr>
 <tr >
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.41 - 19.10</td>
-<th colspan="5" class="table-primary">Iftar & Maghrib*</th>
+<td class="text-nowrap sticky-col">18.41 - 19.10</td>
+<th colspan="5" class="row-brand">Iftar & Maghrib*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.10 - 19.40</td>
-<th colspan="5" class="table-info">Makan*</th>
+<td class="text-nowrap sticky-col">19.10 - 19.40</td>
+<th colspan="5" class="row-info">Makan*</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.40 - 20.15</td>
+<td class="text-nowrap sticky-col">19.40 - 20.15</td>
 <th style="font-weight: bold;">Al Moe'minoen</th>
 <th>Ustadz Rafly</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th>&nbsp;</th>
-<th style="" ><span style="font-weight: bold;">Ustadz Nashir</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
+<th ><span style="font-weight: bold;">Ustadz Nashir</span><br/><span style="font-weight: normal">40 hadith imam An Nawawi</span></th>
 <th ><span class="text-nowrap">Ronald Kroon</span><br/><span style="font-weight: normal;">Wees op deze wereld als een reiziger</span></th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.27 - 22.15</td>
-<th colspan="5" class="table-primary">Isya & Tarawih*</th>
+<td class="text-nowrap sticky-col">20.27 - 22.15</td>
+<th colspan="5" class="row-brand">Isya & Tarawih*</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ geser ke kanan di tabel diatas untuk melihat secara lengkap)
 </div>
 <br/>

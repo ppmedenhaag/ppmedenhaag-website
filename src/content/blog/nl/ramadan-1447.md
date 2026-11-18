@@ -23,13 +23,13 @@ Assalamu'alaykum wa rahmatullahi wa barakaatuh, beste jongeren en gemeenteleden 
 
 De gezegende maand Ramadan 1447 is een tijd van bezinning, spirituele groei en verbinding. Om onze jongeren te inspireren en te versterken in hun geloof, presenteren wij met trots het Ramadan Jongerenprogramma in Masjid Al Hikmah. Gedurende vier zaterdagen duiken we samen met verschillende sprekers dieper in de islam, met onderwerpen variërend van de betekenis van de Shahada tot het praktiseren van je geloof in het dagelijks leven. Of je nu komt voor de kennis, de sfeer of de gezamenlijke Iftar, je bent van harte welkom om deel te nemen aan deze leerzame sessies.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ schuif naar rechts om de volledige tabel te bekijken)
 </div>
-<div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-<table class="table" style="min-width: 900px; width: 100%; border-collapse: collapse;">
+<div class="overflow-x-auto" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<table style="min-width: 900px; width: 100%; border-collapse: collapse;">
 <thead>
-<tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+<tr class="row-muted">
 <th style="padding: 12px; width: 15%;">Date</th>
 <th style="padding: 12px; width: 25%;">Sessions</th>
 <th style="padding: 12px; width: 20%;">Speaker</th>
@@ -37,7 +37,7 @@ De gezegende maand Ramadan 1447 is een tijd van bezinning, spirituele groei en v
 </tr>
 </thead>
 <tbody>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>4 Ramadan</strong>
 
 
@@ -52,7 +52,7 @@ De gezegende maand Ramadan 1447 is een tijd van bezinning, spirituele groei en v
 <td style="padding: 12px;">Samira I. Ibrahim</td>
 <td style="padding: 12px;">Het Licht van De Leiding</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>11 Ramadan</strong>
 
 
@@ -67,7 +67,7 @@ De gezegende maand Ramadan 1447 is een tijd van bezinning, spirituele groei en v
 <td style="padding: 12px;">Muhammad Azam</td>
 <td style="padding: 12px;">Diepere betekenis van لَا إِلٰهَ إِلَّا ٱللَّٰهُ</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>18 Ramadan</strong>
 
 
@@ -82,7 +82,7 @@ De gezegende maand Ramadan 1447 is een tijd van bezinning, spirituele groei en v
 <td style="padding: 12px;">Muhammad Idoe</td>
 <td style="padding: 12px;">Tafsīr surat al-Qadr</td>
 </tr>
-<tr style="border-bottom: 1px solid #dee2e6;">
+<tr>
 <td style="padding: 12px;"><strong>25 Ramadan</strong>
 
 
@@ -100,7 +100,7 @@ De gezegende maand Ramadan 1447 is een tijd van bezinning, spirituele groei en v
 </tbody>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ schuif naar rechts om de volledige tabel te bekijken)
 </div>
 

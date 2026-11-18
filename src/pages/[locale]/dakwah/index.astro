@@ -1,0 +1,14 @@
+---
+import DakwahIndex from "../../../components/DakwahIndex.astro";
+import { locales, defaultLocale, type LangOptions } from "../../../data/i18n";
+
+export function getStaticPaths() {
+  return Object.keys(locales)
+    .filter((lang) => lang !== defaultLocale)
+    .map((lang) => ({ params: { locale: lang } }));
+}
+
+const { locale } = Astro.params;
+---
+
+<DakwahIndex locale={locale as LangOptions} />

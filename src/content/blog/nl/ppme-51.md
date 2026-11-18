@@ -33,38 +33,38 @@ In de planning hieronder ziet u welke activiteiten gepland staan. Informatie ove
 We vieren dit graag samen met iedereen. Dus zowel leden als sympathisanten zijn welkom om mee te doen met de activiteiten. 
  
 ### Aanmelden
-Wilt u zich aanmelden voor een activiteit? Doe dit via het <a href="{{< ref "contact" >}}">contactformulier</a> en kies voor “Aanmelden viering PPME 51 jaar”. Zet in het berichtenveld de naam van de activiteit waar u aan wil meedoen.
+Wilt u zich aanmelden voor een activiteit? Doe dit via het <a href="/contact/">contactformulier</a> en kies voor “Aanmelden viering PPME 51 jaar”. Zet in het berichtenveld de naam van de activiteit waar u aan wil meedoen.
  
-Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME Den Haag en in de toekomst wellicht helpen met het organiseren van activiteiten en evenementen? U bent heel erg welkom! 
+Wilt u zich als lid <a href="/about/about-1/">aanmelden</a> bij PPME Den Haag en in de toekomst wellicht helpen met het organiseren van activiteiten en evenementen? U bent heel erg welkom! 
 
 ### Planning activiteiten viering 51 jaar PPME
 
-<div class="d-lg-none">
-<p class="font-weight-lighter">* klik voor details</p>
+<div class="lg:hidden">
+<p class="text-sm font-light text-slate-500">* klik voor details</p>
 <div id="accordion">
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading1"  data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading1"  data-accordion-trigger data-accordion-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
           <p>Kick-off “51 jaar PPME”</p>
           📅21 Mei 2022 / 20 Syawal 1443
     </div>
-    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
-      <div class="card-body">
-        <span class="badge badge-pill  badge-success">Geen Inschrijven</span>
-        <span class="badge badge-pill badge-success">Voor Iedereen</span>      
+    <div id="collapse1" class="accordion-panel" aria-labelledby="heading1" data-accordion-group="#accordion">
+      <div class="accordion-body">
+        <span class="badge badge-success">Geen Inschrijven</span>
+        <span class="badge badge-success">Voor Iedereen</span>      
         <p> Begeleider: <strong>Wati Chaeron</strong></p>
-        <p><a href="{{< ref "event/kickoff-51">}}">Meer Info</a></p>
+        <p><a href="/event/kickoff-51/">Meer Info</a></p>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading2"  data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading2"  data-accordion-trigger data-accordion-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
           <p>Open House</p>
           📅11 Juni 2022 / 12 Dzul Qadah 1443
     </div>
-    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-success">Voor Iedereen</span>
-            <span class="badge badge-pill badge-warning">Maximaal 20 deelnemers per workshop.</span>
+    <div id="collapse2" class="accordion-panel" aria-labelledby="heading2" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Voor Iedereen</span>
+            <span class="badge badge-warning">Maximaal 20 deelnemers per workshop.</span>
             <p>
             Open House:
             <ul>
@@ -73,75 +73,75 @@ Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME
             <li>Verschillende workshops</li>
             </ul>
             </p>
-            <p>⚠️Inschrijven via de <a href="{{< ref "contact" >}}">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
+            <p>⚠️Inschrijven via de <a href="/contact/">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading3"  data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading3"  data-accordion-trigger data-accordion-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
           <p>“51 jaar PK” - PPME Pesantren Kilat</p>📅26-28 Augustus 2022 /<br/>28-30 Muharram 1444
     </div>
-    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-warning">Voor Jongeren tussen 13 - 30 jaar</span>
-            <p>⚠️Inschrijven via de <a href="{{< ref "contact" >}}">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
+    <div id="collapse3" class="accordion-panel" aria-labelledby="heading3" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-warning">Voor Jongeren tussen 13 - 30 jaar</span>
+            <p>⚠️Inschrijven via de <a href="/contact/">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading4"  data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading4"  data-accordion-trigger data-accordion-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
           <p>Training: Leerpunten uit het leiderschap van Profeet Muhammad saw.</p>
           📅8 Oktober 2022 / 12 Rabi’ul Awal 1444
     </div>
-    <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-success">Voor Iedereen</span>
+    <div id="collapse4" class="accordion-panel" aria-labelledby="heading4" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Voor Iedereen</span>
             <p>Gastspreker <strong>Mr. Umar Mirza</strong>            </p>
-            <p>⚠️Inschrijven via de <a href="{{< ref "contact" >}}">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
+            <p>⚠️Inschrijven via de <a href="/contact/">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading5"  data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading5"  data-accordion-trigger data-accordion-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
           <p>Umrah PPME Den Haag</p>
           📅14-23 Oktober 2022 /<br/> 18-27 Rabi’ul Awal 1444
     </div>
-    <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill badge-success">Voor Iedereen</span>
+    <div id="collapse5" class="accordion-panel" aria-labelledby="heading5" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Voor Iedereen</span>
             <p>Voor de Indonesisch sprekenden: bpk. <strong>Nur Hasyim Subadi</strong>.<br/>
             Voor de Nederlands sprekenden: mr. <strong>Ronald Kroon</strong></p>
-            <p>⚠️Inschrijven via de <a href="{{< ref "contact" >}}">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
+            <p>⚠️Inschrijven via de <a href="/contact/">contactpagina</a>.<br/>Kies het onderwerp “PPME 51 jaar”</p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading6"  data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading6"  data-accordion-trigger data-accordion-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
           <p>Lezing: “De adhab en akhlaq van mensen binnen een moskee gemeenschap”</p>
           📅14 Januari 2023 /<br/>11 Jumadil Akhir 1444
     </div>
-    <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill  badge-success">Geen Inschrijven</span>
-            <span class="badge badge-pill badge-success">Voor Iedereen</span>
+    <div id="collapse6" class="accordion-panel" aria-labelledby="heading6" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Geen Inschrijven</span>
+            <span class="badge badge-success">Voor Iedereen</span>
             <p>In het Indonesisch: <strong>E. Ainun Nadjib</strong><br/>In het Nederlands: <strong>Anne Dijk</strong> (Fahm Instituut)
 </p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header alert-primary text-center" id="heading7"  data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+  <div class="accordion-item">
+    <div class="accordion-trigger text-center" id="heading7"  data-accordion-trigger data-accordion-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
           <p>Afsluiting met Halal bi Halal</p>
           📅7 Mei 2023 / 17 Syawal 1444
     </div>
-    <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
-      <div class="card-body">
-            <span class="badge badge-pill  badge-success">Geen Inschrijven</span>
-            <span class="badge badge-pill badge-success">Voor Iedereen</span>
+    <div id="collapse7" class="accordion-panel" aria-labelledby="heading7" data-accordion-group="#accordion">
+      <div class="accordion-body">
+            <span class="badge badge-success">Geen Inschrijven</span>
+            <span class="badge badge-success">Voor Iedereen</span>
             <p>Tentoonstelling van de eerdere workshops fotografie, kalligrafie en essay.</p>
       </div>
     </div>
@@ -150,10 +150,10 @@ Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME
 </div>
 
 </div>
-<div class="d-none d-lg-block">
-    <table class="table">
+<div class="hidden lg:block">
+    <table>
         <thead>
-            <tr class="table-primary">
+            <tr class="row-brand">
                 <td>
                     <p><span>Datum</span>
                     </p>
@@ -183,7 +183,7 @@ Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME
                 </td>
                 <td>
                     <p><span>Kick-off &ldquo;51 jaar PPME&rdquo;</span></p>
-                    <p><a href="{{< ref "event/kickoff-51">}}">Meer Info</a></p>
+                    <p><a href="/event/kickoff-51/">Meer Info</a></p>
                 </td>
                 <td>
                     <p><span>Mba Wati Chaeron</span></p>
@@ -237,7 +237,7 @@ Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME
                 <td rowspan="6">
                     <p><span>Ja,
                             via de </span><a
-                            href="{{< ref "contact" >}}"><span>contactpagina</span></a><span>.
+                            href="/contact/"><span>contactpagina</span></a><span>.
                             Kies het onderwerp &ldquo;PPME 51 jaar&rdquo;</span></p>
                 </td>
             </tr>
@@ -264,7 +264,7 @@ Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME
                 </td>
                 <td rowspan="3">
                     <p><span>Ja, via de </span><a
-                            href="{{< ref "contact" >}}"><span>contactpagina</span></a><span>.
+                            href="/contact/"><span>contactpagina</span></a><span>.
                             Kies het onderwerp &ldquo;PPME 51 jaar&rdquo;</span></p>
                 </td>
             </tr>
@@ -287,7 +287,7 @@ Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME
                 </td>
                 <td>
                     <p><span>Ja, via de </span><a
-                            href="{{< ref "contact" >}}"><span>contactpagina</span></a><span>.
+                            href="/contact/"><span>contactpagina</span></a><span>.
                             Kies het onderwerp &ldquo;PPME 51 jaar&rdquo;</span></p>
                 </td>
             </tr>
@@ -309,7 +309,7 @@ Wilt u zich als lid <a href="{{< ref "about/about-1" >}}">aanmelden</a> bij PPME
                 </td>
                 <td rowspan="2">
                     <p><span>Ja, via de </span><a
-                            href="{{< ref "contact" >}}"><span>contactpagina</span></a><span>.
+                            href="/contact/"><span>contactpagina</span></a><span>.
                             Kies het onderwerp &ldquo;PPME 51 jaar&rdquo;</span></p>
                 </td>
             </tr>

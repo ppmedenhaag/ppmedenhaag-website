@@ -33,13 +33,13 @@ Moge Allah SWT u gezondheid, geduld en overvloedige genade schenken. Moge Allah 
 
 Hieronder vindt u het programma voor zaterdag **25 Ramadan 1447**.
 
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ schuif naar rechts in de onderstaande tabel voor het volledige overzicht)
 </div>
-<div class="table-responsive">
-<table class="table table-sm">
+<div class="overflow-x-auto">
+<table class="table-compact">
 <thead class="text-center">
-<th style="position:sticky;left:0px;background-color:white;">Tijd</th>
+<th class="sticky-col">Tijd</th>
 <th><span class="text-nowrap">Ruimte Beneden Middel</span><br/><span class="text-nowrap">"Al Moe'minoen"</span></th>
 <th><span class="text-nowrap">Ruimte Beneden Groot</span><br/><span class="text-nowrap">"Al Ittihaad"</span></th>
 <th><span class="text-nowrap">Ruimte Beneden Klein</span><br/><span class="text-nowrap">"Ramadan Kidz"</span></th>
@@ -47,38 +47,38 @@ Hieronder vindt u het programma voor zaterdag **25 Ramadan 1447**.
 </thead>
 
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">17.30 - 18.15</td>
+<td class="text-nowrap sticky-col">17.30 - 18.15</td>
 <th>Al Moe'minoen</th>
 <th>Ustad Iqbal</th>
 <th>Groene Moslims</th>
 <th>Ustad Ronald</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.20 - 18.52</td>
-<th colspan="4" class="table-success">Tadarus</th>
+<td class="text-nowrap sticky-col">18.20 - 18.52</td>
+<th colspan="4" class="row-success">Tadarus</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">18.52 - 19.20</td>
-<th colspan="4" class="table-primary">Iftar &amp; Maghrib</th>
+<td class="text-nowrap sticky-col">18.52 - 19.20</td>
+<th colspan="4" class="row-brand">Iftar &amp; Maghrib</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.20 - 19.50</td>
-<th colspan="4" class="table-info">Eten</th>
+<td class="text-nowrap sticky-col">19.20 - 19.50</td>
+<th colspan="4" class="row-info">Eten</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">19.50 - 20.20</td>
+<td class="text-nowrap sticky-col">19.50 - 20.20</td>
 <th>Al Moe'minoen</th>
 <th>Ustad Iqbal</th>
 <th>&nbsp;</th>
 <th>Ustad Ronald</th>
 </tr>
 <tr>
-<td class="text-nowrap" style="position:sticky;left:0px;background-color:white;">20.38 - Einde</td>
-<th colspan="4" class="table-primary">Isya &amp; Tarawih</th>
+<td class="text-nowrap sticky-col">20.38 - Einde</td>
+<th colspan="4" class="row-brand">Isya &amp; Tarawih</th>
 </tr>
 </table>
 </div>
-<div class="d-block d-lg-none">
+<div class="block lg:hidden">
 (➡️ schuif naar rechts in de bovenstaande tabel voor het volledige overzicht)
 </div>
 <br/>
@@ -105,8 +105,8 @@ Laten wij goede manieren en gezinswarmte bewaren met een glimlach en respect, zo
 
 Wassalamu'alaikum wa rahmatullahi wa barakatuh,
 
-<div class="row py-1">
-      <div class="col-12 text-center">
-      <a href="https://www.ing.nl/payreq/m/?trxid=xbLdUJmu9BkHK2CV8ubHXWE5AIgmlSkv" type="button" class="btn-sm btn-info">Shodaqoh PPME Den Haag</a>
+<div class="py-1">
+      <div class="text-center">
+      <a href="https://www.ing.nl/payreq/m/?trxid=xbLdUJmu9BkHK2CV8ubHXWE5AIgmlSkv" type="button" class="btn btn-primary btn-sm">Shodaqoh PPME Den Haag</a>
       </div>   
 </div>

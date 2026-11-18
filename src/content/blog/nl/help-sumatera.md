@@ -41,7 +41,7 @@ Omschrijving: Help Sumatera<br/>
 <br/>
 
 
-<p class="alert alert-primary text-center">Het totale donatiebedrag tot en met zondag <span style="font-weight:bold">4 januari 2026</span> is €<span style="font-weight:bold">6060</span>.</p>
+<p class="callout text-center">Het totale donatiebedrag tot en met zondag <span style="font-weight:bold">4 januari 2026</span> is €<span style="font-weight:bold">6060</span>.</p>
 
 
 Moge Allah elke goede daad belonen met een veelvoud aan beloning en ons tot Zijn dienaren maken die zorg dragen voor anderen. Aamiin.

@@ -33,7 +33,7 @@ You can fill in this [form](/forms/Mualaf_Formulier_NL_2025.docx). We use the da
 
 Have you completed the form?
 
-You can then send an email to {{< param email >}} to make an appointment at the mosque or come by on Saturdays from 4 p.m.
+You can then send an email to [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl) to make an appointment at the mosque or come by on Saturdays from 4 p.m.
 Please bring a copy of your identification along with the form when you visit the mosque. For example, a passport or identity card with photo.
 During the appointment in the mosque we discuss when the accession will take place.
 We will try as much as possible to hold the accession during our Saturday meetings.

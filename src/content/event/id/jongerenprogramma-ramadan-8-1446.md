@@ -42,7 +42,7 @@ Semoga Allah SWT melimpahkan kesehatan, kesabaran dan banyak rahmat. Semoga Alla
 Berikut adalah program remaja untuk Sabtu 8 Ramadan.
 
 
-<h6 class="alert alert-primary">
+<h6 class="callout">
   Sesi 1: Stress & Islam
 </h6>
 
@@ -52,7 +52,7 @@ Berikut adalah program remaja untuk Sabtu 8 Ramadan.
 |Waktu| **17.00 - 18.10**|
 
 <br/>
-<h6 class="alert alert-primary">
+<h6 class="callout">
   Sesi 2: Wees op deze wereld als een reiziger
 </h6>
 
@@ -63,7 +63,7 @@ Berikut adalah program remaja untuk Sabtu 8 Ramadan.
 
 <br/>
 
-<h6 class="alert alert-success">
+<h6 class="callout callout-success">
  Lokasi: Ruang Atas
 </h6>
 
