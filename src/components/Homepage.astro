@@ -47,16 +47,16 @@ const posts = (
           <p class="mt-6 text-base leading-relaxed whitespace-pre-line text-slate-600 sm:text-lg">
             {home.about.content}
           </p>
-          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div class="mt-6 grid grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-3">
             <a
               href={getRelativeLocaleUrl(locale, "ibadah/islamitisch-trouwen/")}
-              class="btn btn-lg btn-primary"
+              class="btn btn-lg btn-primary w-full"
             >
               {t("homepage.nikah")}
             </a>
             <a
               href={getRelativeLocaleUrl(locale, "ibadah/toetreden-islam/")}
-              class="btn btn-lg btn-secondary"
+              class="btn btn-lg btn-secondary w-full"
             >
               {t("homepage.shahada")}
             </a>
