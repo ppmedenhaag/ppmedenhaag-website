@@ -4,9 +4,11 @@
 //   pattern  (option 2, default) faint batik / ronce pattern in five blurred, differently sized layers
 //   night    (option 3) starry night with meteors and light animation
 //   leaves   (option 4) faint tree-leaf sprigs with a very slow sway
+//   map      (option 5) faint outline map of the Netherlands and its provinces, Den Haag marked
 import { PUBLIC_BACKGROUND } from "astro:env/client";
 import NightSky from "./NightSky.astro";
 import LeafBackdrop from "./LeafBackdrop.astro";
+import NetherlandsMap from "./NetherlandsMap.astro";
 
 const layers = ["", "app-grid-blur", "app-grid-sm", "app-grid-fine", "app-grid-haze"];
 ---
@@ -19,3 +21,4 @@ const layers = ["", "app-grid-blur", "app-grid-sm", "app-grid-fine", "app-grid-h
 }
 {PUBLIC_BACKGROUND === "night" && <NightSky />}
 {PUBLIC_BACKGROUND === "leaves" && <LeafBackdrop />}
+{PUBLIC_BACKGROUND === "map" && <NetherlandsMap />}

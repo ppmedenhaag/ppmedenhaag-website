@@ -67,14 +67,14 @@ export default defineConfig({
   // Cloudflare Pages serves the static `dist/` output directly — no adapter needed.
   // See .migration/07-deploy-hosting.md in ppmedenhaag-website for why Pages over Workers/Vercel.
   output: "static",
-  // Build-time page background: PUBLIC_BACKGROUND=none | pattern | night (default) | leaves.
+  // Build-time page background: PUBLIC_BACKGROUND=none | pattern | night (default) | leaves | map.
   // e.g. PowerShell: $env:PUBLIC_BACKGROUND="night"; npm run build   (bash: PUBLIC_BACKGROUND=night npm run build)
   env: {
     schema: {
       PUBLIC_BACKGROUND: envField.enum({
         context: "client",
         access: "public",
-        values: ["none", "pattern", "night", "leaves"],
+        values: ["none", "pattern", "night", "leaves", "map"],
         default: "night",
       }),
     },
