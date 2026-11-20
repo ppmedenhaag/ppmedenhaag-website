@@ -178,12 +178,13 @@ port conflict, fully independent processes.
 Deployed to **Cloudflare Workers (static assets)**, Worker `ppme-website` (config: `wrangler.jsonc`, serves `dist/`).
 The earlier Cloudflare Pages plan (`.migration/07-deploy-hosting.md`) was superseded.
 
-**GitHub and Cloudflare are NOT connected for now.** `.github/workflows/deploy.yml` exists, but the repo secrets
-(`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`) are not set, so pushing to `main` does not deploy. **Deploy manually with the Wrangler CLI**:
+**Auto-deploy is live.** The GitHub repo is `ppmedenhaag/ppmedenhaag-website` (`origin`). Every push to `main` runs
+`.github/workflows/deploy.yml` (build + `npx wrangler deploy`) using the repo secrets `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_ACCOUNT_ID`. Live at https://ppme-website.ppme-registration.workers.dev. DNS for ppmedenhaag.nl is not touched.
+No manual deploy is needed after pushing.
 
-```
-npm run build        # astro check + build + pagefind into dist/
-npx wrangler deploy  # uploads dist/ (needs `npx wrangler login` once)
-```
-
-After committing/pushing, always run both commands to publish. DNS for ppmedenhaag.nl is not touched.
+- CI uses Node 24 and `npm install` rather than `npm ci`: the lockfile (generated on Windows) lacks cross-platform optional
+  `@emnapi/*` entries, so `npm ci` fails on Linux runners. To restore `npm ci`, regenerate `package-lock.json` on Linux.
+- `src/icons/` is intentionally empty (`.gitkeep`): astro-icon scans it by default and warns if it is missing. Icons come
+  from the Iconify sets listed in `astro.config.mjs`.
+- Manual deploy (fallback): `npm run build` then `npx wrangler deploy` (needs `npx wrangler login` once).
