@@ -39,7 +39,7 @@ PPME Den Haag akan menyelenggarakan acara Peringatan Isra' Mi'raj yang in syaa A
 <tr>
 <td>Hari</td><td>Sabtu, 23 Rajab 1445 / 3 Februari 2024</td>
 <tr><td>Waktu</td><td>15:00 – 20:00 CET</td>
-<tr><td>Tempat</td><td>Masjid Al-Hikmah<br/>Heeswijkplein 170<br/>2531 HK, Den Haag</td>
+<tr><td>Tempat</td><td>Masjid Al-Hikmah<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
 <br/>

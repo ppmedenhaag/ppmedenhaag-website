@@ -32,8 +32,9 @@ const t = useTranslations(locale);
   const items = Array.from(grid.children) as HTMLElement[];
   const L = nav.dataset;
 
+  // No display utility in `base`: `inline-flex` here beat `hidden` on the numbered buttons, so phones showed them next to "1 / 10".
   const base =
-    "inline-flex h-10 min-w-10 items-center justify-center rounded-lg px-3 font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2";
+    "h-10 min-w-10 items-center justify-center rounded-lg px-3 font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2";
   const idle = "text-slate-700 hover:bg-brand-50 hover:text-brand border border-slate-200 bg-white";
   const active = "bg-brand border border-brand text-white shadow-sm shadow-brand/20";
   const off = "text-slate-300 pointer-events-none";
@@ -82,8 +83,8 @@ const t = useTranslations(locale);
     nav.classList.toggle("flex", n > 1);
     if (n <= 1) return;
 
-    const prev = btn("‹", Math.max(1, page - 1), `${idle} ${page === 1 ? off : ""}`, L.labelPrev!);
-    const next = btn("›", Math.min(n, page + 1), `${idle} ${page === n ? off : ""}`, L.labelNext!);
+    const prev = btn("‹", Math.max(1, page - 1), `inline-flex ${idle} ${page === 1 ? off : ""}`, L.labelPrev!);
+    const next = btn("›", Math.min(n, page + 1), `inline-flex ${idle} ${page === n ? off : ""}`, L.labelNext!);
     if (page === 1) prev.setAttribute("aria-disabled", "true");
     if (page === n) next.setAttribute("aria-disabled", "true");
     nav.append(prev);
@@ -91,7 +92,8 @@ const t = useTranslations(locale);
     const frag = range(page, n);
     // Mobile: compact "‹ 2 / 5 ›"; numbered list from sm up.
     const status = document.createElement("span");
-    status.className = "px-3 text-slate-600 sm:hidden";
+    status.className = "whitespace-nowrap px-3 font-medium text-slate-600 tabular-nums sm:hidden";
+    status.setAttribute("aria-hidden", "true");
     status.textContent = `${page} / ${n}`;
     nav.append(status);
 
@@ -102,7 +104,7 @@ const t = useTranslations(locale);
         d.textContent = "…";
         nav.append(d);
       } else {
-        const b = btn(String(p), p, `hidden sm:inline-flex ${p === page ? active : idle}`, `${L.labelPage} ${p}`, p === page);
+        const b = btn(String(p), p, `max-sm:hidden sm:inline-flex ${p === page ? active : idle}`, `${L.labelPage} ${p}`, p === page);
         nav.append(b);
       }
     });

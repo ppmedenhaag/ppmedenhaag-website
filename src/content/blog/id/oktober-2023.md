@@ -1,7 +1,7 @@
 ---
 title: "Informasi Program Pengajian Sabtu Oktober 2023"
 draft: false
-date: "2023-09-27T09:00:00+01:00"
+date: "2023-09-27T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description

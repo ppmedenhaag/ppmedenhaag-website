@@ -1,7 +1,7 @@
 ---
 title: "Informatie over het zaterdagprogramma"
 draft: false
-date: "2023-04-22T09:00:00+01:00"
+date: "2023-04-22T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description

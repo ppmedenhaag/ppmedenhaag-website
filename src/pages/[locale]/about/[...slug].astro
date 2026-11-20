@@ -1,4 +1,5 @@
 ---
+import HeroImage from "../../../components/HeroImage.astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import { defaultLocale } from "../../../data/i18n";
@@ -52,8 +53,8 @@ const { Content } = await render(entry);
             {
                 entry.data.image && (
                     <div class="mb-10 overflow-hidden border border-slate-200">
-                        <img
-                            src={`/${entry.data.image}`}
+                        <HeroImage
+                            src={entry.data.image}
                             alt={entry.data.title}
                             class="w-full object-cover"
                         />

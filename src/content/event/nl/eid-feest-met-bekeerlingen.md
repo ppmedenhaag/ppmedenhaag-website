@@ -3,7 +3,7 @@ title: "Eid Feest met Bekeerlingen"
 # Schedule page publish date
 publishDate: "2026-03-17T00:30:00+02:00"
 # event date
-date: "2026-03-22T10:00:00+02:00"
+date: "2026-03-22T10:00:00+01:00"
 duration: "2 uur"
 # post save as draft
 draft: false

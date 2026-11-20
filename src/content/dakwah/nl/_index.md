@@ -4,7 +4,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Dakwah bij PPME Den Haag: wekelijkse Qur’an-, fiqh- en aqidahlessen voor kinderen en volwassenen, lezingen en workshops in Masjid Al Hikmah."
 ---
 
 Uitnodigen tot het geloof noemen we in het Arabisch dakwah. Dit is voor de PPME Den Haag als Islamitische organisatie haar belangrijkste taak. En dat doen we wekelijks op zaterdag door verschillende programma’s en lessen op te zetten. 

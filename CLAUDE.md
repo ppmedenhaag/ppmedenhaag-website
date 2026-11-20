@@ -193,6 +193,7 @@ new interactive UI rather than reaching for a different framework.
 
 - `npm run dev` — dev server, default port 4321.
 - `npm run build` — runs `astro check && astro build && pagefind --site dist && node scripts/seo-audit.mjs` (~80 s; the first run also renders ~280 share cards).
+- `node scripts/check-content.mjs [--fix-dates|--write-lang]` — report wrong UTC offsets / language mismatches in front matter; `node scripts/optimize-images.mjs` — shrink oversized public images; `node scripts/indexnow.mjs` — production-only Bing/Yandex ping (run by deploy.yml).
 - `npm run seo:audit` / `npm run seo:diff` — re-run the SEO audit on `dist/` / compare with the live Hugo sitemaps.
 - `npx astro sync` — regenerate content-collection types after changing
   `content.config.ts` or adding/removing collections. Run this whenever `astro check`

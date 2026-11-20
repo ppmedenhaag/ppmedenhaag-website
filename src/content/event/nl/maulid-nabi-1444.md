@@ -38,7 +38,7 @@ PPME Den Haag organiseert een avond in het teken van het leven van onze Profeet 
 <tr>
 <td>Dag</td><td>Zaterdag, 12 Rabiul ‘Awal 1444 / 8 Oktober 2022</td>
 <tr><td>Tijd</td><td>16:29 – 21:00 CEST</td>
-<tr><td>Locatie</td><td>Al-Hikmah Moskee<br/>Heeswijkplein 170<br/>2531 HK, Den Haag</td>
+<tr><td>Locatie</td><td>Al-Hikmah Moskee<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
 Het programma ziet er als volgt uit: 

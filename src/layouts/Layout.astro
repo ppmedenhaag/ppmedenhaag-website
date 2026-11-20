@@ -4,6 +4,7 @@ import globalCss from "../styles/global.css?url";
 import Navbar from "../components/Navbar.astro";
 import PageBackground from "../components/PageBackground.astro";
 import Footer from "../components/footer.astro";
+import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import Seo from "../components/Seo.astro";
 import { defaultLocale, type LangOptions } from "../data/i18n";
 import { OG_HEIGHT, OG_LOCALE, OG_WIDTH, SITE_NAME, STATIC_COPY, EYEBROW } from "../data/seo";
@@ -36,6 +37,8 @@ const rawTitle = titleProp ?? page?.title ?? SITE_NAME;
 const seoTitle = fullTitle(rawTitle, SITE_NAME);
 const seoDescription = descriptionProp ?? page?.description ?? STATIC_COPY.home[seoLocale].description;
 const canonical = abs(Astro.url.pathname);
+// Language of the text itself (differs from the URL locale for a few Indonesian pages under /nl/ and /en/).
+const textLang = (page?.contentLang ?? seoLocale) as LangOptions;
 const cardPath = page?.cardPath ?? reg.byRoute.get(`${seoLocale}|`)!.cardPath;
 const image = { url: abs(cardPath), width: OG_WIDTH, height: OG_HEIGHT, alt: rawTitle, type: "image/jpeg" };
 const altList = page && !noindex ? alternatesFor(reg, page) : [];
@@ -57,7 +60,7 @@ const section = segments[0] ?? "page";
 ---
 
 <!doctype html>
-<html lang={currentLocale}>
+<html lang={textLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,8 +71,8 @@ const section = segments[0] ?? "page";
       noindex={noindex}
       ogType={isEntry ? "article" : "website"}
       siteName={SITE_NAME}
-      ogLocale={OG_LOCALE[seoLocale]}
-      ogLocaleAlternates={altList.filter((a) => a.locale !== seoLocale).map((a) => OG_LOCALE[a.locale])}
+      ogLocale={OG_LOCALE[textLang]}
+      ogLocaleAlternates={altList.filter((a) => a.locale !== textLang).map((a) => OG_LOCALE[a.locale])}
       image={image}
       alternates={alternates}
       published={isEntry && page?.date ? isoInTimeZone(page.date) : undefined}
@@ -83,6 +86,7 @@ const section = segments[0] ?? "page";
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href={globalCss} />
     <meta name="generator" content={Astro.generator} />
   </head>

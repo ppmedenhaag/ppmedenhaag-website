@@ -1,4 +1,5 @@
 ---
+import HeroImage from "../../../components/HeroImage.astro";
 import { getEntry, render } from "astro:content";
 import VisionMission from "../../../components/VisionMission.astro";
 import Layout from "../../../layouts/Layout.astro";
@@ -37,8 +38,8 @@ const visionMission = homepageEntry?.data.vision_mission;
             {
                 overview.data.image && (
                     <div class="mb-10 overflow-hidden border border-slate-200">
-                        <img
-                            src={`/${overview.data.image}`}
+                        <HeroImage
+                            src={overview.data.image}
                             alt={overview.data.title}
                             class="w-full object-cover"
                         />

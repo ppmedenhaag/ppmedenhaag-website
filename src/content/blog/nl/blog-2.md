@@ -1,7 +1,7 @@
 ---
 title: "Ramadhan Programma 2022/1443"
 draft: true
-date: "2022-04-01T20:00:00+01:00"
+date: "2022-04-01T20:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description

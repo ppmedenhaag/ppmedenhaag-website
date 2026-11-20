@@ -19,13 +19,13 @@ Plan: [`SEO-PLAN.md`](./SEO-PLAN.md) · Skill: `.claude/skills/ppme-seo/SKILL.md
 - [x] **M4 Rich results** — JSON-LD graph (Organization, WebSite, page node, BreadcrumbList, Event, BlogPosting/Article). *Open: venue street address (D1), Rich Results Test not run (needs the deployed URL).*
 - [x] **M5 Discovery** — `/sitemap.xml` + `/nl|id|en/sitemap.xml` (Hugo-identical, lastmod), RSS (18 feeds, same set as Hugo). *Not done: IndexNow.*
 - [x] **M6 Parity** — `seo-audit` in the build, `seo-url-diff` = 0 missing (274 served 1:1, 136 via `_redirects`), `/ibadah/` index pages added. *Decision D3/D4 still open: the 136 legacy URLs are 301-redirected, not ported (tags/categories/author → blog, ramadhan-1444/notice → event, course/teacher → about).*
-- [~] **M7 Speed** — done: hero `<img>` width/height + eager/high priority (event, blog), immutable caching for /_astro and /og. *Not done: other hero images (ibadah/about/dakwah), compress 4 images >600 KB, font preload, island hydration review, Lighthouse before/after, `src/assets` migration.*
+- [x] **M7 Speed (automatable part)** — hero `<img>` width/height + eager/high priority on every detail page (event, blog, ibadah, about, dakwah), 8 oversized images shrunk (-8 MB, `scripts/optimize-images.mjs`), Latin Inter font preloaded, immutable caching for /_astro and /og, Lighthouse baseline below. *Not done: responsive `srcset` images (needs `src/assets` migration, Lighthouse estimates ~220-240 KiB saving on mobile), navbar island hydration review (`client:load`, ~34 KiB unused JS).*
 - [ ] **M8 Launch** — inventory (DNS, Netlify rules: Netlify has no redirects, only headers, already ported), GSC/Bing, both domains on Worker, cutover, monitoring (Phase 10–11). **Owner actions required.**
 
 ## Decisions needed from the owner
 | # | Question | Default if no answer |
 |---|---|---|
-| D1 | Current official address of Masjid Al Hikmah? (content has both *Medlerstraat 4, 2531 HA* and *Heeswijkplein 170*) | Block Event `location` address markup until answered; emit `Place` with name only |
+| D1 | ~~Current official address of Masjid Al Hikmah?~~ **ANSWERED 2026-11-21: Medlerstraat 4, 2531 HA Den Haag.** Footer, `VENUES` (JSON-LD) and **every** event/body mention of the old *Heeswijkplein 170, 2531 HK* were changed to *Medlerstraat 4, 2531 HA* (owner instruction). | Done |
 | D2 | AI-crawler policy (Cloudflare managed robots.txt / AI Crawl Control): allow, or block training bots? | Leave Cloudflare default, document it |
 | D3 | `/tags/*` (91 URLs) and `/categories/*`, `/author/*`: port as pages or 301 to `/blog/`? (check Search Console impressions first) | Port categories+author, 301 tags |
 | D4 | `/ramadhan-1444/*`, `/course/`, `/teacher/`, `/notice/`: port or 301? | Port per CLAUDE.md "not yet ported" list; 301 if owner says content is dead |
@@ -54,7 +54,17 @@ Hugo live: sitemap 410 URLs (nl 166 / id 164 / en 80); title+og+hreflang(home on
 Astro (workers.dev): sitemap 274 URLs; title only; 246/264 empty descriptions; 261/264 entries have a hero image (mostly 800×600).
 Missing vs live: 136 URLs (91 tags, 18 ramadhan-1444, 12 categories, 6 author, 3 teacher, 3 notice, 3 ibadah index, 3 course). Staging hosts indexable. Trailing-slash redirect = 307.
 
+## Lighthouse baseline (mobile, 2026-11-21, one run each)
+| page | perf | SEO | a11y | best-pr. | LCP |
+|---|---|---|---|---|---|
+| Hugo home (www) | 71 | 100 | 87 | 89 | 5.5 s |
+| **Astro home (website-v2)** | **93** | 69* | 100 | 100 | 3.1 s |
+| Hugo event | 82 | 100 | 91 | 89 | 4.1 s |
+| **Astro event** | **90** | 69* | 93 | 100 | 3.4 s |
+* the only failing SEO audit is `is-crawlable` = the deliberate staging `X-Robots-Tag: noindex`; it passes after the cutover. Re-run after cutover: `npx lighthouse@12 <url> --only-categories=performance,seo,accessibility,best-practices`.
+
 ## Log
+- 2026-11-21 (2) — Owner: Masjid Al Hikmah address is Medlerstraat 4, 2531 HA Den Haag → footer, JSON-LD venue + Organization address and all former "Heeswijkplein 170 / 2531 HK" mentions in content changed (note: some flyer *images* may still print the old address). Fixed the mobile pagination ("1 / 10" with number buttons: `inline-flex` in the shared class string beat `hidden`). Automated recommendations done: image optimization, hero dims everywhere, font preload, `scripts/check-content.mjs` (26 wrong DST offsets fixed so displayed times match the live site, e.g. Eid 08:00 instead of 07:00; `contentLang` for 2 Indonesian events under /nl and /en, drives <html lang>/og:locale/JSON-LD), hand-written descriptions (dakwah overviews, Geloofsbewijs series), IndexNow key + production-only ping step in deploy.yml.
 - 2026-11-21 — Implemented M1–M6 + part of M7 in one session (see milestones). Deviation from plan: non-production robots.txt is *permissive* (`Allow: /`) with `X-Robots-Tag: noindex` on every response instead of `Disallow: /`, because a Disallow stops Google from ever seeing the noindex and blocks Facebook/Twitter preview crawlers. All legacy URLs (136) are 301s in `public/_redirects` instead of ported pages. sitemap hreflang uses plain `nl|id|en` (the old `locales` map produced the invalid `en-UK`). ING payment link on the homepage updated (owner request).
 - 2026-11-20 — Added to plan/skill/reference: card image for every page (page registry `listSeoPages()`), and source pixel-size rules (upscale cap 1.5×, <400 px / extreme aspect → title card). Still no code.
 - 2026-11-20 — Assessment + full plan written (this folder), skill `ppme-seo`, memories. Owner confirmed site replaces both www and apex. No code changed.

@@ -57,3 +57,10 @@ jobs:
             echo "Set the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets."; exit 1
           fi
       - run: npx wrangler deploy
+      # Production only: notify Bing/Yandex (IndexNow) about the new/changed URLs. Never fails the deploy.
+      - name: IndexNow ping
+        if: ${{ vars.PUBLIC_SITE_URL == 'https://www.ppmedenhaag.nl' }}
+        continue-on-error: true
+        env:
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+        run: node scripts/indexnow.mjs

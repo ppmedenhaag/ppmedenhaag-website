@@ -1,6 +1,6 @@
 ---
 title: "Jaarplanning Mei 2022-Mei 2023"
-date: "2022-04-26T10:00:00+01:00"
+date: "2022-04-26T10:00:00+02:00"
 draft: true
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"

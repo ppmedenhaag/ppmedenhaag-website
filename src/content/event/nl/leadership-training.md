@@ -43,7 +43,7 @@ Ter gelegenheid van 51 jaar PPME, wil het bestuur van PPME Den Haag een training
 <td style="width:30%">Tijd</td><td style="width:70%">13:30 – 15:30 CET</td>
 </tr>
 <tr>
-<td style="width:30%">Plaats</td><td style="width:70%">Mesjid Al-Hikmah<br/>Heeswijkplein 170<br/>Den Haag</td>
+<td style="width:30%">Plaats</td><td style="width:70%">Mesjid Al-Hikmah<br/>Medlerstraat 4<br/>Den Haag</td>
 </tr>
 <tr>
 <td style="width:30%">Lokaal</td><td style="width:70%">Grote ruimte beneden</td>

@@ -33,7 +33,7 @@ Bij deze willen wij, het bestuur van PPME Den Haag, u uitnodigen om aanwezig te 
 | Datum | Zaterdag, 17 Juni 2023/<br/>28 Dhul Qa’dah 1444 |
 |----|----|
 | Tijd | 12:00 - Einde |
-| PLaats | Masjid Al-Hikmah<br/>Heeswijkplein 170, 2531 HK<br/>Den Haag |
+| PLaats | Masjid Al-Hikmah<br/>Medlerstraat 4, 2531 HA<br/>Den Haag |
 
 PPME werd officieel opgericht op 12 april 1971/17 Safar 1391 door 22 Indonesische jonge leiders, waaronder de heer **Hambali Maksum**, de heer **Abdurrahman Wahid** en de heer **Mochammad Chaeron**. Nu is PPME al meer dan 50 jaar actief in Nederland, en we willen dit samen vieren met alle vijf afdelingen van PPME, namelijk Den Haag, Amsterdam, Rotterdam, Heemskerk en Breda. Naast de afdelingen van PPME, zullen vrienden en sympathisanten ook worden uitgenodigd voor dit Halal Bi Halal-evenement.
 

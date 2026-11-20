@@ -40,7 +40,7 @@ op:
 <tr>
 <td>Dag</td><td>Zaterdag, 22 Rabiul ‘Awal 1445 / 7 Oktober 2023</td>
 <tr><td>Tijd</td><td>16:30 – 21:30 CEST</td>
-<tr><td>Locatie</td><td>Al-Hikmah Moskee<br/>Heeswijkplein 170<br/>2531 HK, Den Haag</td>
+<tr><td>Locatie</td><td>Al-Hikmah Moskee<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
 #### YouTube Video

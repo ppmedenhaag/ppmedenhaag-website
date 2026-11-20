@@ -37,5 +37,5 @@ PPME Den Haag organiseert een avond in het teken van Isra' Mi'raj op:
 <tr>
 <td>Dag</td><td>Zaterdag, 27 Rajab 1444 / 18 februari 2023</td>
 <tr><td>Tijd</td><td>16:00 – 20:30 CET</td>
-<tr><td>Locatie</td><td>Al-Hikmah Moskee<br/>Heeswijkplein 170<br/>2531 HK, Den Haag</td>
+<tr><td>Locatie</td><td>Al-Hikmah Moskee<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>

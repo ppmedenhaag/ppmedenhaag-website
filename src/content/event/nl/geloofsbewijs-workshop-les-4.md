@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Interactieve workshop Geloofsbewijs van het Al Fath Instituut en PPME Den Haag: 4 zaterdagavonden vanaf 31 oktober in Masjid Al Hikmah. Zeker bewijs voor de weg naar het Paradijs."
+description: "Les 4 van 4 van de workshop Geloofsbewijs (Al Fath Instituut & PPME Den Haag) op zaterdagavond in Masjid Al Hikmah. Zeker bewijs voor de weg naar het Paradijs."
 # Event image
 image: "images/events/geloofsbewijs-workshop-4x3.webp"
 # location

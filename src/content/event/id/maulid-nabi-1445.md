@@ -41,7 +41,7 @@ yang in syaa Allah akan dilaksanakan pada:
 <tr>
 <td>Hari</td><td>Sabtu, 22 Rabiul ‘Awal 1445 / 7 Oktober 2023</td>
 <tr><td>Waktu</td><td>16:30 – 21:30 CEST, sholat 'asr sampai dengan sholat 'isya</td>
-<tr><td>Tempat</td><td>Masjid Al-Hikmah<br/>Heeswijkplein 170<br/>2531 HK, Den Haag</td>
+<tr><td>Tempat</td><td>Masjid Al-Hikmah<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
 

@@ -39,6 +39,8 @@ export interface SeoPage {
   tags?: string[];
   categories?: string[];
   author?: string;
+  /** Language of the text when it differs from the URL locale (front matter `contentLang`). */
+  contentLang?: LangOptions;
   /** Raw front matter (event/blog/...), for structured data. */
   data?: Record<string, any>;
   card: CardSpec;
@@ -133,6 +135,7 @@ async function build(): Promise<SeoRegistry> {
       tags: p.tags,
       categories: p.categories,
       author: p.author,
+      contentLang: p.data?.contentLang,
       data: p.data,
       card,
       cardPath: `/og/${cardParam}.jpg`,

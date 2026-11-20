@@ -29,9 +29,16 @@ export const SOCIAL_LINKS = [
 export const OG_WIDTH = 1200;
 export const OG_HEIGHT = 630;
 
-/** Venue facts for structured data. Address fields stay empty until the owner confirms them (decision D1). */
-export const VENUES: { match: RegExp; name: string; address?: { street?: string; postalCode?: string } }[] = [
-  { match: /al\s*hikmah/i, name: "Masjid Al Hikmah" },
+/**
+ * Venue facts for structured data. Address confirmed by the owner (2026-11-21): Medlerstraat 4, 2531 HA Den Haag
+ * (same as components/footer.astro). An address written in an event's `location` text wins over this default.
+ */
+export const VENUES: { match: RegExp; name: string; address?: { street?: string; postalCode?: string; city?: string } }[] = [
+  {
+    match: /al\s*hikmah/i,
+    name: "Masjid Al Hikmah",
+    address: { street: "Medlerstraat 4", postalCode: "2531 HA", city: "Den Haag" },
+  },
 ];
 
 export type StaticKey = "home" | "events" | "blog" | "contact" | "prayer" | "ibadah";

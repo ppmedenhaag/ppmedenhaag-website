@@ -1,7 +1,7 @@
 ---
 title: "Idul Fitri 1445H"
 draft: false
-date: "2024-04-10T00:00:00+01:00"
+date: "2024-04-10T00:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description

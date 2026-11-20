@@ -42,7 +42,7 @@ Semoga Bapak/Ibu/Saudara/i senantiasa dalam limpahan rahmat dan karunia Allah SW
 14:00-16.30 CEST
 
 🕌 **Masjid Al-Hikmah Den Haag**<br/>
-Heeswijkplein 170, Den Haag
+Medlerstraat 4, Den Haag
 
 📂 _Untuk persiapan fasilitas & logistik, mohon untuk mendaftar via form berikut_:<br/>
 https://generasibaru.nl/kajianrumta

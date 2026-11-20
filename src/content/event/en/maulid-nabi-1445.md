@@ -36,7 +36,7 @@ PPME Den Haag will commemorate Maulid Prophet Muhammad saws,  in syaa Allah will
 <tr>
 <td>Day</td><td>Saturday, 22 Rabiul ‘Awal 1445 / 7 Oktober 2023</td>
 <tr><td>Time</td><td>16:30 – 21:30 CEST, between sholat 'asr to sholat 'isya</td>
-<tr><td>Place</td><td>Masjid Al-Hikmah<br/>Heeswijkplein 170<br/>2531 HK, Den Haag</td>
+<tr><td>Place</td><td>Masjid Al-Hikmah<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
 

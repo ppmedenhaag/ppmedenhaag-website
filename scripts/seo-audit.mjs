@@ -76,8 +76,11 @@ for (const file of htmlFiles) {
   else if (title.length > 70) warn(path, `title is ${title.length} chars`);
   if (!description) err(path, "missing meta description");
   else if (description.length < 60 || description.length > 175) warn(path, `description length ${description.length}`);
-  if (!root.querySelector("html")?.getAttribute("lang")?.startsWith(localeOf(path)))
-    err(path, `html lang "${root.querySelector("html")?.getAttribute("lang")}" does not match locale ${localeOf(path)}`);
+  // <html lang> is the language of the text (front matter `contentLang` may differ from the URL locale) and must agree with og:locale.
+  const htmlLang = root.querySelector("html")?.getAttribute("lang");
+  const ogLang = (meta('meta[property="og:locale"]') ?? "").slice(0, 2);
+  if (!htmlLang || (ogLang && htmlLang !== ogLang)) err(path, `html lang "${htmlLang}" does not match og:locale "${ogLang}"`);
+  else if (htmlLang !== localeOf(path)) warn(path, `text language "${htmlLang}" differs from URL locale "${localeOf(path)}" (contentLang)`);
   if (noindex && !is404) err(path, "noindex on an indexable page");
   if (is404 && !noindex) err(path, "404 page must be noindex");
   if (production && noindex && !is404) err(path, "noindex in production");

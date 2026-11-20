@@ -41,7 +41,7 @@ PPME Den Haag akan menyelenggarakan acara Peringatan Maulid Nabi Muhammad saws y
 <tr>
 <td>Hari</td><td>Sabtu, 12 Rabiul ‘Awal 1444 / 8 Oktober 2022</td>
 <tr><td>Waktu</td><td>16:29 – 21:00 CEST, sholat 'asr sampai dengan sholat 'isya</td>
-<tr><td>Tempat</td><td>Masjid Al-Hikmah<br/>Heeswijkplein 170<br/>2531 HK, Den Haag</td>
+<tr><td>Tempat</td><td>Masjid Al-Hikmah<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
 dengan susunan acara sebagai berikut:

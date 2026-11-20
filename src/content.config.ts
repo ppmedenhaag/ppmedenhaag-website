@@ -17,6 +17,8 @@ const eventSchema = z.object({
   image: z.string().optional(),
   /** Optional override for the link-preview (Open Graph) image; defaults to `image`. */
   social_image: z.string().optional(),
+  /** Language of the text when it differs from the folder/URL locale (drives <html lang>, og:locale, JSON-LD inLanguage). */
+  contentLang: z.enum(["nl", "id", "en"]).optional(),
   location: z.string().optional(),
   speaker: z
     .array(
@@ -37,6 +39,7 @@ const blogSchema = z.object({
   description: z.string().optional().default(""),
   image: z.string().optional(),
   social_image: z.string().optional(),
+  contentLang: z.enum(["nl", "id", "en"]).optional(),
   author: z.string().optional(),
   categories: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),

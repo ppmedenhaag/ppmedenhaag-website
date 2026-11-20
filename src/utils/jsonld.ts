@@ -34,11 +34,15 @@ function venueOf(location: string) {
   const venue = VENUES.find((v) => v.match.test(text));
   const postal = text.match(/\b(\d{4}\s?[A-Z]{2})\b/)?.[1];
   const street = parts.slice(1).find((p) => /\d/.test(p) && !/^\d{4}\s?[A-Z]{2}/.test(p));
-  const city = text.match(/\b(Den Haag|Rotterdam|Utrecht|Amsterdam|Enschede|Leiden|Delft)\b/)?.[1] ?? (venue ? "Den Haag" : undefined);
+  const city = text.match(/\b(Den Haag|Rotterdam|Utrecht|Amsterdam|Enschede|Leiden|Delft)\b/)?.[1] ?? venue?.address?.city;
   const address: Json = { "@type": "PostalAddress", addressCountry: "NL" };
   if (city) address.addressLocality = city;
-  if (postal) address.postalCode = postal;
-  if (street) address.streetAddress = street;
+  // An address spelled out in the event text wins; otherwise fall back to the venue's known address.
+  const useVenueAddress = venue?.address && !street;
+  const finalPostal = postal ?? (useVenueAddress ? venue!.address!.postalCode : undefined);
+  const finalStreet = street ?? (useVenueAddress ? venue!.address!.street : undefined);
+  if (finalPostal) address.postalCode = finalPostal;
+  if (finalStreet) address.streetAddress = finalStreet;
   return { "@type": "Place", name: venue?.name ?? parts[0], address } as Json;
 }
 
@@ -59,7 +63,7 @@ function eventNode(ctx: Ctx, page: SeoPage): Json {
     location: online ? { "@type": "VirtualLocation", url: ctx.url } : d.location ? venueOf(d.location) : undefined,
     image: [ctx.image.url, d.image ? abs(ctx.origin, d.image) : undefined].filter(Boolean),
     organizer: { "@id": `${ctx.origin}/#organization` },
-    inLanguage: ctx.locale,
+    inLanguage: page.contentLang ?? ctx.locale,
     url: ctx.url,
   };
   const hours = parseDurationHours(d.duration);
@@ -90,7 +94,7 @@ function articleNode(ctx: Ctx, page: SeoPage): Json {
     image: [ctx.image.url],
     keywords: page.tags?.length ? page.tags.join(", ") : undefined,
     articleSection: page.categories?.[0],
-    inLanguage: ctx.locale,
+    inLanguage: page.contentLang ?? ctx.locale,
   };
 }
 
@@ -127,6 +131,13 @@ export function buildJsonLd(ctx: Ctx): string {
       url: `${origin}/`,
       logo: { "@type": "ImageObject", url: `${origin}/icon-512.png`, width: 512, height: 512 },
       sameAs: SOCIAL_LINKS,
+      address: VENUES[0].address && {
+        "@type": "PostalAddress",
+        streetAddress: VENUES[0].address.street,
+        postalCode: VENUES[0].address.postalCode,
+        addressLocality: VENUES[0].address.city,
+        addressCountry: "NL",
+      },
       areaServed: "Den Haag, Nederland",
       knowsLanguage: ["nl", "id", "en"],
     },
