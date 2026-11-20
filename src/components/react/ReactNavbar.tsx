@@ -161,7 +161,7 @@ export default function NavbarExample(params: NavProps) {
                   {text}
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className="h-4 w-4 text-slate-400 transition-transform duration-200 in-data-open:rotate-180"
+                    className="h-4 w-4 text-slate-500 transition-transform duration-200 in-data-open:rotate-180"
                   />
                 </PopoverButton>
                 <PopoverPanel

@@ -45,7 +45,7 @@ export default function ContactSubject({ locale, label }: Props) {
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5">
               <ChevronUpDownIcon
                 aria-hidden="true"
-                className="size-5 text-slate-400"
+                className="size-5 text-slate-500"
               />
             </span>
           </ListboxButton>

@@ -162,7 +162,7 @@ body {
     }
 
     .eyebrow {
-        @apply text-[11px] font-semibold tracking-[0.14em] text-slate-500 uppercase;
+        @apply text-[11px] font-semibold tracking-[0.14em] text-slate-600 uppercase;
     }
 
     .page-title {

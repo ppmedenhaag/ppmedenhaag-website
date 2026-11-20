@@ -5,7 +5,7 @@
 
 const c = {
   white: "#ffffff",
-  slate50: "#f8fafc", slate500: "#64748b", slate700: "#334155", slate900: "#0f172a",
+  slate50: "#f8fafc", slate600: "#475569", slate500: "#64748b", slate700: "#334155", slate900: "#0f172a",
   brand: "#034ea2", brandDark: "#023771", brand50: "#ebf1f8", brand100: "#d7e3f0",
   brand200: "#b3cae3", emerald50: "#ecfdf5", emerald800: "#065f46", amber50: "#fffbeb", amber900: "#78350f",
   red50: "#fef2f2", red800: "#991b1b", brand100x: "#d7e3f0", brand300: "#81a6d0", brandDarker: "#022954", brandDarkest: "#011c3b",
@@ -17,6 +17,8 @@ const pairs = [
   ["slate700", "white", 4.5, "body on white"],
   ["slate500", "white", 4.5, "secondary text on white"],
   ["slate500", "slate50", 4.5, "secondary text on page backdrop"],
+  ["slate600", "slate50", 4.5, "eyebrow labels on page backdrop"],
+  ["brand300", "brandDarker", 4.5, "footer column headings (11px)"],
   ["slate700", "brand50", 4.5, "body on tinted surface"],
   ["white", "brand", 4.5, "primary button text"],
   ["white", "brandDark", 4.5, "primary button hover"],
@@ -36,8 +38,11 @@ const pairs = [
   ["red800", "red50", 4.5, "legacy .badge-danger"],
   ["brandDarker", "brand50", 4.5, "legacy .alert-primary / accordion header"],
   ["brandDarker", "brand100x", 4.5, "accordion header hover"],
+  // Search UI icons/placeholder moved from slate-400 (2.5:1) to slate-500
+  ["slate500", "white", 3.0, "icon (chevron/magnifier) on white"],
   // Expected to FAIL as text: documents why brand-300 is not for text on white.
   // ["brand300", "white", 4.5, "brand-300 text on white (don't)"],
+  // ["slate400", "white", 4.5, "slate-400 (2.56:1) is not for text, placeholders or meaningful icons (don't)"],
 ];
 
 const lin = (v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);

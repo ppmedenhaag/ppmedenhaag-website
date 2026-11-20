@@ -268,10 +268,10 @@ export default function Search({
       >
         <MagnifyingGlassIcon
           aria-hidden="true"
-          className="size-4 text-slate-400 transition-colors group-hover:text-brand"
+          className="size-4 text-slate-500 transition-colors group-hover:text-brand"
         />
         <span className="flex-1 truncate text-left">{t("search.open")}…</span>
-        <kbd className="rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-sans text-[11px] font-semibold text-slate-400">
+        <kbd className="rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-sans text-[11px] font-semibold text-slate-500">
           Ctrl K
         </kbd>
       </button>
@@ -311,14 +311,14 @@ export default function Search({
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={onInputKey}
                 placeholder={t("search.placeholder")}
-                className="h-14 min-w-0 flex-1 border-0 bg-transparent px-1 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-0 [&::-webkit-search-cancel-button]:hidden"
+                className="h-14 min-w-0 flex-1 border-0 bg-transparent px-1 text-base text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-0 [&::-webkit-search-cancel-button]:hidden"
               />
               {query && (
                 <button
                   type="button"
                   onClick={reset}
                   aria-label={t("search.clear")}
-                  className={`inline-flex size-8 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-700 ${focusRing}`}
+                  className={`inline-flex size-8 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 hover:text-slate-700 ${focusRing}`}
                 >
                   <XMarkIcon aria-hidden="true" className="size-4" />
                 </button>
@@ -327,7 +327,7 @@ export default function Search({
                 type="button"
                 onClick={close}
                 aria-label={t("search.close")}
-                className={`inline-flex h-8 items-center justify-center rounded-lg px-2 text-sm font-semibold text-brand hover:bg-brand-50 sm:border sm:border-slate-200 sm:text-[11px] sm:text-slate-400 sm:hover:text-slate-700 ${focusRing}`}
+                className={`inline-flex h-8 items-center justify-center rounded-lg px-2 text-sm font-semibold text-brand hover:bg-brand-50 sm:border sm:border-slate-200 sm:text-[11px] sm:text-slate-500 sm:hover:text-slate-700 ${focusRing}`}
               >
                 <span className="sm:hidden">{t("search.close")}</span>
                 <span className="hidden sm:inline">ESC</span>
@@ -351,7 +351,7 @@ export default function Search({
                     onClick={() => setSection(s)}
                   >
                     {sectionLabel(s)}
-                    <span className="ml-1.5 tabular-nums opacity-60">{n}</span>
+                    <span className="ml-1.5 tabular-nums opacity-90">{n}</span>
                   </Chip>
                 ))}
               </div>
@@ -393,7 +393,7 @@ export default function Search({
                 <>
                   <div className="flex items-center justify-between gap-3 px-4 pb-1 pt-3">
                     <p
-                      className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400"
+                      className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500"
                       aria-live="polite"
                     >
                       {results.length} {t("search.results")}
