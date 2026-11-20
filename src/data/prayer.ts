@@ -123,7 +123,7 @@ export interface PrayerState {
  *
  * - Before Fadjr (incl. just after midnight) Isha of the previous night is
  *   still current. The old app highlighted nothing between 00:00 and Fadjr.
- * - Between Shoroeq and Dhohr no prayer is current (sunrise → noon).
+ * - Between Shoroeq and Dhohr no obligatory prayer is highlighted (sunrise → noon; optional prayers such as Dhuha fall here).
  */
 export function prayerState(times: Times, minutes: number): PrayerState {
   const t = times.map(toMinutes);
@@ -174,7 +174,7 @@ export const prayerStrings: Record<LangOptions, PrayerStrings> = {
     dstStart: "Zomertijd begint",
     dstEnd: "Wintertijd begint",
     months: "Maanden",
-    note: "Tijden gelden voor Den Haag en omgeving. Shoroeq is zonsopgang; er is geen gebed tussen Shoroeq en Dhohr.",
+    note: "Tijden gelden voor Den Haag en omgeving. Shoroeq is zonsopgang.",
     verse:
       "“Voorwaar, het gebed is voor de gelovigen een voorgeschreven plicht op vastgestelde tijden.”",
     verseSource: "An-Nisa 4:103",
@@ -192,7 +192,7 @@ export const prayerStrings: Record<LangOptions, PrayerStrings> = {
     dstStart: "Waktu musim panas dimulai",
     dstEnd: "Waktu musim dingin dimulai",
     months: "Bulan",
-    note: "Waktu berlaku untuk Den Haag dan sekitarnya. Shoroeq adalah waktu terbit matahari; tidak ada sholat antara Shoroeq dan Dhohr.",
+    note: "Waktu berlaku untuk Den Haag dan sekitarnya. Shoroeq adalah waktu terbit matahari.",
     verse:
       "“Sungguh, sholat itu adalah kewajiban yang ditentukan waktunya atas orang-orang yang beriman.”",
     verseSource: "An-Nisa 4:103",
@@ -210,7 +210,7 @@ export const prayerStrings: Record<LangOptions, PrayerStrings> = {
     dstStart: "Daylight saving time starts",
     dstEnd: "Daylight saving time ends",
     months: "Months",
-    note: "Times apply to The Hague and surroundings. Shoroeq is sunrise; there is no prayer between Shoroeq and Dhohr.",
+    note: "Times apply to The Hague and surroundings. Shoroeq is sunrise.",
     verse:
       "“Indeed, prayer has been decreed upon the believers at specified times.”",
     verseSource: "An-Nisa 4:103",
