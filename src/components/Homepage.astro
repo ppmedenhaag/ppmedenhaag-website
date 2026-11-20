@@ -40,9 +40,9 @@ const posts = (
 
 {
   home.about.enable && (
-    <section class="section">
-      <div class="grid items-center gap-10 md:grid-cols-2 md:gap-14">
-        <div class="animate-fade-up border border-slate-200 bg-white/95 p-6 backdrop-blur-lg md:p-8">
+    <section class="section pt-6! pb-16! md:pt-8! md:pb-28!">
+      <div class="mx-auto max-w-3xl lg:max-w-5xl">
+        <div class="animate-fade-up border border-slate-200 bg-white p-6 backdrop-blur-lg md:p-8 lg:p-8">
           <h1 class="page-title title-rule">{home.about.title}</h1>
           <p class="mt-6 text-base leading-relaxed whitespace-pre-line text-slate-600 sm:text-lg">
             {home.about.content}
@@ -85,13 +85,6 @@ const posts = (
             </a>
           )}
         </div>
-        <div class="animate-fade-up relative" style="--i: 2">
-          <img
-            class="aspect-[4/3] w-full border border-slate-200 object-cover"
-            src={`/${home.about.image}`}
-            alt={home.about.title}
-          />
-        </div>
       </div>
     </section>
   )
@@ -99,7 +92,7 @@ const posts = (
 
 {
   home.cta.enable && (
-    <section class="relative isolate overflow-hidden bg-brand-darker py-14 md:py-20">
+    <section class="relative isolate overflow-hidden bg-brand-darker py-8 md:py-10">
       <div
         class="pointer-events-none absolute -top-32 -left-24 -z-10 size-[26rem] rounded-full bg-brand-400/40 blur-3xl"
         aria-hidden="true"

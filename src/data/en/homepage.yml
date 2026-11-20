@@ -46,20 +46,20 @@ homepage:
   ########################## Call to action ############################
   cta:
     enable : true
-    subtitle : "Saturday, 22 August 2026"
-    title : "Nongkrong Sessie: The Role of Islam in Indonesian Independence"
+    subtitle : "Saturday, 5 December 2026"
+    title : "Lecture with dr. Aisah Dahlan: Differences Between the Male and Female Brain (in Indonesian)"
     button:
       enable : true
       label : "Read More"
-      link : "event/nongkrong-sessie-2/"
+      link : "event/kajian-dr-aisah-dahlan/"
     youtube:
       enable : false
       title : ""
       id : "-1HiLtHLAGk"
     img:
       enable: true
-      src: "/images/events/nongkrong-sessie-20260822.webp"
-      desc: "Nongkrong session at the Al-Hikmah Mosque"
+      src: "/images/events/kajian-dr-aisah-dahlan.webp"
+      desc: "Lecture with dr. Aisah Dahlan at Masjid Al Hikmah"
 
   # Previous CTA - Umrah 2026 (restore after 22 August 2026)
   # cta:

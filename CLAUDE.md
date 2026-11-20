@@ -139,9 +139,16 @@ new interactive UI rather than reaching for a different framework.
   bodies — it will render as-is (broken-looking) until the MDX/native-TS work in
   `.migration/03-layouts-components.md` is done. Don't be surprised by this in event/blog
   content; it's tracked, not missed.
-- **No SEO head component yet** — no canonical tag, no Twitter Cards, no JSON-LD. Only
-  `@astrojs/sitemap` (configured with `i18n` locales) is wired. Full plan:
-  `.migration/05-seo.md`.
+- **CUTOVER PENDING — remind the owner at every commit/push/deploy.** For now all SEO (canonical, OG, hreflang,
+  sitemap, RSS) must point to `https://website-v2.ppmedenhaag.nl/`, not www. When committing, pushing or deploying, end
+  with one line: "Reminder: SEO still targets website-v2; cutover to www/apex is pending (docs/seo/PROGRESS.md)." Remove
+  this bullet after the cutover step in `docs/seo/SEO-PLAN.md` Phase 10 is done.
+- **No SEO head component yet** — no description, canonical, hreflang, Open Graph/Twitter, JSON-LD, robots.txt,
+  404 page or `/sitemap.xml`; only `@astrojs/sitemap` (`/sitemap-index.xml`) is wired. **This site replaces both
+  `www.ppmedenhaag.nl` and `ppmedenhaag.nl`** (canonical = www, apex 301 → www). The full, current plan is
+  `docs/seo/SEO-PLAN.md` (status/decisions in `docs/seo/PROGRESS.md`, skill `/ppme-seo`); the older
+  `.migration/05-seo.md` is superseded. Non-production hosts (`*.workers.dev`, `website-v2.ppmedenhaag.nl`) are
+  currently indexable — the plan fixes that with an edge Worker.
 - **No `@astrojs/rss` endpoints yet** — the package is installed but no feed files
   exist. Hugo generates one per site/section/language; match that when built.
 - **Homepage (`src/pages/index.astro` and `[locale]/index.astro`) is a stub** — just

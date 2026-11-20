@@ -44,20 +44,20 @@ homepage:
   ########################## Call to action ############################
   cta:
     enable : true
-    subtitle : "Zaterdag 22 augustus 2026"
-    title : "Nongkrong Sessie: De rol van islam in de Indonesische onafhankelijkheid"
+    subtitle : "Zaterdag 5 december 2026"
+    title : "Lezing met dr. Aisah Dahlan: Verschillen tussen het mannen- en vrouwenbrein (in het Indonesisch)"
     button:
       enable : true
       label : "Lees Meer"
-      link : "event/nongkrong-sessie-2/"
+      link : "event/kajian-dr-aisah-dahlan/"
     youtube:
       enable : false
       title : ""
       id : "-1HiLtHLAGk"
     img:
       enable: true
-      src: "/images/events/nongkrong-sessie-20260822.webp"
-      desc: "Nongkrong sessie in de Al-Hikmah-moskee"
+      src: "/images/events/kajian-dr-aisah-dahlan.webp"
+      desc: "Lezing met dr. Aisah Dahlan in Masjid Al Hikmah"
 
   # Vorige CTA - Umrah 2026 (terugzetten na 22 augustus 2026)
   # cta:
