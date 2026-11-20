@@ -80,6 +80,8 @@ export default defineConfig({
     },
   },
   trailingSlash: "always",
+  // Inline component CSS into each page: with the separate Layout.*.css chunk, Astro did not emit a <link> for it (map/scoped styles missing in production).
+  build: { inlineStylesheets: "always" },
   vite: {
     plugins: [tailwindcss(), pagefindDev()],
     // Pre-bundle the navbar's React deps up front. Otherwise Vite discovers them lazily,
