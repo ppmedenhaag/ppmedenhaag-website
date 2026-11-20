@@ -175,6 +175,15 @@ port conflict, fully independent processes.
 
 ## Deploy
 
-Target is **Cloudflare Pages** (decided against Vercel and Netlify — see
-`.migration/07-deploy-hosting.md` for the reasoning and the `netlify.toml` →
-`_redirects`/`_headers` mapping). Not yet set up.
+Deployed to **Cloudflare Workers (static assets)**, Worker `ppme-website` (config: `wrangler.jsonc`, serves `dist/`).
+The earlier Cloudflare Pages plan (`.migration/07-deploy-hosting.md`) was superseded.
+
+**GitHub and Cloudflare are NOT connected for now.** `.github/workflows/deploy.yml` exists, but the repo secrets
+(`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`) are not set, so pushing to `main` does not deploy. **Deploy manually with the Wrangler CLI**:
+
+```
+npm run build        # astro check + build + pagefind into dist/
+npx wrangler deploy  # uploads dist/ (needs `npx wrangler login` once)
+```
+
+After committing/pushing, always run both commands to publish. DNS for ppmedenhaag.nl is not touched.
