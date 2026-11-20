@@ -3,6 +3,7 @@ import { render, type CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import EventCard from "./EventCard.astro";
+import HeroImage from "./HeroImage.astro";
 import type { LangOptions } from "../data/i18n";
 import { formatDate, formatTime, getLocaleEvents, plainInline } from "../utils/event";
 import { useTranslations } from "../utils/lang";
@@ -40,8 +41,8 @@ const meta = [
         </h1>
         {
           d.image && (
-            <img
-              src={`/${d.image}`}
+            <HeroImage
+              src={d.image}
               alt={d.title}
               class="w-full border border-slate-200 mb-6"
             />

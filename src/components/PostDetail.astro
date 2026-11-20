@@ -3,6 +3,7 @@ import { render, type CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
+import HeroImage from "./HeroImage.astro";
 import type { LangOptions } from "../data/i18n";
 import { formatPostDate, getLocalePosts, postSlug } from "../utils/blog";
 import { useTranslations } from "../utils/lang";
@@ -37,8 +38,8 @@ const postUrl = (p: CollectionEntry<"blog">) =>
         </h1>
         {
           d.image && (
-            <img
-              src={`/${d.image}`}
+            <HeroImage
+              src={d.image}
               alt={d.title}
               class="w-full border border-slate-200 mb-6"
             />

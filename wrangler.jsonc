@@ -1,11 +1,25 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "ppme-website",
+	"main": "worker/index.js",
 	"compatibility_date": "2026-11-16",
 	"assets": {
 		"directory": "./dist",
+		"binding": "ASSETS",
 		"not_found_handling": "404-page",
-		"html_handling": "auto-trailing-slash"
+		"html_handling": "auto-trailing-slash",
+		// The Worker (worker/index.js) only runs for pages and robots.txt; static files skip it (no Worker invocation).
+		"run_worker_first": [
+			"/*",
+			"!/_astro/*",
+			"!/images/*",
+			"!/og/*",
+			"!/pagefind/*",
+			"!/data/*",
+			"!/docs/*",
+			"!/icons/*",
+			"!/forms/*"
+		]
 	},
 	"workers_dev": true,
 	"routes": [{ "pattern": "website-v2.ppmedenhaag.nl", "custom_domain": true }],

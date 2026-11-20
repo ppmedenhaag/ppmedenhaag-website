@@ -8,6 +8,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 import { defineConfig, envField } from "astro/config";
 import { defaultLocale, locales } from "./src/data/i18n";
+import { DEFAULT_SITE_URL } from "./src/data/seo";
+import sitemapSplit from "./scripts/sitemap-split.mjs";
 
 // Dev only: serve the Pagefind index that `npm run build` wrote to dist/pagefind, so the search box
 // works under `npm run dev` too. The index is a snapshot of the last build (rebuild to refresh it).
@@ -38,7 +40,10 @@ function pagefindDev() {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.ppmedenhaag.nl",
+  // Origin of every absolute URL (canonical, og:*, hreflang, JSON-LD, sitemap, RSS).
+  // Until the cutover this is the staging host; the cutover sets PUBLIC_SITE_URL=https://www.ppmedenhaag.nl
+  // (GitHub repo variable `PUBLIC_SITE_URL`). See docs/seo/PROGRESS.md.
+  site: (process.env.PUBLIC_SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, ""),
   i18n: {
     defaultLocale: "nl",
     locales: ["nl", "id", "en"],
@@ -49,11 +54,16 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // hreflang values must match the <head> alternates (plain language codes; `locales` maps nl-NL/id-ID/en-UK for Intl).
       i18n: {
-        locales,
+        locales: { nl: "nl", id: "id", en: "en" },
         defaultLocale,
       },
+      // The 404 page is not an indexable URL.
+      filter: (page) => !/\/404\/?$/.test(page),
     }),
+    // After the sitemap integration: lastmod + Hugo-identical /sitemap.xml and /nl|id|en/sitemap.xml.
+    sitemapSplit(),
     react(),
     // Build-time inline SVG icons (no client JS). Heroicons outline = same set as the registration app; Tabler only for gaps.
     icon({

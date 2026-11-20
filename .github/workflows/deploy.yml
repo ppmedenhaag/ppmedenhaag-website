@@ -30,7 +30,27 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm install --no-audit --no-fund
+      # SEO origin: until the cutover this is empty -> default https://website-v2.ppmedenhaag.nl (src/data/seo.ts).
+      # The cutover sets the repo variable PUBLIC_SITE_URL=https://www.ppmedenhaag.nl (docs/seo/PROGRESS.md).
+      - name: SEO target reminder
+        env:
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+        run: |
+          TARGET="${PUBLIC_SITE_URL:-https://website-v2.ppmedenhaag.nl}"
+          if [ "$TARGET" = "https://www.ppmedenhaag.nl" ]; then
+            echo "### PRODUCTION deploy (SEO targets $TARGET)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning title=STAGING deploy::SEO still targets $TARGET and the site is noindexed. Cutover to www/apex is PENDING (docs/seo/PROGRESS.md, Phase 10)."
+            {
+              echo "### STAGING deploy: cutover pending"
+              echo "SEO (canonical, og:*, sitemap, RSS) points to **$TARGET**; non-production hosts are noindexed."
+              echo "To go live set the repo variable \`PUBLIC_SITE_URL=https://www.ppmedenhaag.nl\`, then follow Phase 10 in \`docs/seo/SEO-PLAN.md\`."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
       - run: npm run build
+        env:
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+          SEO_AUDIT_MODE: ${{ vars.PUBLIC_SITE_URL == 'https://www.ppmedenhaag.nl' && 'production' || 'staging' }}
       - name: Check credentials
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then

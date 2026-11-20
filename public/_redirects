@@ -1,0 +1,48 @@
+# Legacy Hugo URLs that are not ported as pages. 301 keeps inbound links/rankings alive.
+# See docs/seo/SEO-PLAN.md Phase 0.4 and docs/seo/url-diff.md. Revisit when the sections are ported.
+
+# Taxonomy pages (tags / categories / author) -> the blog/news listing of the same language
+/tags/*        /blog/       301
+/categories/*  /blog/       301
+/author/*      /blog/       301
+/tags          /blog/       301
+/categories    /blog/       301
+/author        /blog/       301
+/id/tags/*        /id/blog/ 301
+/id/categories/*  /id/blog/ 301
+/id/author/*      /id/blog/ 301
+/id/tags          /id/blog/ 301
+/id/categories    /id/blog/ 301
+/id/author        /id/blog/ 301
+/en/tags/*        /en/blog/ 301
+/en/categories/*  /en/blog/ 301
+/en/author/*      /en/blog/ 301
+/en/tags          /en/blog/ 301
+/en/categories    /en/blog/ 301
+/en/author        /en/blog/ 301
+
+# Ramadan 1444 city pages, notices, courses, teachers (not ported yet) -> closest live section
+/ramadhan-1444/*     /event/     301
+/ramadhan-1444       /event/     301
+/id/ramadhan-1444/*  /id/event/  301
+/id/ramadhan-1444    /id/event/  301
+/en/ramadhan-1444/*  /en/event/  301
+/en/ramadhan-1444    /en/event/  301
+/notice/*     /event/     301
+/notice       /event/     301
+/id/notice/*  /id/event/  301
+/id/notice    /id/event/  301
+/en/notice/*  /en/event/  301
+/en/notice    /en/event/  301
+/course/*     /about/     301
+/course       /about/     301
+/id/course/*  /id/about/  301
+/id/course    /id/about/  301
+/en/course/*  /en/about/  301
+/en/course    /en/about/  301
+/teacher/*    /about/     301
+/teacher      /about/     301
+/id/teacher/* /id/about/  301
+/id/teacher   /id/about/  301
+/en/teacher/* /en/about/  301
+/en/teacher   /en/about/  301

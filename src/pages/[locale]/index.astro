@@ -12,6 +12,6 @@ export function getStaticPaths() {
 const { locale } = Astro.params as { locale: LangOptions };
 ---
 
-<Layout title="PPME Den Haag" searchable={false}>
+<Layout searchable={false}>
   <Homepage locale={locale} />
 </Layout>

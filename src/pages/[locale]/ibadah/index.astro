@@ -1,0 +1,15 @@
+---
+import IbadahIndex from "../../../components/IbadahIndex.astro";
+import { defaultLocale, locales, type LangOptions } from "../../../data/i18n";
+
+export function getStaticPaths() {
+  // nl is unprefixed (src/pages/ibadah/index.astro); never emit /nl/...
+  return (Object.keys(locales) as LangOptions[])
+    .filter((l) => l !== defaultLocale)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: LangOptions };
+---
+
+<IbadahIndex locale={locale} />

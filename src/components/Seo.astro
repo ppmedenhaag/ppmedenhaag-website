@@ -1,0 +1,50 @@
+---
+// Renders every SEO <head> tag. Fed by Layout.astro (which resolves everything from the page registry).
+// Must stay FIRST in <head> (right after charset/viewport): social crawlers read only the first KB of HTML.
+export interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  noindex?: boolean;
+  ogType: "website" | "article";
+  siteName: string;
+  ogLocale: string;
+  ogLocaleAlternates: string[];
+  image: { url: string; width: number; height: number; alt: string; type: string };
+  alternates: { hreflang: string; href: string }[];
+  published?: string;
+  section?: string;
+  tags?: string[];
+  rss?: { title: string; href: string };
+  jsonLd: string;
+}
+const p = Astro.props;
+---
+
+<title>{p.title}</title>
+<meta name="description" content={p.description} />
+<link rel="canonical" href={p.canonical} />
+{p.noindex && <meta name="robots" content="noindex, follow" />}
+{p.alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+<meta property="og:site_name" content={p.siteName} />
+<meta property="og:type" content={p.ogType} />
+<meta property="og:title" content={p.title} />
+<meta property="og:description" content={p.description} />
+<meta property="og:url" content={p.canonical} />
+<meta property="og:locale" content={p.ogLocale} />
+{p.ogLocaleAlternates.map((l) => <meta property="og:locale:alternate" content={l} />)}
+<meta property="og:image" content={p.image.url} />
+<meta property="og:image:width" content={String(p.image.width)} />
+<meta property="og:image:height" content={String(p.image.height)} />
+<meta property="og:image:type" content={p.image.type} />
+<meta property="og:image:alt" content={p.image.alt} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={p.title} />
+<meta name="twitter:description" content={p.description} />
+<meta name="twitter:image" content={p.image.url} />
+<meta name="twitter:image:alt" content={p.image.alt} />
+{p.published && <meta property="article:published_time" content={p.published} />}
+{p.section && <meta property="article:section" content={p.section} />}
+{p.tags?.map((t) => <meta property="article:tag" content={t} />)}
+{p.rss && <link rel="alternate" type="application/rss+xml" title={p.rss.title} href={p.rss.href} />}
+<script type="application/ld+json" set:html={p.jsonLd} />

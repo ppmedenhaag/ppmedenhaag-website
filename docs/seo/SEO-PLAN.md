@@ -1,6 +1,7 @@
 # PPME Den Haag — Maximum-SEO plan (Astro site on Cloudflare)
 
-Status: **PLAN ONLY — nothing below is implemented yet.** Track progress in [`PROGRESS.md`](./PROGRESS.md).
+Status: **M1–M6 implemented (2026-11-21), M7 partly; M8 (cutover) needs the owner.** Track progress and deviations from this plan in [`PROGRESS.md`](./PROGRESS.md)
+(notably: non-production robots.txt is permissive + `X-Robots-Tag: noindex`, not `Disallow: /`; legacy URLs are 301s rather than ported pages).
 Written 2026-11-20. Conventions for doing the work: `.claude/skills/ppme-seo/SKILL.md`.
 Earlier, shorter audit (Hugo repo): `../ppmedenhaag-website/.migration/05-seo.md` — this plan supersedes and extends it.
 

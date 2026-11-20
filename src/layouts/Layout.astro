@@ -4,17 +4,49 @@ import globalCss from "../styles/global.css?url";
 import Navbar from "../components/Navbar.astro";
 import PageBackground from "../components/PageBackground.astro";
 import Footer from "../components/footer.astro";
-import { defaultLocale } from "../data/i18n";
+import Seo from "../components/Seo.astro";
+import { defaultLocale, type LangOptions } from "../data/i18n";
+import { OG_HEIGHT, OG_LOCALE, OG_WIDTH, SITE_NAME, STATIC_COPY, EYEBROW } from "../data/seo";
+import { alternatesFor, getSeoRegistry } from "../utils/seo-registry";
+import { buildJsonLd } from "../utils/jsonld";
+import { fullTitle, isoInTimeZone } from "../utils/seo";
 
 export interface Props {
-  title: string;
+  /** Page title. Optional: code-driven pages get theirs (localized) from the SEO registry. */
+  title?: string;
+  /** Overrides the description from the SEO registry. */
+  description?: string;
   /** Include this page in the site search index (Pagefind). Off for the homepage and listing pages. */
   searchable?: boolean;
   /** Publish date (posts) or event date (events): shown in search results and used to sort them. */
   date?: Date;
+  /** Search engines: keep this page out of the index (404). */
+  noindex?: boolean;
 }
 
-const { title, searchable = true, date } = Astro.props;
+const { title: titleProp, description: descriptionProp, searchable = true, date, noindex = false } = Astro.props;
+
+// ---- SEO: everything below comes from the page registry (src/utils/seo-registry.ts) ----------------------
+const reg = await getSeoRegistry();
+const page = reg.byPath.get(Astro.url.pathname);
+const seoLocale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
+const origin = (Astro.site ?? new URL("https://website-v2.ppmedenhaag.nl")).origin;
+const abs = (p: string) => new URL(p, origin).href;
+const rawTitle = titleProp ?? page?.title ?? SITE_NAME;
+const seoTitle = fullTitle(rawTitle, SITE_NAME);
+const seoDescription = descriptionProp ?? page?.description ?? STATIC_COPY.home[seoLocale].description;
+const canonical = abs(Astro.url.pathname);
+const cardPath = page?.cardPath ?? reg.byRoute.get(`${seoLocale}|`)!.cardPath;
+const image = { url: abs(cardPath), width: OG_WIDTH, height: OG_HEIGHT, alt: rawTitle, type: "image/jpeg" };
+const altList = page && !noindex ? alternatesFor(reg, page) : [];
+const alternates: { hreflang: string; href: string }[] = altList.map((a) => ({ hreflang: a.locale, href: abs(a.path) }));
+if (alternates.length) {
+  const nl = altList.find((a) => a.locale === defaultLocale);
+  alternates.push({ hreflang: "x-default", href: abs((nl ?? altList.find((a) => a.path === Astro.url.pathname) ?? altList[0]).path) });
+}
+const isEntry = !!page && ["event", "blog", "ibadah", "about", "dakwah"].includes(page.kind);
+const rssPrefix = seoLocale === defaultLocale ? "" : `/${seoLocale}`;
+const jsonLd = buildJsonLd({ origin, url: canonical, page, locale: seoLocale, title: rawTitle, description: seoDescription, image });
 const isoDate = date ? date.toISOString().slice(0, 10) : undefined;
 const currentLocale = Astro.currentLocale ?? defaultLocale;
 
@@ -29,11 +61,30 @@ const section = segments[0] ?? "page";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Seo
+      title={seoTitle}
+      description={seoDescription}
+      canonical={canonical}
+      noindex={noindex}
+      ogType={isEntry ? "article" : "website"}
+      siteName={SITE_NAME}
+      ogLocale={OG_LOCALE[seoLocale]}
+      ogLocaleAlternates={altList.filter((a) => a.locale !== seoLocale).map((a) => OG_LOCALE[a.locale])}
+      image={image}
+      alternates={alternates}
+      published={isEntry && page?.date ? isoInTimeZone(page.date) : undefined}
+      section={isEntry && page ? EYEBROW[page.section]?.[seoLocale] : undefined}
+      tags={isEntry ? page?.tags : undefined}
+      rss={{ title: `${SITE_NAME} (${seoLocale})`, href: abs(`${rssPrefix}/index.xml`) }}
+      jsonLd={jsonLd}
+    />
     <meta name="theme-color" content="#034ea2" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href={globalCss} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body class="flex min-h-screen flex-col">
     <Navbar />

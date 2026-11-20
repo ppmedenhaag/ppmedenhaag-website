@@ -1,0 +1,16 @@
+---
+// Served by the Worker for every unknown URL (wrangler.jsonc: not_found_handling "404-page"), so it is trilingual.
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 | PPME Den Haag" noindex searchable={false} description="Page not found / Pagina niet gevonden / Halaman tidak ditemukan.">
+  <div class="section mx-auto max-w-2xl text-center">
+    <p class="eyebrow">404</p>
+    <h1 class="page-title mb-6">Pagina niet gevonden</h1>
+    <ul class="not-prose space-y-2 text-slate-600">
+      <li>Deze pagina bestaat niet (meer). <a class="font-semibold text-brand underline" href="/">Naar de homepage</a> · <a class="font-semibold text-brand underline" href="/event/">Evenementen</a></li>
+      <li>Halaman tidak ditemukan. <a class="font-semibold text-brand underline" href="/id/">Ke beranda</a> · <a class="font-semibold text-brand underline" href="/id/event/">Event</a></li>
+      <li>Page not found. <a class="font-semibold text-brand underline" href="/en/">Go to the homepage</a> · <a class="font-semibold text-brand underline" href="/en/event/">Events</a></li>
+    </ul>
+  </div>
+</Layout>

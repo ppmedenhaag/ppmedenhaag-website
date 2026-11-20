@@ -124,6 +124,34 @@ new interactive UI rather than reaching for a different framework.
 - Yearly page: `/ibadah/gebedstijden/` (+ `/id/…`, `/en/…`) via `PrayerYear.astro`; static route files, no content entry
   (Navbar's language switcher has an `isStaticPage` bypass for it).
 
+## SEO (plan: `docs/seo/SEO-PLAN.md`, status: `docs/seo/PROGRESS.md`, skill: `/ppme-seo`)
+
+- **Origin:** every absolute URL derives from `Astro.site`, set from build env `PUBLIC_SITE_URL` (default
+  `https://website-v2.ppmedenhaag.nl` = staging, see `src/data/seo.ts`). Cutover = repo variable
+  `PUBLIC_SITE_URL=https://www.ppmedenhaag.nl` (+ DNS). Never hard-code a host. `deploy.yml` prints a STAGING/PRODUCTION notice.
+- **Page registry** `src/utils/seo-registry.ts` (`getSeoRegistry()`): every indexable page with title, description, card, hreflang
+  alternates, dates. `Layout.astro` looks the page up by `Astro.url.pathname` and renders `components/Seo.astro` (title, description,
+  canonical, hreflang + x-default, Open Graph, Twitter, RSS link, JSON-LD) **first in `<head>`**. Code-driven pages get localized
+  titles/descriptions from `STATIC_COPY` in `src/data/seo.ts` (their `<Layout>` has no `title`). New page type ⇒ add it to the registry.
+- **Descriptions:** front matter, else derived from the body (`utils/seo.ts`: skips greetings, joins to ≥90 chars, ≤155). Events get a
+  "date, time · location." prefix.
+- **Link-preview cards:** `/og/<locale>/<route>.<hash>.jpg` (1200×630), generated at build by `utils/og.ts` (sharp; satori for title cards)
+  through `src/pages/og/[...path].jpg.ts`. Hero image shown whole over a blurred copy (never cropped); no usable image → generated brand
+  title card; every page has its own. Cached in `node_modules/.cache/ppme-og` (bump `CARD_VERSION` after changing card layout code).
+  Optional front matter `social_image` overrides `image`.
+- **JSON-LD** `utils/jsonld.ts` (Organization, WebSite, WebPage/CollectionPage/ContactPage, BreadcrumbList, Event, BlogPosting/Article).
+  Venue address is intentionally partial until the owner confirms it (`VENUES` in `data/seo.ts`).
+- **Discovery:** `/sitemap.xml` + `/nl|id|en/sitemap.xml` (Hugo-identical, built by `scripts/sitemap-split.mjs`, with lastmod),
+  `/sitemap-index.xml`, RSS at `/[locale/][section/]index.xml` (`src/pages/[...feed]/index.xml.ts`, same 18 feeds as Hugo), `robots.txt`
+  (endpoint), 404 page, icons + `site.webmanifest` (`scripts/build-icons.mjs`).
+- **Edge Worker** `worker/index.js` (wrangler `main`, `run_worker_first` skips static files): apex → www 301, trailing slash 301 (Workers'
+  own is 307), `/x/index.html` 301, and **`X-Robots-Tag: noindex` + permissive robots.txt on every host except `www.ppmedenhaag.nl`**
+  (website-v2 and workers.dev are noindexed on purpose until cutover). `public/_redirects` 301s the legacy Hugo URLs that are not ported
+  (tags/categories/author → blog; ramadhan-1444/notice → event; course/teacher → about).
+- **Gates:** `npm run build` ends with `scripts/seo-audit.mjs` (errors fail the build: head tags, canonical, og image 1200×630 ≤300 KB, hreflang
+  reciprocity, JSON-LD, sitemap/robots, staging-origin leak in production mode). `npm run seo:diff -- --write` compares the live Hugo sitemaps
+  with `dist/` (must stay at 0 missing; report in `docs/seo/url-diff.md`).
+
 ## Known gaps (don't assume these are solved)
 
 - **Event Markdown conventions after the audit:** `{{< youtube >}}` was converted to raw
@@ -143,14 +171,8 @@ new interactive UI rather than reaching for a different framework.
   sitemap, RSS) must point to `https://website-v2.ppmedenhaag.nl/`, not www. When committing, pushing or deploying, end
   with one line: "Reminder: SEO still targets website-v2; cutover to www/apex is pending (docs/seo/PROGRESS.md)." Remove
   this bullet after the cutover step in `docs/seo/SEO-PLAN.md` Phase 10 is done.
-- **No SEO head component yet** — no description, canonical, hreflang, Open Graph/Twitter, JSON-LD, robots.txt,
-  404 page or `/sitemap.xml`; only `@astrojs/sitemap` (`/sitemap-index.xml`) is wired. **This site replaces both
-  `www.ppmedenhaag.nl` and `ppmedenhaag.nl`** (canonical = www, apex 301 → www). The full, current plan is
-  `docs/seo/SEO-PLAN.md` (status/decisions in `docs/seo/PROGRESS.md`, skill `/ppme-seo`); the older
-  `.migration/05-seo.md` is superseded. Non-production hosts (`*.workers.dev`, `website-v2.ppmedenhaag.nl`) are
-  currently indexable — the plan fixes that with an edge Worker.
-- **No `@astrojs/rss` endpoints yet** — the package is installed but no feed files
-  exist. Hugo generates one per site/section/language; match that when built.
+- **SEO: implemented (milestones M1–M6 mostly done, see `docs/seo/PROGRESS.md`); read the "SEO" section below.** This site
+  replaces both `www.ppmedenhaag.nl` and `ppmedenhaag.nl` (canonical = www, apex 301 → www at cutover).
 - **Homepage (`src/pages/index.astro` and `[locale]/index.astro`) is a stub** — just
   renders `<CTA />`. `src/data/config.ts`'s `CTA_CONFIG` is stale sample data (an old
   "Eid al-Adha 1445H / June 2024" promo, not the live site's current promoted event).
@@ -170,7 +192,8 @@ new interactive UI rather than reaching for a different framework.
 ## Build & dev commands
 
 - `npm run dev` — dev server, default port 4321.
-- `npm run build` — runs `astro check && astro build`.
+- `npm run build` — runs `astro check && astro build && pagefind --site dist && node scripts/seo-audit.mjs` (~80 s; the first run also renders ~280 share cards).
+- `npm run seo:audit` / `npm run seo:diff` — re-run the SEO audit on `dist/` / compare with the live Hugo sitemaps.
 - `npx astro sync` — regenerate content-collection types after changing
   `content.config.ts` or adding/removing collections. Run this whenever `astro check`
   reports `Property 'data' does not exist on type 'never'` for a collection — it means

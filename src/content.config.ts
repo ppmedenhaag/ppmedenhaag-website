@@ -15,6 +15,8 @@ const eventSchema = z.object({
   bg_image: z.string().optional(),
   description: z.string().optional().default(""),
   image: z.string().optional(),
+  /** Optional override for the link-preview (Open Graph) image; defaults to `image`. */
+  social_image: z.string().optional(),
   location: z.string().optional(),
   speaker: z
     .array(
@@ -34,6 +36,7 @@ const blogSchema = z.object({
   date: z.coerce.date(),
   description: z.string().optional().default(""),
   image: z.string().optional(),
+  social_image: z.string().optional(),
   author: z.string().optional(),
   categories: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
@@ -76,6 +79,7 @@ const aboutOverviewSchema = z.object({
   bg_image: z.string().optional(),
   description: z.string().optional().default(""),
   image: z.string().optional(),
+  social_image: z.string().optional(),
 });
 
 function overviewCollection(section: "about" | "dakwah") {

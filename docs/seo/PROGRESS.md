@@ -12,15 +12,15 @@ Plan: [`SEO-PLAN.md`](./SEO-PLAN.md) · Skill: `.claude/skills/ppme-seo/SKILL.md
 - **This Astro site replaces BOTH `www.ppmedenhaag.nl` and `ppmedenhaag.nl`.** Canonical = `https://www.ppmedenhaag.nl`; apex 301 → www.
 - URL preservation is a hard constraint (see `CLAUDE.md`).
 
-## Milestones
-- [ ] **M1 Blockers** — `PUBLIC_SITE_URL` build var (default = website-v2 until cutover) + `deploy.yml` "STAGING deploy — cutover pending" warning/summary on every deploy, edge Worker (noindex on non-prod hosts, apex→www 301, trailing-slash 301), `robots.txt`, `404.astro`, `_headers` caching
-- [ ] **M2 Core head** — `Seo.astro`, `utils/seo.ts`, Layout props, derived + hand-written descriptions/titles, hreflang (+self, x-default), og/twitter text tags, canonical, icons/manifest
-- [ ] **M3 Previews** — `resolveSocialImage`, sharp 1200×630 pipeline (`/og/*.jpg`), **a distinct card for every page** (hero-image card or generated title card; page registry `listSeoPages()`), build report, platform QA
-- [ ] **M4 Rich results** — JSON-LD graph (Organization, WebSite, WebPage, BreadcrumbList, Event, BlogPosting/Article, ContactPage), venues map, date normalizer
-- [ ] **M5 Discovery** — sitemap filter/lastmod, `/sitemap.xml` + per-locale split (Hugo-identical), RSS endpoints, IndexNow (optional)
-- [ ] **M6 Parity** — decide + implement legacy URLs (tags 91, ramadhan-1444 18, categories 12, author 6, teacher/notice/course/ibadah index), `seo-url-diff` = 0 gaps, `seo-audit` in build
-- [ ] **M7 Speed** — image dims/lazy/fetchpriority, compress 4 big images, font preload, island hydration review, Lighthouse before/after (optional 7b: move images to `src/assets`)
-- [ ] **M8 Launch** — inventory (DNS, Netlify rules), GSC/Bing, both domains on Worker, cutover, post-launch monitoring (Phase 10–11)
+## Milestones (implemented 2026-11-20/21, one overnight session; all verified with build + audit + local wrangler)
+- [x] **M1 Blockers** — `PUBLIC_SITE_URL` (default website-v2) + `deploy.yml` STAGING/PRODUCTION notice, edge Worker `worker/index.js` (apex→www 301, trailing-slash 301, `index.html` 301, noindex on every non-www host; unit-tested + wrangler dev), `robots.txt` endpoint, `404.astro`, `_headers` caching. *Not yet verified on the real Cloudflare deploy: check the first CI run.*
+- [x] **M2 Core head** — `Seo.astro`, registry + `utils/seo.ts`, derived descriptions, localized hand-written copy for code-driven pages, hreflang (+self, x-default), og/twitter, canonical, icons/manifest. *Not done: hand-written descriptions for individual ibadah/about pages (derived for now), `contentLang` for Indonesian text under /nl/.*
+- [x] **M3 Previews** — registry-driven 1200×630 cards for every page (257 hero-image cards, 21 generated title cards), size rules, cache, build report. *Not done: real WhatsApp/Telegram/Facebook test (needs a human + the deployed host), `social_image` is supported but unused.*
+- [x] **M4 Rich results** — JSON-LD graph (Organization, WebSite, page node, BreadcrumbList, Event, BlogPosting/Article). *Open: venue street address (D1), Rich Results Test not run (needs the deployed URL).*
+- [x] **M5 Discovery** — `/sitemap.xml` + `/nl|id|en/sitemap.xml` (Hugo-identical, lastmod), RSS (18 feeds, same set as Hugo). *Not done: IndexNow.*
+- [x] **M6 Parity** — `seo-audit` in the build, `seo-url-diff` = 0 missing (274 served 1:1, 136 via `_redirects`), `/ibadah/` index pages added. *Decision D3/D4 still open: the 136 legacy URLs are 301-redirected, not ported (tags/categories/author → blog, ramadhan-1444/notice → event, course/teacher → about).*
+- [~] **M7 Speed** — done: hero `<img>` width/height + eager/high priority (event, blog), immutable caching for /_astro and /og. *Not done: other hero images (ibadah/about/dakwah), compress 4 images >600 KB, font preload, island hydration review, Lighthouse before/after, `src/assets` migration.*
+- [ ] **M8 Launch** — inventory (DNS, Netlify rules: Netlify has no redirects, only headers, already ported), GSC/Bing, both domains on Worker, cutover, monitoring (Phase 10–11). **Owner actions required.**
 
 ## Decisions needed from the owner
 | # | Question | Default if no answer |
@@ -55,5 +55,6 @@ Astro (workers.dev): sitemap 274 URLs; title only; 246/264 empty descriptions; 2
 Missing vs live: 136 URLs (91 tags, 18 ramadhan-1444, 12 categories, 6 author, 3 teacher, 3 notice, 3 ibadah index, 3 course). Staging hosts indexable. Trailing-slash redirect = 307.
 
 ## Log
+- 2026-11-21 — Implemented M1–M6 + part of M7 in one session (see milestones). Deviation from plan: non-production robots.txt is *permissive* (`Allow: /`) with `X-Robots-Tag: noindex` on every response instead of `Disallow: /`, because a Disallow stops Google from ever seeing the noindex and blocks Facebook/Twitter preview crawlers. All legacy URLs (136) are 301s in `public/_redirects` instead of ported pages. sitemap hreflang uses plain `nl|id|en` (the old `locales` map produced the invalid `en-UK`). ING payment link on the homepage updated (owner request).
 - 2026-11-20 — Added to plan/skill/reference: card image for every page (page registry `listSeoPages()`), and source pixel-size rules (upscale cap 1.5×, <400 px / extreme aspect → title card). Still no code.
 - 2026-11-20 — Assessment + full plan written (this folder), skill `ppme-seo`, memories. Owner confirmed site replaces both www and apex. No code changed.
