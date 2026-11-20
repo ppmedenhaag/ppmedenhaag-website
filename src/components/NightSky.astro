@@ -1,0 +1,150 @@
+---
+// Option 3 background: a starry night with an occasional meteor, rendered at build time
+// (positions / timings are generated once with a seeded RNG, so the output is stable per build).
+// Pure CSS animation, no client JS. Colours stay on the site theme (brand blue on the light page).
+let seed = 20261120;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const between = (a: number, b: number) => a + rnd() * (b - a);
+const f = (n: number, d = 2) => n.toFixed(d);
+
+const stars = Array.from({ length: 220 }, () => {
+  const lo = between(0.05, 0.18);
+  const five = rnd() < 0.3; // ~30% are 5-point stars (drawn a little larger so the shape reads)
+  return {
+    five,
+    rot: f(between(0, 72), 0),
+    x: f(between(0, 100), 1),
+    y: f(between(0, 100), 1),
+    size: f(five ? between(4, 7) : between(1, 2.8), 1),
+    lo: f(lo),
+    hi: f(Math.min(0.5, lo + between(0.15, 0.32))),
+    dur: f(between(3, 9), 1),
+    delay: f(between(0, 9), 1),
+  };
+});
+
+const sparkles = Array.from({ length: 30 }, () => ({
+  x: f(between(3, 97), 1),
+  y: f(between(3, 97), 1),
+  size: f(between(7, 13), 0),
+  dur: f(between(5, 10), 1),
+  delay: f(between(0, 8), 1),
+}));
+
+const meteors = Array.from({ length: 3 }, () => ({
+  x: f(between(35, 105), 0),
+  y: f(between(-8, 45), 0),
+  len: f(between(80, 150), 0),
+  dist: f(between(520, 900), 0),
+  rot: f(between(-42, -28), 0),
+  dur: f(between(14, 28), 1),
+  delay: f(between(2, 20), 1),
+}));
+---
+
+<div class="night-sky" aria-hidden="true">
+  <div class="night-sky__stage">
+    {stars.map((s) => (
+      <span
+        class={s.five ? "star star--five" : "star"}
+        style={`rotate:${s.rot}deg;left:${s.x}%;top:${s.y}%;width:${s.size}px;height:${s.size}px;--lo:${s.lo};--hi:${s.hi};animation-duration:${s.dur}s;animation-delay:-${s.delay}s`}
+      />
+    ))}
+    {sparkles.map((s) => (
+      <span
+        class="sparkle"
+        style={`left:${s.x}%;top:${s.y}%;width:${s.size}px;height:${s.size}px;animation-duration:${s.dur}s;animation-delay:-${s.delay}s`}
+      />
+    ))}
+    {meteors.map((m) => (
+      <span
+        class="meteor"
+        style={`left:${m.x}%;top:${m.y}%;width:${m.len}px;--rot:${m.rot}deg;--dist:${m.dist}px;animation-duration:${m.dur}s;animation-delay:${m.delay}s`}
+      />
+    ))}
+  </div>
+</div>
+
+<style>
+  /* The stage is sticky inside the page-high layer, so the sky stays in the viewport while scrolling
+     but never paints over the navbar or footer (the layer is clipped to the page backdrop). */
+  .night-sky {
+    position: absolute;
+    inset: 0;
+    overflow: clip;
+    pointer-events: none;
+  }
+  .night-sky__stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 9999px;
+    background: #034ea2;
+    opacity: var(--lo);
+    animation: twinkle ease-in-out infinite;
+  }
+
+  .star--five {
+    border-radius: 0;
+    clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .sparkle {
+    position: absolute;
+    background: #034ea2;
+    opacity: 0.12;
+    clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: sparkle ease-in-out infinite;
+  }
+
+  .meteor {
+    position: absolute;
+    height: 1.5px;
+    border-radius: 9999px;
+    background: linear-gradient(to right, rgb(3 78 162 / 0.55), rgb(3 78 162 / 0));
+    transform-origin: left center;
+    opacity: 0;
+    animation: meteor linear infinite;
+  }
+  .meteor::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    margin-top: -2px;
+    border-radius: 9999px;
+    background: rgb(3 78 162 / 0.7);
+    box-shadow: 0 0 6px 2px rgb(3 78 162 / 0.25);
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: var(--lo); }
+    50% { opacity: var(--hi); }
+  }
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.08; transform: scale(0.8) rotate(0deg); }
+    50% { opacity: 0.32; transform: scale(1.1) rotate(20deg); }
+  }
+  /* Visible for roughly the first tenth of the cycle, then idle until the next pass. */
+  @keyframes meteor {
+    0% { opacity: 0; transform: rotate(var(--rot)) translateX(0); }
+    1.5% { opacity: 1; }
+    9% { opacity: 0.9; }
+    11% { opacity: 0; transform: rotate(var(--rot)) translateX(calc(var(--dist) * -1)); }
+    100% { opacity: 0; transform: rotate(var(--rot)) translateX(calc(var(--dist) * -1)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .star, .sparkle { animation: none; }
+    .star { opacity: calc((var(--lo) + var(--hi)) / 2); }
+    .sparkle { opacity: 0.18; }
+    .meteor { display: none; }
+  }
+</style>

@@ -79,15 +79,86 @@ body {
         background-repeat: no-repeat;
     }
 
-    /* Interlaced strapwork: hollow ribbon bands tracing an 8-point star (khatam) lattice with nested stars, diamonds and connectors; 360px tile, very faint, faded out downward. */
+    /* Interlaced S-rings: wavy bands along all four tile edges, so tiles join into linked rings, with an 8-point star in the middle, at three random sizes (five layers, 170-340px, blur 0.8-9px), brand blue, very faint, covers the whole page. */
     .app-grid {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cdefs%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='80' height='80'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2.4' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3Cg fill='none' stroke='%23000' stroke-width='0.8' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='80' height='80' fill='%23034EA2' fill-opacity='.045' mask='url(%23m)'/%3E%3C/svg%3E");
-        background-size: 360px 360px;
-        mask-image: linear-gradient(to bottom, black, transparent 26rem);
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23034EA2' stroke-width='1.3' stroke-opacity='0.084' fill='none'%3E%3Cpath d='M0 20 C30 20, 20 0, 50 0 C80 0, 70 20, 100 20' stroke-width='1.6'/%3E%3Cpath d='M0 80 C30 80, 20 100, 50 100 C80 100, 70 80, 100 80' stroke-width='1.6'/%3E%3Cpath d='M20 0 C20 30, 0 20, 0 50 C0 80, 20 70, 20 100' stroke-width='1.6'/%3E%3Cpath d='M80 0 C80 30, 100 20, 100 50 C100 80, 80 70, 80 100' stroke-width='1.6'/%3E%3Cg transform='translate(50,50)'%3E%3Crect x='-8.5' y='-8.5' width='17' height='17' fill='%23034EA2' fill-opacity='0.030'/%3E%3Crect x='-8.5' y='-8.5' width='17' height='17' transform='rotate(45)' fill='%23034EA2' fill-opacity='0.030'/%3E%3Ccircle cx='0' cy='0' r='1.8' fill='%23034EA2' fill-opacity='0.078'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-size: 240px 240px;
+        filter: blur(0.8px);
+        mask-image:
+            radial-gradient(circle 300px at 8% 12%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 240px at 46% 6%, rgb(0 0 0 / 0.8), transparent),
+            radial-gradient(circle 320px at 78% 26%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 260px at 22% 52%, rgb(0 0 0 / 0.9), transparent),
+            radial-gradient(circle 300px at 60% 66%, rgb(0 0 0 / 0.85), transparent),
+            radial-gradient(circle 240px at 92% 84%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 280px at 30% 92%, rgb(0 0 0 / 0.8), transparent);
+        mask-size: 1400px 1000px;
+        mask-repeat: repeat;
+    }
+
+    /* Second copy of the pattern: blurred and revealed through different random patches, so sharpness varies across the page. */
+    .app-grid-blur {
+        background-size: 340px 340px;
+        filter: blur(5px);
+        mask-image:
+            radial-gradient(circle 260px at 26% 20%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 300px at 64% 10%, rgb(0 0 0 / 0.9), transparent),
+            radial-gradient(circle 260px at 90% 48%, rgb(0 0 0 / 0.9), transparent),
+            radial-gradient(circle 320px at 10% 70%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 220px at 48% 44%, rgb(0 0 0 / 0.8), transparent),
+            radial-gradient(circle 300px at 72% 92%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 200px at 40% 76%, rgb(0 0 0 / 0.8), transparent);
+        mask-size: 1100px 1300px;
+        mask-repeat: repeat;
+    }
+
+    /* Third copy at a smaller size with a light blur, again through its own random patches (small / medium / large patches overlap). */
+    .app-grid-sm {
+        background-size: 170px 170px;
+        filter: blur(2.5px);
+        mask-image:
+            radial-gradient(circle 240px at 14% 34%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 220px at 52% 28%, rgb(0 0 0 / 0.9), transparent),
+            radial-gradient(circle 260px at 84% 8%, rgb(0 0 0 / 0.9), transparent),
+            radial-gradient(circle 240px at 36% 64%, rgb(0 0 0 / 1), transparent),
+            radial-gradient(circle 200px at 70% 50%, rgb(0 0 0 / 0.8), transparent),
+            radial-gradient(circle 260px at 8% 88%, rgb(0 0 0 / 0.9), transparent),
+            radial-gradient(circle 240px at 58% 90%, rgb(0 0 0 / 1), transparent);
+        mask-size: 1250px 1150px;
+        mask-repeat: repeat;
+    }
+
+    /* Fourth and fifth copies: a fine-blur one and a very heavy-blur one, each through its own random patches, for more varied sharpness. */
+    .app-grid-fine {
+        background-size: 200px 200px;
+        filter: blur(1.6px);
+        mask-image:
+            radial-gradient(circle 230px at 18% 58%, rgb(0 0 0 / 0.7), transparent),
+            radial-gradient(circle 260px at 44% 12%, rgb(0 0 0 / 0.6), transparent),
+            radial-gradient(circle 240px at 76% 70%, rgb(0 0 0 / 0.7), transparent),
+            radial-gradient(circle 200px at 92% 30%, rgb(0 0 0 / 0.6), transparent),
+            radial-gradient(circle 180px at 60% 40%, rgb(0 0 0 / 0.5), transparent),
+            radial-gradient(circle 250px at 28% 86%, rgb(0 0 0 / 0.7), transparent);
+        mask-size: 1700px 1250px;
+        mask-repeat: repeat;
+    }
+
+    .app-grid-haze {
+        background-size: 300px 300px;
+        filter: blur(9px);
+        mask-image:
+            radial-gradient(circle 300px at 34% 44%, rgb(0 0 0 / 0.7), transparent),
+            radial-gradient(circle 280px at 70% 16%, rgb(0 0 0 / 0.6), transparent),
+            radial-gradient(circle 260px at 12% 22%, rgb(0 0 0 / 0.6), transparent),
+            radial-gradient(circle 300px at 84% 86%, rgb(0 0 0 / 0.7), transparent),
+            radial-gradient(circle 240px at 52% 78%, rgb(0 0 0 / 0.6), transparent),
+            radial-gradient(circle 220px at 96% 60%, rgb(0 0 0 / 0.5), transparent);
+        mask-size: 950px 1450px;
+        mask-repeat: repeat;
     }
 
     .app-grid-light {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cdefs%3E%3Cmask id='m' maskUnits='userSpaceOnUse' x='0' y='0' width='80' height='80'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2.4' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3Cg fill='none' stroke='%23000' stroke-width='0.8' stroke-linejoin='round'%3E%3Cg transform='translate(0 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 0)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(0 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(80 80)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 40)'%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45)'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21'/%3E%3Crect x='-10.5' y='-10.5' width='21' height='21' transform='rotate(45)'/%3E%3Ccircle r='3.2'/%3E%3C/g%3E%3Cg transform='translate(40 0)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(40 80)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(0 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cg transform='translate(80 40)'%3E%3Crect x='-11.7' y='-11.7' width='23.4' height='23.4' transform='rotate(45)'/%3E%3C/g%3E%3Cpath d='M28.3 0H51.7M28.3 80H51.7M-11.7 40H11.7M68.3 40H91.7M0 28.3V51.7M80 28.3V51.7M40 -11.7V11.7M40 68.3V91.7'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Crect width='80' height='80' fill='%23FFFFFF' fill-opacity='.05' mask='url(%23m)'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23FFFFFF' stroke-width='1.3' stroke-opacity='0.090' fill='none'%3E%3Cpath d='M0 20 C30 20, 20 0, 50 0 C80 0, 70 20, 100 20' stroke-width='1.6'/%3E%3Cpath d='M0 80 C30 80, 20 100, 50 100 C80 100, 70 80, 100 80' stroke-width='1.6'/%3E%3Cpath d='M20 0 C20 30, 0 20, 0 50 C0 80, 20 70, 20 100' stroke-width='1.6'/%3E%3Cpath d='M80 0 C80 30, 100 20, 100 50 C100 80, 80 70, 80 100' stroke-width='1.6'/%3E%3Cg transform='translate(50,50)'%3E%3Crect x='-8.5' y='-8.5' width='17' height='17' fill='%23FFFFFF' fill-opacity='0.030'/%3E%3Crect x='-8.5' y='-8.5' width='17' height='17' transform='rotate(45)' fill='%23FFFFFF' fill-opacity='0.030'/%3E%3Ccircle cx='0' cy='0' r='1.8' fill='%23FFFFFF' fill-opacity='0.078'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
     .eyebrow {

@@ -6,7 +6,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import { defaultLocale, locales } from "./src/data/i18n";
 
 // Dev only: serve the Pagefind index that `npm run build` wrote to dist/pagefind, so the search box
@@ -67,6 +67,18 @@ export default defineConfig({
   // Cloudflare Pages serves the static `dist/` output directly — no adapter needed.
   // See .migration/07-deploy-hosting.md in ppmedenhaag-website for why Pages over Workers/Vercel.
   output: "static",
+  // Build-time page background: PUBLIC_BACKGROUND=none | pattern | night (default) | leaves.
+  // e.g. PowerShell: $env:PUBLIC_BACKGROUND="night"; npm run build   (bash: PUBLIC_BACKGROUND=night npm run build)
+  env: {
+    schema: {
+      PUBLIC_BACKGROUND: envField.enum({
+        context: "client",
+        access: "public",
+        values: ["none", "pattern", "night", "leaves"],
+        default: "night",
+      }),
+    },
+  },
   trailingSlash: "always",
   vite: {
     plugins: [tailwindcss(), pagefindDev()],

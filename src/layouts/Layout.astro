@@ -2,6 +2,7 @@
 import "@fontsource-variable/inter";
 import globalCss from "../styles/global.css?url";
 import Navbar from "../components/Navbar.astro";
+import PageBackground from "../components/PageBackground.astro";
 import Footer from "../components/footer.astro";
 import { defaultLocale } from "../data/i18n";
 
@@ -37,10 +38,7 @@ const section = segments[0] ?? "page";
   <body class="flex min-h-screen flex-col">
     <Navbar />
     <div class="app-backdrop relative flex-1">
-      <div
-        class="app-grid pointer-events-none absolute inset-x-0 top-0 h-[26rem]"
-        aria-hidden="true"
-      ></div>
+      <PageBackground />
       <main
         class="relative"
         data-pagefind-body={searchable ? "" : undefined}

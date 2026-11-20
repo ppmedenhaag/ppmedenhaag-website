@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { PUBLIC_BACKGROUND } from "astro:env/client";
 import { useTranslations } from "../utils/lang";
 import EventCard from "./EventCard.astro";
 import PostCard from "./PostCard.astro";
@@ -70,10 +71,12 @@ const posts = (
         class="pointer-events-none absolute -right-24 -bottom-32 -z-10 size-[26rem] rounded-full bg-brand/60 blur-3xl"
         aria-hidden="true"
       />
-      <div
-        class="app-grid app-grid-light pointer-events-none absolute inset-0 -z-10"
-        aria-hidden="true"
-      />
+      {PUBLIC_BACKGROUND === "pattern" && (
+        <div
+          class="app-grid app-grid-light pointer-events-none absolute inset-0 -z-10"
+          aria-hidden="true"
+        />
+      )}
       <div class="reveal mx-auto grid max-w-3xl grid-cols-1 justify-items-center gap-3 px-4 text-center">
         <span class="text-[clamp(0.875rem,4.4vw,1.25rem)] font-semibold tracking-wide whitespace-nowrap text-brand-100 uppercase">{home.cta.subtitle}</span>
         <span class="text-2xl font-bold tracking-tight text-white lg:text-4xl">

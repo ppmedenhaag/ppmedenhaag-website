@@ -1,0 +1,164 @@
+---
+// Option 4 background: faint tree-leaf sprigs and loose leaves, generated at build time with a seeded RNG
+// (stable per build), with a very slow sway. Pure CSS, no client JS. Sage green at low opacity.
+let seed = 77123;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const between = (a: number, b: number) => a + rnd() * (b - a);
+const f = (n: number, d = 1) => n.toFixed(d);
+
+// Two leaf outlines in a 24x24 box, tip at the top, base at (12,23): slim pointed and broad.
+const LEAVES = [
+  { body: "M12 1 C19 6 20 16 12 23 C4 16 5 6 12 1 Z", veins: "M12 3 V21 M12 9 L16 6 M12 9 L8 6 M12 14 L17 11 M12 14 L7 11 M12 18.5 L15.5 16.5 M12 18.5 L8.5 16.5" },
+  { body: "M12 2 C22 5 22 17 12 23 C2 17 2 5 12 2 Z", veins: "M12 4 V21 M12 10 L17 7 M12 10 L7 7 M12 15 L18 12 M12 15 L6 12" },
+];
+
+// Point and direction along the sprig stem (cubic bezier) in a 100x200 box.
+const P = [
+  [50, 198],
+  [30 + between(-8, 8), 140],
+  [70 + between(-8, 8), 80],
+  [50, 6],
+];
+const bez = (t: number) => {
+  const u = 1 - t;
+  const x = u ** 3 * P[0][0] + 3 * u * u * t * P[1][0] + 3 * u * t * t * P[2][0] + t ** 3 * P[3][0];
+  const y = u ** 3 * P[0][1] + 3 * u * u * t * P[1][1] + 3 * u * t * t * P[2][1] + t ** 3 * P[3][1];
+  const dx = 3 * u * u * (P[1][0] - P[0][0]) + 6 * u * t * (P[2][0] - P[1][0]) + 3 * t * t * (P[3][0] - P[2][0]);
+  const dy = 3 * u * u * (P[1][1] - P[0][1]) + 6 * u * t * (P[2][1] - P[1][1]) + 3 * t * t * (P[3][1] - P[2][1]);
+  return { x, y, angle: (Math.atan2(dx, -dy) * 180) / Math.PI }; // 0deg = pointing up
+};
+
+const stem = `M${P[0][0]} ${P[0][1]} C${P[1][0].toFixed(1)} ${P[1][1]} ${P[2][0].toFixed(1)} ${P[2][1]} ${P[3][0]} ${P[3][1]}`;
+
+// A sprig = stem with alternating leaves that shrink toward the tip, plus a terminal leaf.
+const makeSprig = () => {
+  const count = Math.floor(between(5, 8));
+  const leaves = [];
+  for (let i = 0; i < count; i++) {
+    const t = 0.12 + (i / count) * 0.8;
+    const p = bez(t);
+    const side = i % 2 === 0 ? 1 : -1;
+    leaves.push({
+      x: p.x,
+      y: p.y,
+      rot: p.angle + side * between(38, 62),
+      scale: (1.9 - t * 0.9) * between(0.9, 1.1),
+      shape: Math.floor(rnd() * 2),
+    });
+  }
+  const tip = bez(1);
+  leaves.push({ x: tip.x, y: tip.y, rot: tip.angle, scale: 1.0, shape: 0 });
+  return leaves;
+};
+
+const sprigs = Array.from({ length: 11 }, () => ({
+  x: f(between(-3, 98), 1),
+  y: f(between(0, 96), 1),
+  w: f(between(80, 190), 0),
+  rot: f(between(-60, 60), 0),
+  flip: rnd() < 0.5 ? -1 : 1,
+  dur: f(between(14, 26), 1),
+  delay: f(between(0, 14), 1),
+  amp: f(between(1.5, 3.2), 1),
+  leaves: makeSprig(),
+}));
+
+const loose = Array.from({ length: 26 }, () => ({
+  x: f(between(0, 100), 1),
+  y: f(between(0, 100), 1),
+  size: f(between(14, 36), 0),
+  rot: f(between(0, 360), 0),
+  shape: Math.floor(rnd() * 2),
+  dur: f(between(12, 24), 1),
+  delay: f(between(0, 12), 1),
+  amp: f(between(3, 8), 1),
+}));
+---
+
+<div class="leaf-backdrop" aria-hidden="true">
+  <div class="leaf-backdrop__stage">
+    {sprigs.map((s) => (
+      <svg
+        class="sprig"
+        viewBox="0 0 100 200"
+        style={`left:${s.x}%;top:${s.y}%;width:${s.w}px;rotate:${s.rot}deg;--amp:${s.amp}deg;animation-duration:${s.dur}s;animation-delay:-${s.delay}s`}
+      >
+        <g transform={`translate(${s.flip === -1 ? 100 : 0} 0) scale(${s.flip} 1)`}>
+          <path class="stem" d={stem} />
+          {s.leaves.map((l) => (
+            <g transform={`translate(${f(l.x)} ${f(l.y)}) rotate(${f(l.rot, 0)}) scale(${f(l.scale, 2)}) translate(-12 -23)`}>
+              <path class="leaf" d={LEAVES[l.shape].body} />
+              <path class="vein" d={LEAVES[l.shape].veins} />
+            </g>
+          ))}
+        </g>
+      </svg>
+    ))}
+    {loose.map((l) => (
+      <svg
+        class="loose"
+        viewBox="0 0 24 24"
+        style={`left:${l.x}%;top:${l.y}%;width:${l.size}px;height:${l.size}px;rotate:${l.rot}deg;--amp:${l.amp}deg;animation-duration:${l.dur}s;animation-delay:-${l.delay}s`}
+      >
+        <path class="leaf" d={LEAVES[l.shape].body} />
+        <path class="vein" d={LEAVES[l.shape].veins} />
+      </svg>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* Sticky viewport-high stage inside a page-high layer: the leaves stay in view while scrolling
+     but never paint over the navbar or footer. */
+  .leaf-backdrop {
+    position: absolute;
+    inset: 0;
+    overflow: clip;
+    pointer-events: none;
+  }
+  .leaf-backdrop__stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sprig,
+  .loose {
+    position: absolute;
+    overflow: visible;
+    transform-origin: 50% 100%;
+    animation: sway ease-in-out infinite alternate;
+  }
+  .sprig { height: auto; }
+
+  .leaf {
+    fill: rgb(104 140 112 / 0.045);
+    stroke: rgb(104 140 112 / 0.15);
+    stroke-width: 0.7;
+    stroke-linejoin: round;
+  }
+  .vein {
+    fill: none;
+    stroke: rgb(104 140 112 / 0.1);
+    stroke-width: 0.45;
+    stroke-linecap: round;
+  }
+  .stem {
+    fill: none;
+    stroke: rgb(104 140 112 / 0.15);
+    stroke-width: 1.1;
+    stroke-linecap: round;
+  }
+  .loose .leaf { stroke-width: 0.9; }
+  .loose .vein { stroke-width: 0.6; }
+
+  @keyframes sway {
+    from { transform: rotate(calc(var(--amp) * -1)); }
+    to { transform: rotate(var(--amp)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sprig, .loose { animation: none; }
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+// Page background, chosen at build time by the PUBLIC_BACKGROUND parameter (see astro.config.mjs):
+//   none     (option 1) plain backdrop
+//   pattern  (option 2, default) faint batik / ronce pattern in five blurred, differently sized layers
+//   night    (option 3) starry night with meteors and light animation
+//   leaves   (option 4) faint tree-leaf sprigs with a very slow sway
+import { PUBLIC_BACKGROUND } from "astro:env/client";
+import NightSky from "./NightSky.astro";
+import LeafBackdrop from "./LeafBackdrop.astro";
+
+const layers = ["", "app-grid-blur", "app-grid-sm", "app-grid-fine", "app-grid-haze"];
+---
+
+{
+  PUBLIC_BACKGROUND === "pattern" &&
+    layers.map((extra) => (
+      <div class={`app-grid ${extra} pointer-events-none absolute inset-0`} aria-hidden="true" />
+    ))
+}
+{PUBLIC_BACKGROUND === "night" && <NightSky />}
+{PUBLIC_BACKGROUND === "leaves" && <LeafBackdrop />}
