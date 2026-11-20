@@ -11,9 +11,31 @@ import { DEN_HAAG, NL_PROVINCES, NL_VIEWBOX } from "../data/nl-map";
       viewBox={`0 0 ${NL_VIEWBOX.width} ${NL_VIEWBOX.height}`}
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        {/* Everything inside the country is masked out, so only the OUTER half of a stroke remains: the country outline (coast, borders, islands), without any inner province borders. */}
+        <mask
+          id="nl-outside"
+          maskUnits="userSpaceOnUse"
+          x="-10"
+          y="-10"
+          width={NL_VIEWBOX.width + 20}
+          height={NL_VIEWBOX.height + 20}
+        >
+          <rect x="-10" y="-10" width={NL_VIEWBOX.width + 20} height={NL_VIEWBOX.height + 20} fill="#fff" />
+          {NL_PROVINCES.map((p) => <path d={p.d} fill="#000" />)}
+        </mask>
+      </defs>
+      {/* Land: one faint tint for the whole country, Zuid-Holland a little stronger. No strokes here. */}
       {NL_PROVINCES.map((p) => (
-        <path class={p.name === "Zuid-Holland" ? "prov prov--home" : "prov"} d={p.d} />
+        <path class={p.name === "Zuid-Holland" ? "land land--home" : "land"} d={p.d} />
       ))}
+      {/* Line work: country outline + Zuid-Holland border. One group, so overlaps do not stack into darker spots. */}
+      <g class="lines">
+        <g mask="url(#nl-outside)">
+          {NL_PROVINCES.map((p) => <path class="outline" d={p.d} />)}
+        </g>
+        {NL_PROVINCES.filter((p) => p.name === "Zuid-Holland").map((p) => <path class="zh-border" d={p.d} />)}
+      </g>
       <g class="marker" transform={`translate(${DEN_HAAG.x} ${DEN_HAAG.y})`}>
         <circle class="marker__pulse" r="3" />
         <circle class="marker__dot" r="2.6" />
@@ -50,14 +72,27 @@ import { DEN_HAAG, NL_PROVINCES, NL_VIEWBOX } from "../data/nl-map";
     overflow: visible;
   }
 
-  .prov {
+  .land {
     fill: rgb(3 78 162 / 0.035);
-    stroke: rgb(3 78 162 / 0.25);
-    stroke-width: 0.7;
+  }
+  .land--home {
+    fill: rgb(3 78 162 / 0.08);
+  }
+  /* Opaque strokes + opacity on the group: overlapping lines never get darker. */
+  .lines {
+    opacity: 0.25;
+  }
+  .outline {
+    fill: none;
+    stroke: rgb(3 78 162);
+    stroke-width: 1.4; /* clipped to its outer half by the mask, so ~0.7 wide */
     stroke-linejoin: round;
   }
-  .prov--home {
-    fill: rgb(3 78 162 / 0.08);
+  .zh-border {
+    fill: none;
+    stroke: rgb(3 78 162);
+    stroke-width: 0.7;
+    stroke-linejoin: round;
   }
 
   .marker__dot {
