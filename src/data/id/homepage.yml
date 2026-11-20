@@ -30,7 +30,7 @@ homepage:
     enable : true
     title : "Tentang PPME"
     image : "images/about/about-ppme.webp"
-    content : "Pada tanggal 12 April 1971 di Den Haag, dua puluh anggota musyawarah telah berkumpul, salah satunya Abdurrachman Wahid (Gus Dur), mantan Presiden RI ke-4. Musyawarah ini melahirkan organisasi Persatuan Pemuda Muslim se-Eropa (PPME).  Sejak itu PPME menambah komunitas Muslim asing di Belanda di samping komunitas dari Turki, Maroko, Suriname, dan Pakistan. Setelah PPME disahkan oleh Ratu Juliana di tahun 1974, kegiatan-kegiatan sosialisasi pun mulai padat. Kerja sama dengan komunitas-komunitas Muslim di Belanda pun terjalin."
+    content : "PPME Den Haag adalah komunitas Muslim yang hidup dan aktif di Masjid Al Hikmah. Setiap pekan jamaah dari anak-anak hingga dewasa berkumpul dalam pengajian Sabtu, TPA, kajian, program remaja, serta kegiatan sosial. Semua orang diterima dengan tangan terbuka, termasuk yang baru mulai belajar.\n\nKami juga mendampingi momen terpenting dalam hidup Anda: jika Anda ingin menikah secara Islam, atau ingin mengucapkan syahadat dan menjadi mualaf."
     button:
       enable : true
       label : "Lebih Lanjut"
@@ -46,20 +46,20 @@ homepage:
   ########################## Call to action ############################
   cta:
     enable : true
-    subtitle : "Sabtu, 22 Agustus 2026"
-    title : "Nongkrong Sessie: Peran Islam dalam Kemerdekaan Indonesia"
+    subtitle : "Sabtu, 5 Desember 2026"
+    title : "Kajian bersama dr. Aisah Dahlan: Perbedaan Otak Laki-laki dan Perempuan"
     button:
       enable : true
       label : "Selengkapnya"
-      link : "event/nongkrong-sessie-2/"
+      link : "event/kajian-dr-aisah-dahlan/"
     youtube:
       enable : false
       title : ""
       id : "-1HiLtHLAGk"
     img:
       enable: true
-      src: "/images/events/nongkrong-sessie-20260822.webp"
-      desc: "Nongkrong sessie di Masjid Al-Hikmah"
+      src: "/images/events/kajian-dr-aisah-dahlan.webp"
+      desc: "Kajian bersama dr. Aisah Dahlan di Masjid Al Hikmah"
 
   # CTA sebelumnya - Umrah 2026 (aktifkan kembali setelah 22 Agustus 2026)
   # cta:

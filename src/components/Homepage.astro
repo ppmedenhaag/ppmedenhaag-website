@@ -47,6 +47,43 @@ const posts = (
           <p class="mt-6 text-base leading-relaxed whitespace-pre-line text-slate-600 sm:text-lg">
             {home.about.content}
           </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={getRelativeLocaleUrl(locale, "ibadah/islamitisch-trouwen/")}
+              class="btn btn-lg btn-primary"
+            >
+              {t("homepage.nikah")}
+            </a>
+            <a
+              href={getRelativeLocaleUrl(locale, "ibadah/toetreden-islam/")}
+              class="btn btn-lg btn-secondary"
+            >
+              {t("homepage.shahada")}
+            </a>
+          </div>
+          {home.event.enable && events.length > 0 && (
+            <a
+              href="#events"
+              class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-dark"
+            >
+              {t("homepage.checkEvents")}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-4"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+                />
+              </svg>
+            </a>
+          )}
         </div>
         <div class="animate-fade-up relative" style="--i: 2">
           <img
@@ -162,7 +199,7 @@ const posts = (
 
 {
   home.event.enable && events.length > 0 && (
-    <section class="border-t border-slate-200 bg-white/60">
+    <section id="events" class="scroll-mt-20 border-t border-slate-200 bg-white/60">
       <div class="section">
         <div class="mb-8 flex items-end justify-between gap-4">
           <h2 class="title-rule section-heading">

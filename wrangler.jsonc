@@ -7,5 +7,7 @@
 		"not_found_handling": "404-page",
 		"html_handling": "auto-trailing-slash"
 	},
+	"workers_dev": true,
+	"routes": [{ "pattern": "website-v2.ppmedenhaag.nl", "custom_domain": true }],
 	"observability": { "enabled": true }
 }
