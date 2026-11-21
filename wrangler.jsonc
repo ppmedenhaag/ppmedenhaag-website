@@ -24,6 +24,10 @@
 		]
 	},
 	"workers_dev": true,
-	"routes": [{ "pattern": "website-v2.ppmedenhaag.nl", "custom_domain": true }],
+	"routes": [
+		{ "pattern": "website-v2.ppmedenhaag.nl", "custom_domain": true },
+		{ "pattern": "www.ppmedenhaag.nl", "custom_domain": true },
+		{ "pattern": "ppmedenhaag.nl", "custom_domain": true }
+	],
 	"observability": { "enabled": true }
 }
