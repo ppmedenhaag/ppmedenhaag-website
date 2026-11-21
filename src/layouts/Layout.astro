@@ -127,6 +127,8 @@ const section = segments[0] ?? "page";
 
 <script>
   // Copy buttons: <button data-copy="text" data-copied="Copied"><span data-copy-label>Copy</span></button> (IBAN, page link).
+  // Feedback for 2 s: the visible label (if any) changes, `data-done` is set (icon-only buttons swap icons with
+  // group-data-[done]:...), and an optional [data-copy-status] live region announces it to screen readers.
   document.querySelectorAll<HTMLElement>("[data-copy]").forEach((btn) => {
     btn.addEventListener("click", async () => {
       const text = btn.dataset.copy ?? "";
@@ -140,12 +142,23 @@ const section = segments[0] ?? "page";
         document.execCommand("copy");
         ta.remove();
       }
+      btn.dataset.done = "";
+      const status = btn.querySelector<HTMLElement>("[data-copy-status]");
+      if (status) status.textContent = btn.dataset.copied ?? "";
       const label = btn.querySelector<HTMLElement>("[data-copy-label]");
-      if (!label || !btn.dataset.copied) return;
-      const original = label.dataset.original ?? label.textContent ?? "";
-      label.dataset.original = original;
-      label.textContent = btn.dataset.copied;
-      setTimeout(() => (label.textContent = original), 2000);
+      const original = label ? (label.dataset.original ?? label.textContent ?? "") : "";
+      if (label && btn.dataset.copied) {
+        label.dataset.original = original;
+        label.textContent = btn.dataset.copied;
+      }
+      clearTimeout(Number(btn.dataset.timer));
+      btn.dataset.timer = String(
+        setTimeout(() => {
+          delete btn.dataset.done;
+          if (status) status.textContent = "";
+          if (label) label.textContent = original;
+        }, 2000),
+      );
     });
   });
   // Native share sheet (phones): revealed only where the Web Share API exists.

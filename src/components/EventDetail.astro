@@ -79,7 +79,7 @@ const pageDescription = (await getSeoRegistry()).byPath.get(Astro.url.pathname)?
             ))
           }
         </dl>
-        <div class="mt-5 flex flex-col gap-3">
+        <div class="mt-5 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:gap-x-8">
           <AddToCalendar entry={entry} locale={locale} description={pageDescription} />
           <ShareBar locale={locale} title={d.title} />
         </div>

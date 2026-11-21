@@ -1,7 +1,9 @@
 ---
-// "Add to calendar" for an upcoming event: .ics file (Apple Calendar, Outlook, most phones) + Google Calendar link.
+// "Add to calendar" for an upcoming event: .ics file (Apple Calendar, Outlook, Android calendar apps) + Google Calendar link.
 // Rendered only when the event has not ended at build time; the global script in Layout.astro also removes it in the
 // browser once `data-expires` has passed, so a stale build never offers a past event.
+// Compact on phones: a short label in a fixed column (lines up with ShareBar) + two equal buttons with one-word texts
+// that fit one row in nl/id/en; the full description is in aria-label/title.
 import { Icon } from "astro-icon/components";
 import type { CollectionEntry } from "astro:content";
 import type { LangOptions } from "../data/i18n";
@@ -21,24 +23,23 @@ const url = new URL(Astro.url.pathname, Astro.site ?? DEFAULT_SITE_URL).href;
 const cal = calendarEvent(entry, url, description);
 const upcoming = cal.end.getTime() > Date.now();
 const btn =
-  "inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-brand-200 bg-white px-3 py-1.5 text-[13px] font-semibold text-brand transition-colors hover:border-brand hover:bg-brand-50 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none";
+  "inline-flex h-11 min-w-0 items-center justify-center gap-1 rounded-lg border border-brand-200 bg-white px-2 text-[13px] font-semibold whitespace-nowrap text-brand transition-colors hover:border-brand hover:bg-brand-50 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none";
 ---
 
 {
   upcoming && (
-    <div class="not-prose flex flex-wrap items-center gap-2" data-expires={cal.end.toISOString()} data-pagefind-ignore>
-      <span class="mr-1 inline-flex w-full items-center gap-1.5 text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase sm:w-auto">
-        <Icon name="heroicons:calendar-days" class="size-4 text-brand" aria-hidden="true" />
-        {t("event.addToCalendar")}
-      </span>
-      <a href={icsPath(entry)} download={`${eventSlug(entry)}.ics`} class={btn}>
-        <Icon name="heroicons:arrow-down-tray" class="size-4" aria-hidden="true" />
-        {t("event.icsFile")}
-      </a>
-      <a href={googleCalendarUrl(cal)} class={btn} target="_blank" rel="noopener">
-        <Icon name="heroicons:arrow-top-right-on-square" class="size-4" aria-hidden="true" />
-        {t("event.googleCalendar")}
-      </a>
+    <div class="not-prose flex items-center gap-2" data-expires={cal.end.toISOString()} data-pagefind-ignore>
+      <span class="w-20 shrink-0 md:w-auto text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase">{t("event.addToCalendar")}</span>
+      <div class="grid min-w-0 flex-1 grid-cols-2 gap-2 sm:max-w-72">
+        <a href={icsPath(entry)} download={`${eventSlug(entry)}.ics`} class={btn} aria-label={t("event.icsFile")} title={t("event.icsFile")}>
+          <Icon name="heroicons:arrow-down-tray" class="size-4 shrink-0" aria-hidden="true" />
+          {t("event.icsShort")}
+        </a>
+        <a href={googleCalendarUrl(cal)} class={btn} target="_blank" rel="noopener" aria-label={t("event.googleCalendar")} title={t("event.googleCalendar")}>
+          <Icon name="heroicons:arrow-top-right-on-square" class="size-4 shrink-0" aria-hidden="true" />
+          Google
+        </a>
+      </div>
     </div>
   )
 }
