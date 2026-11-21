@@ -46,20 +46,38 @@ homepage:
   ########################## Call to action ############################
   cta:
     enable : true
-    subtitle : "Sabtu, 5 Desember 2026"
-    title : "Kajian bersama dr. Aisah Dahlan: Perbedaan Otak Laki-laki dan Perempuan"
+    subtitle : "Sabtu, 28 November 2026 · 12:00 - 19:00"
+    title : "Istigotsah Akbar PPME Belanda"
     button:
       enable : true
       label : "Selengkapnya"
-      link : "event/kajian-dr-aisah-dahlan/"
+      link : "event/istigotsah-akbar-2026/"
     youtube:
       enable : false
       title : ""
       id : "-1HiLtHLAGk"
     img:
       enable: true
-      src: "/images/events/kajian-dr-aisah-dahlan.webp"
-      desc: "Kajian bersama dr. Aisah Dahlan di Masjid Al Hikmah"
+      src: "/images/events/istigotsah-akbar-2026.webp"
+      desc: "Istigotsah Akbar PPME di Masjid Al Hikmah"
+
+  # CTA sebelumnya - Kajian dr. Aisah Dahlan (aktifkan kembali setelah 28 November 2026)
+  # cta:
+  #   enable : true
+  #   subtitle : "Sabtu, 5 Desember 2026"
+  #   title : "Kajian bersama dr. Aisah Dahlan: Perbedaan Otak Laki-laki dan Perempuan"
+  #   button:
+  #     enable : true
+  #     label : "Selengkapnya"
+  #     link : "event/kajian-dr-aisah-dahlan/"
+  #   youtube:
+  #     enable : false
+  #     title : ""
+  #     id : "-1HiLtHLAGk"
+  #   img:
+  #     enable: true
+  #     src: "/images/events/kajian-dr-aisah-dahlan.webp"
+  #     desc: "Kajian bersama dr. Aisah Dahlan di Masjid Al Hikmah"
 
   # CTA sebelumnya - Umrah 2026 (aktifkan kembali setelah 22 Agustus 2026)
   # cta:

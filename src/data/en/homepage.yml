@@ -46,20 +46,38 @@ homepage:
   ########################## Call to action ############################
   cta:
     enable : true
-    subtitle : "Saturday, 5 December 2026"
-    title : "Lecture with dr. Aisah Dahlan: Differences Between the Male and Female Brain (in Indonesian)"
+    subtitle : "Saturday, 28 November 2026 · 12:00 - 19:00"
+    title : "Istigotsah Akbar PPME Netherlands"
     button:
       enable : true
       label : "Read More"
-      link : "event/kajian-dr-aisah-dahlan/"
+      link : "event/istigotsah-akbar-2026/"
     youtube:
       enable : false
       title : ""
       id : "-1HiLtHLAGk"
     img:
       enable: true
-      src: "/images/events/kajian-dr-aisah-dahlan.webp"
-      desc: "Lecture with dr. Aisah Dahlan at Masjid Al Hikmah"
+      src: "/images/events/istigotsah-akbar-2026.webp"
+      desc: "Istigotsah Akbar PPME at Masjid Al Hikmah"
+
+  # Previous CTA - Lecture dr. Aisah Dahlan (restore after 28 November 2026)
+  # cta:
+  #   enable : true
+  #   subtitle : "Saturday, 5 December 2026"
+  #   title : "Lecture with dr. Aisah Dahlan: Differences Between the Male and Female Brain (in Indonesian)"
+  #   button:
+  #     enable : true
+  #     label : "Read More"
+  #     link : "event/kajian-dr-aisah-dahlan/"
+  #   youtube:
+  #     enable : false
+  #     title : ""
+  #     id : "-1HiLtHLAGk"
+  #   img:
+  #     enable: true
+  #     src: "/images/events/kajian-dr-aisah-dahlan.webp"
+  #     desc: "Lecture with dr. Aisah Dahlan at Masjid Al Hikmah"
 
   # Previous CTA - Umrah 2026 (restore after 22 August 2026)
   # cta:
