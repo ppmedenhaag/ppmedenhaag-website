@@ -6,6 +6,8 @@ import { useTranslations } from "../utils/lang";
 import EventCard from "./EventCard.astro";
 import PostCard from "./PostCard.astro";
 import PrayerTimes from "./PrayerTimes.astro";
+import Img from "./Img.astro";
+import DonationBox from "./DonationBox.astro";
 import type { LangOptions } from "../data/i18n";
 
 interface Props {
@@ -116,15 +118,17 @@ const posts = (
         />
       )}
       <div class="reveal mx-auto grid max-w-3xl grid-cols-1 justify-items-center gap-3 px-4 text-center">
-        <span class="text-[clamp(0.875rem,4.4vw,1.25rem)] font-semibold tracking-wide whitespace-nowrap text-brand-100 uppercase">{home.cta.subtitle}</span>
+        <span class="text-[clamp(0.875rem,4vw,1.25rem)] font-semibold tracking-wide text-balance text-brand-100 uppercase">{home.cta.subtitle}</span>
         <span class="text-2xl font-bold tracking-tight text-white lg:text-4xl">
           {home.cta.title}
         </span>
         {home.cta.img.enable && (
-          <img
-            class="mt-2 w-full max-w-xl border border-white/20"
+          <Img
+            class="mt-2 h-auto w-full max-w-xl border border-white/20"
             src={home.cta.img.src}
             alt={home.cta.img.desc}
+            sizes="cta"
+            loading="eager"
           />
         )}
         {home.cta.button.enable && (
@@ -155,38 +159,7 @@ const posts = (
   )
 }
 
-{
-  home.shodaqoh?.enable && (
-    <section class="border-y border-brand-100 bg-brand-50/70">
-      <div class="mx-auto flex max-w-3xl flex-col items-center gap-3 px-4 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
-        <span class="font-semibold text-brand-darker">
-          {home.shodaqoh.title}
-        </span>
-        <a
-          href="https://www.ing.nl/de-ing/payreq?trxid=pGFVuaic76PdDsKuFNeHD4wkJ5edNwsY"
-          class="btn btn-sm btn-primary"
-        >
-          PPME Den Haag
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-4"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
-        </a>
-      </div>
-    </section>
-  )
-}
+{home.shodaqoh?.enable && <DonationBox locale={locale} variant="band" title={home.shodaqoh.title} />}
 
 {
   home.event.enable && events.length > 0 && (

@@ -37,11 +37,11 @@ const visionMission = homepageEntry?.data.vision_mission;
 
             {
                 overview.data.image && (
-                    <div class="mb-10 overflow-hidden border border-slate-200">
+                    <div class="not-prose mb-10 overflow-hidden border border-slate-200">
                         <HeroImage
                             src={overview.data.image}
                             alt={overview.data.title}
-                            class="w-full object-cover"
+                            class="block w-full object-cover"
                         />
                     </div>
                 )

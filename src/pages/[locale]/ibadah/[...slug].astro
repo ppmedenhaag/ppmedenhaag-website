@@ -2,7 +2,8 @@
 import HeroImage from "../../../components/HeroImage.astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
-import { defaultLocale } from "../../../data/i18n";
+import { defaultLocale, type LangOptions } from "../../../data/i18n";
+import DonationBox from "../../../components/DonationBox.astro";
 
 export async function getStaticPaths() {
     // Excludes nl — see the same note in [locale]/blog/[...slug].astro.
@@ -52,11 +53,11 @@ const { Content } = await render(entry);
 
             {
                 entry.data.image && (
-                    <div class="mb-10 overflow-hidden border border-slate-200">
+                    <div class="not-prose mb-10 overflow-hidden border border-slate-200">
                         <HeroImage
                             src={entry.data.image}
                             alt={entry.data.title}
-                            class="w-full object-cover"
+                            class="block w-full object-cover"
                         />
                     </div>
                 )
@@ -66,6 +67,7 @@ const { Content } = await render(entry);
                 
             >
                 <Content />
+                {entry.id.endsWith("/sadaqah") && <DonationBox locale={locale as LangOptions} />}
             </div>
         </article>
     </div>

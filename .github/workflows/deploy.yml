@@ -30,6 +30,8 @@ jobs:
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      # Optional: zone id of ppmedenhaag.nl -> enables the cache purge after each deploy (token needs "Zone > Cache Purge").
+      CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -64,6 +66,15 @@ jobs:
             echo "Set the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets."; exit 1
           fi
       - run: npx wrangler deploy
+      # HTML is edge-cached for up to 1 h (+ stale-while-revalidate, public/_headers). Purge so a deploy is visible at once and
+      # no edge keeps serving old HTML that points at CSS/JS files of the previous build. Skipped until the secret exists.
+      - name: Purge Cloudflare cache
+        if: ${{ env.CLOUDFLARE_ZONE_ID != '' }}
+        continue-on-error: true
+        run: |
+          curl -fsS -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
       # Production only: notify Bing/Yandex (IndexNow) about the new/changed URLs. Never fails the deploy.
       - name: IndexNow ping
         if: ${{ vars.PUBLIC_SITE_URL == 'https://www.ppmedenhaag.nl' }}

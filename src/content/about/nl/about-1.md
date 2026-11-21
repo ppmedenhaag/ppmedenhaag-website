@@ -34,7 +34,7 @@ We hebben drie soorten lidmaatschap:
 Wil je lid worden? Kom dan langs tijdens een van onze **zaterdagprogramma's**, die om 16.00 uur beginnen. Neem een ingevuld [registratieformulier 📝](/forms/Aanmeldformulier-NL-v2.pdf) mee en een kopie van je paspoort of een ander geldig legitimatiebewijs.
 
 <br/>
-<img src="/images/about/membership.nl.jpeg" style="display: block;  margin-left: auto;  margin-right: auto; width:90%"/>
+<img src="/images/about/membership.nl.jpeg" alt="Lidmaatschappen van PPME Den Haag en de kosten" loading="lazy" style="display: block;  margin-left: auto;  margin-right: auto; width:90%"/>
 
 ### Betalingsregeling
 Wil je graag lid worden, maar zit je in een lastige financiële situatie? **Neem contact met ons op.** Er zijn andere manieren om je contributie te voldoen, zoals gedeeltelijke betaling of het inzetten van je skills, vaardigheden en kennis voor de activiteiten van de PPME Den Haag. We denken graag met je mee over wat mogelijk is.

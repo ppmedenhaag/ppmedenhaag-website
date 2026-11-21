@@ -4,6 +4,8 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import HeroImage from "./HeroImage.astro";
+import Img from "./Img.astro";
+import ShareBar from "./ShareBar.astro";
 import type { LangOptions } from "../data/i18n";
 import { formatPostDate, getLocalePosts, postSlug } from "../utils/blog";
 import { useTranslations } from "../utils/lang";
@@ -72,6 +74,7 @@ const postUrl = (p: CollectionEntry<"blog">) =>
             )
           }
         </p>
+        <ShareBar locale={locale} title={d.title} class="mt-5" />
       </header>
       <div
         
@@ -91,11 +94,11 @@ const postUrl = (p: CollectionEntry<"blog">) =>
               <li class="group flex gap-3 border-b border-slate-200 pb-4">
                 {p.data.image && (
                   <a href={postUrl(p)} tabindex="-1" aria-hidden="true">
-                    <img
-                      src={`/${p.data.image}`}
+                    <Img
+                      src={p.data.image}
                       alt=""
-                      class="h-16 w-16 border border-slate-200 object-cover"
-                      loading="lazy"
+                      sizes="thumb"
+                      class="h-16 w-16 max-w-none border border-slate-200 object-cover"
                     />
                   </a>
                 )}

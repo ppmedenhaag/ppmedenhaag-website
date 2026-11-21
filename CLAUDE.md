@@ -88,10 +88,19 @@ tiles, no heavy shadows/rounded-2xl/indigo). Shared classes live in `global.css`
 classes or `group`; use `@utility` or put `group` in the markup. Rules that restyle migrated Markdown HTML (`.prose …` content components: buttons, badges, callouts, accordion, table rows) must stay **unlayered** at the bottom of `global.css` — typography's `utilities`-layer rules beat anything in `@layer components`. `.prose table` rules in the same file
 target raw-HTML `<table>` markup (prayer-time schedules use this pattern in the Hugo source — preserve it).
 
-**Page background (build-time parameter):** `PUBLIC_BACKGROUND` = `none` (option 1) | `pattern` (option 2) | `night` (option 3) | `leaves` (option 4) | `map` (option 5, **default**, what is deployed), declared in `astro.config.mjs` via `env.schema` (an invalid value fails the build) and read with `astro:env/client`. `components/PageBackground.astro` picks the layer set used by `Layout.astro`; `Homepage.astro` only draws its CTA-band pattern in `pattern` mode. Set it per build, e.g. PowerShell `$env:PUBLIC_BACKGROUND="night"; npm run build`, bash `PUBLIC_BACKGROUND=night npm run build` (Cloudflare Pages: a build environment variable). `pattern` = a faint batik/ronce tile drawn as five stacked `.app-grid*` layers in `global.css` (different tile sizes and blur strengths, each revealed through its own random radial-gradient mask patches; the tile SVG is inlined as a data-URI and brand-blue/white for the dark CTA band). `night` = `components/NightSky.astro`: build-time seeded stars, sparkles and meteors, pure CSS animation, a sticky viewport-high stage inside the backdrop, honours `prefers-reduced-motion`; it stays on the light theme (brand-blue stars), not a dark page. `leaves` = `components/LeafBackdrop.astro`: build-time seeded branch sprigs + loose leaves (inline SVG, brand blue at low opacity, very slow CSS sway, same sticky-stage trick and reduced-motion handling). `map` = `components/NetherlandsMap.astro`: faint map of the Netherlands: only the country outline (coast, borders, islands) and the Zuid-Holland border are drawn as lines (other province borders deliberately omitted; the outline is the outer half of a stroke via an SVG mask, in one opacity group), Zuid-Holland slightly tinted, Den Haag marked with a pulsing dot and label; paths in `src/data/nl-map.ts`, **generated** by `node scripts/build-nl-map.mjs <provincie GeoJSON>` from PDOK/CBS open data (`https://cartomap.github.io/nl/wgs84/provincie_2023.geojson`) - don't hand-edit.
+**Page background (build-time parameter):** `PUBLIC_BACKGROUND` = `none` (option 1) | `pattern` (option 2) | `night` (option 3) | `leaves` (option 4) | `map` (option 5, **default**, what is deployed), declared in `astro.config.mjs` via `env.schema` (an invalid value fails the build) and read with `astro:env/client`. `components/PageBackground.astro` picks the layer set used by `Layout.astro`; `Homepage.astro` only draws its CTA-band pattern in `pattern` mode. Set it per build, e.g. PowerShell `$env:PUBLIC_BACKGROUND="night"; npm run build`, bash `PUBLIC_BACKGROUND=night npm run build` (Cloudflare Pages: a build environment variable). `pattern` = a faint batik/ronce tile drawn as five stacked `.app-grid*` layers in `global.css` (different tile sizes and blur strengths, each revealed through its own random radial-gradient mask patches; the tile SVG is inlined as a data-URI and brand-blue/white for the dark CTA band). `night` = `components/NightSky.astro`: build-time seeded stars, sparkles and meteors, pure CSS animation, a sticky viewport-high stage inside the backdrop, honours `prefers-reduced-motion`; it stays on the light theme (brand-blue stars), not a dark page. `leaves` = `components/LeafBackdrop.astro`: build-time seeded branch sprigs + loose leaves (inline SVG, brand blue at low opacity, very slow CSS sway, same sticky-stage trick and reduced-motion handling). `map` = `components/NetherlandsMap.astro`: faint map of the Netherlands: only the country outline (coast, borders, islands) and the Zuid-Holland border are drawn as lines (other province borders deliberately omitted; the outline is the outer half of a stroke via an SVG mask, in one opacity group), Zuid-Holland slightly tinted, Den Haag marked with a pulsing dot and label; paths in `src/data/nl-map.ts`, **generated** by `node scripts/build-nl-map.mjs <provincie GeoJSON>` from PDOK/CBS open data (`https://cartomap.github.io/nl/wgs84/provincie_2023.geojson`) - don't hand-edit. The static artwork is the **generated** `src/assets/nl-map.svg` (`node scripts/build-nl-map-svg.mjs`, also run by `build-nl-map.mjs`), loaded as a hashed `/_astro/` image: inlining it put ~60 KB into every page's HTML. Only the animated Den Haag marker is inline (same viewBox, same `.nl-map__svg` box).
+
+**Shared page pieces (added at the pre-cutover review, 2026-11-21):**
+- `data/site.ts` = contact + donation facts (email, Formspree action = the Hugo site's form, address, IBAN, iDEAL link, Maps URLs). Footer, contact page and `DonationBox` read it; change them there.
+- `components/Img.astro` + `utils/img.ts` + `src/pages/img/[...path].webp.ts`: build-time WebP `srcset` variants (480/800/1200[/full]) for every `image` in front matter and the homepage CTA, at `/img/<content-hash>/<w>/<name>.webp` (immutable cache). The original public/ path stays the `src`. Use `<Img sizes="card|hero|cta|thumb">` for new card/hero images; images not referenced from front matter/homepage data get no srcset (by design, so a srcset never points at an ungenerated file). Cache: `node_modules/.cache/ppme-img`.
+- `components/DonationBox.astro` (`band` on the nl/id homepage, `panel` on the Sadaqah pages): iDEAL button, IBAN + copy, build-time QR of the iDEAL link (`qrcode`, inline SVG).
+- `components/ShareBar.astro` (event + blog detail: WhatsApp, copy link, native share sheet) and `components/AddToCalendar.astro` (upcoming events: `/ics/<locale>/<slug>.ics` from `src/pages/ics/[...path].ics.ts` + Google Calendar link; end time parsed from the free-text `duration` by `utils/calendar.ts`, default 2 h). Event cards show an "upcoming" label.
+- Global behaviours in `Layout.astro`'s script, by attribute: `[data-copy]` (+`data-copied`, `[data-copy-label]`), `[data-share]` (revealed only where `navigator.share` exists), `[data-expires]` (element removed once the ISO time has passed, so stale builds never show past-event UI). `window.dispatchEvent(new Event("ppme:search"))` opens the search dialog (used by the 404 page).
+- Navbar island hydrates `client:idle` (the SSR'd navbar is visible at once).
+- `<title>`: entries whose title repeats in one language get their date appended via the registry's `docTitle` (visible heading unchanged).
 
 React is available (`@astrojs/react`, `@headlessui/react`, `@heroicons/react`) for
-interactive islands (`src/components/react/*.tsx`, hydrated with `client:load` from a
+interactive islands (`src/components/react/*.tsx`, hydrated with `client:idle`/`client:load`/`client:visible` from a
 thin `.astro` wrapper, e.g. `Navbar.astro` → `ReactNavbar.tsx`). Keep this pattern for
 new interactive UI rather than reaching for a different framework.
 
@@ -144,10 +153,14 @@ new interactive UI rather than reaching for a different framework.
 - **Discovery:** `/sitemap.xml` + `/nl|id|en/sitemap.xml` (Hugo-identical, built by `scripts/sitemap-split.mjs`, with lastmod),
   `/sitemap-index.xml`, RSS at `/[locale/][section/]index.xml` (`src/pages/[...feed]/index.xml.ts`, same 18 feeds as Hugo), `robots.txt`
   (endpoint), 404 page, icons + `site.webmanifest` (`scripts/build-icons.mjs`).
-- **Edge Worker** `worker/index.js` (wrangler `main`, `run_worker_first` skips static files): apex → www 301, trailing slash 301 (Workers'
-  own is 307), `/x/index.html` 301, and **`X-Robots-Tag: noindex` + permissive robots.txt on every host except `www.ppmedenhaag.nl`**
-  (website-v2 and workers.dev are noindexed on purpose until cutover). `public/_redirects` 301s the legacy Hugo URLs that are not ported
-  (tags/categories/author → blog; ramadhan-1444/notice → event; course/teacher → about).
+- **Edge Worker** `worker/index.js` (wrangler `main`, `run_worker_first` skips static files): http → https, apex → www, trailing slash
+  (Workers' own is 307), `/x/index.html`, `//` — all combined into ONE 301; `/404`, `/404/`, `/404.html` serve the 404 page with status 404
+  (they used to loop); and **`X-Robots-Tag: noindex` + permissive robots.txt on every host except `www.ppmedenhaag.nl`**
+  (website-v2 and workers.dev are noindexed on purpose until cutover). Test: `npm run test:worker`. Static files skip the Worker, so the
+  zone setting "Always Use HTTPS" must be on as well. `public/_redirects` 301s the legacy Hugo URLs that are not ported
+  (tags/categories/author → blog; ramadhan-1444/notice → event; course/teacher → about), **Hugo's 20 `aliases:` short links**
+  (`/zakat/`, `/kelahiran/`, `/mualaf/` …, used on flyers; not in any sitemap), `/nl/*`, list pagination `/<section>/page/N/` and the
+  contact-page feeds. New alias in Hugo-style front matter ⇒ add a `_redirects` line (aliases are not read by this site).
 - **Gates:** `npm run build` ends with `scripts/seo-audit.mjs` (errors fail the build: head tags, canonical, og image 1200×630 ≤300 KB, hreflang
   reciprocity, JSON-LD, sitemap/robots, staging-origin leak in production mode). `npm run seo:diff -- --write` compares the live Hugo sitemaps
   with `dist/` (must stay at 0 missing; report in `docs/seo/url-diff.md`).
@@ -161,6 +174,9 @@ new interactive UI rather than reaching for a different framework.
   `sticky-col`) plus plain Tailwind utilities (`lg:hidden`, `overflow-x-auto`); no Bootstrap names remain. They are styled by
   the unlayered `.prose` rules at the bottom of `global.css`; `@source "../content"` lets Tailwind see utilities used in Markdown. `@tailwindcss/typography` is installed (it was missing, so `prose` did nothing).
   Blog uses `PostList/PostCard/PostDetail.astro` + `utils/blog.ts` (author/category shown as plain text; Hugo's `/author/`, `/categories/`, `/tags/` taxonomy pages are NOT ported). Event pages share `EventDetail/EventList/EventCard.astro` + `utils/event.ts`.
+
+- **Bestuur (board) section is planned, not built:** `docs/bestuur/PLAN.md` (routes `/bestuur/` + `/bestuur/<slug>/`, content shape,
+  wiring checklist, open decisions, source texts). Photos wait in `C:\Users\rosti\Downloads\` (`eddy|hamzah|archi|marwan|gusti|wati.png`, `bestuur-1..3.png`).
 
 - **Hugo shortcodes are not converted.** Migrated content still contains literal
   `{{< youtube ... >}}`, `{{< ref ... >}}`, `{{< param email >}}` text in Markdown
@@ -182,9 +198,9 @@ new interactive UI rather than reaching for a different framework.
   (including two real cross-language content gaps found there: `course` only exists for
   `en`, `shodaqoh` only exists for `nl`/`id` — don't silently paper over either without
   flagging it).
-- **`contact.astro` pages exist but haven't been audited** against this CLAUDE.md's
-  conventions yet — don't assume they follow the URL-preservation rule above without
-  checking.
+- **Contact pages** (`/contact/`, `/id/contact/`, `/en/contact/`, URLs match Hugo) were reviewed 2026-11-21: the form posts to the
+  Hugo site's Formspree form (`CONTACT.formAction`, was a 2024 prototype form), has a `_gotcha` honeypot, and a "direct contact" block
+  (email, address + directions, socials) follows it. Field names differ from Hugo (`email` instead of `mail`, Formspree's reply-to name).
 - **No adapter, no deploy config yet** — `output: 'static'`, intentionally no adapter
   (Cloudflare Pages serves `dist/` directly). No Cloudflare Pages project has been
   created yet; that requires dashboard/account access this session doesn't have.
@@ -192,7 +208,11 @@ new interactive UI rather than reaching for a different framework.
 ## Build & dev commands
 
 - `npm run dev` — dev server, default port 4321.
-- `npm run build` — runs `astro check && astro build && pagefind --site dist && node scripts/seo-audit.mjs` (~80 s; the first run also renders ~280 share cards).
+- `npm run build` — runs `astro check && astro build && pagefind --site dist && node scripts/seo-audit.mjs` (~80 s; the first run also renders ~280 share cards and ~200 image variants).
+- **Windows gotcha:** build from an upper-case drive path (`C:\Users\...`, e.g. PowerShell `Set-Location C:\Users\rosti\hugo\ppmedenhaag-website-astro`).
+  From a lower-case path (`c:\...`: VS Code's terminal, Git Bash `/c/...`) Astro silently drops all component CSS (fonts, map, scoped
+  styles) from every page. `seo-audit` now fails such a build ("component CSS missing"). Never `wrangler deploy` a build that failed it. CI (Linux) is unaffected.
+- `npm run test:worker` — unit test of the edge Worker's redirects/noindex (no wrangler needed).
 - `node scripts/check-content.mjs [--fix-dates|--write-lang]` — report wrong UTC offsets / language mismatches in front matter; `node scripts/optimize-images.mjs` — shrink oversized public images; `node scripts/indexnow.mjs` — production-only Bing/Yandex ping (run by deploy.yml).
 - `npm run seo:audit` / `npm run seo:diff` — re-run the SEO audit on `dist/` / compare with the live Hugo sitemaps.
 - `npx astro sync` — regenerate content-collection types after changing
@@ -218,4 +238,9 @@ No manual deploy is needed after pushing.
   `@emnapi/*` entries, so `npm ci` fails on Linux runners. To restore `npm ci`, regenerate `package-lock.json` on Linux.
 - `src/icons/` is intentionally empty (`.gitkeep`): astro-icon scans it by default and warns if it is missing. Icons come
   from the Iconify sets listed in `astro.config.mjs`.
-- Manual deploy (fallback): `npm run build` then `npx wrangler deploy` (needs `npx wrangler login` once).
+- Manual deploy (fallback): `npm run build` then `npx wrangler deploy` (needs `npx wrangler login` once). See the Windows gotcha above.
+- Optional repo secret `CLOUDFLARE_ZONE_ID` (+ token permission Zone › Cache Purge) enables the purge-everything step after each deploy
+  (HTML is edge-cached up to 1 h). Skipped while the secret is absent.
+- Simple Analytics (the Hugo site's cookieless analytics, `sa-verify` token) is emitted **only in production builds** (`PUBLIC_SITE_URL`
+  = www), so staging traffic never reaches the stats.
+- Cutover runbook with exact steps: `docs/seo/CUTOVER-CHECKLIST.md`.

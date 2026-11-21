@@ -1,6 +1,6 @@
 ---
-// Page hero image with real width/height (prevents layout shift) and LCP-friendly loading hints.
-import { imageDims } from "../utils/og";
+// Page hero image: real width/height (prevents layout shift), WebP srcset, LCP-friendly loading hints.
+import Img from "./Img.astro";
 
 interface Props {
   /** public/-relative path as in front matter, e.g. images/events/x.webp */
@@ -11,16 +11,6 @@ interface Props {
   eager?: boolean;
 }
 const { src, alt, class: className, eager = true } = Astro.props;
-const dims = await imageDims(src);
 ---
 
-<img
-  src={`/${src.replace(/^\/+/, "")}`}
-  alt={alt}
-  class={className}
-  width={dims?.width}
-  height={dims?.height}
-  loading={eager ? "eager" : "lazy"}
-  fetchpriority={eager ? "high" : undefined}
-  decoding="async"
-/>
+<Img src={src} alt={alt} class={className} sizes="hero" loading={eager ? "eager" : "lazy"} />

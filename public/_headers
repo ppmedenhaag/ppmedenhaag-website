@@ -22,10 +22,18 @@
 /*.xml
   Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
 
+# "Add to calendar" files (src/pages/ics): change with the event, same freshness as HTML.
+/ics/*
+  Content-Type: text/calendar; charset=utf-8
+  Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+
 # Content-hashed build output (JS, CSS, fonts, optimised images) and hashed link-preview cards never change.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 /og/*
+  Cache-Control: public, max-age=31536000, immutable
+# Responsive image variants (src/utils/img.ts): the URL contains a content hash.
+/img/*
   Cache-Control: public, max-age=31536000, immutable
 
 # Un-hashed images: a month, and serve stale while refreshing (replace a file under a new name to bust it).

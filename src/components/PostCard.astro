@@ -5,6 +5,7 @@ import type { LangOptions } from "../data/i18n";
 import { formatPostDate, postSlug } from "../utils/blog";
 import { useTranslations } from "../utils/lang";
 import { stripMarkdown, truncateText } from "../utils/text";
+import Img from "./Img.astro";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -19,7 +20,7 @@ const href = getRelativeLocaleUrl(locale, `blog/${postSlug(post)}/`);
   {
     post.data.image && (
       <a href={href} class="tile-media" tabindex="-1" aria-hidden="true">
-        <img src={`/${post.data.image}`} alt="" loading="lazy" />
+        <Img src={post.data.image} alt="" sizes="card" />
       </a>
     )
   }

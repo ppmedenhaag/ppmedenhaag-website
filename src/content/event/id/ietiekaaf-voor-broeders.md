@@ -112,7 +112,7 @@ Bersama-sama kita berkumpul untuk menimba ilmu, merenung, dan memperkuat persaud
     box-shadow: 0 2px 10px rgba(0,0,0,0.25);
     padding: 6px;
   }
-  .ppme-header h1 {
+  .ppme-header .ppme-title {
     font-family: 'Amiri', serif;
     font-size: clamp(1.4rem, 5vw, 2rem);
     font-weight: 700;
@@ -234,7 +234,7 @@ Bersama-sama kita berkumpul untuk menimba ilmu, merenung, dan memperkuat persaud
 
   <div class="ppme-header">
     <div class="ppme-logo">PPME<br>Rotterdam</div>
-    <h1>PROGRAM</h1>
+    <p class="ppme-title">PROGRAM</p>
     <h2>IE'TIEKAAF UNTUK SAUDARA</h2>
     <div class="ppme-date">
       <p>Jumat ke Sabtu</p>

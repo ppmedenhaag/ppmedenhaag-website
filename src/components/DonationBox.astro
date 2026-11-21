@@ -1,0 +1,86 @@
+---
+// Donation call-to-action: iDEAL payment link, IBAN with a copy button and (panel, sm+) a QR code of the iDEAL link
+// so desktop visitors can pay with their phone. QR is generated at build time (inline SVG, no client JS).
+// Copy behaviour: the global [data-copy] handler in Layout.astro.
+import { Icon } from "astro-icon/components";
+import QRCode from "qrcode";
+import { DONATION } from "../data/site";
+import type { LangOptions } from "../data/i18n";
+import { useTranslations } from "../utils/lang";
+
+interface Props {
+  locale: LangOptions;
+  /** band = slim homepage strip; panel = boxed block (Sadaqah page, contact page). */
+  variant?: "band" | "panel";
+  /** Overrides the default heading. */
+  title?: string;
+}
+const { locale, variant = "panel", title } = Astro.props;
+const t = useTranslations(locale);
+const ibanCompact = DONATION.iban.replace(/\s+/g, "");
+const qr =
+  variant === "panel"
+    ? await QRCode.toString(DONATION.idealUrl, {
+        type: "svg",
+        margin: 0,
+        errorCorrectionLevel: "M",
+        color: { dark: "#0f172a", light: "#ffffff" },
+      })
+    : "";
+---
+
+{
+  variant === "band" ? (
+    <section class="relative border-y border-brand-100 bg-brand-50" aria-label={title ?? t("donate.title")}>
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-3 px-4 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div class="min-w-0">
+          <p class="font-semibold text-brand-darker">{title ?? t("donate.title")}</p>
+          <p class="mt-0.5 text-sm text-slate-600">
+            {t("donate.transfer")} <span class="font-semibold whitespace-nowrap text-slate-800 tabular-nums">{DONATION.iban}</span>
+            <button
+              type="button"
+              class="ml-1 inline-flex items-center gap-1 rounded px-1 align-middle text-xs font-semibold text-brand hover:text-brand-dark focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+              data-copy={ibanCompact}
+              data-copied={t("donate.copied")}
+            >
+              <Icon name="heroicons:clipboard-document" class="size-4" aria-hidden="true" />
+              <span data-copy-label>{t("donate.copy")}</span>
+            </button>
+          </p>
+        </div>
+        <a href={DONATION.idealUrl} class="btn btn-primary shrink-0" rel="noopener">
+          {t("donate.button")}
+          <Icon name="heroicons:arrow-right" class="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+  ) : (
+    <aside class="not-prose my-10 border border-brand-100 bg-brand-50/60" aria-label={title ?? t("donate.title")}>
+      <div class="flex flex-col gap-6 p-5 sm:flex-row sm:items-center sm:p-6">
+        <div class="min-w-0 flex-1">
+          <p class="eyebrow !text-brand">{title ?? t("donate.title")}</p>
+          <p class="mt-2 text-base text-slate-700">{t("donate.lead")}</p>
+          <a href={DONATION.idealUrl} class="btn btn-lg btn-primary mt-4 w-full sm:w-auto" rel="noopener">
+            {t("donate.button")}
+            <Icon name="heroicons:arrow-right" class="size-4" aria-hidden="true" />
+          </a>
+          <div class="mt-5 border-t border-brand-100 pt-4 text-sm text-slate-600">
+            <p>{t("donate.transfer")}:</p>
+            <p class="mt-1 font-semibold text-slate-800">{DONATION.holder}</p>
+            <div class="mt-1 flex flex-wrap items-center gap-2">
+              <span class="text-lg font-bold tracking-wide text-slate-900 tabular-nums">{DONATION.iban}</span>
+              <button type="button" class="btn btn-sm btn-secondary" data-copy={ibanCompact} data-copied={t("donate.copied")}>
+                <Icon name="heroicons:clipboard-document" class="size-4" aria-hidden="true" />
+                <span data-copy-label>{t("donate.copy")}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <figure class="hidden shrink-0 text-center sm:block">
+          <div class="size-36 border border-slate-200 bg-white p-2.5 [&>svg]:size-full" set:html={qr} />
+          <figcaption class="mt-2 max-w-36 text-xs leading-snug text-slate-500">{t("donate.scan")}</figcaption>
+        </figure>
+      </div>
+    </aside>
+  )
+}

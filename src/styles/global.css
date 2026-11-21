@@ -277,7 +277,7 @@ body {
 
     /* Form controls (contact form) */
     .field {
-        @apply block w-full rounded-lg border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-xs placeholder:text-slate-500;
+        @apply block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-xs placeholder:text-slate-500;
         @apply transition-colors focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none;
     }
     .field-label {

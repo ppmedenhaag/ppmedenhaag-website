@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import type { LangOptions } from "../data/i18n";
 import { useTranslations } from "../utils/lang";
 import { stripMarkdown, truncateText } from "../utils/text";
+import Img from "./Img.astro";
 
 interface Props {
   locale: LangOptions;
@@ -37,7 +38,7 @@ const pages = (
             <article class="tile group reveal">
               {p.data.image && (
                 <a href={href} class="tile-media" tabindex="-1" aria-hidden="true">
-                  <img src={`/${p.data.image}`} alt="" loading="lazy" />
+                  <Img src={p.data.image} alt="" sizes="card" />
                 </a>
               )}
               <div class="flex flex-1 flex-col p-5 sm:p-6">

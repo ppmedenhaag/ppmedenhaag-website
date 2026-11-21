@@ -61,6 +61,9 @@ const fileExists = (p) => {
 for (const file of htmlFiles) {
   const path = pageOf(file);
   const html = readFileSync(file, "utf8");
+  // Component CSS (incl. the self-hosted Inter @font-face) is inlined into every page (inlineStylesheets: "always").
+  // On Windows, building from a lower-case drive path (c:\..., e.g. VS Code's terminal) silently drops it -> unstyled site.
+  if (!html.includes("@font-face")) err(path, "component CSS missing (no inlined @font-face). On Windows, build from an upper-case C:\\ path (see CLAUDE.md)");
   const root = parse(html, { blockTextElements: { script: true, style: true } });
   const head = root.querySelector("head");
   const meta = (sel) => head.querySelector(sel)?.getAttribute("content");

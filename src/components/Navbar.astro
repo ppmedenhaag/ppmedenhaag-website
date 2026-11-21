@@ -80,11 +80,12 @@ const langLinks = (await Promise.all(langLinksPromises)).filter(
 );
 ---
 
+{/* client:idle: the server-rendered navbar shows at once; React hydrates after the page has loaded instead of competing with it (TBT). */}
 <NavbarExample
   locale={locale}
   currentPath={currentPath}
   menu={localMenu}
   langLinks={langLinks}
   searchLabels={searchLabels}
-  client:load
+  client:idle
 />

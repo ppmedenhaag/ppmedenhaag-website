@@ -35,7 +35,7 @@ type: "event"
 
 Assalamu 'alaykum wr wb,
 
-Geachte leden en vrienden van PPME Den Haag. Hierbij willen wij u graag uitnodigen voor een lezing, ter gelegenheid van [51 jaar PPME](https://ppmedenhaag.nl/blog/ppme-51). Deze lezing is open voor iedereen: jong, oud, leden, niet-leden, Nederlands en zowel Indonesisch sprekende mensen. In deze lezing willen we meer leren hoe we onze masdjidgemeenschap klaar kunnen stomen om 50 jaar verder te gaan, in syaa Allah!
+Geachte leden en vrienden van PPME Den Haag. Hierbij willen wij u graag uitnodigen voor een lezing, ter gelegenheid van [51 jaar PPME](/blog/ppme-51/). Deze lezing is open voor iedereen: jong, oud, leden, niet-leden, Nederlands en zowel Indonesisch sprekende mensen. In deze lezing willen we meer leren hoe we onze masdjidgemeenschap klaar kunnen stomen om 50 jaar verder te gaan, in syaa Allah!
 
 Wees welkom en kom ook eerst gezellig samen avondeten (na het gezamenlijke Magrib gebed) om 17:30. In syaa Allah. 
 

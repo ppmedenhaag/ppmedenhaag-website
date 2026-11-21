@@ -129,8 +129,14 @@ export default function Search({
         setOpen(true);
       }
     };
+    // Page content can open the dialog too (404 page): window.dispatchEvent(new Event("ppme:search")).
+    const onOpen = () => setOpen(true);
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("ppme:search", onOpen);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("ppme:search", onOpen);
+    };
   }, []);
 
   // Warm the index as soon as the dialog opens.

@@ -5,6 +5,9 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import type { LangOptions } from "../data/i18n";
 import { dateBadge, eventSlug, formatDate, plainInline } from "../utils/event";
 import { stripMarkdown, truncateText } from "../utils/text";
+import Img from "./Img.astro";
+import { eventWindow } from "../utils/calendar";
+import { useTranslations } from "../utils/lang";
 
 interface Props {
   event: CollectionEntry<"event">;
@@ -12,14 +15,23 @@ interface Props {
 }
 const { event, locale } = Astro.props;
 const badge = dateBadge(event.data.date, locale);
-const href =getRelativeLocaleUrl(locale, `event/${eventSlug(event)}/`);
+const href = getRelativeLocaleUrl(locale, `event/${eventSlug(event)}/`);
+const t = useTranslations(locale);
+// "Upcoming" label: rendered while the event hasn't ended at build time, removed in the browser once it has (data-expires).
+const { end } = eventWindow(event.data.date, event.data.duration);
+const upcoming = end.getTime() > Date.now();
 ---
 
 <article class="tile group reveal">
   {
     event.data.image && (
       <a href={href} class="tile-media" tabindex="-1" aria-hidden="true">
-        <img src={`/${event.data.image}`} alt="" loading="lazy" />
+        <Img src={event.data.image} alt="" sizes="card" />
+        {upcoming && (
+          <span class="absolute top-0 right-0 bg-white px-2.5 py-1 text-[11px] font-bold tracking-wide text-brand uppercase" data-expires={end.toISOString()}>
+            {t("event.upcoming")}
+          </span>
+        )}
         <span class="date-badge" aria-hidden="true">
           <span class="date-badge-day">{badge.day}</span>
           <span class="date-badge-month">{badge.month}</span>

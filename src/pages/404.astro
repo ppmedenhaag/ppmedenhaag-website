@@ -1,5 +1,6 @@
 ---
 // Served by the Worker for every unknown URL (wrangler.jsonc: not_found_handling "404-page"), so it is trilingual.
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -12,5 +13,16 @@ import Layout from "../layouts/Layout.astro";
       <li>Halaman tidak ditemukan. <a class="font-semibold text-brand underline" href="/id/">Ke beranda</a> · <a class="font-semibold text-brand underline" href="/id/event/">Event</a></li>
       <li>Page not found. <a class="font-semibold text-brand underline" href="/en/">Go to the homepage</a> · <a class="font-semibold text-brand underline" href="/en/event/">Events</a></li>
     </ul>
+    <button type="button" class="btn btn-lg btn-primary mt-8" data-open-search>
+      <Icon name="heroicons:magnifying-glass" class="size-5" aria-hidden="true" />
+      Zoeken · Cari · Search
+    </button>
   </div>
 </Layout>
+
+<script>
+  // Opens the site search dialog (react/Search.tsx listens for this event).
+  document.querySelector("[data-open-search]")?.addEventListener("click", () => {
+    window.dispatchEvent(new Event("ppme:search"));
+  });
+</script>

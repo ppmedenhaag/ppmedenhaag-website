@@ -34,7 +34,7 @@ type: "event"
 ---
 
 Para anggota dan teman-teman PPME Den Haag yang terhormat.
-Kami ingin mengundang anda menghadiri diskusi sebagai bagian rangkaian acara [51 tahun PPME](https://ppmedenhaag.nl/blog/ppme-51). Acara ini terbuka untuk semua orang: muda, tua, anggota, non-anggota, berbahasa Belanda dan Indonesia. Dalam acara ini, kami ingin belajar lebih banyak tentang bagaimana mempersiapkan komunitas masjid kami untuk maju 50 tahun ke depan, in syaa Allah!
+Kami ingin mengundang anda menghadiri diskusi sebagai bagian rangkaian acara [51 tahun PPME](/id/blog/ppme-51/). Acara ini terbuka untuk semua orang: muda, tua, anggota, non-anggota, berbahasa Belanda dan Indonesia. Dalam acara ini, kami ingin belajar lebih banyak tentang bagaimana mempersiapkan komunitas masjid kami untuk maju 50 tahun ke depan, in syaa Allah!
 
 Acara akan dimulai setelah sholat Maghrib berjamaah dan makan malam bersama pada pukul 17:30. Insya Allah.
 

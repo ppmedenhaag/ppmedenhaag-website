@@ -14,6 +14,8 @@
 			"!/_astro/*",
 			"!/images/*",
 			"!/og/*",
+			"!/img/*",
+			"!/ics/*",
 			"!/pagefind/*",
 			"!/data/*",
 			"!/docs/*",

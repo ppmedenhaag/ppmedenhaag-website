@@ -7,6 +7,7 @@ import { STATIC_COPY, PRAYER_COPY } from "../data/seo";
 import { LATEST_YEAR, fill, prayerStrings } from "../data/prayer";
 import { getSeoRegistry } from "../utils/seo-registry";
 import { useTranslations } from "../utils/lang";
+import Img from "./Img.astro";
 
 interface Props {
   locale: LangOptions;
@@ -36,7 +37,7 @@ const prayer = pages.find((p) => p.locale === locale && p.routeKey === "ibadah/g
           <article class="tile group reveal">
             {p.data?.image && (
               <a href={p.path} class="tile-media" tabindex="-1" aria-hidden="true">
-                <img src={`/${p.data.image}`} alt="" loading="lazy" />
+                <Img src={p.data.image} alt="" sizes="card" />
               </a>
             )}
             <div class="flex flex-1 flex-col p-5 sm:p-6">

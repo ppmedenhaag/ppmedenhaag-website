@@ -1,0 +1,40 @@
+---
+// <img> for a public/ image with build-time WebP srcset (src/utils/img.ts) and its real width/height (no layout shift).
+import { responsiveImage } from "../utils/img";
+
+/** `sizes` presets matching the layouts that use them. */
+const SIZES = {
+  /** Card grids: 1 col < 640 px, 2 cols, 3 cols from 1024 px (max ~400 px wide). */
+  card: "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw",
+  /** Article hero inside max-w-4xl / the blog main column. */
+  hero: "(min-width: 896px) 832px, calc(100vw - 2rem)",
+  /** Homepage call-to-action flyer (max-w-xl). */
+  cta: "(min-width: 640px) 576px, calc(100vw - 2rem)",
+  thumb: "64px",
+} as const;
+
+interface Props {
+  /** public/-relative path as in front matter, e.g. images/events/x.webp */
+  src: string;
+  alt: string;
+  sizes: keyof typeof SIZES;
+  class?: string;
+  /** "eager" adds fetchpriority=high (LCP candidate). */
+  loading?: "lazy" | "eager";
+}
+const { src, alt, sizes, class: className, loading = "lazy" } = Astro.props;
+const img = await responsiveImage(src);
+---
+
+<img
+  src={img.src}
+  srcset={img.srcset}
+  sizes={img.srcset ? SIZES[sizes] : undefined}
+  alt={alt}
+  class={className}
+  width={img.width}
+  height={img.height}
+  loading={loading}
+  fetchpriority={loading === "eager" ? "high" : undefined}
+  decoding="async"
+/>

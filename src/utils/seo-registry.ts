@@ -32,6 +32,8 @@ export interface SeoPage {
   kind: PageKind;
   section: string;
   title: string;
+  /** <title> text when it differs from `title`: entries whose title repeats in the same language get their date added. */
+  docTitle?: string;
   description: string;
   subtitle: string;
   eyebrow: string;
@@ -233,6 +235,22 @@ async function build(): Promise<SeoRegistry> {
         image: d,
         body: entry.body,
       });
+    }
+  }
+
+  // Same title twice in one language (legacy "Jongeren Programma", "Ramadan Programma" ...): add the date so every
+  // page has a unique <title>. The visible heading and share card keep the plain title.
+  const titleGroups = new Map<string, SeoPage[]>();
+  for (const p of pages) {
+    if (!p.date || !["event", "blog", "ibadah", "about", "dakwah"].includes(p.kind)) continue;
+    const key = `${p.locale}|${p.title.trim().toLowerCase()}`;
+    titleGroups.set(key, [...(titleGroups.get(key) ?? []), p]);
+  }
+  for (const group of titleGroups.values()) {
+    if (group.length < 2) continue;
+    for (const p of group) {
+      const when = p.date!.toLocaleDateString(locales[p.locale], { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Amsterdam" });
+      p.docTitle = `${p.title} (${when.replace(".", "")})`;
     }
   }
 

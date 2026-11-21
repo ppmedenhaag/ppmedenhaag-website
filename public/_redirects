@@ -46,3 +46,52 @@
 /id/teacher   /id/about/  301
 /en/teacher/* /en/about/  301
 /en/teacher   /en/about/  301
+
+# Hugo `aliases:` (short links used on flyers / WhatsApp; not in any sitemap). Targets = where Hugo's alias pages pointed.
+# The Worker adds the trailing slash first (301), so only the slash form is needed.
+/zakat/                   /ibadah/sadaqah/        301
+/infaq/                   /ibadah/sadaqah/        301
+/sadaqah/                 /ibadah/sadaqah/        301
+/zakat-infaq-sadaqah/     /ibadah/sadaqah/        301
+/id/zakat/                /id/ibadah/sadaqah/     301
+/id/infaq/                /id/ibadah/sadaqah/     301
+/id/sadaqah/              /id/ibadah/sadaqah/     301
+/id/zakat-infaq-sadaqah/  /id/ibadah/sadaqah/     301
+/geboorte/                /ibadah/geboorte/       301
+/kelahiran/               /id/ibadah/geboorte/    301
+/overlijden/              /ibadah/overlijden/     301
+/kematian/                /id/ibadah/overlijden/  301
+/islamitisch-trouwen/     /ibadah/islamitisch-trouwen/     301
+/pernikahan-islami/       /id/ibadah/islamitisch-trouwen/  301
+/toetreden-islam/         /ibadah/toetreden-islam/         301
+/mualaf/                  /id/ibadah/toetreden-islam/      301
+/blog/program-remaja-romadhoon-1445/   /id/blog/jongerenprogramma-romadhoon-1445/     301
+/id/blog/panduan-romadhoon/            /id/blog/huisregels-romadhoon/                 301
+/id/event/sosialisasi-komisi-jenazah/  /id/event/informatieavond-afdeling-djenazah/   301
+/event/istighotsah-akbar/              /en/event/istigotsah-akbar/                    301
+
+# Hugo served /nl/ as an alias of the (unprefixed) Dutch homepage.
+/nl/      /         301
+/nl/*     /:splat   301
+
+# Hugo list pagination (/<section>/page/N/). The new listings paginate differently -> section start page.
+/blog/page/*        /blog/       301
+/event/page/*       /event/      301
+/dakwah/page/*      /dakwah/     301
+/ibadah/page/*      /ibadah/     301
+/about/page/*       /about/      301
+/id/blog/page/*     /id/blog/    301
+/id/event/page/*    /id/event/   301
+/id/dakwah/page/*   /id/dakwah/  301
+/id/ibadah/page/*   /id/ibadah/  301
+/id/about/page/*    /id/about/   301
+/en/blog/page/*     /en/blog/    301
+/en/event/page/*    /en/event/   301
+/en/dakwah/page/*   /en/dakwah/  301
+/en/ibadah/page/*   /en/ibadah/  301
+/en/about/page/*    /en/about/   301
+
+# Hugo generated an (empty) RSS feed for the contact page.
+/contact/index.xml     /index.xml      301
+/id/contact/index.xml  /id/index.xml   301
+/en/contact/index.xml  /en/index.xml   301

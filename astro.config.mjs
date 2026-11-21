@@ -70,7 +70,7 @@ export default defineConfig({
       include: {
         heroicons: ["*"],
         // Gap-fillers Heroicons lacks (see .claude/skills/ppme-visual-design: Icons).
-        tabler: ["hourglass", "building-mosque", "moon-stars", "pray"],
+        tabler: ["hourglass", "building-mosque", "moon-stars", "pray", "brand-whatsapp", "qrcode"],
       },
     }),
   ],

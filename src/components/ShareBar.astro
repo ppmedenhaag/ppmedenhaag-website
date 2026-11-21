@@ -1,0 +1,36 @@
+---
+// Share an event/post: WhatsApp (how this community shares), copy link, and the phone's native share sheet when the
+// browser supports it (button revealed by the global script in Layout.astro). No third-party scripts or trackers.
+import { Icon } from "astro-icon/components";
+import type { LangOptions } from "../data/i18n";
+import { DEFAULT_SITE_URL } from "../data/seo";
+import { useTranslations } from "../utils/lang";
+
+interface Props {
+  locale: LangOptions;
+  title: string;
+  class?: string;
+}
+const { locale, title, class: className } = Astro.props;
+const t = useTranslations(locale);
+const url = new URL(Astro.url.pathname, Astro.site ?? DEFAULT_SITE_URL).href;
+const whatsapp = `https://wa.me/?text=${encodeURIComponent(`${title}\n${url}`)}`;
+const btn =
+  "inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-[13px] font-semibold text-slate-700 transition-colors hover:border-brand-300 hover:text-brand focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none";
+---
+
+<div class:list={["not-prose flex flex-wrap items-center gap-2", className]} data-pagefind-ignore>
+  <span class="mr-1 w-full text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase sm:w-auto">{t("share.label")}</span>
+  <a href={whatsapp} class={btn} target="_blank" rel="noopener">
+    <Icon name="tabler:brand-whatsapp" class="size-4" aria-hidden="true" />
+    WhatsApp
+  </a>
+  <button type="button" class={btn} data-copy={url} data-copied={t("share.copied")}>
+    <Icon name="heroicons:link" class="size-4" aria-hidden="true" />
+    <span data-copy-label>{t("share.copy")}</span>
+  </button>
+  <button type="button" class={btn} data-share data-title={title} data-url={url} hidden>
+    <Icon name="heroicons:share" class="size-4" aria-hidden="true" />
+    {t("share.native")}
+  </button>
+</div>

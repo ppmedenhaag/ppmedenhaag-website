@@ -47,3 +47,6 @@ export const NL_PROVINCES: { name: string; d: string }[] = ${JSON.stringify(prov
 `;
 writeFileSync(new URL("../src/data/nl-map.ts", import.meta.url), out);
 console.log("provinces:", provinces.length, "viewBox:", fix(maxX - minX + 2 * PAD), "x", fix(maxY - minY + 2 * PAD), "den haag:", fix(hx), fix(hy));
+
+// The static map artwork (src/assets/nl-map.svg) is derived from nl-map.ts.
+await import("./build-nl-map-svg.mjs");

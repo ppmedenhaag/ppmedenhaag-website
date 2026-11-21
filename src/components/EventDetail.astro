@@ -7,6 +7,11 @@ import HeroImage from "./HeroImage.astro";
 import type { LangOptions } from "../data/i18n";
 import { formatDate, formatTime, getLocaleEvents, plainInline } from "../utils/event";
 import { useTranslations } from "../utils/lang";
+import AddToCalendar from "./AddToCalendar.astro";
+import ShareBar from "./ShareBar.astro";
+import { mapsUrl } from "../data/site";
+import { fullLocation } from "../utils/calendar";
+import { getSeoRegistry } from "../utils/seo-registry";
 
 interface Props {
   entry: CollectionEntry<"event">;
@@ -19,13 +24,14 @@ const d = entry.data;
 const more = (await getLocaleEvents(locale))
   .filter((e) => e.id !== entry.id)
   .slice(0, 3);
-// [icon, label, value] — Heroicons outline via astro-icon.
+// [icon, label, value, link?] — Heroicons outline via astro-icon. The location links to Google Maps directions.
 const meta = [
-  d.location && ["heroicons:map-pin", t("event.location"), plainInline(d.location)],
+  d.location && ["heroicons:map-pin", t("event.location"), plainInline(d.location), mapsUrl(fullLocation(d.location))],
   ["heroicons:calendar-days", t("event.date"), formatDate(d.date, locale)],
   ["heroicons:clock", t("event.time"), formatTime(d.date, locale)],
-  d.duration && ["tabler:hourglass", t("event.duration"), d.duration],
-].filter(Boolean) as [string, string, string][];
+  d.duration && d.duration.trim() !== "..." && ["tabler:hourglass", t("event.duration"), d.duration],
+].filter(Boolean) as [string, string, string, string?][];
+const pageDescription = (await getSeoRegistry()).byPath.get(Astro.url.pathname)?.description ?? "";
 ---
 
 <Layout title={d.title} date={d.date}>
@@ -50,7 +56,7 @@ const meta = [
         }
         <dl class="not-prose grid grid-cols-1 divide-y divide-slate-200 border border-slate-200 bg-brand-50/40 text-sm sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
           {
-            meta.map(([icon, label, value]) => (
+            meta.map(([icon, label, value, href]) => (
               <div class="flex items-start gap-3 px-4 py-3">
                 <Icon
                   name={icon}
@@ -60,11 +66,23 @@ const meta = [
                 <div class="min-w-0">
                   <dt class="eyebrow !text-brand">{label}</dt>
                   <dd class="mt-1 font-medium break-words text-slate-800">{value}</dd>
+                  {href && (
+                    <dd class="mt-1">
+                      <a href={href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:text-brand-dark">
+                        {t("event.directions")}
+                        <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
+                      </a>
+                    </dd>
+                  )}
                 </div>
               </div>
             ))
           }
         </dl>
+        <div class="mt-5 flex flex-col gap-3">
+          <AddToCalendar entry={entry} locale={locale} description={pageDescription} />
+          <ShareBar locale={locale} title={d.title} />
+        </div>
       </header>
 
       <div

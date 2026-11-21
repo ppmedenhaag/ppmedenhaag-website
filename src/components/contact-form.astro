@@ -3,14 +3,17 @@ import { Image } from "astro:assets";
 import { useTranslations } from "../utils/lang";
 import contactImage from "../assets/contact.webp";
 import ContactSubject from "./react/ContactSubject";
+import { Icon } from "astro-icon/components";
 import { defaultLocale, type LangOptions } from "../data/i18n";
+import { CONTACT, VENUE_MAPS_URL } from "../data/site";
+import { SOCIAL_LINKS } from "../data/seo";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 const t = useTranslations(locale);
 ---
 
 <form
-  action="https://formspree.io/f/mdknakbg"
+  action={CONTACT.formAction}
   method="POST"
   class="mx-auto max-w-3xl"
 >
@@ -27,6 +30,8 @@ const t = useTranslations(locale);
       sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${contactImage.width}px`}
     />
     <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+      {/* Honeypot: Formspree drops submissions that fill this hidden field (bots). */}
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
       <div class="sm:col-span-2">
         <ContactSubject client:load locale={locale} label={t("contact.subject")} />
       </div>
@@ -77,3 +82,42 @@ const t = useTranslations(locale);
     </div>
   </div>
 </form>
+
+<section class="mx-auto mt-6 max-w-3xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="contact-direct">
+  <h2 id="contact-direct" class="eyebrow">{t("contact.direct")}</h2>
+  <dl class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
+    <div class="flex items-start gap-3">
+      <Icon name="heroicons:envelope" class="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
+      <div class="min-w-0">
+        <dt class="text-xs font-semibold text-slate-500">{t("contact.emailUs")}</dt>
+        <dd class="mt-0.5"><a href={`mailto:${CONTACT.email}`} class="font-semibold break-all text-brand hover:text-brand-dark">{CONTACT.email}</a></dd>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <Icon name="heroicons:map-pin" class="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
+      <div>
+        <dt class="text-xs font-semibold text-slate-500">{t("contact.visit")}</dt>
+        <dd class="mt-0.5 text-sm leading-relaxed text-slate-800">
+          {CONTACT.address.name}<br />{CONTACT.address.street}<br />{CONTACT.address.postalCode} {CONTACT.address.city}
+        </dd>
+        <dd class="mt-1">
+          <a href={VENUE_MAPS_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:text-brand-dark">
+            {t("contact.directions")}
+            <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
+          </a>
+        </dd>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <Icon name="heroicons:chat-bubble-left-right" class="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
+      <div>
+        <dt class="text-xs font-semibold text-slate-500">Social media</dt>
+        <dd class="mt-0.5 flex flex-col gap-0.5 text-sm">
+          {SOCIAL_LINKS.map((l) => (
+            <a href={l} target="_blank" rel="noopener" class="font-medium text-slate-800 hover:text-brand">{new URL(l).hostname.replace(/^www\./, "").split(".")[0].replace(/^./, (c) => c.toUpperCase()).replace("Youtube", "YouTube")}</a>
+          ))}
+        </dd>
+      </div>
+    </div>
+  </dl>
+</section>

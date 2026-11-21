@@ -7,7 +7,7 @@ import Footer from "../components/footer.astro";
 import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import Seo from "../components/Seo.astro";
 import { defaultLocale, type LangOptions } from "../data/i18n";
-import { OG_HEIGHT, OG_LOCALE, OG_WIDTH, SITE_NAME, STATIC_COPY, EYEBROW } from "../data/seo";
+import { OG_HEIGHT, OG_LOCALE, OG_WIDTH, PRODUCTION_ORIGIN, SITE_NAME, STATIC_COPY, EYEBROW } from "../data/seo";
 import { alternatesFor, getSeoRegistry } from "../utils/seo-registry";
 import { buildJsonLd } from "../utils/jsonld";
 import { fullTitle, isoInTimeZone } from "../utils/seo";
@@ -34,7 +34,7 @@ const seoLocale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 const origin = (Astro.site ?? new URL("https://website-v2.ppmedenhaag.nl")).origin;
 const abs = (p: string) => new URL(p, origin).href;
 const rawTitle = titleProp ?? page?.title ?? SITE_NAME;
-const seoTitle = fullTitle(rawTitle, SITE_NAME);
+const seoTitle = fullTitle(page?.docTitle ?? rawTitle, SITE_NAME);
 const seoDescription = descriptionProp ?? page?.description ?? STATIC_COPY.home[seoLocale].description;
 const canonical = abs(Astro.url.pathname);
 // Language of the text itself (differs from the URL locale for a few Indonesian pages under /nl/ and /en/).
@@ -52,6 +52,9 @@ const rssPrefix = seoLocale === defaultLocale ? "" : `/${seoLocale}`;
 const jsonLd = buildJsonLd({ origin, url: canonical, page, locale: seoLocale, title: rawTitle, description: seoDescription, image });
 const isoDate = date ? date.toISOString().slice(0, 10) : undefined;
 const currentLocale = Astro.currentLocale ?? defaultLocale;
+// Simple Analytics (the Hugo site's privacy-friendly, cookieless analytics): production build only, so staging
+// (website-v2 / workers.dev) traffic never reaches the stats. sa-verify = the account's domain-verification token.
+const analytics = origin === PRODUCTION_ORIGIN;
 
 // Search facet: first path segment without the locale prefix (event, blog, ibadah, ...).
 const segments = Astro.url.pathname.split("/").filter(Boolean);
@@ -89,6 +92,7 @@ const section = segments[0] ?? "page";
     <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href={globalCss} />
     <meta name="generator" content={Astro.generator} />
+    {analytics && <meta name="sa-verify" content="ssnppmedenhaarr" />}
   </head>
   <body class="flex min-h-screen flex-col">
     <Navbar />
@@ -108,10 +112,56 @@ const section = segments[0] ?? "page";
       </main>
     </div>
     <Footer />
+    {
+      analytics && (
+        <>
+          <script is:inline async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+          <noscript>
+            <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />
+          </noscript>
+        </>
+      )
+    }
   </body>
 </html>
 
 <script>
+  // Copy buttons: <button data-copy="text" data-copied="Copied"><span data-copy-label>Copy</span></button> (IBAN, page link).
+  document.querySelectorAll<HTMLElement>("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = btn.dataset.copy ?? "";
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const ta = Object.assign(document.createElement("textarea"), { value: text });
+        ta.style.cssText = "position:fixed;opacity:0";
+        document.body.append(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+      const label = btn.querySelector<HTMLElement>("[data-copy-label]");
+      if (!label || !btn.dataset.copied) return;
+      const original = label.dataset.original ?? label.textContent ?? "";
+      label.dataset.original = original;
+      label.textContent = btn.dataset.copied;
+      setTimeout(() => (label.textContent = original), 2000);
+    });
+  });
+  // Native share sheet (phones): revealed only where the Web Share API exists.
+  if (typeof navigator.share === "function") {
+    document.querySelectorAll<HTMLElement>("[data-share]").forEach((btn) => {
+      btn.hidden = false;
+      btn.addEventListener("click", () => {
+        navigator.share({ title: btn.dataset.title, url: btn.dataset.url }).catch(() => {});
+      });
+    });
+  }
+  // Time-limited UI (e.g. "add to calendar" once the event is over), in case the page was built before that moment.
+  document.querySelectorAll<HTMLElement>("[data-expires]").forEach((el) => {
+    if (Date.now() > Date.parse(el.dataset.expires ?? "")) el.remove();
+  });
+
   // Accordion for Markdown content: <div class="accordion-trigger" data-accordion-trigger data-accordion-target="#id" data-accordion-group="#group">.
   document
     .querySelectorAll<HTMLElement>("[data-accordion-trigger]")

@@ -33,7 +33,7 @@ Kami memiliki tiga jenis keanggotaan:
 ### Bergabung
 Untuk menjadi anggota, mampirlah ke salah satu **program Sabtu** kami yang dimulai pukul 16.00. Bawa [formulir pendaftaran 📝](/forms/Aanmeldformulier-ID-v2.pdf) yang sudah diisi dan fotokopi paspor atau bukti identitas lain yang masih berlaku.
 
-<img src="/images/about/membership.id.jpeg" style="display: block;  margin-left: auto;  margin-right: auto; width:90%"/>
+<img src="/images/about/membership.id.jpeg" alt="Jenis keanggotaan PPME Den Haag dan iurannya" loading="lazy" style="display: block;  margin-left: auto;  margin-right: auto; width:90%"/>
 
 ### Pengaturan Pembayaran
 Ingin menjadi anggota tetapi keberatan dengan iuran bulanan? **Mari berdiskusi.** Ada cara lain untuk membayar iuran, misalnya pembayaran sebagian, atau menyumbangkan keahlian, keterampilan, dan pemikiran Anda untuk kegiatan PPME Den Haag. Kami senang melihat bersama opsi yang memungkinkan.

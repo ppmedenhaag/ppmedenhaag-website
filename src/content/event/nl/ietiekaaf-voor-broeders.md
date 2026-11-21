@@ -115,7 +115,7 @@ Samen komen we bijeen voor kennis, reflectie en versterking van onze broederscha
     box-shadow: 0 2px 10px rgba(0,0,0,0.25);
     padding: 6px;
   }
-  .ppme-header h1 {
+  .ppme-header .ppme-title {
     font-family: 'Amiri', serif;
     font-size: clamp(1.4rem, 5vw, 2rem);
     font-weight: 700;
@@ -237,7 +237,7 @@ Samen komen we bijeen voor kennis, reflectie en versterking van onze broederscha
 
   <div class="ppme-header">
     <div class="ppme-logo">PPME<br>Rotterdam</div>
-    <h1>PROGRAMMA</h1>
+    <p class="ppme-title">PROGRAMMA</p>
     <h2>IE'TIEKAAF VOOR BROEDERS</h2>
     <div class="ppme-date">
       <p>vrijdag op zaterdag</p>

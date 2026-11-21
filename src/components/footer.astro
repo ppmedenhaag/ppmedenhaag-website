@@ -1,5 +1,7 @@
 ---
+import { Icon } from "astro-icon/components";
 import { defaultLocale, type LangOptions } from "../data/i18n";
+import { CONTACT, DONATION, VENUE_MAPS_URL } from "../data/site";
 
 const headerLinks = {
   activities: { nl: "Activiteiten", id: "Kegiatan", en: "Activities" },
@@ -133,11 +135,22 @@ const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
               d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
             ></path>
           </svg>
-          <div class="grid grid-cols-1 text-sm leading-relaxed font-medium text-white">
-            <span>Masjid Al Hikmah</span>
-            <span>Medlerstraat 4</span>
-            <span>2531 HA Den Haag</span>
-          </div>
+          <a href={VENUE_MAPS_URL} target="_blank" rel="noopener" class="grid grid-cols-1 text-sm leading-relaxed font-medium text-white hover:underline">
+            <span>{CONTACT.address.name}</span>
+            <span>{CONTACT.address.street}</span>
+            <span>{CONTACT.address.postalCode} {CONTACT.address.city}</span>
+          </a>
+        </div>
+        <div class="flex items-center gap-3">
+          <Icon name="heroicons:envelope" class="size-5 shrink-0 text-brand-300" aria-hidden="true" />
+          <a href={`mailto:${CONTACT.email}`} class="text-sm font-medium text-white hover:underline">{CONTACT.email}</a>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="heroicons:banknotes" class="mt-0.5 size-5 shrink-0 text-brand-300" aria-hidden="true" />
+          <p class="text-sm leading-relaxed text-brand-100">
+            <span class="block font-medium text-white tabular-nums">IBAN {DONATION.iban}</span>
+            <span class="block text-xs">{DONATION.holder}</span>
+          </p>
         </div>
         <ul role="list" class="flex flex-wrap gap-3">
           {
