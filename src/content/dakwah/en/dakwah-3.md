@@ -1,5 +1,5 @@
 ---
-title: "Indonesian gathering"
+title: "Indonesian gathering Al Ittihaad"
 date: 2022-03-16T15:27:17+01:00
 draft: false
 # page title background image
