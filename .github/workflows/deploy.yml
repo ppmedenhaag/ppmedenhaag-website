@@ -7,7 +7,14 @@ name: Build and deploy
 on:
   push:
     branches: [main]
+    # Documentation-only commits don't change the site.
+    paths-ignore:
+      - "docs/**"
+      - "**/*.md"
   workflow_dispatch:
+  # The prayer-time page shows the build-time (Amsterdam) year: rebuild just after midnight on 1 January.
+  schedule:
+    - cron: "30 0 1 1 *"
 
 concurrency:
   group: deploy

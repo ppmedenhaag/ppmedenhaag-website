@@ -1,27 +1,64 @@
+# NOTE: Cloudflare MERGES every matching rule (duplicate header names are joined with a comma), so the
+# Cache-Control rules below are written to be mutually exclusive. Never add a catch-all `/*` Cache-Control.
+
+# Security headers: every response.
 /*
   X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
-  Referrer-Policy: same-origin
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
-# Hashed build output and content-hashed link-preview cards never change.
+# --- Caching ---------------------------------------------------------------------------------------------
+# Content changes about weekly, so HTML may be a little stale: browsers reuse it for 5 min, the edge for 1 h, and
+# either may serve a stale copy for up to a day while it revalidates in the background (instant repeat views).
+# A deploy is therefore visible everywhere within ~1 h at most (usually within minutes).
+/
+  Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+/*/
+  Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+
+# Feeds, sitemaps: crawlers/readers poll these; 1 h is plenty.
+/*.xml
+  Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+
+# Content-hashed build output (JS, CSS, fonts, optimised images) and hashed link-preview cards never change.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
-
 /og/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Un-hashed images: a month, and serve stale while refreshing (replace a file under a new name to bust it).
 /images/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
 
+# Logos, favicons, manifest (listed explicitly: a `/*.svg` glob would also match /images and /_astro and merge headers).
+/apple-touch-icon.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/favicon-32.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/favicon.ico
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/favicon.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/icon-192.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/icon-512.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/logo.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/ppme-logo.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/site.webmanifest
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Search index: pagefind.js/entry files are un-hashed and change on every build.
 /pagefind/*
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
-/*.js
-  Cache-Control: public, s-maxage=86400
-
-/*.css
-  Cache-Control: public, s-maxage=86400
-
-/*.woff
-  Cache-Control: public, s-maxage=86400
+# PDFs/forms/documents (public/docs, public/forms): un-hashed names, so a week + stale-while-revalidate.
+# If you replace a file, give it a new name (or accept up to a week of staleness).
+/docs/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+/forms/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
