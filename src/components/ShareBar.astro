@@ -18,20 +18,20 @@ const t = useTranslations(locale);
 const url = new URL(Astro.url.pathname, Astro.site ?? DEFAULT_SITE_URL).href;
 const whatsapp = `https://wa.me/?text=${encodeURIComponent(`${title}\n${url}`)}`;
 const btn =
-  "group inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition-colors hover:border-brand-300 hover:text-brand focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none";
+  "group inline-flex size-11 shrink-0 items-center justify-center rounded-sm border-2 border-brand bg-white text-brand transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-50 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none";
 ---
 
 <div class:list={["not-prose flex items-center gap-2", className]} data-pagefind-ignore>
-  <span class="w-20 shrink-0 md:w-auto text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase">{t("share.label")}</span>
+  <span class="sr-only md:not-sr-only text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase">{t("share.label")}</span>
   <a href={whatsapp} class={btn} target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
-    <Icon name="tabler:brand-whatsapp" class="size-6" aria-hidden="true" />
+    <img src="/icons/whatsapp.svg" alt="" width="24" height="24" class="size-6" aria-hidden="true" />
   </a>
-  <button type="button" class={btn} data-copy={url} data-copied={t("share.copied")} aria-label={t("share.copy")} title={t("share.copy")}>
-    <Icon name="heroicons:link" class="size-6 group-data-[done]:hidden" aria-hidden="true" />
-    <Icon name="heroicons:check" class="hidden size-6 text-brand group-data-[done]:block" aria-hidden="true" />
+  <button type="button" class:list={[btn, "max-md:has-[~[data-share]:not([hidden])]:hidden"]} data-copy={url} data-copied={t("share.copied")} aria-label={t("share.copy")} title={t("share.copy")}>
+    <Icon name="heroicons:link-solid" class="size-6 group-data-[done]:hidden" aria-hidden="true" />
+    <Icon name="heroicons:check-solid" class="hidden size-6 text-brand group-data-[done]:block" aria-hidden="true" />
     <span class="sr-only" aria-live="polite" data-copy-status></span>
   </button>
   <button type="button" class={btn} data-share data-title={title} data-url={url} aria-label={t("share.native")} title={t("share.native")} hidden>
-    <Icon name="heroicons:share" class="size-6" aria-hidden="true" />
+    <Icon name="heroicons:share-solid" class="size-6" aria-hidden="true" />
   </button>
 </div>

@@ -23,20 +23,20 @@ const url = new URL(Astro.url.pathname, Astro.site ?? DEFAULT_SITE_URL).href;
 const cal = calendarEvent(entry, url, description);
 const upcoming = cal.end.getTime() > Date.now();
 const btn =
-  "inline-flex h-11 min-w-0 items-center justify-center gap-1 rounded-lg border border-brand-200 bg-white px-2 text-[13px] font-semibold whitespace-nowrap text-brand transition-colors hover:border-brand hover:bg-brand-50 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none";
+  "inline-flex h-11 min-w-0 items-center justify-center gap-1 rounded-sm border-2 border-brand bg-white px-2 text-[13px] font-semibold whitespace-nowrap text-brand transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-50 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none";
 ---
 
 {
   upcoming && (
-    <div class="not-prose flex items-center gap-2" data-expires={cal.end.toISOString()} data-pagefind-ignore>
-      <span class="w-20 shrink-0 md:w-auto text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase">{t("event.addToCalendar")}</span>
-      <div class="grid min-w-0 flex-1 grid-cols-2 gap-2 sm:max-w-72">
+    <div class="not-prose flex min-w-0 flex-1 items-center gap-2 md:flex-none" data-expires={cal.end.toISOString()} data-pagefind-ignore>
+      <span class="sr-only md:not-sr-only text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase">{t("event.addToCalendar")}</span>
+      <div class="grid min-w-0 flex-1 grid-cols-2 gap-2 md:w-72 md:flex-none">
         <a href={icsPath(entry)} download={`${eventSlug(entry)}.ics`} class={btn} aria-label={t("event.icsFile")} title={t("event.icsFile")}>
           <Icon name="heroicons:arrow-down-tray" class="size-4 shrink-0" aria-hidden="true" />
           {t("event.icsShort")}
         </a>
         <a href={googleCalendarUrl(cal)} class={btn} target="_blank" rel="noopener" aria-label={t("event.googleCalendar")} title={t("event.googleCalendar")}>
-          <Icon name="heroicons:arrow-top-right-on-square" class="size-4 shrink-0" aria-hidden="true" />
+          <img src="/icons/google-calendar.svg" alt="" width="16" height="16" class="size-4 shrink-0" aria-hidden="true" />
           Google
         </a>
       </div>
