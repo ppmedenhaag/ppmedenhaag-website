@@ -37,10 +37,11 @@ type MenuItem = NavProps["menu"][number];
 const norm = (p: string) => (p.endsWith("/") ? p : p + "/");
 
 /** A link is active when the current page is that page or lives beneath it. */
-function isActive(currentPath: string, href?: string) {
+function isActive(currentPath: string, href?: string, exact = false) {
   if (!href || href.endsWith(".pdf")) return false;
   const cur = norm(currentPath);
   const target = norm(href);
+  if (exact) return cur === target;
   // Home links ("/" or "/id/") only match exactly.
   if (target === "/" || /^\/[a-z]{2}\/$/.test(target)) return cur === target;
   return cur.startsWith(target);
@@ -49,7 +50,9 @@ function isActive(currentPath: string, href?: string) {
 function groupActive(currentPath: string, item: MenuItem) {
   return (
     isActive(currentPath, (item as any).href) ||
-    ((item as any).links ?? []).some((l: any) => isActive(currentPath, l.href))
+    ((item as any).links ?? []).some((l: any) =>
+      isActive(currentPath, l.href, l.exact),
+    )
   );
 }
 
@@ -170,7 +173,7 @@ export default function NavbarExample(params: NavProps) {
                   className="z-50 w-64 origin-top rounded-lg border border-slate-200 bg-white/95 p-1.5 shadow-lg shadow-brand/10 backdrop-blur-md transition duration-150 ease-out data-closed:-translate-y-1 data-closed:scale-95 data-closed:opacity-0"
                 >
                   {links.map((l) => {
-                    const a = isActive(currentPath, l.href);
+                    const a = isActive(currentPath, l.href, (l as any).exact);
                     return (
                       <CloseButton
                         key={l.href}
@@ -289,7 +292,7 @@ export default function NavbarExample(params: NavProps) {
                   </DisclosureButton>
                   <DisclosurePanel className="mt-1 space-y-1 border-l-2 border-slate-200 pl-3 ml-4">
                     {links.map((l) => {
-                      const a = isActive(currentPath, l.href);
+                      const a = isActive(currentPath, l.href, (l as any).exact);
                       return (
                         <a
                           key={l.href}

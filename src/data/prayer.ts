@@ -146,6 +146,8 @@ export function prayerState(times: Times, minutes: number): PrayerState {
 export interface PrayerStrings {
   widgetTitle: string;
   next: string;
+  /** Shown while Fadjr is current: the Fadjr period ends at sunrise (Shoroeq). */
+  fadjrEnds: string;
   fullSchedule: string; // "{year}" placeholder
   unavailable: string;
   pageTitle: string; // "{year}" placeholder
@@ -164,6 +166,7 @@ export const prayerStrings: Record<LangOptions, PrayerStrings> = {
   nl: {
     widgetTitle: "Gebedstijden voor de regio Den Haag",
     next: "Volgende",
+    fadjrEnds: "Fadjr eindigt bij zonsopgang (Shoroeq)",
     fullSchedule: "Volledig rooster {year}",
     unavailable: "De gebedstijden van vandaag zijn nog niet beschikbaar.",
     pageTitle: "Gebedstijden Den Haag {year}",
@@ -182,6 +185,7 @@ export const prayerStrings: Record<LangOptions, PrayerStrings> = {
   id: {
     widgetTitle: "Jadwal Sholat Area Den Haag",
     next: "Berikutnya",
+    fadjrEnds: "Waktu Shubuh berakhir saat terbit matahari (Shoroeq)",
     fullSchedule: "Jadwal lengkap {year}",
     unavailable: "Jadwal sholat hari ini belum tersedia.",
     pageTitle: "Jadwal Sholat Den Haag {year}",
@@ -200,6 +204,7 @@ export const prayerStrings: Record<LangOptions, PrayerStrings> = {
   en: {
     widgetTitle: "Prayer Times for The Hague Area",
     next: "Next",
+    fadjrEnds: "Fadjr ends at sunrise (Shoroeq)",
     fullSchedule: "Full {year} schedule",
     unavailable: "Today's prayer times are not available yet.",
     pageTitle: "Prayer Times The Hague {year}",
