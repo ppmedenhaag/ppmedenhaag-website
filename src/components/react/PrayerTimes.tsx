@@ -73,7 +73,7 @@ export default function PrayerTimes({ locale, scheduleHref }: Props) {
   return (
     <section
       aria-label={s.widgetTitle}
-      className="border border-slate-200 bg-white"
+      className="border-y border-slate-200 bg-white sm:border-x"
     >
       <div className="border-b border-slate-200 bg-slate-50 px-3 py-2 text-center">
         <p className="eyebrow">{s.widgetTitle}</p>
@@ -118,7 +118,9 @@ export default function PrayerTimes({ locale, scheduleHref }: Props) {
 
       <div className="flex min-h-9 flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t border-slate-200 px-3 py-2 text-xs text-slate-600">
         <span aria-live="polite">
-          {times && state && state.next !== -1 && countdown
+          {times && state && state.active === 0
+            ? `${s.fadjrEnds}: ${times[1]}${countdown ? ` · ${countdown}` : ""}`
+            : times && state && state.next !== -1 && countdown
             ? `${s.next}: ${PRAYER_NAMES[state.next]} ${times[state.next]} · ${countdown}`
             : " "}
         </span>
