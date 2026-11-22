@@ -37,61 +37,74 @@ const pageDescription = (await getSeoRegistry()).byPath.get(Astro.url.pathname)?
 ---
 
 <Layout title={d.title} date={d.date}>
-  <div class="mx-auto max-w-4xl px-2 py-6 sm:px-6 sm:py-10 lg:px-8">
+  <div class="mx-auto max-w-7xl px-2 py-6 sm:px-6 sm:py-10 lg:px-8">
+    {/*
+      One card. Below lg it is a single column: title, poster, facts, actions, text (as before).
+      From lg the poster, facts and actions move to a right-hand column; the facts + actions stay in view while scrolling.
+    */}
     <article
-      class="prose prose-brand lg:prose-lg page-article max-w-none min-w-0 !p-4 sm:!p-6 md:!p-10"
+      class="prose prose-brand lg:prose-lg 2xl:prose-xl page-article max-w-none min-w-0 !p-4 sm:!p-6 md:!p-10 lg:grid lg:grid-cols-[minmax(0,1fr)_22rem] lg:grid-rows-[auto_1fr_auto] lg:gap-x-8"
     >
-      <header class="mb-8 border-b border-slate-200 pb-8">
-        <h1
-          class="page-title title-rule mb-8"
-        >
+      {/* a div, not <header>: global `.page-article > header` adds its own rule + padding */}
+      <div class="lg:col-start-1 lg:row-start-1 lg:mb-8 lg:border-b lg:border-slate-200 lg:pb-8">
+        <h1 class="page-title title-rule mb-8 lg:!mb-0">
           {d.title}
         </h1>
-        {
-          d.image && (
-            <HeroImage
-              src={d.image}
-              alt={d.title}
-              class="w-full border border-slate-200 mb-6"
-            />
-          )
-        }
-        <dl class="not-prose grid grid-cols-2 divide-y divide-slate-200 border border-slate-200 bg-brand-50/40 text-sm sm:divide-y-0 md:-mx-10 md:border-x-0 lg:grid-cols-[1.6fr_1.3fr_0.9fr_1fr] lg:divide-x">
-          {
-            meta.map(([icon, label, value, href, cls]) => (
-              <div class:list={["min-w-0 px-3 py-2.5 sm:px-5 sm:py-4", cls]}>
-                <dt class="flex items-center gap-2">
-                  <Icon name={icon} class="size-5 shrink-0 text-brand" aria-hidden="true" />
-                  <span class="eyebrow !text-brand">{label}</span>
-                </dt>
-                <dd class="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <span class="font-medium break-words text-slate-800">{value}</span>
-                  {href && (
-                    <a href={href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold whitespace-nowrap text-brand hover:text-brand-dark">
-                      {t("event.directions")}
-                      <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
-                    </a>
-                  )}
-                </dd>
-              </div>
-            ))
-          }
-        </dl>
-        <div class="mt-4 flex items-center gap-2 md:mt-5 md:flex-wrap md:gap-x-8 md:gap-y-3">
-          <AddToCalendar entry={entry} locale={locale} description={pageDescription} />
-          <ShareBar locale={locale} title={d.title} />
-        </div>
-      </header>
+      </div>
 
       <div
-        
+        class="not-prose mb-8 border-b border-slate-200 pb-8 lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:mb-0 lg:border-b-0 lg:border-l lg:pb-0 lg:pl-8"
       >
+        {
+          d.image && (
+            <a
+              href={d.image.startsWith("/") ? d.image : `/${d.image}`}
+              target="_blank"
+              rel="noopener"
+              class="mb-6 block"
+              aria-label={`${d.title} (${t("event.poster")})`}
+              title={t("event.poster")}
+            >
+              <HeroImage src={d.image} alt={d.title} sizes="side" class="w-full rounded-md border border-slate-200" />
+            </a>
+          )
+        }
+        <div class="lg:sticky lg:top-24">
+          <dl class="grid grid-cols-2 divide-y divide-slate-200 border border-slate-200 bg-brand-50/40 text-sm sm:divide-y-0 md:-mx-10 md:border-x-0 lg:mx-0 lg:grid-cols-1 lg:divide-y lg:border-x">
+            {
+              meta.map(([icon, label, value, href, cls]) => (
+                <div class:list={["min-w-0 px-3 py-2.5 sm:px-5 sm:py-4", cls]}>
+                  <dt class="flex items-center gap-2">
+                    <Icon name={icon} class="size-5 shrink-0 text-brand" aria-hidden="true" />
+                    <span class="eyebrow !text-brand">{label}</span>
+                  </dt>
+                  <dd class="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span class="font-medium break-words text-slate-800">{value}</span>
+                    {href && (
+                      <a href={href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold whitespace-nowrap text-brand hover:text-brand-dark">
+                        {t("event.directions")}
+                        <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
+                      </a>
+                    )}
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+          <div class="mt-4 flex items-center gap-2 md:mt-5 md:flex-wrap md:gap-x-8 md:gap-y-3 lg:flex-col lg:items-stretch lg:gap-4">
+            <AddToCalendar entry={entry} locale={locale} description={pageDescription} />
+            <ShareBar locale={locale} title={d.title} />
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-start-1 lg:row-start-2 min-w-0">
         <Content />
       </div>
 
       {
         d.speaker && d.speaker.length > 0 && (
-          <div class="mt-10 border-t border-slate-200 pt-8 not-prose">
+          <div class="mt-10 border-t border-slate-200 pt-8 not-prose lg:col-start-1 min-w-0">
             <h2 class="text-lg font-semibold text-slate-900 mb-4">
               {t("event.speakers")}
             </h2>

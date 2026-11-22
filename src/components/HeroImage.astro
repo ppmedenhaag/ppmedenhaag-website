@@ -7,10 +7,12 @@ interface Props {
   src: string;
   alt: string;
   class?: string;
+  /** `sizes` preset of Img.astro. */
+  sizes?: "hero" | "side";
   /** Above the fold (LCP candidate): eager + high fetch priority. */
   eager?: boolean;
 }
-const { src, alt, class: className, eager = true } = Astro.props;
+const { src, alt, class: className, sizes = "hero", eager = true } = Astro.props;
 ---
 
-<Img src={src} alt={alt} class={className} sizes="hero" loading={eager ? "eager" : "lazy"} />
+<Img src={src} alt={alt} class={className} sizes={sizes} loading={eager ? "eager" : "lazy"} />

@@ -28,9 +28,9 @@ const btn =
 
 {
   upcoming && (
-    <div class="not-prose flex min-w-0 flex-1 items-center gap-2 md:flex-none" data-expires={cal.end.toISOString()} data-pagefind-ignore>
+    <div class="not-prose flex min-w-0 flex-1 items-center gap-2 md:flex-none lg:w-full lg:flex-col lg:items-stretch lg:gap-1.5" data-expires={cal.end.toISOString()} data-pagefind-ignore>
       <span class="sr-only md:not-sr-only text-xs font-semibold tracking-[0.12em] text-slate-500 uppercase">{t("event.addToCalendar")}</span>
-      <div class="grid min-w-0 flex-1 grid-cols-2 gap-2 md:w-72 md:flex-none">
+      <div class="grid min-w-0 flex-1 grid-cols-2 gap-2 md:w-72 md:flex-none lg:w-full">
         <a href={icsPath(entry)} download={`${eventSlug(entry)}.ics`} class={btn} aria-label={t("event.icsFile")} title={t("event.icsFile")}>
           <Icon name="heroicons:arrow-down-tray" class="size-4 shrink-0" aria-hidden="true" />
           {t("event.icsShort")}

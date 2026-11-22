@@ -12,10 +12,11 @@ const locale = (Astro.currentLocale ?? defaultLocale) as LangOptions;
 const t = useTranslations(locale);
 ---
 
+<div class="mx-auto max-w-3xl lg:grid lg:max-w-none lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start lg:gap-6">
 <form
   action={CONTACT.formAction}
   method="POST"
-  class="mx-auto max-w-3xl"
+  class="min-w-0"
 >
   <div class="animate-fade-up border border-slate-200 bg-white p-6 sm:p-10">
     <h1 class="page-title title-rule">{t("contact.title")}</h1>
@@ -26,8 +27,8 @@ const t = useTranslations(locale);
       src={contactImage}
       alt="Contact"
       class="my-8 w-full border border-slate-200"
-      widths={[240, 540, 720, contactImage.width]}
-      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${contactImage.width}px`}
+      widths={[240, 540, 720, 760, contactImage.width]}
+      sizes="(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1023px) 688px, 760px"
     />
     <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
       {/* Honeypot: Formspree drops submissions that fill this hidden field (bots). */}
@@ -83,9 +84,9 @@ const t = useTranslations(locale);
   </div>
 </form>
 
-<section class="mx-auto mt-6 max-w-3xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="contact-direct">
+<section class="mt-6 border border-slate-200 bg-white p-6 sm:p-8 lg:sticky lg:top-24 lg:mt-0" aria-labelledby="contact-direct">
   <h2 id="contact-direct" class="eyebrow">{t("contact.direct")}</h2>
-  <dl class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
+  <dl class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-1">
     <div class="flex items-start gap-3">
       <Icon name="heroicons:envelope" class="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
       <div class="min-w-0">
@@ -121,3 +122,4 @@ const t = useTranslations(locale);
     </div>
   </dl>
 </section>
+</div>

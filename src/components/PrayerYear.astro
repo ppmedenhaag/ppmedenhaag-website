@@ -64,15 +64,15 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
 {
   panels.map((p, i) => (
 <div
-    class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8"
+    class="page-wrap"
     data-year-panel={p.year}
     data-title={p.title}
     hidden={i > 0}
   >
   <header class="mb-8 border-b border-slate-200 pb-8">
     <h1 class="page-title title-rule mb-4">{p.title}</h1>
-    <p class="text-slate-600">{s.pageIntro}</p>
-    <blockquote class="callout mt-6 text-sm text-slate-700">
+    <p class="max-w-3xl text-slate-600">{s.pageIntro}</p>
+    <blockquote class="callout mt-6 max-w-3xl text-sm text-slate-700">
       <p>{s.verse}</p>
       <footer class="mt-1 text-xs text-slate-500">{s.verseSource}</footer>
     </blockquote>
@@ -88,7 +88,7 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
     </nav>
   </header>
 
-  <div class="space-y-10">
+  <div class="grid gap-10 lg:grid-cols-2 lg:gap-x-8">
     {
       p.months.map((m) => (
         <section
