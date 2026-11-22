@@ -70,6 +70,22 @@ export default function PrayerTimes({ locale, scheduleHref }: Props) {
         )
       : undefined;
 
+  // Same countdown, with the number in bold (parts keep the locale's word order).
+  const countdownRich =
+    state?.minutesLeft !== undefined
+      ? new Intl.RelativeTimeFormat(INTL_TAG[locale], { numeric: "always" })
+          .formatToParts(state.minutesLeft, "minute")
+          .map((p, i) =>
+            p.type === "integer" ? (
+              <strong key={i} className="font-bold">
+                {p.value}
+              </strong>
+            ) : (
+              p.value
+            ),
+          )
+      : undefined;
+
   return (
     <section
       aria-label={s.widgetTitle}
@@ -120,8 +136,8 @@ export default function PrayerTimes({ locale, scheduleHref }: Props) {
         <span aria-live="polite">
           {times && state && state.active === 0
             ? `${s.fadjrEnds}: ${times[1]}${countdown ? ` · ${countdown}` : ""}`
-            : times && state && state.next !== -1 && countdown
-            ? `${s.next}: ${PRAYER_NAMES[state.next]} ${times[state.next]} · ${countdown}`
+            : times && state && state.next !== -1 && countdownRich
+            ? <>{s.next}: {PRAYER_NAMES[state.next]} {countdownRich}</>
             : " "}
         </span>
         <a
