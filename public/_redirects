@@ -21,13 +21,13 @@
 /en/categories    /en/blog/ 301
 /en/author        /en/blog/ 301
 
-# Ramadan 1444 city pages, notices, courses, teachers (not ported yet) -> closest live section
-/ramadhan-1444/*     /event/     301
-/ramadhan-1444       /event/     301
-/id/ramadhan-1444/*  /id/event/  301
-/id/ramadhan-1444    /id/event/  301
-/en/ramadhan-1444/*  /en/event/  301
-/en/ramadhan-1444    /en/event/  301
+# Ramadan 1444 city pages (were also a daily prayer-times page, see Google traffic) -> /ibadah/gebedstijden/. Notices, courses, teachers (not ported yet) -> closest live section
+/ramadhan-1444/*     /ibadah/gebedstijden/     301
+/ramadhan-1444       /ibadah/gebedstijden/     301
+/id/ramadhan-1444/*  /id/ibadah/gebedstijden/  301
+/id/ramadhan-1444    /id/ibadah/gebedstijden/  301
+/en/ramadhan-1444/*  /en/ibadah/gebedstijden/  301
+/en/ramadhan-1444    /en/ibadah/gebedstijden/  301
 /notice/*     /event/     301
 /notice       /event/     301
 /id/notice/*  /id/event/  301
