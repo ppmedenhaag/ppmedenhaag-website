@@ -135,9 +135,10 @@ new interactive UI rather than reaching for a different framework.
 
 ## SEO (plan: `docs/seo/SEO-PLAN.md`, status: `docs/seo/PROGRESS.md`, skill: `/ppme-seo`)
 
-- **Origin:** every absolute URL derives from `Astro.site`, set from build env `PUBLIC_SITE_URL` (default
-  `https://website-v2.ppmedenhaag.nl` = staging, see `src/data/seo.ts`). Cutover = repo variable
-  `PUBLIC_SITE_URL=https://www.ppmedenhaag.nl` (+ DNS). Never hard-code a host. `deploy.yml` prints a STAGING/PRODUCTION notice.
+- **Origin:** every absolute URL derives from `Astro.site`, set from build env `PUBLIC_SITE_URL`. **Production (live since the
+  2026-11-21 cutover) = repo variable `PUBLIC_SITE_URL=https://www.ppmedenhaag.nl`; do not delete or change it** — the code default
+  is still the staging origin `https://website-v2.ppmedenhaag.nl` (`src/data/seo.ts`), so a missing variable would ship staging
+  canonicals to the live site. Never hard-code a host. `deploy.yml` prints a PRODUCTION notice, or a STAGING warning if the variable is wrong/missing.
 - **Page registry** `src/utils/seo-registry.ts` (`getSeoRegistry()`): every indexable page with title, description, card, hreflang
   alternates, dates. `Layout.astro` looks the page up by `Astro.url.pathname` and renders `components/Seo.astro` (title, description,
   canonical, hreflang + x-default, Open Graph, Twitter, RSS link, JSON-LD) **first in `<head>`**. Code-driven pages get localized
@@ -156,7 +157,7 @@ new interactive UI rather than reaching for a different framework.
 - **Edge Worker** `worker/index.js` (wrangler `main`, `run_worker_first` skips static files): http → https, apex → www, trailing slash
   (Workers' own is 307), `/x/index.html`, `//` — all combined into ONE 301; `/404`, `/404/`, `/404.html` serve the 404 page with status 404
   (they used to loop); and **`X-Robots-Tag: noindex` + permissive robots.txt on every host except `www.ppmedenhaag.nl`**
-  (website-v2 and workers.dev are noindexed on purpose until cutover). Test: `npm run test:worker`. Static files skip the Worker, so the
+  (website-v2 and workers.dev are noindexed on purpose). Test: `npm run test:worker`. Static files skip the Worker, so the
   zone setting "Always Use HTTPS" must be on as well. `public/_redirects` 301s the legacy Hugo URLs that are not ported
   (tags/categories/author → blog; ramadhan-1444/notice → event; course/teacher → about), **Hugo's 20 `aliases:` short links**
   (`/zakat/`, `/kelahiran/`, `/mualaf/` …, used on flyers; not in any sitemap), `/nl/*`, list pagination `/<section>/page/N/` and the
@@ -183,12 +184,11 @@ new interactive UI rather than reaching for a different framework.
   bodies — it will render as-is (broken-looking) until the MDX/native-TS work in
   `.migration/03-layouts-components.md` is done. Don't be surprised by this in event/blog
   content; it's tracked, not missed.
-- **CUTOVER PENDING — remind the owner at every commit/push/deploy.** For now all SEO (canonical, OG, hreflang,
-  sitemap, RSS) must point to `https://website-v2.ppmedenhaag.nl/`, not www. When committing, pushing or deploying, end
-  with one line: "Reminder: SEO still targets website-v2; cutover to www/apex is pending (docs/seo/PROGRESS.md)." Remove
-  this bullet after the cutover step in `docs/seo/SEO-PLAN.md` Phase 10 is done.
-- **SEO: implemented (milestones M1–M6 mostly done, see `docs/seo/PROGRESS.md`); read the "SEO" section below.** This site
-  replaces both `www.ppmedenhaag.nl` and `ppmedenhaag.nl` (canonical = www, apex 301 → www at cutover).
+- **Cutover done (2026-11-21):** `www.ppmedenhaag.nl` and `ppmedenhaag.nl` are custom domains of the Worker (`wrangler.jsonc`
+  `routes`); canonical = www, apex 301 → www. Rollback to Netlify/Hugo: `docs/seo/ROLLBACK-PLAN.md` (keep the Netlify site for ≥ 2 weeks,
+  i.e. until ~2026-12-05). Search Console: the www `sitemap.xml` is submitted. Still open: see the "Afterwards" items in `docs/seo/PROGRESS.md`.
+- **SEO: implemented (milestones M1–M6 mostly done, see `docs/seo/PROGRESS.md`); read the "SEO" section above.** This site
+  replaces both `www.ppmedenhaag.nl` and `ppmedenhaag.nl` (canonical = www, apex 301 → www).
 - **Homepage (`src/pages/index.astro` and `[locale]/index.astro`) is a stub** — just
   renders `<CTA />`. `src/data/config.ts`'s `CTA_CONFIG` is stale sample data (an old
   "Eid al-Adha 1445H / June 2024" promo, not the live site's current promoted event).
@@ -231,7 +231,8 @@ The earlier Cloudflare Pages plan (`.migration/07-deploy-hosting.md`) was supers
 
 **Auto-deploy is live.** The GitHub repo is `ppmedenhaag/ppmedenhaag-website` (`origin`). Every push to `main` runs
 `.github/workflows/deploy.yml` (build + `npx wrangler deploy`) using the repo secrets `CLOUDFLARE_API_TOKEN` and
-`CLOUDFLARE_ACCOUNT_ID`. Live at https://ppme-website.ppme-registration.workers.dev. DNS for ppmedenhaag.nl is not touched.
+`CLOUDFLARE_ACCOUNT_ID`. Live at https://www.ppmedenhaag.nl (and `ppmedenhaag.nl` → www); also reachable (noindexed) at https://website-v2.ppmedenhaag.nl and
+https://ppme-website.ppme-registration.workers.dev. The Cloudflare API token needs account Workers Scripts Write + zone DNS Write / Zone Read / Workers Routes Write / Cache Purge.
 No manual deploy is needed after pushing.
 
 - CI uses Node 24 and `npm install` rather than `npm ci`: the lockfile (generated on Windows) lacks cross-platform optional

@@ -7,9 +7,10 @@ languages: Dutch (default, unprefixed), Indonesian (`/id/`) and English (`/en/`)
 This is the Astro rebuild of the earlier Hugo site. Every URL must stay identical to the Hugo site's (same path, same
 trailing slash) so search rankings and old links keep working.
 
-> **Status:** the site is deployed to a staging host. SEO (canonical, Open Graph, hreflang, sitemap, RSS) still points to
-> `https://website-v2.ppmedenhaag.nl` and the site is noindexed until the cutover to `www.ppmedenhaag.nl`
-> (see [docs/seo/PROGRESS.md](docs/seo/PROGRESS.md)).
+> **Status:** live at <https://www.ppmedenhaag.nl> since 2026-11-21 (`ppmedenhaag.nl` redirects to www). SEO (canonical, Open
+> Graph, hreflang, sitemap, RSS) targets www. `website-v2.ppmedenhaag.nl` stays up, noindexed. See
+> [docs/seo/PROGRESS.md](docs/seo/PROGRESS.md) and, for rolling back to the old Hugo/Netlify site,
+> [docs/seo/ROLLBACK-PLAN.md](docs/seo/ROLLBACK-PLAN.md).
 
 ## Tech stack
 
@@ -87,7 +88,7 @@ working in this repo.
 
 | Variable               | Purpose                                                                                  |
 | :--------------------- | :--------------------------------------------------------------------------------------- |
-| `PUBLIC_SITE_URL`      | Origin used for every absolute URL. Default: `https://website-v2.ppmedenhaag.nl` (staging) |
+| `PUBLIC_SITE_URL`      | Origin used for every absolute URL. Production: `https://www.ppmedenhaag.nl` (GitHub repo variable, required). Code default: `https://website-v2.ppmedenhaag.nl` (staging) |
 | `PUBLIC_BACKGROUND`    | Page background variant (see above)                                                      |
 | `PUBLIC_PRAYER_SOURCE` | Set to `manual` to use the hand-maintained prayer-time tables                            |
 

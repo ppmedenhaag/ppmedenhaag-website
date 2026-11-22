@@ -1,5 +1,8 @@
 # Cutover checklist: www.ppmedenhaag.nl + ppmedenhaag.nl → this Astro site
 
+> **Status: executed 2026-11-21.** Results in `PROGRESS.md` ("Cutover — DONE"); rollback in `ROLLBACK-PLAN.md`. Kept as a record and
+> as the runbook for re-doing the cutover after a rollback.
+
 Short, ordered version of SEO-PLAN.md Phase 10, written after the pre-cutover review (2026-11-21).
 Steps marked **(owner)** need the Cloudflare dashboard / GitHub settings. Order matters.
 
@@ -49,5 +52,5 @@ Steps marked **(owner)** need the Cloudflare dashboard / GitHub settings. Order 
 10. Search Console: submit `https://www.ppmedenhaag.nl/sitemap.xml`; URL-inspect the homepage + 5 key pages. No "Change of address".
 11. Keep the Netlify site (unlinked) for ≥ 2 weeks as rollback (re-create the two DNS records to roll back). Don't delete the Netlify
     team: `sholat.ppmedenhaag.nl` is hosted there.
-12. Clean-up: remove the "CUTOVER PENDING" bullet in `CLAUDE.md`, the memory note, the banner in `PROGRESS.md`; optionally remove the
+12. Clean-up (done 2026-11-22: reminder bullet, memory note and banner removed); optionally remove the
     `website-v2` route and set `workers_dev: false`.

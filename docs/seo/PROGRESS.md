@@ -20,7 +20,7 @@ Plan: [`SEO-PLAN.md`](./SEO-PLAN.md) · Skill: `.claude/skills/ppme-seo/SKILL.md
 - [x] **M5 Discovery** — `/sitemap.xml` + `/nl|id|en/sitemap.xml` (Hugo-identical, lastmod), RSS (18 feeds, same set as Hugo). *Not done: IndexNow.*
 - [x] **M6 Parity** — `seo-audit` in the build, `seo-url-diff` = 0 missing (274 served 1:1, 136 via `_redirects`), `/ibadah/` index pages added. *Decision D3/D4 still open: the 136 legacy URLs are 301-redirected, not ported (tags/categories/author → blog, ramadhan-1444/notice → event, course/teacher → about).*
 - [x] **M7 Speed (automatable part)** — hero `<img>` width/height + eager/high priority on every detail page (event, blog, ibadah, about, dakwah), 8 oversized images shrunk (-8 MB, `scripts/optimize-images.mjs`), Latin Inter font preloaded, immutable caching for /_astro and /og, Lighthouse baseline below. *Not done: responsive `srcset` images (needs `src/assets` migration, Lighthouse estimates ~220-240 KiB saving on mobile), navbar island hydration review (`client:load`, ~34 KiB unused JS).*
-- [ ] **M8 Launch** — inventory (DNS, Netlify rules: Netlify has no redirects, only headers, already ported), GSC/Bing, both domains on Worker, cutover, monitoring (Phase 10–11). **Owner actions required.**
+- [x] **M8 Launch** — both domains on the Worker, cutover done 2026-11-21 (see "Cutover — DONE" below), Search Console sitemap submitted. *Still open: post-launch monitoring items listed there, Bing Webmaster.*
 
 ## Decisions needed from the owner
 | # | Question | Default if no answer |
@@ -36,11 +36,20 @@ Plan: [`SEO-PLAN.md`](./SEO-PLAN.md) · Skill: `.claude/skills/ppme-seo/SKILL.md
 | D9 | Other subdomains/DNS records on the zone (sholat., email, registration app) | Don't touch; inventory first |
 | D10 | Do any Netlify redirect/header rules exist in the Hugo repo that must be ported? | Check `../ppmedenhaag-website` |
 
-## Staging note (current state) — CUTOVER PENDING
-**Owner instruction: for now ALL SEO points to `https://website-v2.ppmedenhaag.nl/`.** Default `PUBLIC_SITE_URL` = that origin; live site is still Hugo on www/apex. See SEO-PLAN §2.9. M1 includes the var, the noindex Worker and the per-deploy reminder step in `deploy.yml`, because website-v2 is indexable today.
-**Remind the owner at every commit/push/deploy until cutover is done** ("SEO still targets website-v2; cutover to www/apex pending").
-- [ ] Cutover step 0: set repo variable `PUBLIC_SITE_URL=https://www.ppmedenhaag.nl`, redeploy, confirm "PRODUCTION deploy" + `seo-audit --production` pass.
-- [ ] After cutover: delete the reminder bullet in `CLAUDE.md`, the memory note `project-cutover-pending`, and this banner.
+## Cutover — DONE 2026-11-21
+`www.ppmedenhaag.nl` and `ppmedenhaag.nl` are served by the Worker (`wrangler.jsonc` routes, commit `fa15e71`); repo variable
+`PUBLIC_SITE_URL=https://www.ppmedenhaag.nl` is set (do not remove: the code default is the staging origin, `deploy.yml` warns if it is
+missing). Runbook: [`CUTOVER-CHECKLIST.md`](./CUTOVER-CHECKLIST.md). Rollback to Netlify/Hugo: [`ROLLBACK-PLAN.md`](./ROLLBACK-PLAN.md).
+Verified right after: deploy green (PRODUCTION, `seo-audit` passed, cache purge + IndexNow ran); www 200 without `x-robots-tag`; canonical/`og:url` = www;
+robots.txt `Sitemap:` = www; apex → www 301; website-v2 still `noindex`; Simple Analytics present; `/zakat` → `/ibadah/sadaqah/`
+(3 hops over http: Cloudflare "Always Use HTTPS" → Worker → `_redirects`; accepted). Search Console: `https://www.ppmedenhaag.nl/sitemap.xml`
+submitted, status Success.
+
+Afterwards (owner):
+- [ ] Search Console: check the child sitemaps show page counts after 1–2 days; URL-inspect + request indexing for the homepage and ~5 key pages; watch Indexing → Pages for 2 weeks.
+- [ ] Real WhatsApp share test; `npm run seo:diff -- --write` against the live site (must be 0 missing).
+- [ ] Keep the Netlify site unlinked for ≥ 2 weeks (until ~2026-12-05) as rollback; never delete the Netlify team (`sholat`, `tpa` live there). Check `sholat`/`tpa` keep valid HTTPS (HSTS `includeSubDomains` is live on www).
+- [ ] Optional clean-up after the rollback window: drop the `website-v2` route and set `workers_dev: false` in `wrangler.jsonc`.
 
 ## Open questions to verify with data (no owner needed)
 - Does `@astrojs/sitemap` `i18n` emit alternates only for existing pages? (inspect `dist/sitemap-0.xml`)

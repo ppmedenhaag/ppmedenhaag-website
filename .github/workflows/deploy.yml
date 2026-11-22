@@ -39,9 +39,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm install --no-audit --no-fund
-      # SEO origin: until the cutover this is empty -> default https://website-v2.ppmedenhaag.nl (src/data/seo.ts).
-      # The cutover sets the repo variable PUBLIC_SITE_URL=https://www.ppmedenhaag.nl (docs/seo/PROGRESS.md).
-      - name: SEO target reminder
+      # SEO origin: production = repo variable PUBLIC_SITE_URL=https://www.ppmedenhaag.nl (set at the 2026-11-21 cutover).
+      # If it is ever empty the code default is the staging origin https://website-v2.ppmedenhaag.nl (src/data/seo.ts),
+      # so this step warns loudly instead of silently shipping staging canonicals to the live site.
+      - name: SEO target check
         env:
           PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
         run: |
@@ -49,11 +50,11 @@ jobs:
           if [ "$TARGET" = "https://www.ppmedenhaag.nl" ]; then
             echo "### PRODUCTION deploy (SEO targets $TARGET)" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "::warning title=STAGING deploy::SEO still targets $TARGET and the site is noindexed. Cutover to www/apex is PENDING (docs/seo/PROGRESS.md, Phase 10)."
+            echo "::warning title=STAGING build::PUBLIC_SITE_URL is not https://www.ppmedenhaag.nl (SEO targets $TARGET). The live site is on www: restore the repo variable unless this is an intentional rollback (docs/seo/ROLLBACK-PLAN.md)."
             {
-              echo "### STAGING deploy: cutover pending"
-              echo "SEO (canonical, og:*, sitemap, RSS) points to **$TARGET**; non-production hosts are noindexed."
-              echo "To go live set the repo variable \`PUBLIC_SITE_URL=https://www.ppmedenhaag.nl\`, then follow Phase 10 in \`docs/seo/SEO-PLAN.md\`."
+              echo "### STAGING build: PUBLIC_SITE_URL is not the production origin"
+              echo "SEO (canonical, og:*, sitemap, RSS) points to **$TARGET**, but www.ppmedenhaag.nl is served by this Worker."
+              echo "Restore the repo variable \`PUBLIC_SITE_URL=https://www.ppmedenhaag.nl\` unless you are rolling back (\`docs/seo/ROLLBACK-PLAN.md\`)."
             } >> "$GITHUB_STEP_SUMMARY"
           fi
       - run: npm run build
