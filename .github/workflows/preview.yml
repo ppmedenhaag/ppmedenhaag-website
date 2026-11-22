@@ -1,0 +1,99 @@
+name: Preview
+
+# On every push to a branch other than main: build the site and upload it to Cloudflare as a Worker *version*
+# (never deployed, production is untouched) under a stable per-branch preview URL:
+#   https://<branch-alias>-ppme-website.<account-subdomain>.workers.dev
+# The URL is written to the job summary and, when the branch has an open pull request, posted/updated as a PR comment.
+# Same secrets as deploy.yml (CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID). Needs "Preview URLs" enabled on the Worker.
+# Previews are built with the STAGING origin (no PUBLIC_SITE_URL) and the edge Worker sends X-Robots-Tag: noindex on
+# every host except www.ppmedenhaag.nl, so a preview can never leak production canonicals or get indexed.
+
+on:
+  push:
+    branches-ignore: [main]
+    paths-ignore:
+      - "docs/**"
+      - "**/*.md"
+  workflow_dispatch:
+
+# A newer push to the same branch cancels the older preview build.
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      BRANCH: ${{ github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --no-audit --no-fund
+      - name: Branch alias
+        id: alias
+        run: |
+          # Preview alias: lowercase letters/digits/dashes. The URL label is "<alias>-ppme-website" (max 63 chars),
+          # so the alias is cut at 40.
+          ALIAS=$(printf '%s' "$BRANCH" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//' | cut -c1-40 | sed -E 's/-+$//')
+          [ -n "$ALIAS" ] || ALIAS="branch"
+          echo "alias=$ALIAS" >> "$GITHUB_OUTPUT"
+      - name: Build (staging origin)
+        run: npm run build
+        env:
+          SEO_AUDIT_MODE: staging
+      - name: Check credentials
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "Set the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets."; exit 1
+          fi
+      - name: Upload preview version
+        id: upload
+        run: |
+          npx wrangler versions upload \
+            --preview-alias "${{ steps.alias.outputs.alias }}" \
+            --message "Preview of ${BRANCH} (${GITHUB_SHA::7})" 2>&1 | tee upload.log
+          URL=$(grep -oE 'https://[A-Za-z0-9._-]+\.workers\.dev' upload.log | grep -F "${{ steps.alias.outputs.alias }}-" | head -n1 || true)
+          if [ -z "$URL" ]; then
+            URL=$(grep -oE 'https://[A-Za-z0-9._-]+\.workers\.dev' upload.log | head -n1 || true)
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+      - name: Report preview URL
+        env:
+          URL: ${{ steps.upload.outputs.url }}
+        run: |
+          if [ -z "$URL" ]; then
+            echo "::warning title=No preview URL::wrangler did not print a workers.dev preview URL. Enable Preview URLs for the Worker (Cloudflare dashboard > Workers > ppme-website > Settings > Domains & Routes)."
+            echo "### Preview uploaded, but no URL was printed" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          {
+            echo "### Preview: $URL"
+            echo "Branch \`$BRANCH\` at \`${GITHUB_SHA::7}\`. Not deployed to production; noindexed."
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Post/update one PR comment if this branch has an open pull request.
+          PR=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number --jq '.[0].number' || true)
+          if [ -n "$PR" ]; then
+            BODY="<!-- ppme-preview -->
+          **Preview ready:** $URL
+
+          Commit \`${GITHUB_SHA::7}\` · built with the staging origin, noindexed, not deployed to production."
+            BODY=$(printf '%s\n' "$BODY" | sed 's/^          //')
+            ID=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --jq '[.[] | select(.body | contains("<!-- ppme-preview -->"))][0].id // empty' || true)
+            if [ -n "$ID" ]; then
+              gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$ID" -f body="$BODY" > /dev/null
+            else
+              gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body "$BODY"
+            fi
+          fi

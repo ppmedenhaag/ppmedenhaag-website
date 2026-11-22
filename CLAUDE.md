@@ -235,6 +235,11 @@ The earlier Cloudflare Pages plan (`.migration/07-deploy-hosting.md`) was supers
 https://ppme-website.ppme-registration.workers.dev. The Cloudflare API token needs account Workers Scripts Write + zone DNS Write / Zone Read / Workers Routes Write / Cache Purge.
 No manual deploy is needed after pushing.
 
+- **Branch previews:** every push to a branch other than `main` runs `.github/workflows/preview.yml`: build (staging origin, no
+  `PUBLIC_SITE_URL`) + `wrangler versions upload --preview-alias <branch slug>`. It never deploys; the URL
+  (`https://<alias>-ppme-website.<account-subdomain>.workers.dev`, noindexed by the Worker) is in the job summary and, if the branch
+  has an open PR, in one auto-updated PR comment. Needs "Preview URLs" enabled on the Worker (`workers_dev: true`). Manual:
+  `npm run build` then `npx wrangler versions upload --preview-alias <name>`.
 - CI uses Node 24 and `npm install` rather than `npm ci`: the lockfile (generated on Windows) lacks cross-platform optional
   `@emnapi/*` entries, so `npm ci` fails on Linux runners. To restore `npm ci`, regenerate `package-lock.json` on Linux.
 - `src/icons/` is intentionally empty (`.gitkeep`): astro-icon scans it by default and warns if it is missing. Icons come
