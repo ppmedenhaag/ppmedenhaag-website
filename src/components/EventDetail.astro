@@ -64,17 +64,15 @@ const pageDescription = (await getSeoRegistry()).byPath.get(Astro.url.pathname)?
                   <Icon name={icon} class="size-5 shrink-0 text-brand" aria-hidden="true" />
                   <span class="eyebrow !text-brand">{label}</span>
                 </dt>
-                <div class="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <dd class="font-medium break-words text-slate-800">{value}</dd>
+                <dd class="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span class="font-medium break-words text-slate-800">{value}</span>
                   {href && (
-                    <dd>
-                      <a href={href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold whitespace-nowrap text-brand hover:text-brand-dark">
-                        {t("event.directions")}
-                        <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
-                      </a>
-                    </dd>
+                    <a href={href} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold whitespace-nowrap text-brand hover:text-brand-dark">
+                      {t("event.directions")}
+                      <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
+                    </a>
                   )}
-                </div>
+                </dd>
               </div>
             ))
           }

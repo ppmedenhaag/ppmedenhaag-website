@@ -5,7 +5,7 @@ import { responsiveImage } from "../utils/img";
 /** `sizes` presets matching the layouts that use them. */
 const SIZES = {
   /** Card grids: 1 col < 640 px, 2 cols, 3 cols from 1024 px (max ~400 px wide). */
-  card: "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw",
+  card: "(min-width: 1024px) 400px, (min-width: 640px) calc(50vw - 2rem), calc(100vw - 2rem)",
   /** Article hero inside max-w-4xl / the blog main column. */
   hero: "(min-width: 896px) 832px, calc(100vw - 2rem)",
   /** Homepage call-to-action flyer (max-w-xl). */

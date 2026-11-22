@@ -14,8 +14,9 @@ import { locales, type LangOptions } from "../data/i18n";
 import { publicPath } from "./seo";
 
 /** Bump to regenerate every variant (changes all URLs). */
-const IMG_VERSION = "1";
-const WIDTHS = [480, 800, 1200];
+const IMG_VERSION = "2";
+// Finer steps: a ~394 px card on a DPR 1.75 phone needs ~690 px; with 480/800 it fetched the 800 px original (70 KB).
+const WIDTHS = [400, 560, 720, 960, 1200];
 const MAX_WIDTH = 1600;
 const QUALITY = 74;
 const ROOT = process.cwd();
