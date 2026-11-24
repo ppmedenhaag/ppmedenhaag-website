@@ -143,8 +143,8 @@ export interface BestuurCopy {
   labels: { born: string; food: string; hobby: string; quote: string };
   /** aria labels for the phone photo zoom. */
   zoom: { open: string; close: string };
-  /** Shown under the closing band on translated pages only. */
-  translationNote?: string;
+  /** Photographer credit, shown small under the closing band. */
+  credit: string;
   interlude: { quote: string; by: string };
   closing: { title: string; text: string; join: string; contact: string };
 }
@@ -168,6 +168,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Het vertrouwen bewaren", text: "De drie penningmeesters." },
     ],
     labels: { born: "Geboren in", food: "Favoriet eten", hobby: "Hobby's", quote: "PPME, in eigen woorden" },
+    credit: "Foto's: Ariyasa",
     zoom: { open: "Foto vergroten", close: "Sluiten" },
     interlude: {
       quote: "PPME is onze grote familie in Nederland.",
@@ -198,6 +199,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Menjaga amanah", text: "Tiga bendahara." },
     ],
     labels: { born: "Tempat lahir", food: "Makanan favorit", hobby: "Hobi", quote: "Pendapat tentang PPME" },
+    credit: "Foto: Ariyasa",
     zoom: { open: "Perbesar foto", close: "Tutup" },
     interlude: {
       quote: "PPME adalah keluarga besar kami di Belanda.",
@@ -228,6 +230,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Keeping the trust", text: "The three treasurers." },
     ],
     labels: { born: "Born in", food: "Favourite food", hobby: "Hobbies", quote: "On PPME, in their words" },
+    credit: "Photos: Ariyasa",
     zoom: { open: "Enlarge photo", close: "Close" },
     interlude: {
       quote: "PPME is our big family in the Netherlands.",
