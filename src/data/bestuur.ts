@@ -50,7 +50,7 @@ export const BOARD: BoardMember[] = [
     born: "Rotterdam",
     food: { nl: "Sate kambing (geitensaté)", id: "Sate kambing", en: "Sate kambing (goat satay)" },
     hobby: {
-      nl: "Boksen en 'handwerk'",
+      nl: "Boksen en 'knutselen'",
       id: "Olahraga tinju dan 'kerajinan tangan'",
       en: "Boxing and 'handicrafts'",
     },
