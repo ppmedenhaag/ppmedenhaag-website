@@ -112,12 +112,26 @@ const t = (m: BoardMember) => ({
                         p.frame,
                       ]}
                     >
-                      <Img
-                        src={m.image}
-                        alt={m.name}
-                        sizes="card"
-                        class="relative block aspect-square w-full border border-slate-200 bg-brand-50 object-cover"
-                      />
+                      <button
+                        type="button"
+                        class="bs-zoom relative block w-full cursor-zoom-in md:pointer-events-none md:cursor-default"
+                        data-src={`/${m.image}`}
+                        data-name={`${m.name}, ${x.role}`}
+                        aria-label={`${copy.zoom.open}: ${m.name}`}
+                      >
+                        <Img
+                          src={m.image}
+                          alt={m.name}
+                          sizes="card"
+                          class="relative block aspect-square w-full border border-slate-200 bg-brand-50 object-cover"
+                        />
+                        <span
+                          class="absolute right-1.5 bottom-1.5 flex size-7 items-center justify-center bg-white/90 text-brand-dark md:hidden"
+                          aria-hidden="true"
+                        >
+                          <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4M8.5 6v5M6 8.5h5"/></svg>
+                        </span>
+                      </button>
                     </div>
                   </figure>
 
@@ -204,6 +218,36 @@ const t = (m: BoardMember) => ({
   </section>
 </div>
 
+<!-- Phone photo zoom: tap a portrait to see it large, tap anywhere / Esc to close. -->
+<dialog id="bs-lightbox" class="bs-lightbox" aria-label={copy.title}>
+  <form method="dialog" class="m-0 flex size-full flex-col items-center justify-center gap-4 p-4">
+    <img id="bs-lightbox-img" alt="" class="max-h-[78vh] max-w-full border border-white/20 object-contain" />
+    <p id="bs-lightbox-cap" class="text-center text-sm font-semibold text-white"></p>
+    <button class="btn border border-white/40 text-white" aria-label={copy.zoom.close}>{copy.zoom.close}</button>
+  </form>
+</dialog>
+
+<script>
+  const box = document.getElementById("bs-lightbox") as HTMLDialogElement | null;
+  const big = document.getElementById("bs-lightbox-img") as HTMLImageElement | null;
+  const cap = document.getElementById("bs-lightbox-cap");
+  const phone = window.matchMedia("(max-width: 767px)");
+  document.querySelectorAll<HTMLButtonElement>(".bs-zoom").forEach((b) => {
+    b.addEventListener("click", () => {
+      if (!box || !big || !cap || !phone.matches) return;
+      big.src = b.dataset.src ?? "";
+      big.alt = b.dataset.name ?? "";
+      cap.textContent = b.dataset.name ?? "";
+      box.showModal();
+      document.documentElement.style.overflow = "hidden";
+    });
+  });
+  box?.addEventListener("click", () => box.close());
+  box?.addEventListener("close", () => {
+    document.documentElement.style.overflow = "";
+  });
+</script>
+
 <style>
   /* Photos drift in from their own side, text rises, as each block scrolls into view. Progressive enhancement:
      browsers without scroll-driven animations (and reduced-motion users) just see the static layout. */
@@ -252,6 +296,29 @@ const t = (m: BoardMember) => ({
     from {
       opacity: 0;
       transform: translateY(1.25rem);
+    }
+  }
+  .bs-lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgb(1 28 59 / 0.94);
+  }
+  .bs-lightbox::backdrop {
+    background: transparent;
+  }
+  .bs-lightbox:not([open]) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .bs-lightbox {
+      display: none !important;
     }
   }
 </style>

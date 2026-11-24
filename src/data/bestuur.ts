@@ -141,6 +141,8 @@ export interface BestuurCopy {
   stats: { value: string; label: string }[];
   chapters: { title: string; text: string }[];
   labels: { born: string; food: string; hobby: string; quote: string };
+  /** aria labels for the phone photo zoom. */
+  zoom: { open: string; close: string };
   /** Shown under the closing band on translated pages only. */
   translationNote?: string;
   interlude: { quote: string; by: string };
@@ -166,6 +168,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Het vertrouwen bewaren", text: "De drie penningmeesters." },
     ],
     labels: { born: "Geboren in", food: "Favoriet eten", hobby: "Hobby's", quote: "PPME, in eigen woorden" },
+    zoom: { open: "Foto vergroten", close: "Sluiten" },
     translationNote: "De citaten zijn vertaald uit het Indonesisch, de taal waarin het bestuur ze schreef.",
     interlude: {
       quote: "PPME is onze grote familie in Nederland.",
@@ -196,6 +199,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Menjaga amanah", text: "Tiga bendahara." },
     ],
     labels: { born: "Tempat lahir", food: "Makanan favorit", hobby: "Hobi", quote: "Pendapat tentang PPME" },
+    zoom: { open: "Perbesar foto", close: "Tutup" },
     interlude: {
       quote: "PPME adalah keluarga besar kami di Belanda.",
       by: "Marwan Wirianto, Bendahara I",
@@ -225,6 +229,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Keeping the trust", text: "The three treasurers." },
     ],
     labels: { born: "Born in", food: "Favourite food", hobby: "Hobbies", quote: "On PPME, in their words" },
+    zoom: { open: "Enlarge photo", close: "Close" },
     translationNote: "The quotes are translated from Indonesian, the language the board wrote them in.",
     interlude: {
       quote: "PPME is our big family in the Netherlands.",
