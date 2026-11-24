@@ -5,6 +5,8 @@ import type { LangOptions } from "./i18n";
 type L10n = Record<LangOptions, string>;
 
 const DIR = "images/bestuur-2026";
+/** Photographer's Instagram handle (credit link on the page). */
+export const PHOTOGRAPHER_INSTAGRAM = "ariyasa03";
 export const BESTUUR_GROUP_IMAGE = `${DIR}/bestuur-02.jpg`;
 export const BESTUUR_STAIRS_IMAGE = `${DIR}/bestuur-03.jpg`;
 
@@ -168,7 +170,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Het vertrouwen bewaren", text: "De drie penningmeesters." },
     ],
     labels: { born: "Geboren in", food: "Favoriet eten", hobby: "Hobby's", quote: "PPME, in eigen woorden" },
-    credit: "Foto's: Ariyasa",
+    credit: "Met dank aan Ariyasa voor de foto's",
     zoom: { open: "Foto vergroten", close: "Sluiten" },
     interlude: {
       quote: "PPME is onze grote familie in Nederland.",
@@ -199,7 +201,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Menjaga amanah", text: "Tiga bendahara." },
     ],
     labels: { born: "Tempat lahir", food: "Makanan favorit", hobby: "Hobi", quote: "Pendapat tentang PPME" },
-    credit: "Foto: Ariyasa",
+    credit: "Terima kasih kepada Ariyasa atas foto-fotonya",
     zoom: { open: "Perbesar foto", close: "Tutup" },
     interlude: {
       quote: "PPME adalah keluarga besar kami di Belanda.",
@@ -230,7 +232,7 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
       { title: "Keeping the trust", text: "The three treasurers." },
     ],
     labels: { born: "Born in", food: "Favourite food", hobby: "Hobbies", quote: "On PPME, in their words" },
-    credit: "Photos: Ariyasa",
+    credit: "With thanks to Ariyasa for the photos",
     zoom: { open: "Enlarge photo", close: "Close" },
     interlude: {
       quote: "PPME is our big family in the Netherlands.",

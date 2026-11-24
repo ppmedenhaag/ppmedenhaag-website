@@ -4,7 +4,7 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Img from "./Img.astro";
 import type { LangOptions } from "../data/i18n";
-import { BESTUUR_COPY, BESTUUR_GROUP_IMAGE, BESTUUR_STAIRS_IMAGE, BOARD, type BoardMember } from "../data/bestuur";
+import { BESTUUR_COPY, BESTUUR_GROUP_IMAGE, BESTUUR_STAIRS_IMAGE, BOARD, PHOTOGRAPHER_INSTAGRAM, type BoardMember } from "../data/bestuur";
 
 interface Props {
   locale: LangOptions;
@@ -214,7 +214,15 @@ const t = (m: BoardMember) => ({
         >
       </div>
     </div>
-    <p class="mt-6 text-center text-xs text-slate-500">{copy.credit}</p>
+    <p class="mt-6 text-center text-xs text-slate-500">
+      {copy.credit} ·{" "}
+      <a
+        href={`https://www.instagram.com/${PHOTOGRAPHER_INSTAGRAM}/`}
+        target="_blank"
+        rel="noopener"
+        class="font-medium text-brand hover:text-brand-dark hover:underline">@{PHOTOGRAPHER_INSTAGRAM}</a
+      >
+    </p>
   </section>
 </div>
 
