@@ -169,7 +169,6 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
     ],
     labels: { born: "Geboren in", food: "Favoriet eten", hobby: "Hobby's", quote: "PPME, in eigen woorden" },
     zoom: { open: "Foto vergroten", close: "Sluiten" },
-    translationNote: "De citaten zijn vertaald uit het Indonesisch, de taal waarin het bestuur ze schreef.",
     interlude: {
       quote: "PPME is onze grote familie in Nederland.",
       by: "Marwan Wirianto, penningmeester I",
@@ -230,7 +229,6 @@ export const BESTUUR_COPY: Record<LangOptions, BestuurCopy> = {
     ],
     labels: { born: "Born in", food: "Favourite food", hobby: "Hobbies", quote: "On PPME, in their words" },
     zoom: { open: "Enlarge photo", close: "Close" },
-    translationNote: "The quotes are translated from Indonesian, the language the board wrote them in.",
     interlude: {
       quote: "PPME is our big family in the Netherlands.",
       by: "Marwan Wirianto, Treasurer I",
