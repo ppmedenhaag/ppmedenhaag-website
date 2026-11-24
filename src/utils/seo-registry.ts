@@ -4,6 +4,7 @@
 import { getCollection, getEntry } from "astro:content";
 import { defaultLocale, locales, type LangOptions } from "../data/i18n";
 import {
+  BESTUUR_SHARE_IMAGE,
   EYEBROW,
   PRAYER_COPY,
   STATIC_COPY,
@@ -153,11 +154,12 @@ async function build(): Promise<SeoRegistry> {
       await add({
         locale,
         routeKey: STATIC_ROUTES[key],
-        kind: key === "home" ? "home" : key === "contact" ? "static" : "listing",
+        kind: key === "home" ? "home" : key === "contact" || key === "bestuur" ? "static" : "listing",
         title: c.title,
         description: c.description,
         subtitle: c.subtitle,
-        eyebrow: EYEBROW.site[locale],
+        eyebrow: key === "bestuur" ? EYEBROW.about[locale] : EYEBROW.site[locale],
+        image: key === "bestuur" ? { image: BESTUUR_SHARE_IMAGE } : undefined,
       });
     }
     await add({

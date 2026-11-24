@@ -176,8 +176,7 @@ new interactive UI rather than reaching for a different framework.
   the unlayered `.prose` rules at the bottom of `global.css`; `@source "../content"` lets Tailwind see utilities used in Markdown. `@tailwindcss/typography` is installed (it was missing, so `prose` did nothing).
   Blog uses `PostList/PostCard/PostDetail.astro` + `utils/blog.ts` (author/category shown as plain text; Hugo's `/author/`, `/categories/`, `/tags/` taxonomy pages are NOT ported). Event pages share `EventDetail/EventList/EventCard.astro` + `utils/event.ts`.
 
-- **Bestuur (board) section is planned, not built:** `docs/bestuur/PLAN.md` (routes `/bestuur/` + `/bestuur/<slug>/`, content shape,
-  wiring checklist, open decisions, source texts). Photos wait in `C:\Users\rosti\Downloads\` (`eddy|hamzah|archi|marwan|gusti|wati.png`, `bestuur-1..3.png`).
+- **Bestuur 2026 story page is built** (`/bestuur-2026/`, `/id/`, `/en/`; static route files like gebedstijden, no content collection): copy + facts in `src/data/bestuur.ts`, layout in `components/Bestuur2026.astro` (photos alternate sides, scroll-driven reveal), images in `public/images/bestuur-2026/` (group photos shrunk to 2400 px; full-size originals moved to `C:\Users\rosti\Downloads\bestuur-2026-originals\`). Wired into menu (Meer), SEO registry (`STATIC_COPY.bestuur`), search section label. nl/en quotes are translations of the Indonesian originals (flagged on the page). The per-person pages in `docs/bestuur/PLAN.md` are NOT built.
 
 - **Hugo shortcodes are not converted.** Migrated content still contains literal
   `{{< youtube ... >}}`, `{{< ref ... >}}`, `{{< param email >}}` text in Markdown

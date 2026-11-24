@@ -11,6 +11,7 @@ import { resolve } from "node:path";
 import sharp from "sharp";
 import { getCollection, getEntry } from "astro:content";
 import { locales, type LangOptions } from "../data/i18n";
+import { BESTUUR_RESPONSIVE_IMAGES } from "../data/bestuur";
 import { publicPath } from "./seo";
 
 /** Bump to regenerate every variant (changes all URLs). */
@@ -95,6 +96,7 @@ export function listImageVariants() {
     for (const name of ["event", "blog", "ibadah", "about", "dakwah"] as const) {
       for (const e of await getCollection(name)) if (e.data.image) rels.add(publicPath(e.data.image));
     }
+    for (const rel of BESTUUR_RESPONSIVE_IMAGES) rels.add(publicPath(rel));
     for (const locale of Object.keys(locales) as LangOptions[]) {
       const home = await getEntry(`homepage-${locale}`, "homepage");
       if (home?.data.cta?.img?.src) rels.add(publicPath(home.data.cta.img.src));

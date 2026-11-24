@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Bestuur2026 from "../../components/Bestuur2026.astro";
+import { defaultLocale, type LangOptions } from "../../data/i18n";
+import { BESTUUR_COPY } from "../../data/bestuur";
+
+export function getStaticPaths() {
+  // nl is the unprefixed default locale (src/pages/bestuur-2026.astro); never emit /nl/...
+  return (["id", "en"] as const)
+    .filter((locale) => locale !== defaultLocale)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as LangOptions;
+---
+
+<Layout title={BESTUUR_COPY[locale].title}>
+  <Bestuur2026 locale={locale} />
+</Layout>

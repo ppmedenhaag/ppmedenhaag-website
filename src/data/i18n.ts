@@ -37,6 +37,7 @@ type MenuLabels = {
   blog: string;
   prayerTimes: string;
   about: string;
+  board: string;
   contact: string;
 };
 
@@ -75,6 +76,7 @@ const buildMenu = (prefix: string, t: MenuLabels) => [
       { text: t.blog, href: `${prefix}/blog/` },
       { text: t.prayerTimes, href: `${prefix}/ibadah/gebedstijden/` },
       { text: t.about, href: `${prefix}/about/`, exact: true },
+      { text: t.board, href: `${prefix}/bestuur-2026/` },
       { text: t.contact, href: `${prefix}/contact/` },
     ],
   },
@@ -97,6 +99,7 @@ export const menuData = {
     blog: "Blog",
     prayerTimes: "Gebedstijden (Den Haag)",
     about: "Over ons",
+    board: "Bestuur 2026",
     contact: "Contact",
   }),
   id: buildMenu("/id", {
@@ -115,6 +118,7 @@ export const menuData = {
     blog: "Blog",
     prayerTimes: "Jadwal Sholat (Den Haag)",
     about: "Tentang Kita",
+    board: "Pengurus 2026",
     contact: "Hubungi Kami",
   }),
   en: buildMenu("/en", {
@@ -133,6 +137,7 @@ export const menuData = {
     blog: "Blog",
     prayerTimes: "Prayer Times (Den Haag)",
     about: "About us",
+    board: "Board 2026",
     contact: "Contact Us",
   }),
 };

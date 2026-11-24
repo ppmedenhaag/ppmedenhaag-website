@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Bestuur2026 from "../components/Bestuur2026.astro";
+import { defaultLocale } from "../data/i18n";
+import { BESTUUR_COPY } from "../data/bestuur";
+---
+
+<Layout title={BESTUUR_COPY[defaultLocale].title}>
+  <Bestuur2026 locale={defaultLocale} />
+</Layout>
