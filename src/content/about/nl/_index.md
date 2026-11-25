@@ -27,3 +27,6 @@ Ook nu worden de leden van de verschillende vestigingen nog op de hoogte gehoude
 PPME heeft op veel vlakken een positieve rol gespeeld in de maatschappij. Het weet verschillende moslim- en niet-moslimgemeenschappen met elkaar te verbinden en de islam op een positieve manier uit te dragen. De kernactiviteit is **dakwah**: uitnodigen tot kennis van de islam. Daarnaast verricht PPME islamitische maatschappelijke rituelen, zoals de rituele wassing na een overlijden, het vieren van belangrijke islamitische dagen en huwelijksvoltrekkingen.
 
 Dit was en is alleen mogelijk dankzij de vele (vrijwillige) tijd en energie van onze leiders, ouders, tantes en ooms, jongeren en de **Al-Moe'minoen** groep (het deel van PPME bestaande uit bekeerde Nederlanders).
+
+### Het bestuur
+[Maak kennis met het bestuur 2026](/bestuur-2026/)

@@ -156,11 +156,11 @@ new interactive UI rather than reaching for a different framework.
   (endpoint), 404 page, icons + `site.webmanifest` (`scripts/build-icons.mjs`).
 - **Edge Worker** `worker/index.js` (wrangler `main`, `run_worker_first` skips static files): http → https, apex → www, trailing slash
   (Workers' own is 307), `/x/index.html`, `//` — all combined into ONE 301; `/404`, `/404/`, `/404.html` serve the 404 page with status 404
-  (they used to loop); and **`X-Robots-Tag: noindex` + permissive robots.txt on every host except `www.ppmedenhaag.nl`**
+  (they used to loop); `/nl/...` → unprefixed URL (in the Worker, because a `_redirects` `/nl/*` rule swallowed `/nl/sitemap.xml`); and **`X-Robots-Tag: noindex` + permissive robots.txt on every host except `www.ppmedenhaag.nl`**
   (website-v2 and workers.dev are noindexed on purpose). Test: `npm run test:worker`. Static files skip the Worker, so the
   zone setting "Always Use HTTPS" must be on as well. `public/_redirects` 301s the legacy Hugo URLs that are not ported
   (tags/categories/author → blog; ramadhan-1444/notice → event; course/teacher → about), **Hugo's 20 `aliases:` short links**
-  (`/zakat/`, `/kelahiran/`, `/mualaf/` …, used on flyers; not in any sitemap), `/nl/*`, list pagination `/<section>/page/N/` and the
+  (`/zakat/`, `/kelahiran/`, `/mualaf/` …, used on flyers; not in any sitemap), list pagination `/<section>/page/N/` and the
   contact-page feeds. New alias in Hugo-style front matter ⇒ add a `_redirects` line (aliases are not read by this site).
 - **Gates:** `npm run build` ends with `scripts/seo-audit.mjs` (errors fail the build: head tags, canonical, og image 1200×630 ≤300 KB, hreflang
   reciprocity, JSON-LD, sitemap/robots, staging-origin leak in production mode). `npm run seo:diff -- --write` compares the live Hugo sitemaps
@@ -176,7 +176,7 @@ new interactive UI rather than reaching for a different framework.
   the unlayered `.prose` rules at the bottom of `global.css`; `@source "../content"` lets Tailwind see utilities used in Markdown. `@tailwindcss/typography` is installed (it was missing, so `prose` did nothing).
   Blog uses `PostList/PostCard/PostDetail.astro` + `utils/blog.ts` (author/category shown as plain text; Hugo's `/author/`, `/categories/`, `/tags/` taxonomy pages are NOT ported). Event pages share `EventDetail/EventList/EventCard.astro` + `utils/event.ts`.
 
-- **Bestuur 2026 story page is built** (`/bestuur-2026/`, `/id/`, `/en/`; static route files like gebedstijden, no content collection): copy + facts in `src/data/bestuur.ts`, layout in `components/Bestuur2026.astro` (photos alternate sides, scroll-driven reveal), images in `public/images/bestuur-2026/` (group photos shrunk to 2400 px; full-size originals moved to `C:\Users\rosti\Downloads\bestuur-2026-originals\`). Wired into menu (Meer), SEO registry (`STATIC_COPY.bestuur`), search section label. nl/en quotes are translations of the Indonesian originals (flagged on the page). The per-person pages in `docs/bestuur/PLAN.md` are NOT built.
+- **Bestuur 2026 story page is built** (`/bestuur-2026/`, `/id/`, `/en/`; static route files like gebedstijden, no content collection): copy + facts in `src/data/bestuur.ts`, layout in `components/Bestuur2026.astro` (photos alternate sides, scroll-driven reveal), images in `public/images/bestuur-2026/` (group photos shrunk to 2400 px; full-size originals moved to `C:\Users\rosti\Downloads\bestuur-2026-originals\`). Wired into menu (Meer), SEO registry (`STATIC_COPY.bestuur`), search section label. nl/en quotes are translations of the Indonesian originals. Linked from the three About overview pages. The per-person pages in `docs/bestuur/PLAN.md` are NOT built.
 
 - **Hugo shortcodes are not converted.** Migrated content still contains literal
   `{{< youtube ... >}}`, `{{< ref ... >}}`, `{{< param email >}}` text in Markdown

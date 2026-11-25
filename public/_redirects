@@ -70,9 +70,8 @@
 /id/event/sosialisasi-komisi-jenazah/  /id/event/informatieavond-afdeling-djenazah/   301
 /event/istighotsah-akbar/              /en/event/istigotsah-akbar/                    301
 
-# Hugo served /nl/ as an alias of the (unprefixed) Dutch homepage.
-/nl/      /         301
-/nl/*     /:splat   301
+# Hugo's /nl/... alias of the (unprefixed) Dutch site is redirected by worker/index.js, NOT here: a `/nl/*` rule also
+# swallows the real file /nl/sitemap.xml.
 
 # Hugo list pagination (/<section>/page/N/). The new listings paginate differently -> section start page.
 /blog/page/*        /blog/       301

@@ -9,6 +9,7 @@
 //                                      (crawlers must be allowed to fetch the page to *see* noindex; social-preview bots keep working)
 //  * missing trailing slash on HTML -> 301 (Workers' own auto-trailing-slash redirect is a temporary 307)
 //  * /index.html, `//`              -> 301 to the clean URL
+//  * /nl/...                        -> 301 to the unprefixed Dutch URL (Hugo alias); /nl/sitemap.xml is a real file
 //  * /404, /404/, /404.html         -> the 404 page with status 404 (otherwise the flat dist/404.html bounced between
 //                                      the assets' 307 /404/ -> /404 and our trailing-slash 301 forever)
 // All fixes are combined into ONE 301 hop. Everything else is passed to the static assets.
@@ -62,6 +63,11 @@ export default {
           url.pathname += "/";
           redirect = true;
         }
+      }
+      // /nl/foo/ -> /foo/ (nl is unprefixed). Not in public/_redirects: it would also redirect /nl/sitemap.xml.
+      if (url.pathname.startsWith("/nl/") && url.pathname !== "/nl/sitemap.xml") {
+        url.pathname = url.pathname.slice("/nl".length);
+        redirect = true;
       }
     }
 

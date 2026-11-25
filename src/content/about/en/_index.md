@@ -31,3 +31,6 @@ Members of the various PPME branches are still kept informed today, though now m
 PPME has played a positive role in society in many ways. It connects Muslim and non-Muslim communities and presents Islam in a positive light. Its core activity is **dakwah**: inviting people to learn about Islam. PPME also performs Islamic social rituals, such as the ritual washing after a death, the celebration of important Islamic days, and weddings.
 
 This has only been possible thanks to the (voluntary) time and energy of our leaders, parents, aunts and uncles, young people, and the **Al-Moe'minoen** group (the part of PPME made up of Dutch converts).
+
+### Our board
+[Meet the 2026 board](/en/bestuur-2026/)
