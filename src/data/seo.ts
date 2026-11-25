@@ -25,6 +25,9 @@ export const SOCIAL_LINKS = [
   "https://www.youtube.com/@ppmedenhaag5842",
 ];
 
+/** Hero image of the board page (also its share card). */
+export const BESTUUR_SHARE_IMAGE = "images/bestuur-2026/bestuur-02.jpg";
+
 /** Card/OG image size. */
 export const OG_WIDTH = 1200;
 export const OG_HEIGHT = 630;
@@ -41,7 +44,7 @@ export const VENUES: { match: RegExp; name: string; address?: { street?: string;
   },
 ];
 
-export type StaticKey = "home" | "events" | "blog" | "contact" | "prayer" | "ibadah";
+export type StaticKey = "home" | "events" | "blog" | "contact" | "prayer" | "ibadah" | "bestuur";
 
 export interface StaticCopy {
   title: string;
@@ -58,6 +61,7 @@ export const STATIC_ROUTES: Record<StaticKey, string> = {
   contact: "contact",
   prayer: "ibadah/gebedstijden",
   ibadah: "ibadah",
+  bestuur: "bestuur-2026",
 };
 
 export const STATIC_COPY: Record<Exclude<StaticKey, "prayer">, Record<LangOptions, StaticCopy>> = {
@@ -159,6 +163,26 @@ export const STATIC_COPY: Record<Exclude<StaticKey, "prayer">, Record<LangOption
       description:
         "Practical information about worship and life events in The Hague: joining Islam, Islamic marriage, birth, passing away, zakat and prayer times.",
       subtitle: "Joining Islam, marriage, birth, passing away and prayer times",
+    },
+  },
+  bestuur: {
+    nl: {
+      title: "Bestuur 2026",
+      description:
+        "Maak kennis met het bestuur 2026 van PPME Den Haag: zes mensen, hun geboorteplaats, favoriete eten, hobby's en wat PPME voor hen betekent.",
+      subtitle: "Zes mensen, één thuis",
+    },
+    id: {
+      title: "Pengurus 2026",
+      description:
+        "Kenali pengurus PPME Den Haag 2026: enam orang, tempat lahir, makanan favorit, hobi, dan arti PPME bagi mereka.",
+      subtitle: "Enam orang, satu rumah",
+    },
+    en: {
+      title: "Board 2026",
+      description:
+        "Meet the 2026 board of PPME Den Haag: six people, their birthplaces, favourite food, hobbies and what PPME means to them.",
+      subtitle: "Six people, one home",
     },
   },
 };
