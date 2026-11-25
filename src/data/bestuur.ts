@@ -94,7 +94,7 @@ export const BOARD: BoardMember[] = [
   },
   {
     slug: "gusti",
-    name: "La Gusti Negeri",
+    name: "LG Negeri",
     image: `${DIR}/gusti-01.webp`,
     role: { nl: "Penningmeester II", id: "Bendahara II", en: "Treasurer II" },
     born: "Surabaya",

@@ -139,7 +139,7 @@ Bendahara I-III / Penningmeester I-III / Treasurer I-III. Partial translation is
 - Makanan favorit: Makanan enak yang GRATIS!
 - Hobi: Menghitung duit
 
-**5. La Gusti Negeri, Bendahara II** (`gusti.png`)
+**5. LG Negeri, Bendahara II** (`gusti.png`)
 - Tempat lahir: Surabaya
 - Pendapat tentang PPME: Alhamdulillah dengan adanya PPME terasa ada wadah yang baik untuk umat muslim Indonesia di Belanda. Semoga Allah ridha atas semuanya di PPME Den Haag ini.
 - Makanan favorit: Sate kambing
