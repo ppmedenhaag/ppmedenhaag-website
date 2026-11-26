@@ -42,13 +42,16 @@ function buildYear(year: number) {
             : m === 9 && d + 1 === dstEndDay
               ? s.dstEnd
               : undefined;
+        // Split at the middle word: the label wraps into exactly two lines on phones.
+        const words = dst?.split(" ") ?? [];
+        const half = Math.ceil(words.length / 2);
         return {
           day: d + 1,
           iso: `${year}-${String(m + 1).padStart(2, "0")}-${String(d + 1).padStart(2, "0")}`,
           short: weekdayShort.format(date),
           long: weekdayLong.format(date),
           friday: date.getUTCDay() === 5,
-          dst,
+          dst: dst ? [words.slice(0, half).join(" "), words.slice(half).join(" ")] : undefined,
           times,
         };
       }),
@@ -143,7 +146,8 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
                     <tr class="peer-aria-[current=date]:bg-brand peer-aria-[current=date]:text-white">
                       <td colspan={PRAYER_NAMES.length + 1} class="px-2 pb-1.5 sm:px-3">
                         <span class="block w-fit border border-current px-1 py-px text-[9px] leading-tight font-semibold uppercase sm:text-[10px]">
-                          {d.dst}
+                          {d.dst[0]} <br class="sm:hidden" />
+                          {d.dst[1]}
                         </span>
                       </td>
                     </tr>
