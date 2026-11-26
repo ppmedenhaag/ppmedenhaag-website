@@ -117,11 +117,13 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
               </thead>
               <tbody class="divide-y divide-slate-100">
                 {m.days.map((d) => (
+                  <>
                   <tr
                     data-date={d.iso}
                     class:list={[
                       "aria-[current=date]:bg-brand aria-[current=date]:text-white",
                       d.friday && "bg-brand-50/60",
+                      d.dst && "peer border-b-0!",
                     ]}
                     title={d.friday ? s.jumuah : undefined}
                   >
@@ -131,16 +133,22 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
                         <span class="sm:hidden">{d.short}</span>
                         <span class="hidden sm:inline">{d.long}</span>
                       </span>
-                      {d.dst && (
-                        <span class="mt-0.5 block w-fit border border-current px-1 py-px text-[9px] leading-tight font-semibold uppercase sm:ml-2 sm:mt-0 sm:inline-block sm:text-[10px]">
-                          {d.dst}
-                        </span>
-                      )}
                     </th>
                     {d.times.map((t) => (
                       <td class="px-0.5 py-1.5 text-center sm:px-2">{t}</td>
                     ))}
                   </tr>
+                  {/* Own row across all columns, so the label never widens the date column. */}
+                  {d.dst && (
+                    <tr class="peer-aria-[current=date]:bg-brand peer-aria-[current=date]:text-white">
+                      <td colspan={PRAYER_NAMES.length + 1} class="px-2 pb-1.5 sm:px-3">
+                        <span class="block w-fit border border-current px-1 py-px text-[9px] leading-tight font-semibold uppercase sm:text-[10px]">
+                          {d.dst}
+                        </span>
+                      </td>
+                    </tr>
+                  )}
+                  </>
                 ))}
               </tbody>
             </table>
