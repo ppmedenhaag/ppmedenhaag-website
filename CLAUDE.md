@@ -127,8 +127,9 @@ new interactive UI rather than reaching for a different framework.
   identical to the old hand-made 2025 and 2026 tables (365/365 days) and 2024 Jun–Dec; 2024 Jan–Apr was an older table.
 - **Fallback flip:** `PUBLIC_PRAYER_SOURCE=manual` (build env var) or `DEFAULT` in `prayer/config.ts` switches to the
   hand-maintained `prayer/gebedstijden-<year>.json` files (register them in `MANUAL_SCHEDULES` in `prayer.ts`).
-- The yearly page shows the build-time Amsterdam year (generated mode): **rebuild/redeploy on 1 January**
-  (e.g. a Cloudflare Pages deploy hook on a yearly cron). The homepage widget rolls over by itself.
+- The yearly page renders the build-time Amsterdam year **and the next one** (`PrayerYear.astro`); an inline script shows the
+  panel for today's year, so a build from year Y stays correct through Y+1. A yearly rebuild is still good practice. The
+  homepage widget rolls over by itself.
 - Homepage island: `components/PrayerTimes.astro` → `react/PrayerTimes.tsx` (`client:visible`).
 - Yearly page: `/ibadah/gebedstijden/` (+ `/id/…`, `/en/…`) via `PrayerYear.astro`; static route files, no content entry
   (Navbar's language switcher has an `isStaticPage` bypass for it).
@@ -192,11 +193,10 @@ new interactive UI rather than reaching for a different framework.
 
 - **Bestuur 2026 story page is built** (`/bestuur-2026/`, `/id/`, `/en/`; static route files like gebedstijden, no content collection): copy + facts in `src/data/bestuur.ts`, layout in `components/Bestuur2026.astro` (photos alternate sides, scroll-driven reveal), images in `public/images/bestuur-2026/` (group photos shrunk to 2400 px; full-size originals moved to `C:\Users\rosti\Downloads\bestuur-2026-originals\`). Wired into menu (Meer), SEO registry (`STATIC_COPY.bestuur`), search section label. nl/en quotes are translations of the Indonesian originals. Linked from the three About overview pages. The per-person pages in `docs/bestuur/PLAN.md` are NOT built.
 
-- **Hugo shortcodes are not converted.** Migrated content still contains literal
-  `{{< youtube ... >}}`, `{{< ref ... >}}`, `{{< param email >}}` text in Markdown
-  bodies — it will render as-is (broken-looking) until the MDX/native-TS work in
-  `.migration/03-layouts-components.md` is done. Don't be surprised by this in event/blog
-  content; it's tracked, not missed.
+- **Hugo shortcodes:** converted in event/blog/dakwah content (see the first bullet); the 2026-11-27 crawl of the live site
+  found no `{{< … >}}` residue. Recheck when porting a new section from Hugo.
+- **Site audit 2026-11-27:** `docs/audit/SITE-AUDIT-2026-11-27.md` (live crawl, Lighthouse, contrast, language). Fixed items and
+  the remaining manual checks are listed in its "Status" section.
 - **Cutover done (2026-11-21):** `www.ppmedenhaag.nl` and `ppmedenhaag.nl` are custom domains of the Worker (`wrangler.jsonc`
   `routes`); canonical = www, apex 301 → www. Rollback to Netlify/Hugo: `docs/seo/ROLLBACK-PLAN.md` (keep the Netlify site for ≥ 2 weeks,
   i.e. until ~2026-12-05). Search Console: the www `sitemap.xml` is submitted. Still open: see the "Afterwards" items in `docs/seo/PROGRESS.md`.
