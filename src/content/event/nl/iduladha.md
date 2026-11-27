@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Eid al-Adha-gebed 1443H in de Al Hikmah-moskee met imam Ustadz Rasyid en khatib Dr. Fachrizal Yusuf Affandi, met praktische huisregels voor bezoekers."
 # Event image
 image: "images/events/iduladha.jpg"
 # location

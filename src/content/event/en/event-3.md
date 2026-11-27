@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Online fiqh class on prayer with Ustadz Nur Hasyim Subadi: features of the prayer, sunnah ab'at, sujud sahwi and what invalidates prayer, with a Q&A."
 # Event image
 image: "images/events/event-3.jpg"
 # location

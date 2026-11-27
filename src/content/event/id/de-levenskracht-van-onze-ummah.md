@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Diskusi 51 tahun PPME tentang cara mempersiapkan komunitas masjid kita untuk 50 tahun ke depan. Terbuka untuk umum, didahului makan malam bersama."
 # Event image
 image: "images/events/20230114.jpg"
 # location

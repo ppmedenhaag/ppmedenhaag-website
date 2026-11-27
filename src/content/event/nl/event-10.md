@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Programma op 29 Ramadan 1443: dzikr, tadarus, iftar, een lezing van Bpk. Nashirulhaq over vergeving aan het einde van de Ramadan, tarawih en i'tikaf."
 # Event image
 image: "images/events/event-10.jpg"
 # location

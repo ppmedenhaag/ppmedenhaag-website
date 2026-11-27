@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pelatihan kepemimpinan etis sesuai ajaran Rasulullah SAW bersama fasilitator Umar Mirza, tentang komunikasi antargenerasi di PPME."
 # Event image
 image: "images/events/ppme-training-resized-small.jpg"
 # location

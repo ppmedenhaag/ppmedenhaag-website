@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma met tadarus, gezamenlijke iftar en twee lezingen van Ust. Nur Hasyim Subadi over het zuiveren van het hart en delen via sadaqa."
 # Event image
 image: "images/events/event-13.jpg"
 # location

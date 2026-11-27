@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jongerenprogramma met een les over tayammum en een sessie met Fitria Jelyta: 'Omgaan met falen en twijfel: wat we uit het geloof kunnen halen'."
 # Event image
 image: "images/events/event-13.jpg"
 # location

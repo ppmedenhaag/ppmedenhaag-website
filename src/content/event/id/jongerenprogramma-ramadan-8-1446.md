@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "Program remaja Sabtu 8 Ramadan 1446H (8 Maret 2025): sesi 1 tentang stres dan Islam bersama Ai Lien Djie, sesi 2 tentang hidup bagai musafir."
+description: "Program remaja Ramadhan: 'Stress & Islam' bersama Ai Lien Djie dan 'Wees op deze wereld als een reiziger' bersama Ronald Kroon."
 # Event image
 image: "images/events/jongerenprogramma-ramadan-8-1446.jpg"
 # location

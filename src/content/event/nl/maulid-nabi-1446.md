@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Herdenking van Maulid Nabi met optredens van TPA Al Amin en lezingen van Ustadz Mizar (Indonesisch) en Umar Mirza (Nederlands)."
 # Event image
 image: "images/events/maulid-nabi-1446.webp"
 # location

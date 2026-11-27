@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Herdenking van Maulid Nabi met rebana Noer Hollandie, optredens van TPA Al Amin en lezingen van Ustadz Dawam Multazam (ID) en Ustadz Muhammad Idoe (NL)."
 # Event image
 image: "images/events/maulid-nabi-1447.webp"
 # location

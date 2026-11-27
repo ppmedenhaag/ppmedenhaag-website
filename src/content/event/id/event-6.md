@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program remaja Ramadhan dengan ceramah Ludo Jongmans 'Back to basic: een reminder voor de gelovigen', dilanjutkan buka puasa bersama dan tarawih."
 # Event image
 image: "images/events/event-6.jpg"
 # location

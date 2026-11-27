@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Livestream van de vrijdagpreek in de Al Hikmah-moskee door Prof. Dr. Mahfud MD, Indonesisch minister voor Politieke, Juridische en Veiligheidszaken."
 # Event image
 image: "images/events/sholat-jumat.jpg"
 # location

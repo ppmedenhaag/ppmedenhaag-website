@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Maulid Nabi evening on the life of the Prophet, with a speech by the Indonesian ambassador, TPA children's performances and a talk by Zekeriya Budak."
 # Event image
 image: "images/events/maulid-nabi.jpg"
 # location

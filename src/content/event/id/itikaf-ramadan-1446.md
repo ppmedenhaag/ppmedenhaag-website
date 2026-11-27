@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "I'tikaf 23 Ramadhan 1446H di Masjid Al Hikmah: tarawih, penjelasan sholat tasbih, qiyamul lail, sahur, kajian ba'da subuh dan tadarus. Maks. 250 orang."
 # Event image
 image: "images/events/itikaf-ramadan-1446h-id.webp"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Nongkrong Sessie bersama peneliti Ja'far Al-Habshi tentang peran ulama dan gagasan Islam dalam perjuangan kemerdekaan Indonesia."
+description: "Nongkrong Sessie interaktif bersama peneliti Ja'far Al-Habshi tentang peran ulama dan gagasan Islam dalam perjuangan kemerdekaan Indonesia."
 # Event image
 image: "images/events/nongkrong-sessie-20260822.webp"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zaterdag voor de Ramadan: Koranles en Ramadan-aftrap voor de TPA, Yasin, een lezing over Tarhib Ramadhan door Bpk. Mizar en Sholat Tasbih."
 # Event image
 image: "images/events/event-5.jpg"
 # location

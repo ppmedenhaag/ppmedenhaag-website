@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sholat Idul Adha 1443H di Masjid Al Hikmah dengan imam Ustadz Rasyid dan khatib Dr. Fachrizal Yusuf Affandi, beserta tata tertib bagi jamaah."
 # Event image
 image: "images/events/iduladha.jpg"
 # location

@@ -64,7 +64,7 @@ date: "2026-12-05T14:00:00+01:00"
 duration: "3 uur"
 draft: false
 bg_image: "images/backgrounds/page-title.jpg"
-description: "70-155 characters, see SEO below"
+description: "required, 70-155 characters, no date: see Description below"
 image: "images/events/<slug>.webp"
 location: "Masjid Al Hikmah"
 type: "event"
@@ -108,10 +108,14 @@ input they are built from. Load `ppme-seo` only if SEO *code* has to change.
 - Most important words first, in the page's language. No emoji, ALL CAPS, date or venue stuffing.
 - Unique per language (a repeat gets the date appended automatically, but a specific title is better).
 
-**Description** (meta, `og:description`, Event description, card text, calendar entry)
-- Write it, per language, 70-155 characters, one or two sentences. It is used verbatim, so it **must itself contain the
-  date and the place** (the automatic "date, time · place" prefix only applies when it is empty), plus what and for whom.
-- No greetings ("Assalamu'alaikum", "Beste leden"), Markdown, links, emoji or text shared with another event.
+**Description** (card text, meta + `og:`/`twitter:description`, JSON-LD Event description, RSS item, calendar notes)
+- **Required** and the single source for all of those (nothing is derived from the body): the build fails without it
+  (schema: 40-160 characters). Write it per language, in the language of the page text, **70-155 characters**, one or two
+  sentences: what happens, who (speakers, organisers), the highlights.
+- **No date or time**: the card shows date and location right above it, and search engines get them from the Event
+  structured data. Mention the venue only when it is not Masjid Al Hikmah, or when it is the point (e.g. Delft, Utrecht).
+- No greetings ("Assalamu'alaikum", "Beste leden"), Markdown, links, emoji, double quotes (use 'single'), or text shared
+  word-for-word with another event (translations are fine).
 
 **Date, duration, location** (drive Event structured data)
 - Correct Amsterdam offset (see step 3). `endDate` only exists if `duration` has a number + `uur`/`jam`/`hours`;

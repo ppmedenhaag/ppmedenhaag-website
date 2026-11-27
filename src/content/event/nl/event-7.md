@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Indonesisch Ramadanprogramma met dzikr, tadarus onder leiding van Ust. Rasyid, iftar en de lezing 'Vasten en zuivering van de ziel' door M. Nashirulhaq."
 # Event image
 image: "images/events/event-7.jpg"
 # location

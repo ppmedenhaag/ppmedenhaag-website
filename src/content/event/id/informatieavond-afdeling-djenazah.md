@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sosialisasi Komisi Jenazah PPME Den Haag dan Uitvaartzorg AsSalaam tentang tata cara pengurusan jenazah, biaya pemakaman dan asuransi kematian."
 # Event image
 image: "images/events/Flyer.jpg"
 # location

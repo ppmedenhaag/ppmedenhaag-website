@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Eid al-Adha prayer 1447H at Al Hikmah Mosque: doors open at 08:00, prayer and sermon at 09:00. With the meaning of the feast and practical house rules."
 # Event image
 image: "images/events/idul-adha-1447.webp"
 # location

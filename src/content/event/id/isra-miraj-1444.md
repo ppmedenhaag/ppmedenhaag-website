@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "PPME Den Haag memperingati Isra' Mi'raj Nabi Muhammad SAW dengan acara sore hingga malam di Masjid Al Hikmah."
 # Event image
 image: "images/events/isra-miraj.id.jpg"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sholat Idul Adha 1444H di Masjid Al Hikmah bersama Yayasan Masjid Al Hikmah, dengan informasi pintu masuk, pembagian ruang dan tata tertib jamaah."
 # Event image
 image: "images/events/idul-adha-1444.webp"
 # location

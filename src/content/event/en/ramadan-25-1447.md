@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan programme with talks by Ustad Iqbal and Ustad Ronald, Ramadan Kidz with Groene Moslims, tadarus, iftar and tarawih."
 # Event image
 image: "images/events/ramadan-25-1447.webp"
 # location

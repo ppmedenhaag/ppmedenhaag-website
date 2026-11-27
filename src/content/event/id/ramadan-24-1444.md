@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Ramadhan: tadarus dipimpin Ust. Tahmip, ceramah dr. Muh. Ikhwan Zein dan Ust. Hambali Maksum, buka puasa bersama dan tarawih."
 # Event image
 image: "images/events/fahrul-azmi-vR-Nb0bncOY-unsplash.webp"
 # location

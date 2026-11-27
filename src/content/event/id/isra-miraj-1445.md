@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Peringatan Isra' Mi'raj dengan tilawah, rebana Noer Hollandie, penampilan TPA Al Amin, serta ceramah Ustadzah Samira Ibrahim dan Ustadz Hengki Ferdiansyah."
 # Event image
 image: "images/events/isra-miraj-1445-id.webp"
 # location

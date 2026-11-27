@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Lecture by dr. Aisah Dahlan on the differences between the male and female brain, Sat 5 December 2026 at Masjid Al Hikmah (in Indonesian)."
+description: "Lecture by dr. Aisah Dahlan on the differences between the male and female brain, with Human Initiative Europe. In Indonesian; registration required."
 # Event image
 image: "images/events/kajian-dr-aisah-dahlan.webp"
 # location

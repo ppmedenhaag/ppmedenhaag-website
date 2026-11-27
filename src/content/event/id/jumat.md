@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Siaran langsung khutbah Jum'at di Masjid Al Hikmah oleh Prof. Dr. Mohammad Mahfud MD, Menko Polhukam Republik Indonesia."
 # Event image
 image: "images/events/sholat-jumat.jpg"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program 22-23 Ramadhan: khataman Al-Qur'an, 40 hadits An-Nawawi, kajian Sefa Bağci, presentasi PPME Young Ummah, tarawih dan i'tikaf."
 # Event image
 image: "images/events/ramadan-22-1446h.webp"
 # location

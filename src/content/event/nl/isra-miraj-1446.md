@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Herdenking van Isra' Mi'raj met rebana Noer Hollandie, optredens van TPA Al Amin en lezingen van Ustadz Ahmad Rosyid (ID) en Muhammed Khalil (NL)."
 # Event image
 image: "images/events/isra-miraj-1446.webp"
 # location

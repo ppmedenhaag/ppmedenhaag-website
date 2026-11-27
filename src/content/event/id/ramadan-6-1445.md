@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Sabtu 6 Ramadhan 1445: tadarus, kajian untuk anak, dewasa dan remaja (antara lain Ust. Moh. Masrur dan Ust. Samira), buka puasa dan tarawih."
 # Event image
 image: "images/blog/romadhoon-1445/program-1.jpeg"
 # location

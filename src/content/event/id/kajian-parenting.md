@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Kajian parenting 'Menjadi Orang Tua Zaman Now' oleh Ibu Ilmia Lasmita di Masjid Al Hikmah dan secara online, dengan sesi tanya jawab."
 # Event image
 image: "images/events/kajian-parenting.jpg"
 # location

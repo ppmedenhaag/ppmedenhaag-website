@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Eid al-Adha-gebed 1447H in Masjid Al Hikmah: inloop om 08:00, gebed en preek om 09:00. Met uitleg over het offerfeest en praktische huisregels."
 # Event image
 image: "images/events/idul-adha-1447.webp"
 # location

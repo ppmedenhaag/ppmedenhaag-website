@@ -34,12 +34,9 @@ const href = getRelativeLocaleUrl(locale, `blog/${postSlug(post)}/`);
     <h2 class="mt-2">
       <a href={href} class="tile-title tile-title-link">{post.data.title}</a>
     </h2>
-    <p class="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">
-      {
-        post.data.description ||
-          cardExcerpt(post.body)
-      }
-    </p>
+    <div class="mt-3 flex-1">
+      <p class="line-clamp-3 text-sm leading-relaxed text-slate-600">{post.data.description || cardExcerpt(post.body)}</p>
+    </div>
     <span class="tile-link mt-5">
       {t("common.readMore")}
       <span class="arrow" aria-hidden="true">→</span>

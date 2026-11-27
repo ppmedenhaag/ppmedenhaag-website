@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "PPME Den Haag herdenkt Isra' Mi'raj, de nachtreis en hemelvaart van de Profeet Mohammed, met een middag- en avondprogramma in de Al Hikmah-moskee."
 # Event image
 image: "images/events/isra-miraj.nl.jpg"
 # location

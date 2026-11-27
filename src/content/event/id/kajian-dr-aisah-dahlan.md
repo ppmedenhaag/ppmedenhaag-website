@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Kajian bersama dr. Aisah Dahlan tentang perbedaan otak laki-laki dan perempuan, Sabtu 5 Desember 2026 di Masjid Al Hikmah. Kuota terbatas."
+description: "Kajian dr. Aisah Dahlan tentang perbedaan otak laki-laki dan perempuan, bersama Human Initiative Europe. Pendaftaran wajib, kuota terbatas."
 # Event image
 image: "images/events/kajian-dr-aisah-dahlan.webp"
 # location

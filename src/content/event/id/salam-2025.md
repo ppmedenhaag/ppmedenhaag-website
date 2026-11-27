@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "SALAM 2025: kajian spesial Ust. Hartanto Saryono, Lc., Al-Hafidzh bertema 'Menjadi Pribadi Berakhlak Qur'ani di Eropa' di Masjid Al-Ansaar Delft."
 # Event image
 image: "images/events/salam-2025.webp"
 # location

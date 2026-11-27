@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Laagdrempelige Nongkrong-avond voor jongeren: in kleine groepjes praten over 'Waarom zijn wij moslim?', met ruimte voor vragen, ervaringen en hapjes."
 # Event image
 image: "images/events/nongkrong-sessie.webp"
 # location

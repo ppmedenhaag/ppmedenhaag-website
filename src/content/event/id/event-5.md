@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengajian Sabtu menyambut Ramadhan: TPA mengaji dan penyambutan Ramadhan, Yasin, kajian Tarhib Ramadhan oleh Bpk. Mizar, dan sholat Tasbih."
 # Event image
 image: "images/events/event-5.jpg"
 # location

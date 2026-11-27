@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma op 10 Ramadan 1444 met tadarus, een lezing van Ust. Nur Ahmad, gezamenlijke iftar, avondeten en tarawih."
 # Event image
 image: "images/events/event-5.jpg"
 # location

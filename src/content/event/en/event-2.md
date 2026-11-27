@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Indonesian gathering with recitation of Tahlil and Yasin, held online via Zoom by the Dakwah committee of PPME Den Haag."
 # Event image
 image: "images/events/event-2.jpg"
 # location

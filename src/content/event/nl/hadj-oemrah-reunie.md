@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Reünie met de hadji's van 1445/2023 en de umrah-gangers van PPME Den Haag, die hun ervaringen delen als inspiratie voor wie nog wil gaan."
 # Event image
 image: "images/events/reuni-nl.webp"
 # location

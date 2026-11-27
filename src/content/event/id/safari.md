@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Silaturahmi dan ceramah Safari Dakwah UBM bersama Dr. KH Ahmad Buchory Muslim di Masjid Al Hikmah, dilanjutkan tanya jawab. Juga disiarkan online."
 # Event image
 image: "images/events/safari-ubm.jpg"
 # location

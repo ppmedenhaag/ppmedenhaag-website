@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Panduan dan program i'tikaf di Masjid Al Hikmah: makna i'tikaf, niat, rukun, serta amalan yang dapat dilakukan selama i'tikaf."
 # Event image
 image: "images/events/kel-avelino-yLW1yzCK2HY-unsplash.webp"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Ramadhan: khataman Al-Qur'an, kajian Ust. M. Idoe dan Ustad A. Firmansyah, Ramadan Kidz bersama Halid dan Nadia, tadarus, buka puasa dan tarawih."
 # Event image
 image: "images/events/ramadan-18-1447.webp"
 # location

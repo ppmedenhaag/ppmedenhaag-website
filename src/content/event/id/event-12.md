@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Sabtu: TPA anak-anak, presentasi kick-off 51 tahun PPME oleh Wati Chaeron, dan Istighotsah dipimpin Ust. Tahmip."
 # Event image
 image: "images/events/event-5.jpg"
 # location

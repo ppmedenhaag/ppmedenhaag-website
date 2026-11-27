@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Halal bi halal dan peringatan 50 tahun PPME Belanda bersama lima cabang: sambutan, penampilan, piknik, Istighotsah dan ceramah '50 tahun ke depan'."
 # Event image
 image: "images/events/halal-bi-halal-id.webp"
 # location

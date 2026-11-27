@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Istigotsah Akbar pertama sejak 50 tahun PPME bersama seluruh cabang: pembukaan, penjelasan tentang Istigotsah, istigotsah bersama dan makan malam."
 # Event image
 image: "images/events/istighotsah-akbar.webp"
 # location

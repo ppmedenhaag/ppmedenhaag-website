@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Reuni bersama jamaah Haji 1445/2023 dan jamaah Umrah PPME Den Haag yang berbagi pengalaman sebagai inspirasi bagi yang belum berangkat."
 # Event image
 image: "images/events/reuni-nl.webp"
 # location

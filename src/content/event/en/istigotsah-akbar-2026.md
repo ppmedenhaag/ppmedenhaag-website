@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Istighotsah Akbar of all PPME branches in the Netherlands: opening, branch updates, words from the ustadz, istighotsah and dhikr, and dinner together."
 # Event image
 image: "images/events/istigotsah-akbar-2026.webp"
 # location

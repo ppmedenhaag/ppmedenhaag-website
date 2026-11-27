@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Programma 22-23 Ramadan: khatam Qur'an, 40 hadith van An-Nawawi, Sefa Bağci over vertraging in het dagelijks leven, PPME Young Ummah, tarawih en i'tikaf."
 # Event image
 image: "images/events/ramadan-22-1446h.webp"
 # location

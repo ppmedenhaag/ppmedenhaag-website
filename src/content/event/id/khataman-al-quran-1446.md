@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Khataman Al-Qur'an pada 22 Ramadhan 1446 H di Masjid Al Hikmah, dipimpin Ustadz M. Isyak. Pendaftaran melalui grup WhatsApp Khataman."
 # Event image
 image: "images/events/khataman-al-quran.jpg"
 # location

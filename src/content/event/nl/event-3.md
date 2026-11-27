@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Online fiqhles over het gebed met Ustadz Nur Hasyim Subadi: kenmerken van het gebed, sunnah ab'at, sujud sahwi en wat het gebed ongeldig maakt."
 # Event image
 image: "images/events/event-3.jpg"
 # location

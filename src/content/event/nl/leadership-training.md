@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Training ethisch leiderschap volgens de leer van de Profeet met facilitator Umar Mirza, over communicatie tussen generaties binnen PPME."
 # Event image
 image: "images/events/ppme-training-resized-small.jpg"
 # location

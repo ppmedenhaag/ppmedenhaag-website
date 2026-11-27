@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Saturday before Ramadan: Qur'an lessons and a Ramadan kick-off for the TPA, Yasin, a Tarhib Ramadhan talk by Bpk. Mizar and Sholat Tasbih."
 # Event image
 image: "images/events/event-5.jpg"
 # location

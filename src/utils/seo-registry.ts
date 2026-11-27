@@ -12,7 +12,7 @@ import {
   type StaticKey,
 } from "../data/seo";
 import { LATEST_YEAR, fill, prayerStrings } from "../data/prayer";
-import { formatDate, formatTime, plainInline } from "./event";
+import { formatDate, plainInline } from "./event";
 import {
   firstBodyImage,
   inspectImage,
@@ -77,13 +77,9 @@ async function pickImage(data: { social_image?: string; image?: string }, body?:
   return { info: null as ImageInfo | null, source: "generated" as const };
 }
 
-function eventDescription(d: Record<string, any>, body: string | undefined, locale: LangOptions, title: string) {
-  if (d.description) return String(d.description).trim();
-  const when = `${formatDate(d.date, locale)}, ${formatTime(d.date, locale)}`;
-  const where = d.location ? plainInline(d.location) : "";
-  const prefix = [when, where].filter(Boolean).join(" · ");
-  const rest = deriveFromBody(body, Math.max(60, 158 - prefix.length - 2));
-  return truncateDescription(rest ? `${prefix}. ${rest}` : `${title}. ${prefix}`, 160);
+/** Events: the front matter description, verbatim (required and length-checked by the schema in content.config.ts). */
+function eventDescription(d: Record<string, any>) {
+  return String(d.description).trim();
 }
 
 function plainDescription(d: Record<string, any>, body: string | undefined, locale: LangOptions, title: string) {
@@ -223,7 +219,7 @@ async function build(): Promise<SeoRegistry> {
         kind,
         title: d.title,
         description:
-          kind === "event" ? eventDescription(d, entry.body, locale, d.title) : plainDescription(d, entry.body, locale, d.title),
+          kind === "event" ? eventDescription(d) : plainDescription(d, entry.body, locale, d.title),
         subtitle:
           kind === "event"
             ? `${formatDate(d.date, locale)} · ${d.location ? plainInline(d.location) : "PPME Den Haag"}`

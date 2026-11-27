@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengajian Tahlil dan Yasin berbahasa Indonesia secara online melalui Zoom, diselenggarakan oleh Komisi Dakwah PPME Den Haag."
 # Event image
 image: "images/events/event-2.jpg"
 # location

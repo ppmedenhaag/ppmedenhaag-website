@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Lezing van dr. Aisah Dahlan over de verschillen tussen het mannen- en vrouwenbrein, za 5 december 2026 in Masjid Al Hikmah (in het Indonesisch)."
+description: "Lezing van dr. Aisah Dahlan over de verschillen tussen het mannen- en vrouwenbrein, met Human Initiative Europe. In het Indonesisch; aanmelden verplicht."
 # Event image
 image: "images/events/kajian-dr-aisah-dahlan.webp"
 # location

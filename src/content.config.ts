@@ -13,7 +13,16 @@ const eventSchema = z.object({
   duration: z.string().optional(),
   draft: z.boolean().default(false),
   bg_image: z.string().optional(),
-  description: z.string().optional().default(""),
+  /**
+   * Required one- or two-sentence summary (what, who, highlights; no greeting, no date: the date is shown next to it).
+   * It is the event card text AND the meta/og/twitter description, JSON-LD Event.description, RSS item and calendar
+   * notes: nothing is derived from the body any more. Max 160 chars so search results show it whole.
+   */
+  description: z
+    .string()
+    .trim()
+    .min(40, "event `description` is required: one or two sentences summarising the event (40-160 characters)")
+    .max(160, "event `description` is too long: keep it at most 160 characters (it is the card text and the search snippet)"),
   image: z.string().optional(),
   /** Optional override for the link-preview (Open Graph) image; defaults to `image`. */
   social_image: z.string().optional(),

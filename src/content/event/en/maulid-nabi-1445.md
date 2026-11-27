@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Maulid Nabi evening at Al Hikmah Mosque on the theme 'The love of the Prophet and his respect for others'."
 # Event image
 image: "images/events/maulid-nabi-1445.webp"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sabtu pertama Ramadhan: 40 hadits An-Nawawi bersama Ustadz Nashir dan Fauzi, Ramadan Kidz, kajian remaja 'Perjalanan ke Tarim' bersama Ustadz M. Azam."
 # Event image
 image: "images/events/ramadhan-1-1446h.webp"
 # location

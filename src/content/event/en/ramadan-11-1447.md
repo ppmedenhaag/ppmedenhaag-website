@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan programme with talks in four rooms (Ustadz Iqbal, Ustadzah Saida, Ustadz Azam, Ustadzah Samira), Ramadan Kidz, tadarus, iftar and tarawih."
 # Event image
 image: "images/events/ramadan-11-1447.webp"
 # location

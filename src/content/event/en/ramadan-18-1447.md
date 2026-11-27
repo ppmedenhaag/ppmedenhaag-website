@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan programme with a khatam Qur'an, talks by Ust. M. Idoe and Ustad A. Firmansyah, Ramadan Kidz with Halid and Nadia, tadarus, iftar and tarawih."
 # Event image
 image: "images/events/ramadan-18-1447.webp"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sosialisasi online pengurus PPME Den Haag 2021–2023 dan komisi-komisinya, dengan kuis, Yasin, Tahlil dan Istighotsah, serta program untuk remaja dan anak."
 # Event image
 image: "images/events/event-1.jpg"
 # location

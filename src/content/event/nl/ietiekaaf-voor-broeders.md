@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ie'tiekaaf van PPME Rotterdam en partners over 'Broederschap en de uitdagingen van deze tijd', met vijf sprekers, lezingen en een workshop. Voor broeders."
 # Event image
 image: "images/events/iktikaf-rotterdam.webp"
 # location

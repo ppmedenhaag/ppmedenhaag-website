@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan programme with talks by Ustadz Iqbal (Indonesian) and Ustadzah Samira, Ramadan Kidz with Ustadzah Saida, tadarus, iftar and tarawih."
 # Event image
 image: "images/events/ramadan-4-1447.webp"
 # location

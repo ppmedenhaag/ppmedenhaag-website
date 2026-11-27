@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Lezing bij 51 jaar PPME over hoe onze moskeegemeenschap zich klaarmaakt voor de volgende 50 jaar. Open voor iedereen, vooraf gezamenlijk avondeten."
 # Event image
 image: "images/events/20230114.jpg"
 # location

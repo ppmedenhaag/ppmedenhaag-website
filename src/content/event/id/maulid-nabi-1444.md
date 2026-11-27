@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Peringatan Maulid Nabi dengan sambutan Duta Besar RI, penampilan anak-anak TPA, nasyid dan ceramah Ustadz Zekeriya Budak."
 # Event image
 image: "images/events/maulid-nabi.jpg"
 # location

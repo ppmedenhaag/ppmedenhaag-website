@@ -11,7 +11,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Peringatan Maulid Nabi dengan rebana Noer Hollandie, penampilan TPA Al Amin, serta kajian Ustadz Dawam Multazam dan Ustadz Muhammad Idoe."
 # Event image
 image: "images/events/maulid-nabi-1447.webp"
 # location

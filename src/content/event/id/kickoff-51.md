@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pembukaan peringatan 51 tahun PPME: Wati Chaeron memaparkan rencana tahun jubileum dan berbincang dengan Arif Widyantoro. Juga via Zoom dan YouTube."
 # Event image
 image: "images/ppme-51.jpg"
 # location

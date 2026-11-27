@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "SALAM 2025: lezing van Ust. Hartanto Saryono, Lc., Al-Hafidzh over 'Een persoon met Koranisch karakter worden in Europa', in de Al-Ansaar Masjid in Delft."
 # Event image
 image: "images/events/salam-2025.webp"
 # location

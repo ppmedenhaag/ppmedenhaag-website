@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "I'tikaf PPME Rotterdam dan mitra bertema 'Persaudaraan dan tantangan zaman ini', dengan lima pembicara, ceramah dan workshop. Khusus untuk laki-laki."
 # Event image
 image: "images/events/iktikaf-rotterdam.webp"
 # location
