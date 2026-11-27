@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Start of PPME's 51st anniversary: Wati Chaeron presents the plans for the jubilee year and talks with Arif Widyantoro. Also via Zoom and YouTube."
 # Event image
 image: "images/ppme-51.jpg"
 # location

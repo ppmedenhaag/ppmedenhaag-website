@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Istigotsah Akbar pertama sejak 50 tahun PPME bersama seluruh cabang: pembukaan, penjelasan tentang Istigotsah, istigotsah bersama dan makan malam."
 # Event image
 image: "images/events/istighotsah-akbar.webp"
 # location
@@ -26,7 +26,7 @@ type: "event"
 Assalamu ‘alaykum warrohmatullohi wabarokatuh,<br/>
 PPME mengundang anda ke Istigotsah Akbar edisi pertama, sejak hari jadinya yang ke-50!
 
-Bagi yang belum mendaftar, dipersilahkan untuk mendaftarkan diri [di sini](https://www.eventbrite.com/e/tickets-istigotsah-ppme-akbar-749016156487) melalui Eventbrite.
+Bagi yang belum mendaftar, dipersilakan untuk mendaftarkan diri [di sini](https://www.eventbrite.com/e/tickets-istigotsah-ppme-akbar-749016156487) melalui Eventbrite.
 
 Agenda acara:
 

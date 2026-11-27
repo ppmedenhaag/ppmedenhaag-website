@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengajian 29 Ramadhan 1443: Al-Adzkar, tadarus, buka puasa, ceramah Bpk. Nashirulhaq tentang maaf dan pengampunan di akhir Ramadhan, tarawih dan i'tikaf."
 # Event image
 image: "images/events/event-10.jpg"
 # location

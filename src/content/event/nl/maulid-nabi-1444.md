@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Maulid Nabi-avond met een speech van de Indonesische ambassadeur, optredens van TPA-kinderen, nasheed en een lezing van Zekeriya Budak."
 # Event image
 image: "images/events/maulid-nabi-nl.jpg"
 # location

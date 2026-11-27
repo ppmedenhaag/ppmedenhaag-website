@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "SICN en de PPME-afdelingen in Nederland vieren Eid al-Fitr met nieuwe en oude moslims in het Islamitisch Centrum Utrecht. Vooraf aanmelden."
 # Event image
 image: "images/events/eid-feest-met-bekeerlingen.webp"
 # location

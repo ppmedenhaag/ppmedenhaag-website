@@ -5,7 +5,7 @@ draft: true
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat al-Fitr and fidyah for Ramadan 1443H: €10 per person and €10 per day. Pay through PPME Den Haag by 28 April 2022 at the latest."
 # post thumbnail
 image: "images/blog/zakat1443h.jpg"
 # post author
@@ -19,7 +19,7 @@ type: "post"
 
 The ulama PPME Den Haag has defined the **Zakat Fitrah** and the **Fidyah** for Ramadan 1443H :
 
-* Zakat Fitrah is per persoon € 10,-
+* Zakat Fitrah is € 10 per person
 * Fidyah is €10,-per day
 
 You can pay both your Zakat Fitrah and your Fidyah at PPME Den Haag (at last on 28 April 2022). We will take the responsibility to distribute the received funds to the rightful mustahik. Your Shodaqoh is also welcome to support our activities at PPME Den Haag.

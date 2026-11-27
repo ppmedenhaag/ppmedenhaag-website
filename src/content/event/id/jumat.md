@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Siaran langsung khutbah Jum'at di Masjid Al Hikmah oleh Prof. Dr. Mohammad Mahfud MD, Menko Polhukam Republik Indonesia."
 # Event image
 image: "images/events/sholat-jumat.jpg"
 # location
@@ -34,7 +34,7 @@ Assalamu'alaykum wa rahmatullahi wa barakaatuh
 
 Bapak Prof. Dr. Mohammad Mahfud MD akan menjadi khatib untuk sholat Jum'at di Masjid Al Hikmah pada tanggal 10 Juni 2022.
 
-Khutbah Jum'at akan disiarkang secara langsung melalui live stream Youtube, yang akan dapat diakses langsung dari halaman ini mulai Jum'at jam 14.00 CET.
+Khutbah Jum'at akan disiarkan secara langsung melalui live stream Youtube, yang akan dapat diakses langsung dari halaman ini mulai Jum'at jam 14.00 CET.
 
 #### YouTube Video
 

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengajian 22 Ramadhan 1443: Al-Adzkar, tadarus, buka puasa, ceramah Ustadz Nur Hasyim Subadi tentang Nuzulul Qur'an, tarawih dan i'tikaf."
 # Event image
 image: "images/events/event-8.jpg"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program remaja 29 Ramadhan 1443 bersama Mohammed Kechouh dan Rudy van der Aar (Deen Travellers), buka puasa, tarawih, lalu i'tikaf di masjid."
 # Event image
 image: "images/events/event-11.jpg"
 # location

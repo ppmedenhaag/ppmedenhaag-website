@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Programma op 22 Ramadan 1443: dzikr, tadarus, iftar, een Indonesische lezing over Nuzul Qur'an door Ustadz Nur Hasyim Subadi, tarawih en i'tikaf."
 # Event image
 image: "images/events/event-8.jpg"
 # location

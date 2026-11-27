@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sholat Idul Adha 1447H di Masjid Al Hikmah: pintu dibuka pukul 08.00, sholat dan khutbah pukul 09.00, beserta tata tertib bagi jamaah."
 # Event image
 image: "images/events/idul-adha-1447.webp"
 # location

@@ -12,7 +12,7 @@ import {
   type StaticKey,
 } from "../data/seo";
 import { LATEST_YEAR, fill, prayerStrings } from "../data/prayer";
-import { formatDate, formatTime, plainInline } from "./event";
+import { formatDate, plainInline } from "./event";
 import {
   firstBodyImage,
   inspectImage,
@@ -20,7 +20,6 @@ import {
   type CardSpec,
   type ImageInfo,
 } from "./og";
-import { deriveFromBody, truncateDescription } from "./seo";
 
 export type PageKind = "home" | "listing" | "static" | "overview" | "event" | "blog" | "ibadah" | "about" | "dakwah";
 
@@ -77,19 +76,12 @@ async function pickImage(data: { social_image?: string; image?: string }, body?:
   return { info: null as ImageInfo | null, source: "generated" as const };
 }
 
-function eventDescription(d: Record<string, any>, body: string | undefined, locale: LangOptions, title: string) {
-  if (d.description) return String(d.description).trim();
-  const when = `${formatDate(d.date, locale)}, ${formatTime(d.date, locale)}`;
-  const where = d.location ? plainInline(d.location) : "";
-  const prefix = [when, where].filter(Boolean).join(" · ");
-  const rest = deriveFromBody(body, Math.max(60, 158 - prefix.length - 2));
-  return truncateDescription(rest ? `${prefix}. ${rest}` : `${title}. ${prefix}`, 160);
-}
-
-function plainDescription(d: Record<string, any>, body: string | undefined, locale: LangOptions, title: string) {
-  if (d.description) return String(d.description).trim();
-  const derived = deriveFromBody(body, 155);
-  return derived || truncateDescription(`${title} | ${STATIC_COPY.home[locale].subtitle}`, 155);
+/**
+ * Content pages (events, blog, ibadah, about, dakwah, section overviews): the hand-written front matter description,
+ * verbatim. It is required and length-checked by the schema in content.config.ts; nothing is derived from the body.
+ */
+function writtenDescription(d: Record<string, any>) {
+  return String(d.description).trim();
 }
 
 let cached: Promise<SeoRegistry> | undefined;
@@ -183,7 +175,7 @@ async function build(): Promise<SeoRegistry> {
         routeKey: section,
         kind: "overview",
         title: entry.data.title,
-        description: plainDescription(entry.data, entry.body, locale, entry.data.title),
+        description: writtenDescription(entry.data),
         subtitle: EYEBROW[section][locale],
         eyebrow: EYEBROW[section][locale],
         data: entry.data,
@@ -223,7 +215,7 @@ async function build(): Promise<SeoRegistry> {
         kind,
         title: d.title,
         description:
-          kind === "event" ? eventDescription(d, entry.body, locale, d.title) : plainDescription(d, entry.body, locale, d.title),
+          writtenDescription(d),
         subtitle:
           kind === "event"
             ? `${formatDate(d.date, locale)} · ${d.location ? plainInline(d.location) : "PPME Den Haag"}`

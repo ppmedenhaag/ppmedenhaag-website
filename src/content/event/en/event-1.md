@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Online introduction of the PPME Den Haag board 2021–2023 and its committees, with a quiz, Yasin, Tahlil and Istighotsah, and programmes for all ages."
 # Event image
 image: "images/events/event-1.jpg"
 # location

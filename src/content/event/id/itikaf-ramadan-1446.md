@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "I'tikaf 23 Ramadhan 1446H di Masjid Al Hikmah: tarawih, penjelasan sholat tasbih, qiyamul lail, sahur, kajian ba'da subuh dan tadarus. Maks. 250 orang."
 # Event image
 image: "images/events/itikaf-ramadan-1446h-id.webp"
 # location
@@ -51,8 +51,8 @@ Berikut susunan program:
 
 <br/>
 
-Mohon diperhatikan, progam ini terbatas untuk **250** orang.<br/>
-**Registrasi**📝 dapat dilakukan [disini melalui Google Form](https://forms.gle/AVRzw3FopKHt9wmm9).
+Mohon diperhatikan, program ini terbatas untuk **250** orang.<br/>
+**Registrasi**📝 dapat dilakukan [di sini melalui Google Form](https://forms.gle/AVRzw3FopKHt9wmm9).
 
 
 <br/>

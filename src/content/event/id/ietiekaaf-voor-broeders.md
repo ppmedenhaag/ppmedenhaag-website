@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "I'tikaf PPME Rotterdam dan mitra bertema 'Persaudaraan dan tantangan zaman ini', dengan lima pembicara, ceramah dan workshop. Khusus untuk laki-laki."
 # Event image
 image: "images/events/iktikaf-rotterdam.webp"
 # location
@@ -28,7 +28,7 @@ Satu malam penuh persaudaraan, ilmu, dan refleksi.
 
 Pada 15-16 Syawwal 1447 (3-4 April '26), PPME Rotterdam bersama organisasi-organisasi lainnya menyelenggarakan sebuah Ie'tiekaaf istimewa dengan tema "Persaudaraan dan Tantangan Zaman Ini."
 
-Kami mentargetkan dua kelompok usia, namun acara ini tentu juga terbuka bagi yang lebih tua.
+Kami menargetkan dua kelompok usia, namun acara ini tentu juga terbuka bagi yang lebih tua.
 
 Sebuah momen untuk bersama-sama merenungkan tanggung jawab kita sebagai saudara, ikatan kita satu sama lain, dan bagaimana kita tetap teguh di tengah zaman yang penuh tantangan.
 

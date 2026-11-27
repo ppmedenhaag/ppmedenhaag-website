@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Ramadhan dengan kajian di empat ruang (Ustadz Iqbal, Ustadzah Saida, Ustadz Azam, Ustadzah Samira), Ramadan Kidz, tadarus, buka puasa dan tarawih."
 # Event image
 image: "images/events/ramadan-11-1447.webp"
 # location
@@ -79,7 +79,7 @@ Berikut adalah program untuk Sabtu **11 Ramadan 1447**.
 </table>
 </div>
 <div class="block lg:hidden">
-(➡️ geser ke kanan di tabel diatas untuk melihat secara lengkap)
+(➡️ geser ke kanan di tabel di atas untuk melihat secara lengkap)
 </div>
 <br/>
 

@@ -7,9 +7,11 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 import { defineConfig, envField } from "astro/config";
-import { defaultLocale, locales } from "./src/data/i18n";
+import { defaultLocale } from "./src/data/i18n";
 import { DEFAULT_SITE_URL } from "./src/data/seo";
 import sitemapSplit from "./scripts/sitemap-split.mjs";
+import { satteri } from "@astrojs/markdown-satteri";
+import { headingLevels } from "./src/plugins/heading-levels.mjs";
 
 // Dev only: serve the Pagefind index that `npm run build` wrote to dist/pagefind, so the search box
 // works under `npm run dev` too. The index is a snapshot of the last build (rebuild to refresh it).
@@ -44,6 +46,11 @@ export default defineConfig({
   // Until the cutover this is the staging host; the cutover sets PUBLIC_SITE_URL=https://www.ppmedenhaag.nl
   // (GitHub repo variable `PUBLIC_SITE_URL`). See docs/seo/PROGRESS.md.
   site: (process.env.PUBLIC_SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, ""),
+  // Markdown content: sequential heading levels (h2, h3 ... without gaps) for screen readers and SEO; each renumbered
+  // heading keeps its authored look through a .md-hN class (src/plugins/heading-levels.mjs, global.css).
+  markdown: {
+    processor: satteri({ hastPlugins: [headingLevels()] }),
+  },
   i18n: {
     defaultLocale: "nl",
     locales: ["nl", "id", "en"],

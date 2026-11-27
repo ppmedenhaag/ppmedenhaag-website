@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Silaturahmi dan ceramah Safari Dakwah UBM bersama Dr. KH Ahmad Buchory Muslim di Masjid Al Hikmah, dilanjutkan tanya jawab. Juga disiarkan online."
 # Event image
 image: "images/events/safari-ubm.jpg"
 # location
@@ -31,7 +31,7 @@ type: "event"
 ---
 Assalamu’alaikum warohmatullahi wa barakatuh
 
-Acara silahturahmi PPME Den Haag bersama **Dr KH Ahmad Buchory Muslim S. Ag, SH, MA, ME. Sy.** akan diadakan di mesjid Al Hikmah pada: 
+Acara silaturahmi PPME Den Haag bersama **Dr KH Ahmad Buchory Muslim S. Ag, SH, MA, ME. Sy.** akan diadakan di mesjid Al Hikmah pada: 
 
 
 |Hari | Jam |

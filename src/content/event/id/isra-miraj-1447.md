@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Peringatan Isra' Mi'raj dengan penampilan TPA Al Amin dan kajian Ustadz Baktiar Hasan, Ph.D.: 'Dari Kesedihan Menuju Cahaya', disertai tanya jawab."
 # Event image
 image: "images/events/isra-miraj-1447-id.webp"
 # location

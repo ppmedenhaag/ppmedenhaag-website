@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Islamic marriage at PPME Den Haag: what you need for the akad nikah, from the application form and passport photos to the father's consent and witnesses."
 # post thumbnail
 image: "images/ibadah/nikah.jpg"
 # post author
@@ -32,7 +32,7 @@ From the bride -to-be :
 * A passport photo in triplicate
 * A copy of a valid Dutch passport
 * And otherwise a copy of a valid residence permit
-* Are you converted? Then we ask for a copy of the certificate of conversion
+* Are you a convert? Then we ask for a copy of the certificate of conversion
 * Are you a widow? Then we ask for a copy of the death certificate
 * Are you divorced? Then we ask for a copy of the divorce deed
 * Letter in which your father gives permission for the marriage
@@ -43,7 +43,7 @@ From the future groom :
 * A copy of a valid Dutch passport
 * And otherwise a copy of a valid residence permit
 * Copy of a valid passport of two male Islamic witnesses
-* Are you converted? Then we ask for a copy of the certificate of conversion
+* Are you a convert? Then we ask for a copy of the certificate of conversion
 * Are you a widow? Then we ask for a copy of the death certificate
 * Are you divorced? Then we ask for a copy of the divorce deed
 * The dowry

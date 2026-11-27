@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Open House PPME Den Haag, acara pertama peringatan 51 tahun PPME: merayakan sejarah dan visi masa depan bersama seluruh generasi."
 # Event image
 image: "images/events/open-house.jpg"
 # location

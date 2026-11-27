@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "PPME Den Haag presenteert in samenwerking met Human Initiative Europe een lezing van dr. Aisah Dahlan over de verschillen tussen het mannen- en vrouwenbrein, zaterdag 5 december 2026 in Masjid Al Hikmah. De lezing is in het Indonesisch. Aanmelden via event.ppmedenhaag.nl (beperkt aantal plaatsen)."
+description: "Lezing van dr. Aisah Dahlan over de verschillen tussen het mannen- en vrouwenbrein, met Human Initiative Europe. In het Indonesisch; aanmelden verplicht."
 # Event image
 image: "images/events/kajian-dr-aisah-dahlan.webp"
 # location
@@ -26,9 +26,9 @@ speaker:
     designation : "Spreker"
 ---
 
-<h6 class="callout">
+<p class="callout">
 🗣️ <strong>Let op:</strong> deze lezing wordt gehouden in het <strong>Indonesisch</strong>. Er is geen Nederlandse vertaling.
-</h6>
+</p>
 
 Assalamu'alaikum warohmatullahi wa barakatuh
 

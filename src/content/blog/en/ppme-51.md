@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "PPME turned 51 in April 2022. PPME Den Haag celebrates with a year of activities, from a kick-off in May 2022 to a Halal bi Halal in 2023."
 # post thumbnail
 image: "images/ppme-51.jpg"
 # post author

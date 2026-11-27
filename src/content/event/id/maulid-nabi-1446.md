@@ -11,7 +11,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Peringatan Maulid Nabi dengan penampilan TPA Al Amin, kajian Ustadz Mizar (bahasa Indonesia) dan Bapak Umar Mirza (bahasa Belanda)."
 # Event image
 image: "images/events/maulid-nabi-1446.webp"
 # location

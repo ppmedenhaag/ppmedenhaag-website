@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "PPME Den Haag bedankt de heer Subono, mevrouw Novita, de heer Wawan, de heer Ferry Irawan en alle helpers voor hun bijdrage aan de nieuwe website."
 # post thumbnail
 image: "images/blog/post-1.jpg"
 # post author

@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Qur'an- en godsdienstlessen voor kinderen vanaf 5 jaar bij PPME Den Haag, door gekwalificeerde docenten. Inschrijven en vragen via info@ppmedenhaag.nl."
 # post thumbnail
 image: "images/dakwah/quran-lesson.jpg"
 # post author

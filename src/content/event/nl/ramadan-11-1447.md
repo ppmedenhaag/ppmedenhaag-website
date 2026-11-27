@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma met lezingen in vier ruimtes (Ustadz Iqbal, Ustadzah Saida, Ustadz Azam, Ustadzah Samira), Ramadan Kidz, tadarus, iftar en tarawih."
 # Event image
 image: "images/events/ramadan-11-1447.webp"
 # location

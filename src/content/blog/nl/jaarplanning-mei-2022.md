@@ -5,7 +5,7 @@ draft: true
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Voorstel voor de jaarplanning mei 2022 – mei 2023 rond 51 jaar PPME Den Haag: doel, verantwoordelijken, activiteiten en begroting."
 # post thumbnail
 image: "images/blog/jaarplan-2022.jpg"
 # post author
@@ -283,7 +283,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
             <td rowspan="2">
                 <p>
                     Lezing: De adhab en akhlaq van mensen<br/>
-                    binnen een moskee gemeenschap
+                    binnen een moskeegemeenschap
                 </p>
             </td>
             <td rowspan="2">

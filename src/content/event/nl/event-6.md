@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jongerenprogramma in de Ramadan met de lezing 'Back to basic: een reminder voor de gelovigen' door Ludo Jongmans, gevolgd door iftar en tarawih."
 # Event image
 image: "images/events/event-6.jpg"
 # location

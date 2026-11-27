@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma met tadarus onder leiding van Ust. Tahmip, lezingen van dr. Muh. Ikhwan Zein en Ust. Hambali Maksum, gezamenlijke iftar en tarawih."
 # Event image
 image: "images/events/fahrul-azmi-vR-Nb0bncOY-unsplash.webp"
 # location

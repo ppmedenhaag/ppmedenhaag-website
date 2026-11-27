@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Kajian umum 'Menggapai Kemuliaan Bersama Al-Qur'an' bersama Ustadz Hartanto Saryono, Lc., Al-Hafizh, kerja sama SGB Utrecht, PPME dan Rumah Tajwid."
 # Event image
 image: "images/events/menggapai-kemuliaan-bersama-al-quran.webp"
 # location

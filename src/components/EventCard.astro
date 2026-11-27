@@ -4,7 +4,6 @@ import type { CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { LangOptions } from "../data/i18n";
 import { dateBadge, eventSlug, formatDate, plainInline } from "../utils/event";
-import { stripMarkdown, truncateText } from "../utils/text";
 import Img from "./Img.astro";
 import { eventWindow } from "../utils/calendar";
 import { useTranslations } from "../utils/lang";
@@ -57,11 +56,10 @@ const upcoming = end.getTime() > Date.now();
         </p>
       )
     }
-    <p class="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">
-      {
-        event.data.description ||
-          truncateText(stripMarkdown(event.body ?? ""), 100)
-      }
-    </p>
+    {/* The front matter description (required, ≤ 155 chars) is the card text. flex-1 sits on the wrapper: on the clamped
+        <p> itself it stretched the box and showed text below the "…". */}
+    <div class="mt-3 flex-1">
+      <p class="line-clamp-4 text-sm leading-relaxed text-slate-600">{event.data.description}</p>
+    </div>
   </div>
 </article>

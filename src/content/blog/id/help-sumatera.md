@@ -5,7 +5,7 @@ date: "2025-12-14T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Bantuan darurat bagi korban bencana di Sumatera: PPME Den Haag bersama Dompet Dhuafa menyalurkan donasi Anda, termasuk untuk obat-obatan yang mendesak."
 # post thumbnail
 image: "images/blog/help-sumatera-id.webp"
 # post author

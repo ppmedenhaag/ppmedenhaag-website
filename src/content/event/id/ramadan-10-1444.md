@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program 10 Ramadhan 1444: tadarus, kajian Ust. Nur Ahmad, buka puasa bersama, makan malam dan tarawih."
 # Event image
 image: "images/events/event-5.jpg"
 # location

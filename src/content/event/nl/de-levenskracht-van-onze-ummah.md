@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Lezing bij 51 jaar PPME over hoe onze moskeegemeenschap zich klaarmaakt voor de volgende 50 jaar. Open voor iedereen, vooraf gezamenlijk avondeten."
 # Event image
 image: "images/events/20230114.jpg"
 # location
@@ -45,7 +45,7 @@ We zien u graag op Zaterdag, 14 januari 2023 om 19:15 (na het Isya gebed).
 
 
 
-Deze lezing kunt u ook live bekijken via onze website: [ppmedenhaag.nl](https://ppmedenhaag.nl).
+Deze lezing kunt u ook live bekijken via onze website: [ppmedenhaag.nl](https://www.ppmedenhaag.nl/).
 
 Wassalamu 'alaykum wr wb.
 

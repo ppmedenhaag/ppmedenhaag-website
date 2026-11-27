@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sabtu pertama Ramadhan: 40 hadits An-Nawawi bersama Ustadz Nashir dan Fauzi, Ramadan Kidz, kajian remaja 'Perjalanan ke Tarim' bersama Ustadz M. Azam."
 # Event image
 image: "images/events/ramadhan-1-1446h.webp"
 # location
@@ -83,7 +83,7 @@ Berikut adalah program untuk Sabtu pertama Ramadhan.
 </table>
 </div>
 <div class="block lg:hidden">
-(➡️ geser ke kanan di tabel diatas untuk melihat secara lengkap)
+(➡️ geser ke kanan di tabel di atas untuk melihat secara lengkap)
 </div>
 <br/>
 

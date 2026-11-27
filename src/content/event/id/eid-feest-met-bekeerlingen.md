@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "SICN dan PPME cabang-cabang Belanda merayakan Idul Fitri bersama mualaf dan Muslim lama di Islamitisch Centrum Utrecht. Daftar terlebih dahulu."
 # Event image
 image: "images/events/eid-feest-met-bekeerlingen.webp"
 # location

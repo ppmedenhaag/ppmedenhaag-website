@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "The first Istigotsah Akbar since PPME's 50th anniversary, with all branches: opening, an explanation of Istigotsah, the Istigotsah itself and dinner."
 # Event image
 image: "images/events/istighotsah-akbar.webp"
 # location
@@ -43,7 +43,7 @@ The event itinerary:
 | 17.05 - 18.05 | Dinner and social interactions |
 
 
-Istigotsah Akbar PPME has been arranged with collaborations and partitipations from all PPME areas:
+Istigotsah Akbar PPME has been arranged with collaborations and participation from all PPME areas:
 * **Den Haag**
 * **Amsterdam**
 * **Breda**

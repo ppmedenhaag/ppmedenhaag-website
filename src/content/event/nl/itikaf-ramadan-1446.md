@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "I'tikaf op 23 Ramadan 1446H in de Al Hikmah-moskee: tarawih, uitleg over het tasbih-gebed, nachtgebeden, sahur, lezing en Koranlezing. Max. 250 personen."
 # Event image
 image: "images/events/itikaf-ramadan-1446h.webp"
 # location
@@ -50,7 +50,7 @@ Wij nodigen u van harte uit om deel te nemen aan de Itikaf, die zal plaatsvinden
 
 <br/>
 
-Dit programma is beperkt tot **250** personnen.<br/>
+Dit programma is beperkt tot **250** personen.<br/>
 **Registratie**📝 [hier via Google Form](https://forms.gle/AVRzw3FopKHt9wmm9).
 
 

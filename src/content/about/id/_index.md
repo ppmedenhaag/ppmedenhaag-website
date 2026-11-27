@@ -6,7 +6,7 @@ bg_image: "images/backgrounds/page-title.jpg"
 # about image
 image: "images/about/about-ppme.webp"
 # meta description
-description : ""
+description: "Sejarah PPME: didirikan di Den Haag pada 12 April 1971 oleh pemuda Indonesia, termasuk Gus Dur, untuk dakwah dan pelayanan umat Islam di Belanda."
 ---
 
 

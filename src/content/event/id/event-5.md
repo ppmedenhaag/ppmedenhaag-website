@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengajian Sabtu menyambut Ramadhan: TPA mengaji dan penyambutan Ramadhan, Yasin, kajian Tarhib Ramadhan oleh Bpk. Mizar, dan sholat Tasbih."
 # Event image
 image: "images/events/event-5.jpg"
 # location
@@ -54,7 +54,7 @@ protokol kesehatan yang tetap ingin kita jaga bersama, in syaa Allah,
 
 Pengajian juga dapat diikuti secara online dengan menggunakan link Zoom berikut:
 
-Link sudah bisa diakses setengah jam sebelum pengajian di mulai, dimohon mematikan video/audio hingga pengajian dimulai.
+Link sudah bisa diakses setengah jam sebelum pengajian dimulai, dimohon mematikan video/audio hingga pengajian dimulai.
 
 Semoga pengajian rutin setiap hari sabtu PPME Den Haag dilancarkanNya dan membawa berkah. Aamiiin.
 

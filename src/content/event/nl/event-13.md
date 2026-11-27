@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zaterdagprogramma met godsdienstles voor kinderen en een Indonesische lezing van Hambali Maksum over omgangsregels bij beraad volgens Koran en Soennah."
 # Event image
 image: "images/events/event-13.jpg"
 # location

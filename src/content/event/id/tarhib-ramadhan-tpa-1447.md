@@ -11,7 +11,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Tarhib Ramadhan TPA Al Amin: santri TPA PPME Den Haag menyambut bulan Ramadhan bersama orang tua dan wali."
 # Event image
 image: "images/events/tarhib-ramadhan-tpa-1447.webp"
 # location

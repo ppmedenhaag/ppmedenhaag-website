@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian Sabtu Juli–Agustus 2022: Istighotsah, tajwid dan tafsir Ust. Mizar, ceramah 1 Muharram Dr. KH Ahmad Buchory Muslim, Tahlil dan fiqih."
 # post thumbnail
 image: "images/blog/pengajian.jpg"
 # post author

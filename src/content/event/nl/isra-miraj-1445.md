@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Herdenking van Isra' Mi'raj met Koranrecitatie, optredens van TPA Al Amin en lezingen van Ustadzah Samira I. Ibrahim en Ustadz Hengki Ferdiansyah."
 # Event image
 image: "images/events/isra-miraj-1445-nl.webp"
 # location

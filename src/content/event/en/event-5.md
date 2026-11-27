@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Saturday before Ramadan: Qur'an lessons and a Ramadan kick-off for the TPA, Yasin, a Tarhib Ramadhan talk by Bpk. Mizar and Sholat Tasbih."
 # Event image
 image: "images/events/event-5.jpg"
 # location
@@ -36,7 +36,7 @@ Assalamu'alaykum wa rahmatullahi wa barakaatuh
 
 Peace be on you all, with Allah's mercy and blessings.
 
-Alhamdulillah, praise be to Allah SWT who always gives us guidance and guidance. Shalawat and greetings are always poured out to the prophet Muhammad sallallahu wassallam.
+Alhamdulillah, praise be to Allah SWT who always gives us guidance and guidance. Shalawat and greetings are always poured out to the prophet Muhammad sallallahu 'alaihi wa sallam.
 
 In syaa Allah **in mosque Al Hikmah** on **Saturday, 23 Sya'ban 1443 / 26 March 2022** the following program will take place:
 

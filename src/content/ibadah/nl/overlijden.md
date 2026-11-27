@@ -6,7 +6,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Islamitische uitvaart met hulp van de Commissie Jenazah van PPME Den Haag: wassing, inwikkelen, gebed en begrafenis, de kosten en wat je vooraf regelt."
 # post thumbnail
 image: "images/ibadah/pass-away.jpg"
 # post author
@@ -86,7 +86,7 @@ Heb je een uitvaartverzekering? Check dan of ook zij van je wensen op de hoogte 
 Daarnaast is het goed om te bedenken:
 
 * door wie je gewassen wil worden (meerdere personen van hetzelfde geslacht)
-* door wie je  ingewikkeld wil worden (meerdere personen van hetzelfde geslacht)
+* door wie je in de kafan gewikkeld wil worden (meerdere personen van hetzelfde geslacht)
 * waar je begraven wil worden
 * wie de contactpersoon is
 

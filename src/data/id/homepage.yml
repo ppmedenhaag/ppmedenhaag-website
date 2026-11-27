@@ -105,7 +105,7 @@ homepage:
   ######################## Vision Mission #############################
   vision_mission:
     enable : false
-    bg_image : "images/backgrounds/success-story.jpg"
+    bg_image : "images/backgrounds/success-story.webp"
     vision_title : "Visi PPME"
     mission_title : "Misi PPME"
     vision : "Visi kami adalah berjuang untuk sebuah asosiasi yang dapat diakses oleh semua Muslim dan yang berjuang untuk persaudaraan satu sama lain. Sebuah asosiasi yang terdiri dari komunitas yang erat, di mana tua dan muda merasa betah, yang secara aktif dan sadar mengalami Islam bersama. Kami adalah asosiasi modern dan berorientasi masa depan yang berjuang untuk kemajuan dan jika memungkinkan kami menggunakan teknologi untuk mendukung dan memfasilitasi anggota kami. Berorientasi ke masa depan juga berarti bahwa, selain secara aktif dan sadar mengalami Islam, kami juga ingin memberikan kontribusi aktif untuk masyarakat yang berkelanjutan dan berkomitmen. PPME adalah jantung masyarakat."
@@ -133,7 +133,7 @@ homepage:
 
       # funfact item loop
       - name : "Tahun Komunitas Aktif"
-        count : "53"
+        since : "1971-04-12"  # founding date of PPME: the number of years is computed at build time
 
 
   # funfact is for about page

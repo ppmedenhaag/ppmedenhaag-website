@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengajian Al Ittihaad berbahasa Indonesia setiap Sabtu sekitar waktu Maghrib: membaca Al-Qur'an bersama, dzikir, serta kajian fiqih dan aqidah."
 # post thumbnail
 image: "images/dakwah/indonesia.jpg"
 # post author

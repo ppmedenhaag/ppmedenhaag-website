@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Eid al-Fitr prayer 1445H at Al Hikmah Mosque: gates open at 08:00, prayer and sermon at 09:00, with information on entrances, areas and house rules."
 # Event image
 image: "images/events/idul-fitri-1445.webp"
 # location

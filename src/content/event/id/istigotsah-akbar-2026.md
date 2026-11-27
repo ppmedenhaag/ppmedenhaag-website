@@ -11,7 +11,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Istighotsah Akbar seluruh cabang PPME Belanda: pembukaan, kabar dari cabang-cabang, kalam asaatiedz, istighotsah dan dzikir, ditutup makan malam."
 # Event image
 image: "images/events/istigotsah-akbar-2026.webp"
 # location

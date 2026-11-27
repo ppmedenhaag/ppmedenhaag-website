@@ -5,7 +5,7 @@ date: "2026-02-07T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan Mubarak 1447H from the PPME Den Haag board: 1 Ramadan falls on Wednesday 18 February 2026 and 1 Shawwal on Friday 20 March 2026."
 # post thumbnail
 image: "images/blog/marhaban-ramadhan-1447.webp"
 # post author

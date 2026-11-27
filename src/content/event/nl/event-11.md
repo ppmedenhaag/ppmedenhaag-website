@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jongerenprogramma op 29 Ramadan 1443 met Deen Travellers Mohammed Kechouh en Rudy van der Aar, iftar en tarawih, gevolgd door i'tikaf in de moskee."
 # Event image
 image: "images/events/event-11.jpg"
 # location

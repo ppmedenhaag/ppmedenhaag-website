@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Herdenking van Isra' Mi'raj met optredens van TPA Al Amin en de lezing 'Van verdriet naar licht' door Ustadz Baktiar Hasan, Ph.D., vertaald, met Q&A."
 # Event image
 image: "images/events/isra-miraj-1447-nl.webp"
 # location

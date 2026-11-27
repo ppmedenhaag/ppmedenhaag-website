@@ -11,7 +11,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Tarhib Ramadan van PPME Den Haag en Tombo Ati: avondeten, een shahada na Maghrib, een lezing van Ustadz Nur Hasyim Subadi en Sholat Tasbih."
 # Event image
 image: "images/events/tarhib-ramadhan-1447.webp"
 # location

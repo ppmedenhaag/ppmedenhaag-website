@@ -5,7 +5,7 @@ date: "2024-04-10T00:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Selamat Idul Fitri 1445 H dari pengurus PPME Den Haag. Kegiatan Sabtu libur dua pekan dan dimulai kembali pada 27 April 2024 (18 Syawal)."
 # post thumbnail
 image: "images/blog/idul-fitri-1445h.jpeg"
 # post author
@@ -21,7 +21,7 @@ Assalamu 'alaykum warrohmatullohi wabarokatuh.
 
 Bismillahirrahmanirrahiim
 
-Kami segenap pengurus dan komisi PPME Den Hag mengucapkan:
+Kami segenap pengurus dan komisi PPME Den Haag mengucapkan:
 
 Taqabbalallahu minna wa minkum wa taqabbal ya kariim. Minal 'aidin wal faizin.
 

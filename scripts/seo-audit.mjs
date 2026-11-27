@@ -78,7 +78,7 @@ for (const file of htmlFiles) {
   if (titles.length !== 1) err(path, `expected exactly 1 <title>, found ${titles.length}`);
   else if (title.length > 70) warn(path, `title is ${title.length} chars`);
   if (!description) err(path, "missing meta description");
-  else if (description.length < 60 || description.length > 175) warn(path, `description length ${description.length}`);
+  else if (description.length < 60 || description.length > 160) warn(path, `description length ${description.length} (Google shows ~155-160)`);
   // <html lang> is the language of the text (front matter `contentLang` may differ from the URL locale) and must agree with og:locale.
   const htmlLang = root.querySelector("html")?.getAttribute("lang");
   const ogLang = (meta('meta[property="og:locale"]') ?? "").slice(0, 2);
@@ -212,6 +212,13 @@ if (existsSync(join(DIST, "sitemap-0.xml"))) {
   }
   for (const [path, p] of pages)
     if (path !== "/404.html" && !p.noindex && !inMap.has(path) && !expectedOrigin.startsWith("x")) warn(path, "not in sitemap");
+}
+// A future <lastmod> (e.g. an upcoming event's date) makes search engines distrust every lastmod on the site.
+for (const f of ["sitemap.xml", "nl/sitemap.xml", "id/sitemap.xml", "en/sitemap.xml"]) {
+  if (!existsSync(join(DIST, f))) continue;
+  const now = Date.now() + 60 * 60 * 1000; // 1 h clock slack
+  for (const m of readFileSync(join(DIST, f), "utf8").matchAll(/<lastmod>([^<]+)<\/lastmod>/g))
+    if (Date.parse(m[1]) > now) err(`(${f})`, `lastmod in the future: ${m[1]}`);
 }
 if (existsSync(join(DIST, "robots.txt"))) {
   const robots = readFileSync(join(DIST, "robots.txt"), "utf8");

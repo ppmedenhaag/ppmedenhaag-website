@@ -5,7 +5,7 @@ date: "2023-01-20T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Schema van de Indonesische zaterdagbijeenkomsten in januari 2023: Yasin en Tahlil, een lezing van Anne Dijk over de ummah, Istighotsah en tafsir."
 # post thumbnail
 image: "images/blog/januari-2023.webp"
 # post author
@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode januari 2022 / Jumadil Akhir-Rajab 1444:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode januari 2023 / Jumadil Akhir-Rajab 1444:
 
 ##### Zaterdag 7 januari /<br/> 14 Jumadil Akhir
 <table style="width:100%">
@@ -32,7 +32,7 @@ Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties vo
 
 ##### Zaterdag 14 januari /<br/> 21 Jumadil Akhir
 <table style="width:100%">
-<tr><td style="width:35%;margin:0;">19.15 - 20.30</td><td style="width:65%;margin:0;">Lezing door Anne Dijk: “De levenskracht van onze ummah</td></tr>
+<tr><td style="width:35%;margin:0;">19.15 - 20.30</td><td style="width:65%;margin:0;">Lezing door Anne Dijk: “De levenskracht van onze ummah”</td></tr>
 </table>
 <br/>
 

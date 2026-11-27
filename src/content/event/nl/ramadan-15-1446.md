@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma: 40 hadith van imam An-Nawawi met Ustadz Faturrahman en Haikal, 'De kracht van intentie' met Samira I. Ibrahim, Ramadhan Kidz en tarawih."
 # Event image
 image: "images/events/ramadan-15-1446h.webp"
 # location

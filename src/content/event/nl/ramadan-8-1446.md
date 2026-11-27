@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma: 40 hadith van An-Nawawi met Ustadz Rafly en Nashir, Ramadhan Kidz, voor jongeren 'Stress & Islam' en 'Wees als een reiziger', en tarawih."
 # Event image
 image: "images/events/ramadan-8-1446h.webp"
 # location

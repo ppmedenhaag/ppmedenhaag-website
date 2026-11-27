@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Online kennismaking met het bestuur van PPME Den Haag 2021–2023 en de commissies, met quiz, Yasin, Tahlil en Istighotsah en programma's voor jong en oud."
 # Event image
 image: "images/events/event-1.jpg"
 # location

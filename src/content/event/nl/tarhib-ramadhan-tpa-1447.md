@@ -11,7 +11,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Tarhib Ramadan van TPA Al Amin: de kinderen van de Koranschool verwelkomen de Ramadan samen met hun ouders en verzorgers."
 # Event image
 image: "images/events/tarhib-ramadhan-tpa-1447.webp"
 # location

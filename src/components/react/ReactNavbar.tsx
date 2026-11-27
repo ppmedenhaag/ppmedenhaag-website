@@ -137,6 +137,8 @@ export default function NavbarExample(params: NavProps) {
           <img
             alt=""
             src="/images/logo.png"
+            width={135}
+            height={70}
             className="h-10 w-auto sm:h-12 lg:h-14"
           />
         </a>
@@ -242,7 +244,7 @@ export default function NavbarExample(params: NavProps) {
           <div className="flex items-center justify-between border-b border-slate-200 bg-brand-50/60 px-4 py-2">
             <a href={home} className={`-m-1.5 rounded-md p-1.5 ${focusRing}`}>
               <span className="sr-only">PPME Den Haag</span>
-              <img alt="" src="/images/logo.png" className="h-10 w-auto" />
+              <img alt="" src="/images/logo.png" width={135} height={70} className="h-10 w-auto" />
             </a>
             <button
               type="button"

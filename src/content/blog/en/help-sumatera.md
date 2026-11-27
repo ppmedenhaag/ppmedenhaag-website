@@ -5,7 +5,7 @@ date: "2025-12-14T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Emergency aid for disaster victims in Sumatera: PPME Den Haag and Dompet Dhuafa distribute your donations, including urgently needed medicines."
 # post thumbnail
 image: "images/blog/help-sumatera-en.webp"
 # post author

@@ -5,7 +5,7 @@ date: "2022-03-23T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "PPME Den Haag thanks Mr Subono, Mrs Novita, Mr Wawan, Mr Ferry Irawan and everyone who helped for their donations and work on the new website."
 # post thumbnail
 image: "images/blog/post-1.jpg"
 # post author

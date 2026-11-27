@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jamaah PPME Den Haag bergotong royong membersihkan Masjid Al Hikmah Den Haag. Semua yang ingin membantu dipersilakan hadir."
 # Event image
 image: "images/events/event-4.jpg"
 # location

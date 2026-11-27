@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Buka puasa terakhir Ramadhan di Masjid Al Hikmah, dilanjutkan takbiran bersama setelah sholat Maghrib."
 # Event image
 image: "images/events/takbiran.jpg"
 # location

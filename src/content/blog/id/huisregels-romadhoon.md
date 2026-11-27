@@ -5,7 +5,7 @@ date: "2024-03-16T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Tata tertib hari Sabtu selama Ramadhan 1445 di Masjid Al Hikmah: pintu masuk dan ruang terpisah untuk pria, wanita dan anak saat iftar, makan dan tarawih."
 # post thumbnail
 image: "images/blog/romadhoon-1445/panduan-id.jpeg"
 # post author

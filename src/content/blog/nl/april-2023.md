@@ -5,7 +5,7 @@ date: "2023-04-22T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Na de Ramadan is er op 22 en 29 april en 6 mei 2023 geen zaterdagprogramma; het start weer op 13 mei. Met dank aan alle vrijwilligers en Eid Mubarak."
 # post thumbnail
 image: "images/blog/info-april-2023-nl.webp"
 # post author
@@ -27,7 +27,7 @@ Hierbij willen wij u graag informeren dat op de drie volgende zaterdagen geen pr
 * 29 april 2023/ 9 Syawal 1444 
 * 6 mei 2023/ 16 Syawal 1444 
 
-Zaterdag 13 mei 2023/ 23 Syawal 1444 H, zal in syaa Allah het PPME Den Haag zaterdagpogramma weer van start.
+Zaterdag 13 mei 2023/ 23 Syawal 1444 H, zal in syaa Allah het PPME Den Haag zaterdagprogramma weer van start.
 
 Het bestuur vraagt u om vergeving voor al haar tekortkomingen in de maand Ramadan.
 

@@ -5,7 +5,7 @@ date: "2025-02-20T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan Mubarak 1446H van het bestuur van PPME Den Haag: 1 Ramadan valt op zaterdag 1 maart 2025 en 1 Syawwal op zondag 30 maart 2025."
 # post thumbnail
 image: "images/blog/ramadhan-1446.webp"
 # post author
@@ -25,7 +25,7 @@ Geachte jamaah PPME Den Haag, bij deze willen wij u allen een gezegende Ramadhan
 
 **1 Ramadhan 1446H** valt op **zaterdag, 1 maart 2025**.
 
-**1 Syawwal 1446H** valt op **zondag, 30 Maret 2025**.
+**1 Syawwal 1446H** valt op **zondag, 30 maart 2025**.
 
 Onze excuses voor alle fouten die wij hebben gemaakt. In syaa Allah, zal onze Ramadhan PPME Den Haag programma zo snel mogelijk bekend gemaakt worden hier op onze website. 
 

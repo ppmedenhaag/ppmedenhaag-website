@@ -5,7 +5,7 @@ date: "2023-09-27T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian Oktober 2023: Maulid Nabi, tahsin bersama Aaman Sulchan, kajian Ust. Hengki Ferdiansyah tentang Nabi dan sholawat, serta Istighotsah."
 # post thumbnail
 image: "images/blog/oktober-2023.webp"
 # post author
@@ -29,7 +29,7 @@ Kepada Yth. jama'ah PPME Den Haag, berikut jadwal pengajian Indonesia untuk peri
 <tr><td style="width:35%;margin:0;">18.00 - 18.30</td><td style="width:65%;margin:0;">Makan malam</td></tr>
 <tr><td style="width:35%;margin:0;">18.30 - 19.10</td><td style="width:65%;margin:0;">Kajian Ust. Aaman Sulchan</td></tr>
 <tr><td style="width:35%;margin:0;">19.12</td><td style="width:65%;margin:0;">Magrib</td></tr>
-<tr><td style="width:35%;margin:0;">20.00 - 20. 40</td><td style="width:65%;margin:0;">Kajian Ust. Nur Ahmad</td></tr>
+<tr><td style="width:35%;margin:0;">20.00 - 20.40</td><td style="width:65%;margin:0;">Kajian Ust. Nur Ahmad</td></tr>
 <tr><td style="width:35%;margin:0;">20.40 - 20.55</td><td style="width:65%;margin:0;">Shalawat bersama + doa</td></tr>
 <tr><td style="width:35%;margin:0;">20.55</td><td style="width:65%;margin:0;">Penutupan</td></tr>
 <tr><td style="width:35%;margin:0;">20.57</td><td style="width:65%;margin:0;">'Isya</td></tr>

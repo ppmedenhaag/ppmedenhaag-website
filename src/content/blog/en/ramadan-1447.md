@@ -5,7 +5,7 @@ date: "2026-02-07T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan youth programme 1447 on four Saturdays with Samira I. Ibrahim, Muhammad Azam, Muhammad Idoe and Ronald Abu Noor Jannah (in Dutch), with iftar."
 # post thumbnail
 image: "images/blog/ramadan-jongerenprogramma-1447.webp"
 # post author

@@ -2,7 +2,7 @@
 title: "Umrah PPME Den Haag 2026"
 draft: false
 date: "2026-06-13T00:00:00+02:00"
-description: ""
+description: "Umrah met PPME Den Haag in oktober 2026 onder leiding van Ronald Kroon: 10 dagen, vertrek 8 of 16 oktober, vanaf €1795 per persoon. Ook voor niet-leden."
 image: "images/blog/umrah-2026.webp"
 author: "PPME Den Haag"
 categories: ["Blog"]

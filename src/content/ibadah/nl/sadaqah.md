@@ -6,7 +6,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat, infaq en sadaqah uitgelegd: de verplichte zakat en vrijwillig geven omwille van Allah. Steun PPME Den Haag via iDEAL of bankoverschrijving."
 # post thumbnail
 image: "images/ibadah/zakat.jpg"
 # post author
@@ -22,7 +22,7 @@ type: "post"
 De islam biedt ons meer dan een manier om onszelf te zuiveren van onze tekortkomingen. Steun bieden aan mensen die materiële of morele steun nodig hebben is daar een voorbeeld van. Maar zelfs een oprechte glimlach kan al helpen jouw tekortkomingen en zondes te laten vergeven door Allah SWT. Het is een simpele vorm van liefdadigheid. En liefdadigheid is een vorm van aanbidding.
 
 ### Zakat
-Het behoort tot een van de vijf pilaren van de islam. Het is een verplichting voor een moslim om een voorgeschreven deel van zijn/haar vermogen uit te geven aan mensen die er recht op hebben.
+Het is een van de vijf zuilen van de islam. Het is een verplichting voor een moslim om een voorgeschreven deel van zijn/haar vermogen uit te geven aan mensen die er recht op hebben.
 
 
 ### Infaq

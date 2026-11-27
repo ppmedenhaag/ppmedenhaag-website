@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Kajian fiqih bab sholat secara online bersama Ustadz Nur Hasyim Subadi: ciri-ciri sholat, sunnah ab'at, sujud sahwi dan hal yang membatalkan sholat."
 # Event image
 image: "images/events/event-3.jpg"
 # location

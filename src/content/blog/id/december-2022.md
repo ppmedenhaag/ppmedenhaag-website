@@ -5,7 +5,7 @@ date: "2022-12-09T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian Sabtu Desember 2022: Yasin dan Tahlil, kajian fiqih, Istighotsah, tajwid dan tafsir, serta pertemuan orang tua dan wali kelas TPA."
 # post thumbnail
 image: "images/blog/december-2022.jpg"
 # post author

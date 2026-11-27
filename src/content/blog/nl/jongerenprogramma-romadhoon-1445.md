@@ -5,7 +5,7 @@ date: "2024-03-11T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Het Romadhoon-jongerenprogramma 1445 van PPME Den Haag: elke zaterdag twee sessies, een uur voor iftar en kort voor het Isha-gebed."
 # post thumbnail
 image: "images/blog/romadhoon-1445/jongerenprogramma.jpeg"
 # post author
@@ -17,7 +17,7 @@ tags: ["Romadhoon"]
 type: "post"
 ---
 
-Assalamu'alaykum wa rahmtullahi wa barakaatuh
+Assalamu'alaykum wa rahmatullahi wa barakaatuh
 
 Alhamdulillaah zal er dit jaar weer een Romadhoon Jongerenprogramma georganiseerd worden door PPME Den Haag.
 Zeer vereerd en dankbaar voor de sprekers die de lezingen zullen verzorgen.

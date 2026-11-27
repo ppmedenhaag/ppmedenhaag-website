@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Laatste iftar van de Ramadan in de Al Hikmah-moskee, gevolgd door gezamenlijke takbiran na het Maghrib-gebed."
 # Event image
 image: "images/events/takbiran.jpg"
 # location

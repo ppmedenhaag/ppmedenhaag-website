@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "Jongerenprogramma 8 Ramadan 1446H"
+description: "Jongerenprogramma in de Ramadan: 'Stress & Islam' met Ai Lien Djie en 'Wees op deze wereld als een reiziger' met Ronald Kroon."
 # Event image
 image: "images/events/jongerenprogramma-ramadan-8-1446.jpg"
 # location
@@ -42,9 +42,9 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 
 
 
-<h6 class="callout">
+<p class="callout"><strong>
   Sessie 1: Stress & Islam
-</h6>
+</strong></p>
 
 
 |Spreker | **Ai Lien Djie**|
@@ -52,9 +52,9 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 |Tijd| **17.00 - 18.10**|
 
 <br/>
-<h6 class="callout">
+<p class="callout"><strong>
   Sessie 2: Wees op deze wereld als een reiziger
-</h6>
+</strong></p>
 
 
 |Spreker | **Ronald Kroon**|
@@ -65,7 +65,7 @@ Moge Allah SWT u gezondheid, geduld en heel veel liefde geven. Moge Allah onze i
 
 <h6 class="callout callout-success">
  Locatie: Gebedsruimte boven
-</h6>
+</strong></p>
 
 <br/><br/>
 Wassalamu'alaykum wa rahmatullahi wa barakaatuh

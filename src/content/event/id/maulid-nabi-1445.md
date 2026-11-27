@@ -11,7 +11,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Peringatan Maulid Nabi Muhammad SAW di Masjid Al Hikmah dengan tema 'Kasih Sayang Rasul dan Hormat kepada Sesama'."
 # Event image
 image: "images/events/maulid-nabi-1445.webp"
 # location

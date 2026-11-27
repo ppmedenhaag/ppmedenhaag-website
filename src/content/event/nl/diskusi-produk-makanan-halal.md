@@ -6,7 +6,7 @@ date: "2026-05-30T19:00:00+02:00"
 duration: "2 jam"
 draft: false
 bg_image: "images/backgrounds/page-title.jpg"
-description: "Diskusi tentang dinamika kehalalan di luar negeri bersama auditor halal dari lembaga sertifikasi halal Belanda."
+description: "Diskusi tentang fenomena halal-haram produk makanan dan restoran di luar negeri bersama Raehana Gahari dan Fitri Rachmadita, auditor halal di Belanda."
 image: "images/events/diskusi-makanan-halal.webp"
 location: "Masjid Al Hikmah, Medlerstraat 4, 2531 HA Den Haag"
 type: "event"
@@ -29,7 +29,7 @@ Insyaa Allah akan diadakan pada:
 🕒 **19.00 – selesai**<br/>
 📍 **Masjid Al Hikmah, Medlerstraat 4, 2531 HA Den Haag**<br/>
 
-Bagi Bapak/Ibu yang memiliki pertanyaan seputar tema halal-haram produk makanan/restoran, silahkan mengisi tautan di bawah ini:
+Bagi Bapak/Ibu yang memiliki pertanyaan seputar tema halal-haram produk makanan/restoran, silakan mengisi tautan di bawah ini:
 
 https://forms.gle/qmZAhe75QBbgYBsN8
 

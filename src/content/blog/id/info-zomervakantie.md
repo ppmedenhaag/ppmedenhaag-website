@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Libur musim panas TPA PPME Den Haag dari 9 Juli hingga 20 Agustus 2022; pertemuan pertama setelah libur pada Sabtu 27 Agustus."
 # post thumbnail
 image: "images/blog/info-zomervakantie.jpg"
 # post author

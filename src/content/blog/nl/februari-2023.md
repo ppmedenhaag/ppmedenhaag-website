@@ -5,7 +5,7 @@ date: "2023-02-15T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Schema van de Indonesische zaterdagbijeenkomsten in februari 2023: Yasin en hadith, fiqh, tajwid en tafsir, en de Isra' Mi'raj-herdenking met gastsprekers."
 # post thumbnail
 image: "images/blog/februari-2023.webp"
 # post author
@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode februari 2023 / Rajab - Sya’ban 1444:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode februari 2023 / Rajab - Sya’ban 1444:
 
 ##### Zaterdag 4 Februari /<br/> 13 Rajab
 <table style="width:100%">

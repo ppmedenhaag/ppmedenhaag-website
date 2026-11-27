@@ -6,7 +6,7 @@ draft: false
 # about image
 image: "images/about/about-ppme.webp"
 # meta description
-description : ""
+description: "De geschiedenis van PPME: in 1971 opgericht door Indonesische studenten, onder wie Abdurrachman Wahid, en uitgegroeid tot afdelingen in heel Nederland."
 ---
 
 **12 april 1971** is de geboortedag van PPME. Deze islamitische organisatie werd opgericht door ongeveer twintig Indonesische studenten die in Nederland en het toenmalige West-Duitsland woonden. Een van hen was **Abdurrachman Wahid**, de latere 4e president van Indonesië. De groep kwam geregeld samen in Nederland om gezamenlijk hun geloof te belijden. Daaruit ontstond de wens om iets op te richten dat de belangen van moslims in Nederland behartigt.

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Ramadhan: 40 hadits An-Nawawi bersama Ustadz Rafly dan Nashir, Ramadan Kidz, program remaja tentang stres dan Islam, serta tarawih."
 # Event image
 image: "images/events/ramadan-8-1446h.webp"
 # location
@@ -82,7 +82,7 @@ Berikut adalah program untuk Sabtu 8 Ramadan.
 </table>
 </div>
 <div class="block lg:hidden">
-(➡️ geser ke kanan di tabel diatas untuk melihat secara lengkap)
+(➡️ geser ke kanan di tabel di atas untuk melihat secara lengkap)
 </div>
 <br/>
 

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "Program Remaja 8 Ramadan 1446H"
+description: "Program remaja Ramadhan: 'Stress & Islam' bersama Ai Lien Djie dan 'Wees op deze wereld als een reiziger' bersama Ronald Kroon."
 # Event image
 image: "images/events/jongerenprogramma-ramadan-8-1446.jpg"
 # location
@@ -42,9 +42,9 @@ Semoga Allah SWT melimpahkan kesehatan, kesabaran dan banyak rahmat. Semoga Alla
 Berikut adalah program remaja untuk Sabtu 8 Ramadan.
 
 
-<h6 class="callout">
+<p class="callout"><strong>
   Sesi 1: Stress & Islam
-</h6>
+</strong></p>
 
 
 |Penceramah | **Ai Lien Djie**|
@@ -52,9 +52,9 @@ Berikut adalah program remaja untuk Sabtu 8 Ramadan.
 |Waktu| **17.00 - 18.10**|
 
 <br/>
-<h6 class="callout">
+<p class="callout"><strong>
   Sesi 2: Wees op deze wereld als een reiziger
-</h6>
+</strong></p>
 
 
 |Penceramah | **Ronald Kroon**|
@@ -65,7 +65,7 @@ Berikut adalah program remaja untuk Sabtu 8 Ramadan.
 
 <h6 class="callout callout-success">
  Lokasi: Ruang Atas
-</h6>
+</strong></p>
 
 <br/><br/>
 Wassalamu'alaykum wa rahmatullahi wa barakaatuh

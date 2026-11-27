@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sholat Idul Adha 1445H di Masjid Al Hikmah (pintu dibuka pukul 08.00), dengan informasi pintu masuk, pembagian ruang dan tata tertib jamaah."
 # Event image
 image: "images/events/idul-adha-1445.webp"
 # location
@@ -59,7 +59,7 @@ PPME Den Haag bekerjasama dengan Yayasan Masdjid Al Hikmah menyampaikan pengumum
 * Akan ada pengawas untuk mengoordinasikan arus masuk di pintu masuk utama dan di pintu masuk di lantai pertama, 
 * Jika salat Idul Fitri kedua diperlukan, akan ada seorang Imam yang memimpin salat di Masjid.
 
-Terakhir, setiap orang yang hadir harus mentaati aturan dan saling memperhatikan.
+Terakhir, setiap orang yang hadir harus menaati aturan dan saling memperhatikan.
 
  [Informasi resmi Masjid Al Hikmah (pdf)](/docs/idul-adha-1445h.pdf)
 

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Maulid Nabi evening on the life of the Prophet, with a speech by the Indonesian ambassador, TPA children's performances and a talk by Zekeriya Budak."
 # Event image
 image: "images/events/maulid-nabi.jpg"
 # location
@@ -42,7 +42,7 @@ PPME Den Haag will commemorate Maulid Prophet Muhammad saws,  in syaa Allah will
 <tr><td>Place</td><td>Masjid Al-Hikmah<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
-with the breakdown of the schedue as follow:
+with the breakdown of the schedule as follow:
 
 | From | To | Activity |
 |----|----|---|

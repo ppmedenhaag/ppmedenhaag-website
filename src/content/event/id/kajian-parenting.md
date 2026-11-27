@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Kajian parenting 'Menjadi Orang Tua Zaman Now' oleh Ibu Ilmia Lasmita di Masjid Al Hikmah dan secara online, dengan sesi tanya jawab."
 # Event image
 image: "images/events/kajian-parenting.jpg"
 # location
@@ -38,7 +38,7 @@ Assalamu'alaykum wa rahmatullahi wa barakaatuh
 
 Kepada Yth. jama'ah PPME Den Haag,
 
-Pengajian berbahasa Indonesia akan dilaksanakan fisik di Mesjid Al Hikmah dan online. Pengajian akan dilaksanakan di ruang besar bawah
+Pengajian berbahasa Indonesia akan dilaksanakan fisik di Masjid Al Hikmah dan online. Pengajian akan dilaksanakan di ruang besar bawah
 
 Hari: Sabtu, 4 Rabbi'ul Akhir 1444/ 29 Oktober 2022
 

@@ -5,7 +5,7 @@ date: "2023-09-27T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Programma voor oktober 2023: Maulid Nabi met lezingen, tahsin met Aaman Sulchan, een lezing van Ust. Hengki Ferdiansyah en Istighotsah."
 # post thumbnail
 image: "images/blog/oktober-2023.webp"
 # post author
@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode oktober 2023 / Rabi’ul Awwal - Rabi'ul Akhir 1445:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode oktober 2023 / Rabi’ul Awwal - Rabi'ul Akhir 1445:
 
 ##### Zaterdag 7 Oktober 2023 /<br/> 22 Rabi’ul Awwal 1445
 
@@ -29,7 +29,7 @@ Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties vo
 <tr><td style="width:35%;margin:0;">18.00 - 18.30</td><td style="width:65%;margin:0;">Avondeten</td></tr>
 <tr><td style="width:35%;margin:0;">18.30 - 19.10</td><td style="width:65%;margin:0;">Lezing door Aaman Sulchan</td></tr>
 <tr><td style="width:35%;margin:0;">19.12</td><td style="width:65%;margin:0;">Magrib</td></tr>
-<tr><td style="width:35%;margin:0;">20.00 - 20. 40</td><td style="width:65%;margin:0;">Lezing door Ust. Nur Ahmad</td></tr>
+<tr><td style="width:35%;margin:0;">20.00 - 20.40</td><td style="width:65%;margin:0;">Lezing door Ust. Nur Ahmad</td></tr>
 <tr><td style="width:35%;margin:0;">20.40 - 20.55</td><td style="width:65%;margin:0;">Shalawat  + doa</td></tr>
 <tr><td style="width:35%;margin:0;">20.55</td><td style="width:65%;margin:0;">Afsluiting</td></tr>
 <tr><td style="width:35%;margin:0;">20.57</td><td style="width:65%;margin:0;">'Isya</td></tr>

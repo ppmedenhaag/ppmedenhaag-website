@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Sosialisasi rencana pembangunan Indonesian Islamic Cultural Centre (IICC) Al Ittihaad pada Sabtu, 7 November 2026 pukul 17.45–19.45 di Al Hikmah, PPME Den Haag."
+description: "Sosialisasi rencana, perkembangan dan visi Indonesian Islamic Cultural Centre (IICC) Al Ittihaad, dengan kesempatan bertanya dan berbagi gagasan."
 # Event image
 image: "images/events/informatie-avond-iicc-al-ittihaad-20261107.webp"
 # location

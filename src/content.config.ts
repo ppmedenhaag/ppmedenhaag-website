@@ -6,6 +6,19 @@ import { glob, file } from "astro/loaders";
 // ppmedenhaag-website's content/{nederland,indonesia,english}/event and /blog
 // (see .migration/02-content-migration.md in that repo).
 
+/**
+ * Hand-written one- or two-sentence summary, required on every content page (events, blog, ibadah, about, dakwah and
+ * the section overviews). It is the single source for the card text, the meta / og / twitter description, JSON-LD,
+ * the RSS item and (events) the calendar notes: nothing is derived from the body. Max 160 chars so search results
+ * show it whole; no greeting. Rules for events: .claude/skills/ppme-event.
+ */
+const descriptionField = (what: string) =>
+  z
+    .string()
+    .trim()
+    .min(40, `${what} \`description\` is required: one or two sentences summarising it (40-160 characters)`)
+    .max(160, `${what} \`description\` is too long: keep it at most 160 characters (it is the card text and the search snippet)`);
+
 const eventSchema = z.object({
   title: z.string(),
   publishDate: z.coerce.date().optional(),
@@ -13,7 +26,12 @@ const eventSchema = z.object({
   duration: z.string().optional(),
   draft: z.boolean().default(false),
   bg_image: z.string().optional(),
-  description: z.string().optional().default(""),
+  /**
+   * Required one- or two-sentence summary (what, who, highlights; no greeting, no date: the date is shown next to it).
+   * It is the event card text AND the meta/og/twitter description, JSON-LD Event.description, RSS item and calendar
+   * notes: nothing is derived from the body any more. Max 160 chars so search results show it whole.
+   */
+  description: descriptionField("event"),
   image: z.string().optional(),
   /** Optional override for the link-preview (Open Graph) image; defaults to `image`. */
   social_image: z.string().optional(),
@@ -32,11 +50,12 @@ const eventSchema = z.object({
     .optional(),
 });
 
-const blogSchema = z.object({
+// Post-shaped front matter (Hugo `type: "post"`): blog, ibadah, about and dakwah.
+const postSchema = z.object({
   title: z.string(),
   draft: z.boolean().default(false),
   date: z.coerce.date(),
-  description: z.string().optional().default(""),
+  description: descriptionField("page"),
   image: z.string().optional(),
   social_image: z.string().optional(),
   contentLang: z.enum(["nl", "id", "en"]).optional(),
@@ -45,13 +64,14 @@ const blogSchema = z.object({
   tags: z.array(z.string()).optional(),
 });
 
+
 // Entries live at src/content/<section>/<locale>/<slug>.md — id becomes
 // "<locale>/<slug>", exactly preserving the Hugo filename as the slug.
 // See .migration/02-content-migration.md ("Revision 2026-08-19") for why one
 // collection per section (not one per section+locale) was chosen.
 //
 // NOTE: this must stay generic (<TSchema>), not a `typeof eventSchema | typeof
-// blogSchema` union parameter — a union parameter made TypeScript infer the same
+// postSchema` union parameter — a union parameter made TypeScript infer the same
 // merged/unioned `data` type for both collections instead of each one's own
 // distinct shape, breaking `entry.data.speaker` / `.location` / `.author` etc.
 // across both call sites.
@@ -80,7 +100,7 @@ const aboutOverviewSchema = z.object({
   title: z.string(),
   draft: z.boolean().default(false),
   bg_image: z.string().optional(),
-  description: z.string().optional().default(""),
+  description: descriptionField("overview page"),
   image: z.string().optional(),
   social_image: z.string().optional(),
 });
@@ -172,7 +192,12 @@ const homepageSchema = z.object({
   funfacts: z
     .object({
       enable: z.boolean(),
-      funfact_item: z.array(z.object({ name: z.string(), count: z.string() })),
+      // `since: "YYYY-MM-DD"` instead of `count`: whole years since that date, computed at build time (never stale).
+      funfact_item: z.array(
+        z
+          .object({ name: z.string(), count: z.string().optional(), since: z.coerce.date().optional() })
+          .refine((i) => i.count || i.since, { message: "funfact_item needs `count` or `since`" }),
+      ),
     })
     .optional(),
   blog: z.object({ enable: z.boolean(), title: z.string() }),
@@ -187,17 +212,17 @@ function homepageCollection(locale: "nl" | "id" | "en") {
 
 export const collections = {
   event: sectionCollection("event", eventSchema),
-  blog: sectionCollection("blog", blogSchema),
+  blog: sectionCollection("blog", postSchema),
   // Same front matter shape as blog (both are Hugo `type: "post"` content) — reusing
-  // blogSchema rather than duplicating it. See CLAUDE.md's "ibadah ... not yet ported"
+  // postSchema rather than duplicating it. See CLAUDE.md's "ibadah ... not yet ported"
   // gap list; these 5 pages (toetreden-islam, sadaqah, geboorte, overlijden,
   // islamitisch-trouwen) are the Navbar's "Ibadah" submenu targets.
-  ibadah: sectionCollection("ibadah", blogSchema),
+  ibadah: sectionCollection("ibadah", postSchema),
   // Same front matter shape as blog/ibadah ("post"-style) — about-1.md ("Lidmaatschap").
-  about: sectionCollection("about", blogSchema),
+  about: sectionCollection("about", postSchema),
   "about-overview": aboutOverview,
   // Dakwah: same shapes as about (post-style entries + per-locale _index overview).
-  dakwah: sectionCollection("dakwah", blogSchema),
+  dakwah: sectionCollection("dakwah", postSchema),
   "dakwah-overview": overviewCollection("dakwah"),
   "homepage-nl": homepageCollection("nl"),
   "homepage-id": homepageCollection("id"),

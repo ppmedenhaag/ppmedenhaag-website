@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Reuni bersama jamaah Haji 1445/2023 dan jamaah Umrah PPME Den Haag yang berbagi pengalaman sebagai inspirasi bagi yang belum berangkat."
 # Event image
 image: "images/events/reuni-nl.webp"
 # location
@@ -29,7 +29,7 @@ Bersama ini, kami pengurus PPME Den Haag ingin mengundang bapak dan ibu sekalian
 
 Pada kesempatan ini kami ingin mendengarkan pengalaman para jamaah yang telah menunaikan ibadah Haji dan Umrah. Tujuannya adalah untuk memberikan inspirasi dan motivasi kepada mereka yang belum berangkat. Ibadah-ibadah mulia ini sangat diperlukan bagi yang sanggup menjalankannya untuk memperkuat dan menyempurnakan iman kita kepada Allah swt. 
 
-Bila bapak dan ibu sekalian ingin mengetahui lebih lanjut mengenai ibadah Haji dan Umrah, maka datanglah ke acara **“Reuni Haji & Umrah PPME Den Haag”** yang akan dilaksanakan, in syaa Allah, Sabtu 11 November 2023 pukul 13:00 di Mesjid Al-Hikmah.
+Bila bapak dan ibu sekalian ingin mengetahui lebih lanjut mengenai ibadah Haji dan Umrah, maka datanglah ke acara **“Reuni Haji & Umrah PPME Den Haag”** yang akan dilaksanakan, in syaa Allah, Sabtu 11 November 2023 pukul 13:00 di Masjid Al-Hikmah.
 
 Susunan acara:
 

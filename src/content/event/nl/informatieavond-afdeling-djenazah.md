@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Informatieavond van de afdeling Djenaza en Uitvaartzorg AsSalaam over djenazazorg, de rituele bewassing, uitvaartkosten en het Fonds AsSalaam."
 # Event image
 image: "images/events/Flyer.jpg"
 # location

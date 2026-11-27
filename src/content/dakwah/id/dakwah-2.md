@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Al Moe'minoen: kelompok berbahasa Belanda di PPME Den Haag, banyak di antaranya mualaf dan keluarga campuran, dengan pengajian rutin setiap pekan."
 # post thumbnail
 image: "images/dakwah/moekminoen.jpg"
 # post author

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zaterdagprogramma met godsdienstles voor kinderen, de presentatie van de kick-off van 51 jaar PPME door Wati Chaeron en Istighotsah met Ust. Tahmip."
 # Event image
 image: "images/events/event-5.jpg"
 # location

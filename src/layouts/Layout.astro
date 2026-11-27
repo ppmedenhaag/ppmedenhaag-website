@@ -11,6 +11,7 @@ import { OG_HEIGHT, OG_LOCALE, OG_WIDTH, PRODUCTION_ORIGIN, SITE_NAME, STATIC_CO
 import { alternatesFor, getSeoRegistry } from "../utils/seo-registry";
 import { buildJsonLd } from "../utils/jsonld";
 import { fullTitle, isoInTimeZone } from "../utils/seo";
+import { useTranslations } from "../utils/lang";
 
 export interface Props {
   /** Page title. Optional: code-driven pages get theirs (localized) from the SEO registry. */
@@ -48,10 +49,14 @@ if (alternates.length) {
   alternates.push({ hreflang: "x-default", href: abs((nl ?? altList.find((a) => a.path === Astro.url.pathname) ?? altList[0]).path) });
 }
 const isEntry = !!page && ["event", "blog", "ibadah", "about", "dakwah"].includes(page.kind);
+// An upcoming event's `date` is the event date, not a publish date: never emit a future article:published_time
+// (scripts/sitemap-split.mjs turns it into <lastmod>, and search engines distrust future lastmod values).
+const buildTime = Date.now();
 const rssPrefix = seoLocale === defaultLocale ? "" : `/${seoLocale}`;
 const jsonLd = buildJsonLd({ origin, url: canonical, page, locale: seoLocale, title: rawTitle, description: seoDescription, image });
 const isoDate = date ? date.toISOString().slice(0, 10) : undefined;
 const currentLocale = Astro.currentLocale ?? defaultLocale;
+const t = useTranslations(currentLocale as LangOptions);
 // Simple Analytics (the Hugo site's privacy-friendly, cookieless analytics): production build only, so staging
 // (website-v2 / workers.dev) traffic never reaches the stats. sa-verify = the account's domain-verification token.
 const analytics = origin === PRODUCTION_ORIGIN;
@@ -78,7 +83,7 @@ const section = segments[0] ?? "page";
       ogLocaleAlternates={altList.filter((a) => a.locale !== textLang).map((a) => OG_LOCALE[a.locale])}
       image={image}
       alternates={alternates}
-      published={isEntry && page?.date ? isoInTimeZone(page.date) : undefined}
+      published={isEntry && page?.date && page.date.valueOf() <= buildTime ? isoInTimeZone(page.date) : undefined}
       section={isEntry && page ? EYEBROW[page.section]?.[seoLocale] : undefined}
       tags={isEntry ? page?.tags : undefined}
       rss={{ title: `${SITE_NAME} (${seoLocale})`, href: abs(`${rssPrefix}/index.xml`) }}
@@ -95,11 +100,18 @@ const section = segments[0] ?? "page";
     {analytics && <meta name="sa-verify" content="ssnppmedenhaarr" />}
   </head>
   <body class="flex min-h-screen flex-col">
+    <a
+      href="#main"
+      class="sr-only z-50 bg-white px-4 py-2 text-sm font-semibold text-brand-dark shadow-md focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+      >{t("common.skip")}</a
+    >
     <Navbar />
     <div class="app-backdrop relative flex-1">
       <PageBackground />
       <main
-        class="relative"
+        id="main"
+        tabindex="-1"
+        class="relative focus:outline-none"
         data-pagefind-body={searchable ? "" : undefined}
         data-pagefind-filter={searchable ? "section[data-section], lang[data-lang]" : undefined}
         data-pagefind-sort={searchable && isoDate ? "date[data-date]" : undefined}
@@ -173,6 +185,17 @@ const section = segments[0] ?? "page";
   // Time-limited UI (e.g. "add to calendar" once the event is over), in case the page was built before that moment.
   document.querySelectorAll<HTMLElement>("[data-expires]").forEach((el) => {
     if (Date.now() > Date.parse(el.dataset.expires ?? "")) el.remove();
+  });
+
+  // Wide tables in Markdown content (schedules, cost tables) scroll inside the article instead of widening the page on
+  // phones. Tables that already sit in a scrolling wrapper (overflow-x-auto in the Markdown) are left alone.
+  document.querySelectorAll<HTMLTableElement>(".prose table").forEach((table) => {
+    const parent = table.parentElement;
+    if (!parent || /(auto|scroll)/.test(getComputedStyle(parent).overflowX)) return;
+    const wrap = document.createElement("div");
+    wrap.className = "table-scroll";
+    parent.insertBefore(wrap, table);
+    wrap.append(table);
   });
 
   // Accordion for Markdown content: <div class="accordion-trigger" data-accordion-trigger data-accordion-target="#id" data-accordion-group="#group">.

@@ -6,7 +6,7 @@ draft: false
 # about image
 image: "images/about/about-ppme.webp"
 # meta description
-description : ""
+description: "The history of PPME: founded in 1971 by Indonesian students, including Abdurrachman Wahid, and grown into branches across the Netherlands."
 ---
 
 ### History of PPME
@@ -25,7 +25,7 @@ Cooperation with the international community kept growing. We attended conferenc
 ### News Bulletin
 A monthly bulletin kept PPME members informed about developments in the worldwide Islamic community. The first bulletin was called **"Al Falaah"**, meaning "victory". The idea for the title came when Abdurrachman Wahid interrupted a meeting to perform the *azan*, the call to prayer, in a beautiful and intense way. The words *al-falaah* occur in the azan: "Hayya 'alas-salaah… Hayya 'alal-falaah", which is interpreted as "come to success".
 
-Members of the various PPME branches are still kept informed today, though now mostly through online channels such as Facebook and websites rather than on paper. Where we once reported mainly on international collaborations, we now keep it closer to home. Fifty years after its founding, PPME has **five branches**: The Hague, Rotterdam, Amsterdam, Heemskerk and Breda. Our members are **hundreds of families** spread across the Netherlands.
+Members of the various PPME branches are still kept informed today, though now mostly through online channels such as Facebook and websites rather than on paper. Where we once reported mainly on international collaborations, we now keep it closer to home. More than fifty years after its founding, PPME has **five branches**: The Hague, Rotterdam, Amsterdam, Heemskerk and Breda. Our members are **hundreds of families** spread across the Netherlands.
 
 ### PPME Connects
 PPME has played a positive role in society in many ways. It connects Muslim and non-Muslim communities and presents Islam in a positive light. Its core activity is **dakwah**: inviting people to learn about Islam. PPME also performs Islamic social rituals, such as the ritual washing after a death, the celebration of important Islamic days, and weddings.

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Interactieve Nongkrong-sessie met onderzoeker Ja'far Al-Habshi en host Nasrullah Hosen over de rol van islamitische geleerden en ideeën in de Indonesische onafhankelijkheidsstrijd."
+description: "Interactieve Nongkrong-sessie met onderzoeker Ja'far Al-Habshi over de rol van islamitische geleerden in de Indonesische onafhankelijkheidsstrijd."
 # Event image
 image: "images/events/nongkrong-sessie-20260822.webp"
 # location

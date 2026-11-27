@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Eerste Ramadanzaterdag: 40 hadith van An-Nawawi met Ustadz Nashir en Fauzi, Ramadhan Kidz, 'De reis naar Tarim' met Ustadz M. Azam, iftar en tarawih."
 # Event image
 image: "images/events/ramadhan-1-1446h.webp"
 # location

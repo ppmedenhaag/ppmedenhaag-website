@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program remaja Ramadhan dengan ceramah Mohammed Khalil 'Rahasia Surah al-Baqarah', dilanjutkan buka puasa, makan malam dan tarawih."
 # Event image
 image: "images/events/event-9.jpg"
 # location

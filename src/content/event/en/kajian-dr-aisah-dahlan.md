@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "PPME Den Haag, in cooperation with Human Initiative Europe, presents a lecture by dr. Aisah Dahlan on the differences between the male and female brain, Saturday 5 December 2026 at Masjid Al Hikmah. The lecture is in Indonesian. Register at event.ppmedenhaag.nl (limited capacity)."
+description: "Lecture by dr. Aisah Dahlan on the differences between the male and female brain, with Human Initiative Europe. In Indonesian; registration required."
 # Event image
 image: "images/events/kajian-dr-aisah-dahlan.webp"
 # location

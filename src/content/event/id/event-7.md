@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengajian Ramadhan: Al-Adzkar, tadarus dipimpin Ust. Rasyid, buka puasa bersama, dan ceramah Bpk. M. Nashirulhaq tentang puasa dan penyucian jiwa."
 # Event image
 image: "images/events/event-7.jpg"
 # location

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Ramadhan: tadarus dipimpin Ust. Tahmip, khataman Al-Qur'an, dua kajian Ust. Sukron Makmun, buka puasa bersama dan tarawih."
 # Event image
 image: "images/events/masjid-maba-aUVFS-kKTx8-unsplash.webp"
 # location

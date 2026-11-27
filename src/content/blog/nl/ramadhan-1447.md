@@ -5,7 +5,7 @@ date: "2026-02-07T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadan Mubarak 1447H van het bestuur van PPME Den Haag: 1 Ramadan valt op woensdag 18 februari 2026 en 1 Syawwal op vrijdag 20 maart 2026."
 # post thumbnail
 image: "images/blog/marhaban-ramadhan-1447.webp"
 # post author
@@ -26,9 +26,9 @@ Bij dezen wensen wij u een gezegende vastenperiode toe in de maand Ramadan 1447H
 <br/>
 
 📅 Belangrijke Data:
-* **1 Ramadhan 1447H** valt op **woendsdag 18 februari 2025**.
+* **1 Ramadhan 1447H** valt op **woensdag 18 februari 2026**.
 
-* **1 Syawwal 1447H** valt op **vrijdag 20 maret 2026**.
+* **1 Syawwal 1447H** valt op **vrijdag 20 maart 2026**.
 
 Namens het bestuur van PPME Den Haag vragen wij u oprecht om vergeving voor al onze fouten en tekortkomingen. Insha'Allah wordt het Ramadan-programma van PPME Den Haag spoedig op deze website bekendgemaakt.
 

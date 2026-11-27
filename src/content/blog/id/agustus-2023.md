@@ -5,7 +5,7 @@ date: "2023-06-30T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian Sabtu Agustus 2023: Yasin dan Tahlil, kajian hadits Ust. Isyak, fiqih Ust. Nur Hasyim Subadi, Istighotsah, serta tajwid dan tafsir."
 # post thumbnail
 image: "images/blog/agustus-2023.webp"
 # post author

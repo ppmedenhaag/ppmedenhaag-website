@@ -5,7 +5,7 @@ date: "2025-12-14T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Noodhulp voor slachtoffers van de ramp in Sumatera: PPME Den Haag verdeelt samen met Dompet Dhuafa uw donaties, onder meer voor dringend nodige medicijnen."
 # post thumbnail
 image: "images/blog/help-sumatera-nl.webp"
 # post author

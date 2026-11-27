@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Program Sabtu: TPA anak-anak, presentasi kick-off 51 tahun PPME oleh Wati Chaeron, dan Istighotsah dipimpin Ust. Tahmip."
 # Event image
 image: "images/events/event-5.jpg"
 # location
@@ -42,7 +42,7 @@ Susunan acara hari sabtu 21 Mei 2022 - 20 Syawal 1443 sebagai berikut:
 | 17.58 - 18.15 | Sholat Asr | 
 | 18.15 - 18.40 | Makan malam | 
 | 18.40 - 19.10 | Presentasi Kick-off 51 jaar PPME door Wati Chaeron* |
-| 19.15 - 20.30 | Istighosah dibawah pimpinan Ust. Tahmip | 
+| 19.15 - 20.30 | Istighosah di bawah pimpinan Ust. Tahmip | 
 |   | Acara selesai | 
 
 *Bagian ini berlangsung di ruang besar di bawah.

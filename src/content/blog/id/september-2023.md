@@ -5,7 +5,7 @@ date: "2023-09-27T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian September 2023: Tahlil dan Yasin, kajian hadits dan fiqih, syahadat, rapat umum anggota dengan pemilihan pengurus baru, dan tahsin."
 # post thumbnail
 image: "images/blog/september-2023.webp"
 # post author
@@ -26,7 +26,7 @@ Kepada Yth. jama'ah PPME Den Haag, berikut jadwal pengajian Indonesia untuk peri
 <table style="width:100%">
 <tr><td style="width:35%;margin:0;">17.27</td><td style="width:65%;margin:0;">‘Asr</td></tr>
 <tr><td style="width:35%;margin:0;">18.00 - 18.30</td><td style="width:65%;margin:0;">Makan malam</td></tr>
-<tr><td style="width:35%;margin:0;">18.45 - 19.45</td><td style="width:65%;margin:0;">Tahlil& Yasiin oleh Ust. Isyak</td></tr>
+<tr><td style="width:35%;margin:0;">18.45 - 19.45</td><td style="width:65%;margin:0;">Tahlil & Yasiin oleh Ust. Isyak</td></tr>
 <tr><td style="width:35%;margin:0;">19.45 - 20.30</td><td style="width:65%;margin:0;">Kajian Hadits oleh Ust. Isyak</td></tr>
 <tr><td style="width:35%;margin:0;">20.34</td><td style="width:65%;margin:0;">Magrib</td></tr>
 </table>

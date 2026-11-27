@@ -269,7 +269,7 @@ export default function Search({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label={t("search.open")}
+        aria-keyshortcuts="Control+K Meta+K /"
         className={`group hidden h-10 w-56 items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3.5 text-sm text-slate-500 transition-all hover:border-brand-300 hover:bg-white hover:text-slate-700 hover:shadow-sm xl:w-64 lg:inline-flex ${focusRing}`}
       >
         <MagnifyingGlassIcon
@@ -277,7 +277,7 @@ export default function Search({
           className="size-4 text-slate-500 transition-colors group-hover:text-brand"
         />
         <span className="flex-1 truncate text-left">{t("search.open")}…</span>
-        <kbd className="rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-sans text-[11px] font-semibold text-slate-500">
+        <kbd aria-hidden="true" className="rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-sans text-[11px] font-semibold text-slate-600">
           Ctrl K
         </kbd>
       </button>
@@ -418,7 +418,7 @@ export default function Search({
                           className={`rounded-full px-2.5 py-1 transition-colors ${focusRing} ${
                             sortBy === k
                               ? "bg-white text-brand shadow-sm"
-                              : "text-slate-500 hover:text-slate-700"
+                              : "text-slate-600 hover:text-slate-800"
                           }`}
                         >
                           {t(k === "date" ? "search.sortDate" : "search.sortRelevance")}
@@ -501,7 +501,7 @@ export default function Search({
             </div>
 
             {/* Footer: language scope + keyboard hints */}
-            <div className="flex shrink-0 items-center justify-between gap-3 border-t border-slate-200 bg-slate-50 px-3 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] text-xs text-slate-500 sm:px-4">
+            <div className="flex shrink-0 items-center justify-between gap-3 border-t border-slate-200 bg-slate-50 px-3 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] text-xs text-slate-600 sm:px-4">
               <button
                 type="button"
                 onClick={() => setAllLangs((v) => !v)}
@@ -590,7 +590,7 @@ function Chip({
 
 function Kbd({ children }: { children: React.ReactNode }) {
   return (
-    <kbd className="rounded border border-slate-200 bg-white px-1.5 py-0.5 font-sans text-[11px] font-semibold text-slate-500">
+    <kbd className="rounded border border-slate-200 bg-white px-1.5 py-0.5 font-sans text-[11px] font-semibold text-slate-600">
       {children}
     </kbd>
   );

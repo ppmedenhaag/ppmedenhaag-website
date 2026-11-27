@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma met tadarus onder leiding van Ust. Tahmip, khatam Qur'an, twee lezingen van Ust. Sukron Makmun, gezamenlijke iftar en tarawih."
 # Event image
 image: "images/events/masjid-maba-aUVFS-kKTx8-unsplash.webp"
 # location

@@ -5,7 +5,7 @@ date: "2026-03-06T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "PPME Den Haag bekerja sama dengan Dompet Dhuafa mengajak kita semua untuk membantu saudara-saudara kita di Sumatra melalui paket bantuan Ramadhan."
+description: "Parsel Ramadhan untuk saudara-saudara di Sumatra melalui PPME Den Haag dan Dompet Dhuafa: paket buka puasa, paket sekolah, sembako dan perlengkapan ibadah."
 # post thumbnail
 image: "images/blog/box-of-happiness.webp"
 # post author

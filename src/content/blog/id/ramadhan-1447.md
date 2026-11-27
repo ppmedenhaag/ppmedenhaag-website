@@ -5,7 +5,7 @@ date: "2026-02-07T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Selamat menunaikan ibadah puasa Ramadhan 1447 H. 1 Ramadhan jatuh pada Rabu, 18 Februari 2026 dan 1 Syawwal pada Jum'at, 20 Maret 2026."
 # post thumbnail
 image: "images/blog/marhaban-ramadhan-1447.webp"
 # post author
@@ -30,7 +30,7 @@ Jamaah PPME Den Haag yang kami hormati, bersama ini kami ingin menghaturkan sela
 
 * **1 Syawwal 1447H** In syaa Allah jatuh pada hari **Jum'at, 20 Maret 2026**.
 
-Atas nama pengurus PPME Den Haag kami ucapkan mohon maaf lahir dan bathin atas segala kesalahan dan kekhilafan kami. In syaa Allah, program Ramadhan PPME Den Haag segera akan kita umumkan di website ini. 
+Atas nama pengurus PPME Den Haag kami ucapkan mohon maaf lahir dan batin atas segala kesalahan dan kekhilafan kami. In syaa Allah, program Ramadhan PPME Den Haag segera akan kita umumkan di website ini. 
 
 
 Wassalamu 'alaykum warrohmatullohiwabarokatuh. 

@@ -5,7 +5,7 @@ draft: true
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat fitrah dan fidyah Ramadhan 1443H: €10 per orang dan €10 per hari. Pembayaran melalui PPME Den Haag paling lambat 28 April 2022."
 # post thumbnail
 image: "images/blog/zakat1443h.jpg"
 # post author

@@ -3,6 +3,7 @@ import HeroImage from "../../../components/HeroImage.astro";
 import { getEntry, render } from "astro:content";
 import VisionMission from "../../../components/VisionMission.astro";
 import Layout from "../../../layouts/Layout.astro";
+import { funfactValue } from "../../../utils/funfacts";
 import { locales, defaultLocale, type LangOptions } from "../../../data/i18n";
 
 export function getStaticPaths() {
@@ -63,7 +64,7 @@ const visionMission = homepageEntry?.data.vision_mission;
                     {funfacts.funfact_item.map((item) => (
                         <div>
                             <p class="text-4xl font-bold tracking-tight text-white">
-                                {item.count}
+                                {funfactValue(item)}
                             </p>
                             <p class="eyebrow mt-2 !text-brand-200">{item.name}</p>
                         </div>

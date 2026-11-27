@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jongerenlezing in Dzulhijjah met Ustadzah Saida: 'Een reis door de Qur'an met een tussenstop bij het Offerfeest'."
 # Event image
 image: "images/events/jongerenlezing-20250531.webp"
 # location

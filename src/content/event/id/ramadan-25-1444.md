@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Panduan dan program i'tikaf di Masjid Al Hikmah: makna i'tikaf, niat, rukun, serta amalan yang dapat dilakukan selama i'tikaf."
 # Event image
 image: "images/events/kel-avelino-yLW1yzCK2HY-unsplash.webp"
 # location
@@ -26,14 +26,14 @@ type: "event"
 
 Assalamu’alaikum warohmatullahi wa barakatuh
 
-Saat memasuki masjid Al Hikmah kita mengucapkan do’a memasuki masjid, sholat sunnah Tahiyyatul Masjid dan kemudian berniatntuk melaksanakan I’tikaf
+Saat memasuki masjid Al Hikmah kita mengucapkan do’a memasuki masjid, sholat sunnah Tahiyyatul Masjid dan kemudian berniat untuk melaksanakan I’tikaf
 
 **I'tikaf** (Al Baqarah 2:187) adalah berdiam di masjid dengan niat Taqarrub ilalLaah - mendekatkan diri kepada Allah Subhanahu wa Ta'aalaa (Al Bayyinah 98:5)
 
 **Rukun I'tikaf**: berniat dan tinggal di masjid (walau hanya sejenak).
 
 **Niat**: “***Bismillahirrahmanirrahiim. Nawaitu an i'tikafa fii hadzal masjidi lillahi ta'aalaa***"
-Arti: Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang. Saya berniatntuk melakukan Itikaf di masjid ini.
+Arti: Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang. Saya berniat untuk melakukan Itikaf di masjid ini.
 
 #### Apa yang dapat dilakukan selama Itikaf
 Sebisa mungkin - baik secara kualitatif maupun kuantitatif - melakukan ibadah (secara individu dan/atau berjamaah):

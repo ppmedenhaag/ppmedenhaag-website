@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zaterdag 6 Ramadan 1445: tadarus, lezingen voor kinderen, volwassenen en jongeren (o.a. Ust. Moh. Masrur en Ust. Samira), iftar en tarawih."
 # Event image
 image: "images/blog/romadhoon-1445/program-1.jpeg"
 # location
@@ -43,4 +43,4 @@ type: "event"
 
 ---
 
-[**Zaterdaagprogramma 16 maart 2024**](/images/blog/romadhoon-1445/program-1.jpeg)
+[**Zaterdagprogramma 16 maart 2024**](/images/blog/romadhoon-1445/program-1.jpeg)

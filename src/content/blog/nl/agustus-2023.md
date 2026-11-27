@@ -5,7 +5,7 @@ date: "2023-06-30T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Schema van de Indonesische zaterdagbijeenkomsten in augustus 2023: Yasin en Tahlil, hadith met Ust. Isyak, fiqh, Istighotsah en tajwid en tafsir."
 # post thumbnail
 image: "images/blog/agustus-2023.webp"
 # post author
@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode augustus 2023 / Muharram - Safar 1445:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode augustus 2023 / Muharram - Safar 1445:
 
 ##### Zaterdag 5 Agustus 2023 /<br/> 18 Muharram 1445 
 <table style="width:100%">

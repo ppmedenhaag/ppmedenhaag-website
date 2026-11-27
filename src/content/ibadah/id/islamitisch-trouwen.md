@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pernikahan Islami di PPME Den Haag: dokumen yang diperlukan untuk akad nikah, dari formulir dan pasfoto hingga surat izin wali dan dua saksi laki-laki."
 # post thumbnail
 image: "images/ibadah/nikah.jpg"
 # post author
@@ -70,6 +70,6 @@ Ikhtisar di bawah ini menunjukkan biaya untuk pernikahan di PPME Den Haag:
 | Pelaksanaan di luar Masjid     | € 50        | € 50            | 
 | Administrasi                   | € 75        | € 150           |
 
-Untuk informasi lebih lanjut, silahkan menghubungi kami melalui email:  [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
+Untuk informasi lebih lanjut, silakan menghubungi kami melalui email:  [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
 
 [Checklist dan Formulir Nikah 📝](/forms/20210925-Checklist-trouwerij-PPME-Den-Haag.docx)

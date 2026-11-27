@@ -53,10 +53,14 @@ field turns out to be optional in practice (e.g. `speaker[].designation` is miss
 some real entries), the schema reflects that rather than the content being "fixed" to
 match a stricter schema.
 
-**Sections migrated so far: `event` (fully audited 2026-11-18: all nl/id/en entries, images, shortcodes, render), `blog` (audited 2026-11-18, `{{< ref >}}`/`{{< param email >}}` resolved), `dakwah`, `about`, `ibadah`.** `about`, `contact`, `dakwah`,
-`ibadah`, `notice`, `course`, `teacher`, `ramadhan-1444`, `author` are not yet ported —
-follow the same pattern (schema from real front matter, two route files per section,
-`nl/`-exclusion filter) when they are.
+**Sections migrated: `event` and `blog` (audited 2026-11-18, every entry re-read 2026-11-27), `dakwah`, `about`, `ibadah`;
+`contact`, `bestuur-2026` and the prayer-times page are static route files.** Not ported (their Hugo URLs 301 via
+`public/_redirects`): `notice`, `course`, `teacher`, `ramadhan-1444`, `author`/`tags`/`categories`. A new section follows the same
+pattern (schema from real front matter, two route files, `nl/`-exclusion filter).
+
+**Schemas:** `eventSchema`; `postSchema` for `blog`/`ibadah`/`about`/`dakwah`; `aboutOverviewSchema` for the `_index` overviews. All
+of them use `descriptionField()`: a **required**, hand-written `description` (40-160 chars) that is the single source for cards
+and SEO (see "Event and blog content" below). The build fails on a missing or empty one.
 
 ## i18n conventions
 
@@ -127,8 +131,9 @@ new interactive UI rather than reaching for a different framework.
   identical to the old hand-made 2025 and 2026 tables (365/365 days) and 2024 Jun–Dec; 2024 Jan–Apr was an older table.
 - **Fallback flip:** `PUBLIC_PRAYER_SOURCE=manual` (build env var) or `DEFAULT` in `prayer/config.ts` switches to the
   hand-maintained `prayer/gebedstijden-<year>.json` files (register them in `MANUAL_SCHEDULES` in `prayer.ts`).
-- The yearly page shows the build-time Amsterdam year (generated mode): **rebuild/redeploy on 1 January**
-  (e.g. a Cloudflare Pages deploy hook on a yearly cron). The homepage widget rolls over by itself.
+- The yearly page renders the build-time Amsterdam year **and the next one** (`PrayerYear.astro`); an inline script shows the
+  panel for today's year, so a build from year Y stays correct through Y+1. A yearly rebuild is still good practice. The
+  homepage widget rolls over by itself.
 - Homepage island: `components/PrayerTimes.astro` → `react/PrayerTimes.tsx` (`client:visible`).
 - Yearly page: `/ibadah/gebedstijden/` (+ `/id/…`, `/en/…`) via `PrayerYear.astro`; static route files, no content entry
   (Navbar's language switcher has an `isStaticPage` bypass for it).
@@ -143,8 +148,11 @@ new interactive UI rather than reaching for a different framework.
   alternates, dates. `Layout.astro` looks the page up by `Astro.url.pathname` and renders `components/Seo.astro` (title, description,
   canonical, hreflang + x-default, Open Graph, Twitter, RSS link, JSON-LD) **first in `<head>`**. Code-driven pages get localized
   titles/descriptions from `STATIC_COPY` in `src/data/seo.ts` (their `<Layout>` has no `title`). New page type ⇒ add it to the registry.
-- **Descriptions:** front matter, else derived from the body (`utils/seo.ts`: skips greetings, joins to ≥90 chars, ≤155). Events get a
-  "date, time · location." prefix.
+- **Descriptions:** **every content page uses its front matter `description`, verbatim** (required by the schema, 40-160 chars;
+  written by hand for all 170 event, 68 blog and 33 ibadah/about/dakwah files on 2026-11-27). It is the card text and the
+  meta/og/twitter description, JSON-LD description, RSS item and (events) calendar notes. Nothing is derived from the body any more
+  (that code was removed). Event descriptions carry no date (card + structured data do). Code-driven pages (home, listings,
+  contact, prayer times, board) take theirs from `STATIC_COPY` / `PRAYER_COPY` in `data/seo.ts`.
 - **Link-preview cards:** `/og/<locale>/<route>.<hash>.jpg` (1200×630), generated at build by `utils/og.ts` (sharp; satori for title cards)
   through `src/pages/og/[...path].jpg.ts`. Hero image shown whole over a blurred copy (never cropped); no usable image → generated brand
   title card; every page has its own. Cached in `node_modules/.cache/ppme-og` (bump `CARD_VERSION` after changing card layout code).
@@ -180,6 +188,50 @@ new interactive UI rather than reaching for a different framework.
   `location` marks it online-only in JSON-LD (also for hybrid events); write `Al Hikmah` without hyphen (venue address
   match); JSON-LD `eventStatus` is always `EventScheduled`.
 
+## Event and blog content (what's there, how it's written)
+
+Every event and blog file was read on 2026-11-27 to write its `description`; this is the map that came out of it.
+
+- **Inventory.** Events: 79 (170 files: nl 74, id 72, en 24), Dec 2021 - Dec 2026; only 24 exist in all three languages.
+  id-only: `event-remaja`, `kajian-parenting`, `khataman-al-quran-1446`, `menggapai-kemuliaan-bersama-al-quran`, `safari`;
+  nl-only: the four `geloofsbewijs-workshop*`, `event-jongeren`, `jongerenlezing-dzulhijjah-1446`, `nongkrong-sessie`.
+  Blog: 31 posts (68 files: nl 30, id 29, en 9), Mar 2022 - Nov 2026; drafts: `blog-2`, `blog-3` (all locales), `jaarplanning-mei-2022`.
+  `diskusi-produk-makanan-halal` nl/en carry Indonesian text (`contentLang: "id"`).
+- **Recurring event types and slug patterns** (keep the pattern for new ones; existing slugs never change):
+  - Saturday programme at Al Hikmah, the weekly core: TPA Al Amin (children's Qur'an school), Indonesian adult *pengajian*
+    (Yasin & Tahlil, fiqh, hadith, tajwid & tafsir, Istighotsah), youth (*remaja*) sessions. 2021-22 ones are `event-1`…`event-13`.
+  - Ramadan Saturdays `ramadan-<day>-<hijri year>` (also `ramadhan-1-1446`): multi-room timetables (rooms "Al Moe'minoen",
+    "Al Ittihaad", "Ramadan Kidz", "Jong/Volwassen"), tadarus, iftar, tarawih, khatam Qur'an; i'tikaf (`itikaf-ramadan-1446`,
+    `ramadan-25-1444`); `tarhib-ramadhan-<year>` (+ `-tpa-`), `takbiran`.
+  - Eid: `idulfitri[-<year>]`, `iduladha[-<year>]` (unsuffixed = 1443H). Same text each year with Stichting Masjid Al Hikmah:
+    doors 08:00, prayer 09:00, house rules (women's entrance at the back, ground floor for women, first floor for men).
+  - Yearly commemorations `isra-miraj-<year>`, `maulid-nabi-<year>`: TPA performances, rebana Noer Hollandie, a lecture in
+    Indonesian and one in Dutch.
+  - PPME-wide: `istigotsah-akbar[-2026]` (all branches: Den Haag, Amsterdam, Rotterdam, Heemskerk, Breda), `halal-bi-halal`
+    (50 years PPME Nederland); 51-year jubilee 2022: `kickoff-51`, `open-house`, `de-levenskracht-van-onze-ummah`, `leadership-training`.
+  - Series and one-offs: kajian with guest speakers, *Nongkrong Sessie* (youth, with Al Fath Instituut), Geloofsbewijs workshop
+    (4 lessons), SALAM (Delft), info evenings (djenazah/funeral insurance, IICC Al Ittihaad cultural-centre project).
+- **Blog types:** monthly Saturday schedules 2022-23 (slugs are Indonesian month names: `maret-2023`, `agustus-2023`; keep them),
+  Ramadan/Eid greetings with the dates (`ramadhan-1446/1447`, `romadhoon-1445`, `idul-fitri-1445`), zakat al-fitr/fidyah amounts and
+  deadlines, Ramadan house rules, appeals with Dompet Dhuafa (`help-sumatera`, `box-of-happiness`), the yearly Umrah (guide
+  Ronald Kroon), `ppme-51`, website news.
+- **Vocabulary** (keep it untranslated in all languages): *pengajian/kajian* study session or lecture, Ustadz/Ustadzah teacher,
+  TPA Al Amin children's Qur'an school, *remaja* youth, Istighotsah collective supplication, Yasin & Tahlil, tadarus, tarawih,
+  iftar/takjil, i'tikaf, khataman, tarhib (welcoming Ramadan), halal bi halal, shahada/syahadat (conversions often happen on
+  Saturdays), zakat/infaq/sadaqah (shodaqoh), Komisi Dakwah, Jenazah committee. Hijri years: 1443 ≈ 2021-22 … 1448 ≈ 2026-27.
+- **Correctness traps found in the content:** Hijri dates in bodies are hand-typed: check them against the Gregorian date
+  (`juli-2023` had Muharram 1444 for 1445; nl `ramadhan-1447` said 2025). Language versions are written separately, not always
+  translated: facts can differ, check each. Spelling variants (Romadhoon/Ramadhan/Ramadan, Masdjid/Masjid, Shodaqoh/Sadaqah)
+  belong to their period: fix real typos only. Venue is **Medlerstraat 4** (owner-confirmed; some flyers say Heeswijkplein 170).
+  Many events keep a commented-out `# speaker:` block from Hugo: only an uncommented `speaker:` renders.
+- **Ibadah, About, Dakwah** (5 + 1 + 3 pages, plus the About and Dakwah `_index` overviews, all in nl/id/en) follow the same
+  description rules. Open content questions: `dakwah-3` nl says the Indonesian gathering lasts ~2.5 h, id/en say 1-2 h; the
+  id/en `dakwah/_index.md` have no body text (only the description).
+- **Descriptions are not regenerated:** when an event's or post's body changes materially (speaker, programme, price), update its
+  `description` too. Rules: see the `/ppme-event` skill (events: no date; blog: the period/dates are fine when they are the point).
+- **Headings:** authors pick a size with `###`/`#####`; `src/plugins/heading-levels.mjs` fixes the outline (see Known gaps note
+  below). Bodies usually open with a greeting; that's fine in the body, never in a description.
+
 ## Known gaps (don't assume these are solved)
 
 - **Event Markdown conventions after the audit:** `{{< youtube >}}` was converted to raw
@@ -192,11 +244,16 @@ new interactive UI rather than reaching for a different framework.
 
 - **Bestuur 2026 story page is built** (`/bestuur-2026/`, `/id/`, `/en/`; static route files like gebedstijden, no content collection): copy + facts in `src/data/bestuur.ts`, layout in `components/Bestuur2026.astro` (photos alternate sides, scroll-driven reveal), images in `public/images/bestuur-2026/` (group photos shrunk to 2400 px; full-size originals moved to `C:\Users\rosti\Downloads\bestuur-2026-originals\`). Wired into menu (Meer), SEO registry (`STATIC_COPY.bestuur`), search section label. nl/en quotes are translations of the Indonesian originals. Linked from the three About overview pages. The per-person pages in `docs/bestuur/PLAN.md` are NOT built.
 
-- **Hugo shortcodes are not converted.** Migrated content still contains literal
-  `{{< youtube ... >}}`, `{{< ref ... >}}`, `{{< param email >}}` text in Markdown
-  bodies — it will render as-is (broken-looking) until the MDX/native-TS work in
-  `.migration/03-layouts-components.md` is done. Don't be surprised by this in event/blog
-  content; it's tracked, not missed.
+- **Hugo shortcodes:** converted in event/blog/dakwah content (see the first bullet); the 2026-11-27 crawl of the live site
+  found no `{{< … >}}` residue. Recheck when porting a new section from Hugo.
+- **Markdown heading levels are renumbered at build time** (`src/plugins/heading-levels.mjs`, a Sätteri hast plugin registered
+  in `astro.config.mjs` → `markdown.processor`): every content page gets a gap-free outline (h1 title → h2 → h3 …) and each
+  renumbered heading carries `md-h<original level>`, which the unlayered `.prose .md-hN` rules at the bottom of `global.css` style
+  like the original level. Authors keep choosing sizes with `###`/`#####` as before; don't "fix" levels in Markdown. **Gotcha:**
+  the content layer caches rendered Markdown in `node_modules/.astro/data-store.json` per file, so after changing a Markdown
+  plugin delete that file before building, or unchanged entries keep the old HTML.
+- **Site audit 2026-11-27:** `docs/audit/SITE-AUDIT-2026-11-27.md` (live crawl, Lighthouse, contrast, language). Fixed items and
+  the remaining manual checks are listed in its "Status" section.
 - **Cutover done (2026-11-21):** `www.ppmedenhaag.nl` and `ppmedenhaag.nl` are custom domains of the Worker (`wrangler.jsonc`
   `routes`); canonical = www, apex 301 → www. Rollback to Netlify/Hugo: `docs/seo/ROLLBACK-PLAN.md` (keep the Netlify site for ≥ 2 weeks,
   i.e. until ~2026-12-05). Search Console: the www `sitemap.xml` is submitted. Still open: see the "Afterwards" items in `docs/seo/PROGRESS.md`.

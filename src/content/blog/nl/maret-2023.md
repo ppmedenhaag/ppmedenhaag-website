@@ -5,7 +5,7 @@ date: "2023-03-04T09:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Schema van de Indonesische zaterdagbijeenkomsten in maart 2023: dzikir en tahlilan, fiqh, en Tarhib Ramadan met Ust. Hambali Maksum en sholat tasbih."
 # post thumbnail
 image: "images/blog/maret-2023.webp"
 # post author
@@ -19,9 +19,9 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode maret 2023 / Sya’ban - Ramadan 1444:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode maart 2023 / Sya’ban - Ramadan 1444:
 
-##### Sabtu 4 Maart /<br/> 11 Sya'ban
+##### Zaterdag 4 maart /<br/> 11 Sya'ban
 <table style="width:100%">
 <tr><td style="width:35%;margin:0;">18.34</td><td style="width:65%;margin:0;">Maghrib</td></tr>
 <tr><td style="width:35%;margin:0;">19.00 – 20.15</td><td style="width:65%;margin:0;"> Lezing: “Dzikir en Tahlilan” door Ust. Abdul Gafur</td></tr>
@@ -32,7 +32,7 @@ Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties vo
 
 
 
-##### Sabtu 11 Maart /<br/> 18 Sya'ban
+##### Zaterdag 11 maart /<br/> 18 Sya'ban
 <table style="width:100%">
 <tr><td style="width:35%;margin:0;">18.46</td><td style="width:65%;margin:0;">Maghrib</td></tr>
 <tr><td style="width:35%;margin:0;">19.15 - 20.25</td><td style="width:65%;margin:0;">Fiqh door Ust Nur Hasyim Subadi</td></tr>
@@ -41,7 +41,7 @@ Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties vo
 <br/>
 
 
-##### Sabtu 18 Maart /<br/> 25 Sya'ban
+##### Zaterdag 18 maart /<br/> 25 Sya'ban
 <table style="width:100%">
 <tr><td style="width:35%;margin:0;">18.59</td><td style="width:65%;margin:0;">Maghrib</td></tr>
 <tr><td style="width:35%;margin:0;">19.30 - 20.30</td><td style="width:65%;margin:0;">Tarhib Ramadan door Ust. Hambali Maksum</td></tr>

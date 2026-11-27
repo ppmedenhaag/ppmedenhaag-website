@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Becoming a member of PPME Den Haag: family €15, individual or student €7.50 a month. Sign up on a Saturday; payment arrangements are possible."
 # post thumbnail
 image: "images/about/about-1.jpg"
 # post author
@@ -16,7 +16,7 @@ type: "about"
 ---
 
 ## Membership
-Since PPME was founded in the 1970s, you can join as a member. PPME has several branches, such as in Amsterdam and Breda.
+Membership has been open since PPME was founded in the 1970s. PPME has several branches, such as in Amsterdam and Breda.
 
 Your **monthly membership fee** supports the association and allows us to keep offering high-quality, current and varied programs, both religious and social.
 

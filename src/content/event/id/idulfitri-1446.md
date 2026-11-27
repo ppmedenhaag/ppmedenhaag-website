@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Sholat Idul Fitri 1446H di Masjid Al Hikmah: gerbang dibuka pukul 08.00, sholat dan khutbah pukul 09.00, beserta tata tertib jamaah."
 # Event image
 image: "images/events/idul-fitri-1446.webp"
 # location

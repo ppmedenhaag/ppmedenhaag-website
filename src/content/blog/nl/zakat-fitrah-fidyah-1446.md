@@ -5,7 +5,7 @@ date: "2025-03-20T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat al-Fitr en fidyah 1446H: €10 per persoon. Contant betalen op zaterdagen in de Ramadan in Masjid Al Hikmah, of overmaken tot en met 27 maart 2025."
 # post thumbnail
 image: "images/blog/zakat-fitrah-fidyah-nl.webp"
 # post author
@@ -23,7 +23,7 @@ Assalamu 'alaykum warrohmatullohi wabarokatuh.
 
 PPME Den Haag ontvangt en verdeelt Zakat Fitrah en Fidyah **€ 10 per persoon**.
 
-Betaling kan contant bij de Al Hikmah moskee iedere zaterdag tijdens de maan Ramadan vanaf 17.00 tot Isya of door overmaking op de bankrekening van PPME Den Haag met onderstaande knop.
+Betaling kan contant bij de Al Hikmah moskee iedere zaterdag tijdens de maand Ramadan vanaf 17.00 tot Isya of door overmaking op de bankrekening van PPME Den Haag met onderstaande knop.
 
 <div class="text-center">
 <a href="https://www.ing.nl/de-ing/payreq?trxid=MCAxSpT8MKat2p8vysYKEeMLOlEwVB5A&flow-step=payment-request" type="button" class="btn btn-primary" style="text-decoration:none;text-transform:none"><span>Betaling via iDEAL</span></a>

@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Al Moe'minoen: the Dutch-speaking group within PPME Den Haag, many of them converts, meeting at least weekly for lectures on Islam."
 # post thumbnail
 image: "images/dakwah/moekminoen.jpg"
 # post author

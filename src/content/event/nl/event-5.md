@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zaterdag voor de Ramadan: Koranles en Ramadan-aftrap voor de TPA, Yasin, een lezing over Tarhib Ramadhan door Bpk. Mizar en Sholat Tasbih."
 # Event image
 image: "images/events/event-5.jpg"
 # location
@@ -36,7 +36,7 @@ Assalamu'alaykum wa rahmatullahi wa barakaatuh
 
 Vrede zij met u allen, met Allahs genade en zegeningen
 
-Alhamdulillah, alle lof zij Allah SWT die ons altijd leiding en begeleiding geeft. Shalawat en groeten worden altijd uitgestort aan de profeet Mohammed sallallahu wassallam
+Alhamdulillah, alle lof zij Allah SWT die ons altijd leiding en begeleiding geeft. Shalawat en groeten worden altijd uitgestort aan de profeet Mohammed sallallahu 'alaihi wa sallam
 
 in syaa Allah zal  **in moskee Al Hikmah** op **zaterdag, 23 Sya'ban 1443 / 26 Maart 2022** de volgende programma plaatsvinden:
 

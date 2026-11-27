@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat, infaq and sadaqah explained: the obligatory zakat and voluntary giving for the sake of Allah. Support PPME Den Haag via iDEAL or bank transfer."
 # post thumbnail
 image: "images/ibadah/zakat.jpg"
 # post author
@@ -21,7 +21,7 @@ Islam offers us more than a way to purify ourselves of our shortcomings. Providi
 
  
 ### Zakat
-It belongs to one of the five pillars of Islam. It is an obligation on a Muslim to spend a prescribed portion of his/her wealth to those who are entitled to it.
+It is one of the five pillars of Islam: every Muslim who is able must give a prescribed portion of his or her wealth to those who are entitled to it.
 
  
 ### Infaq
