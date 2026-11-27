@@ -53,10 +53,14 @@ field turns out to be optional in practice (e.g. `speaker[].designation` is miss
 some real entries), the schema reflects that rather than the content being "fixed" to
 match a stricter schema.
 
-**Sections migrated so far: `event` (fully audited 2026-11-18: all nl/id/en entries, images, shortcodes, render), `blog` (audited 2026-11-18, `{{< ref >}}`/`{{< param email >}}` resolved), `dakwah`, `about`, `ibadah`.** `about`, `contact`, `dakwah`,
-`ibadah`, `notice`, `course`, `teacher`, `ramadhan-1444`, `author` are not yet ported —
-follow the same pattern (schema from real front matter, two route files per section,
-`nl/`-exclusion filter) when they are.
+**Sections migrated: `event` and `blog` (audited 2026-11-18, every entry re-read 2026-11-27), `dakwah`, `about`, `ibadah`;
+`contact`, `bestuur-2026` and the prayer-times page are static route files.** Not ported (their Hugo URLs 301 via
+`public/_redirects`): `notice`, `course`, `teacher`, `ramadhan-1444`, `author`/`tags`/`categories`. A new section follows the same
+pattern (schema from real front matter, two route files, `nl/`-exclusion filter).
+
+**Schemas:** `eventSchema`; `blogSchema` = `postSchema` + a **required** `description` (40-160 chars); `ibadah`/`about`/`dakwah` use
+`postSchema` (description optional). Event and blog descriptions are hand-written and are the single source for cards and SEO
+(see "Event and blog content" below).
 
 ## i18n conventions
 
@@ -182,6 +186,47 @@ new interactive UI rather than reaching for a different framework.
 - Traps: a future `publishDate` hides an event and no scheduled rebuild reveals it; `zoom|teams|online|youtube|webinar` in
   `location` marks it online-only in JSON-LD (also for hybrid events); write `Al Hikmah` without hyphen (venue address
   match); JSON-LD `eventStatus` is always `EventScheduled`.
+
+## Event and blog content (what's there, how it's written)
+
+Every event and blog file was read on 2026-11-27 to write its `description`; this is the map that came out of it.
+
+- **Inventory.** Events: 79 (170 files: nl 74, id 72, en 24), Dec 2021 - Dec 2026; only 24 exist in all three languages.
+  id-only: `event-remaja`, `kajian-parenting`, `khataman-al-quran-1446`, `menggapai-kemuliaan-bersama-al-quran`, `safari`;
+  nl-only: the four `geloofsbewijs-workshop*`, `event-jongeren`, `jongerenlezing-dzulhijjah-1446`, `nongkrong-sessie`.
+  Blog: 31 posts (68 files: nl 30, id 29, en 9), Mar 2022 - Nov 2026; drafts: `blog-2`, `blog-3` (all locales), `jaarplanning-mei-2022`.
+  `diskusi-produk-makanan-halal` nl/en carry Indonesian text (`contentLang: "id"`).
+- **Recurring event types and slug patterns** (keep the pattern for new ones; existing slugs never change):
+  - Saturday programme at Al Hikmah, the weekly core: TPA Al Amin (children's Qur'an school), Indonesian adult *pengajian*
+    (Yasin & Tahlil, fiqh, hadith, tajwid & tafsir, Istighotsah), youth (*remaja*) sessions. 2021-22 ones are `event-1`…`event-13`.
+  - Ramadan Saturdays `ramadan-<day>-<hijri year>` (also `ramadhan-1-1446`): multi-room timetables (rooms "Al Moe'minoen",
+    "Al Ittihaad", "Ramadan Kidz", "Jong/Volwassen"), tadarus, iftar, tarawih, khatam Qur'an; i'tikaf (`itikaf-ramadan-1446`,
+    `ramadan-25-1444`); `tarhib-ramadhan-<year>` (+ `-tpa-`), `takbiran`.
+  - Eid: `idulfitri[-<year>]`, `iduladha[-<year>]` (unsuffixed = 1443H). Same text each year with Stichting Masjid Al Hikmah:
+    doors 08:00, prayer 09:00, house rules (women's entrance at the back, ground floor for women, first floor for men).
+  - Yearly commemorations `isra-miraj-<year>`, `maulid-nabi-<year>`: TPA performances, rebana Noer Hollandie, a lecture in
+    Indonesian and one in Dutch.
+  - PPME-wide: `istigotsah-akbar[-2026]` (all branches: Den Haag, Amsterdam, Rotterdam, Heemskerk, Breda), `halal-bi-halal`
+    (50 years PPME Nederland); 51-year jubilee 2022: `kickoff-51`, `open-house`, `de-levenskracht-van-onze-ummah`, `leadership-training`.
+  - Series and one-offs: kajian with guest speakers, *Nongkrong Sessie* (youth, with Al Fath Instituut), Geloofsbewijs workshop
+    (4 lessons), SALAM (Delft), info evenings (djenazah/funeral insurance, IICC Al Ittihaad cultural-centre project).
+- **Blog types:** monthly Saturday schedules 2022-23 (slugs are Indonesian month names: `maret-2023`, `agustus-2023`; keep them),
+  Ramadan/Eid greetings with the dates (`ramadhan-1446/1447`, `romadhoon-1445`, `idul-fitri-1445`), zakat al-fitr/fidyah amounts and
+  deadlines, Ramadan house rules, appeals with Dompet Dhuafa (`help-sumatera`, `box-of-happiness`), the yearly Umrah (guide
+  Ronald Kroon), `ppme-51`, website news.
+- **Vocabulary** (keep it untranslated in all languages): *pengajian/kajian* study session or lecture, Ustadz/Ustadzah teacher,
+  TPA Al Amin children's Qur'an school, *remaja* youth, Istighotsah collective supplication, Yasin & Tahlil, tadarus, tarawih,
+  iftar/takjil, i'tikaf, khataman, tarhib (welcoming Ramadan), halal bi halal, shahada/syahadat (conversions often happen on
+  Saturdays), zakat/infaq/sadaqah (shodaqoh), Komisi Dakwah, Jenazah committee. Hijri years: 1443 ≈ 2021-22 … 1448 ≈ 2026-27.
+- **Correctness traps found in the content:** Hijri dates in bodies are hand-typed: check them against the Gregorian date
+  (`juli-2023` had Muharram 1444 for 1445; nl `ramadhan-1447` said 2025). Language versions are written separately, not always
+  translated: facts can differ, check each. Spelling variants (Romadhoon/Ramadhan/Ramadan, Masdjid/Masjid, Shodaqoh/Sadaqah)
+  belong to their period: fix real typos only. Venue is **Medlerstraat 4** (owner-confirmed; some flyers say Heeswijkplein 170).
+  Many events keep a commented-out `# speaker:` block from Hugo: only an uncommented `speaker:` renders.
+- **Descriptions are not regenerated:** when an event's or post's body changes materially (speaker, programme, price), update its
+  `description` too. Rules: see the `/ppme-event` skill (events: no date; blog: the period/dates are fine when they are the point).
+- **Headings:** authors pick a size with `###`/`#####`; `src/plugins/heading-levels.mjs` fixes the outline (see Known gaps note
+  below). Bodies usually open with a greeting; that's fine in the body, never in a description.
 
 ## Known gaps (don't assume these are solved)
 
