@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Qur'an lessons for children aged 5 to 18 at PPME Den Haag, grouped by age. Registration and questions via info@ppmedenhaag.nl."
 # post thumbnail
 image: "images/dakwah/quran-lesson.jpg"
 # post author

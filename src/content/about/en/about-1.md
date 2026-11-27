@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Becoming a member of PPME Den Haag: family €15, individual or student €7.50 a month. Sign up on a Saturday; payment arrangements are possible."
 # post thumbnail
 image: "images/about/about-1.jpg"
 # post author

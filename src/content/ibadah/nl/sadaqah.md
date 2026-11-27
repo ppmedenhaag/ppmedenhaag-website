@@ -6,7 +6,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat, infaq en sadaqah uitgelegd: de verplichte zakat en vrijwillig geven omwille van Allah. Steun PPME Den Haag via iDEAL of bankoverschrijving."
 # post thumbnail
 image: "images/ibadah/zakat.jpg"
 # post author

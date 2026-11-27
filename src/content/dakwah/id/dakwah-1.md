@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pelajaran membaca Al-Qur'an untuk anak usia 5-18 tahun di PPME Den Haag, dibagi per kelompok umur. Pendaftaran dan pertanyaan melalui info@ppmedenhaag.nl."
 # post thumbnail
 image: "images/dakwah/quran-lesson.jpg"
 # post author

@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Al Ittihaad: de Indonesischtalige bijeenkomst op zaterdag rond het Maghrib-gebed, met Koranlezing, dzikr en lezingen over fiqh en aqidah."
 # post thumbnail
 image: "images/dakwah/indonesia.jpg"
 # post author

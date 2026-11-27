@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Moslim worden bij PPME Den Haag: de shahada, kosteloos en in vrijheid, met begeleiding door een imam. Vul het formulier in en maak een afspraak."
 # post thumbnail
 image: "images/ibadah/mualaf.jpg"
 # post author

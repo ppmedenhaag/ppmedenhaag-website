@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Islamic marriage at PPME Den Haag: what you need for the akad nikah, from the application form and passport photos to the father's consent and witnesses."
 # post thumbnail
 image: "images/ibadah/nikah.jpg"
 # post author

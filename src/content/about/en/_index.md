@@ -6,7 +6,7 @@ draft: false
 # about image
 image: "images/about/about-ppme.webp"
 # meta description
-description : ""
+description: "The history of PPME: founded in 1971 by Indonesian students, including Abdurrachman Wahid, and grown into branches across the Netherlands."
 ---
 
 ### History of PPME

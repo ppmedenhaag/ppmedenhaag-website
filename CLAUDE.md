@@ -58,9 +58,9 @@ match a stricter schema.
 `public/_redirects`): `notice`, `course`, `teacher`, `ramadhan-1444`, `author`/`tags`/`categories`. A new section follows the same
 pattern (schema from real front matter, two route files, `nl/`-exclusion filter).
 
-**Schemas:** `eventSchema`; `blogSchema` = `postSchema` + a **required** `description` (40-160 chars); `ibadah`/`about`/`dakwah` use
-`postSchema` (description optional). Event and blog descriptions are hand-written and are the single source for cards and SEO
-(see "Event and blog content" below).
+**Schemas:** `eventSchema`; `postSchema` for `blog`/`ibadah`/`about`/`dakwah`; `aboutOverviewSchema` for the `_index` overviews. All
+of them use `descriptionField()`: a **required**, hand-written `description` (40-160 chars) that is the single source for cards
+and SEO (see "Event and blog content" below). The build fails on a missing or empty one.
 
 ## i18n conventions
 
@@ -148,10 +148,11 @@ new interactive UI rather than reaching for a different framework.
   alternates, dates. `Layout.astro` looks the page up by `Astro.url.pathname` and renders `components/Seo.astro` (title, description,
   canonical, hreflang + x-default, Open Graph, Twitter, RSS link, JSON-LD) **first in `<head>`**. Code-driven pages get localized
   titles/descriptions from `STATIC_COPY` in `src/data/seo.ts` (their `<Layout>` has no `title`). New page type ⇒ add it to the registry.
-- **Descriptions:** **events and blog posts: the front matter `description` only** (required by the schema, 40-160 chars; written
-  for all 170 event and 68 blog files on 2026-11-27): it is the card text and the meta/og/twitter description, JSON-LD description,
-  RSS item and (events) calendar notes. Event descriptions carry no date (card + structured data do). Other sections (ibadah, about,
-  dakwah): front matter, else derived from the body (`utils/seo.ts`: skips greetings, joins to ≥90 chars, ≤155).
+- **Descriptions:** **every content page uses its front matter `description`, verbatim** (required by the schema, 40-160 chars;
+  written by hand for all 170 event, 68 blog and 33 ibadah/about/dakwah files on 2026-11-27). It is the card text and the
+  meta/og/twitter description, JSON-LD description, RSS item and (events) calendar notes. Nothing is derived from the body any more
+  (that code was removed). Event descriptions carry no date (card + structured data do). Code-driven pages (home, listings,
+  contact, prayer times, board) take theirs from `STATIC_COPY` / `PRAYER_COPY` in `data/seo.ts`.
 - **Link-preview cards:** `/og/<locale>/<route>.<hash>.jpg` (1200×630), generated at build by `utils/og.ts` (sharp; satori for title cards)
   through `src/pages/og/[...path].jpg.ts`. Hero image shown whole over a blurred copy (never cropped); no usable image → generated brand
   title card; every page has its own. Cached in `node_modules/.cache/ppme-og` (bump `CARD_VERSION` after changing card layout code).
@@ -223,6 +224,9 @@ Every event and blog file was read on 2026-11-27 to write its `description`; thi
   translated: facts can differ, check each. Spelling variants (Romadhoon/Ramadhan/Ramadan, Masdjid/Masjid, Shodaqoh/Sadaqah)
   belong to their period: fix real typos only. Venue is **Medlerstraat 4** (owner-confirmed; some flyers say Heeswijkplein 170).
   Many events keep a commented-out `# speaker:` block from Hugo: only an uncommented `speaker:` renders.
+- **Ibadah, About, Dakwah** (5 + 1 + 3 pages, plus the About and Dakwah `_index` overviews, all in nl/id/en) follow the same
+  description rules. Open content questions: `dakwah-3` nl says the Indonesian gathering lasts ~2.5 h, id/en say 1-2 h; the
+  id/en `dakwah/_index.md` have no body text (only the description).
 - **Descriptions are not regenerated:** when an event's or post's body changes materially (speaker, programme, price), update its
   `description` too. Rules: see the `/ppme-event` skill (events: no date; blog: the period/dates are fine when they are the point).
 - **Headings:** authors pick a size with `###`/`#####`; `src/plugins/heading-levels.mjs` fixes the outline (see Known gaps note

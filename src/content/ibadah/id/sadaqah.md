@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Penjelasan zakat, infaq dan sadaqah: zakat yang wajib dan sedekah sukarela karena Allah. Dukung PPME Den Haag melalui iDEAL atau transfer bank."
 # post thumbnail
 image: "images/ibadah/zakat.jpg"
 # post author

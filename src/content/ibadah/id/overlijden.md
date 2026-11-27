@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pengurusan jenazah secara Islami bersama Komisi Jenazah PPME Den Haag: memandikan, mengafani, menyolatkan dan memakamkan, biaya, serta persiapannya."
 # post thumbnail
 image: "images/ibadah/pass-away.jpg"
 # post author

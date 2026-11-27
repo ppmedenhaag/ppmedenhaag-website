@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat, infaq and sadaqah explained: the obligatory zakat and voluntary giving for the sake of Allah. Support PPME Den Haag via iDEAL or bank transfer."
 # post thumbnail
 image: "images/ibadah/zakat.jpg"
 # post author

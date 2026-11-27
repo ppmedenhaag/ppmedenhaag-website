@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Menjadi mualaf di PPME Den Haag: pengucapan syahadat dengan bimbingan imam dalam bahasa Indonesia, Belanda atau Inggris, tanpa biaya."
 # post thumbnail
 image: "images/ibadah/mualaf.jpg"
 # post author

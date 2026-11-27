@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Aqiqah at PPME Den Haag: giving thanks for a newborn, with the ceremonial cutting of the baby's hair during the Saturday evening programme."
 # post thumbnail
 image: "images/ibadah/birth.jpg"
 # post author
@@ -23,6 +23,6 @@ Besides the recommended ritual, the slaughter of a sheep, there is also the cutt
 
 ### What does that look like?
 
-Those present that evening stand in a room and melodically read the Salawat nabi. At the same time, the parents walk past those present. One parent carries the baby in their arms, the other holds a bowl with a bowl of water, scissors and a cloth on it. It is then the intention that all those present cut off a piece of hair or brush a little water on the head of the baby. After this evening, the parents can continue at home with the complete shaving of the hair.
+Those present that evening stand in a room and melodically read the Salawat nabi. At the same time, the parents walk past those present. One parent carries the baby in their arms, the other holds a tray with a bowl of water, scissors and a cloth on it. It is then the intention that all those present cut off a piece of hair or brush a little water on the head of the baby. After this evening, the parents can continue at home with the complete shaving of the hair.
 
 If you would you like an aqiqah to be arranged for your baby at PPME The Hague, or if you have questions about this, you may contact us at [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl)

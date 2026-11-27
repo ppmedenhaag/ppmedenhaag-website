@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Al Ittihaad: the Indonesian-language gathering on Saturdays around Maghrib, with Qur'an recitation, dhikr and lectures on fiqh and aqidah."
 # post thumbnail
 image: "images/dakwah/indonesia.jpg"
 # post author

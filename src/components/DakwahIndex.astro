@@ -4,7 +4,6 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import Layout from "../layouts/Layout.astro";
 import type { LangOptions } from "../data/i18n";
 import { useTranslations } from "../utils/lang";
-import { cardExcerpt } from "../utils/text";
 import Img from "./Img.astro";
 
 interface Props {
@@ -46,7 +45,7 @@ const pages = (
                   <a href={href} class="tile-title tile-title-link">{p.data.title}</a>
                 </h2>
                 <div class="mt-3 flex-1">
-                  <p class="text-sm leading-relaxed text-slate-600 line-clamp-3">{p.data.description || cardExcerpt(p.body)}</p>
+                  <p class="text-sm leading-relaxed text-slate-600 line-clamp-3">{p.data.description}</p>
                 </div>
                 <span class="tile-link mt-5">
                   {t("common.readMore")}

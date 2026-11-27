@@ -6,7 +6,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Islamitische uitvaart met hulp van de Commissie Jenazah van PPME Den Haag: wassing, inwikkelen, gebed en begrafenis, de kosten en wat je vooraf regelt."
 # post thumbnail
 image: "images/ibadah/pass-away.jpg"
 # post author

@@ -6,7 +6,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Aqiqah bij PPME Den Haag: dankbaarheid voor de geboorte van een kind, met het ritueel knippen van het haar van de baby tijdens het zaterdagavondprogramma."
 # post thumbnail
 image: "images/ibadah/birth.jpg"
 # post author
@@ -19,7 +19,7 @@ aliases: ["/geboorte"]
 type: "post"
 ---
 
-De geboorte van een kind is een geschenk van Allah swt. Het is verantwoordelijkheid dat aan ouders wordt gegeven. Een van de rituelen voor het verwelkomen van een pasgeboren baby is aqiqah. Aqiqah is soennah van onze Profeet (vrede zij met hem), waarbij na de geboorte van het kind de ouders een vee gaat offeren. Hiermee tonen we onze dankbaarheid aan Allah voor de geboorte van het kind.
+De geboorte van een kind is een geschenk van Allah swt. Het is een verantwoordelijkheid die aan ouders wordt gegeven. Een van de rituelen voor het verwelkomen van een pasgeboren baby is aqiqah. Aqiqah is soennah van onze Profeet (vrede zij met hem), waarbij na de geboorte van het kind de ouders een dier offeren. Hiermee tonen we onze dankbaarheid aan Allah voor de geboorte van het kind.
 
 
 Naast het aangeraden ritueel, het slachten van een schaap, is er ook het knippen van het haar van het kind. PPME Den Haag faciliteert dit laatste tijdens de Indonesische bijeenkomst in het avondprogramma op zaterdag.

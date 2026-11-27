@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Pernikahan Islami di PPME Den Haag: dokumen yang diperlukan untuk akad nikah, dari formulir dan pasfoto hingga surat izin wali dan dua saksi laki-laki."
 # post thumbnail
 image: "images/ibadah/nikah.jpg"
 # post author

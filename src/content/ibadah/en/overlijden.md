@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Islamic funerals with the PPME Den Haag Jenazah Committee: washing, shrouding, funeral prayer and burial, the costs, and what you can arrange in advance."
 # post thumbnail
 image: "images/ibadah/pass-away.jpg"
 # post author

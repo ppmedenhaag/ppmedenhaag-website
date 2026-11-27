@@ -108,7 +108,7 @@ The same slug in another language folder is its translation.
 - **Events:** use the `/ppme-event` skill in Claude Code (`.claude/skills/ppme-event`): paste the announcement or flyer and it
   writes the nl/id/en pages, prepares the image, updates the homepage highlight if needed, builds and publishes. To do it by
   hand, copy a recent event (e.g. `istigotsah-akbar-2026.md`) and follow the rules in that skill.
-- **`description` is required** for events and posts (40-160 characters; the build fails without it). Write one or two
+- **`description` is required** on every content page: events, news, Ibadah, About and Dakwah (40-160 characters; the build fails without it). Write one or two
   sentences: what happens, who speaks or organises, the highlights, no greeting. It is the card text **and** the Google snippet,
   the WhatsApp/Facebook preview, the structured data, RSS and the calendar entry, so nothing is cut from the body
   automatically. Event descriptions leave out the date (it is shown next to them); update the description when the body changes.

@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Becoming Muslim at PPME Den Haag: pronouncing the shahadah, free of charge, guided by an imam. Fill in the form and make an appointment."
 # post thumbnail
 image: "images/ibadah/mualaf.jpg"
 # post author
