@@ -150,7 +150,7 @@ new interactive UI rather than reaching for a different framework.
   title card; every page has its own. Cached in `node_modules/.cache/ppme-og` (bump `CARD_VERSION` after changing card layout code).
   Optional front matter `social_image` overrides `image`.
 - **JSON-LD** `utils/jsonld.ts` (Organization, WebSite, WebPage/CollectionPage/ContactPage, BreadcrumbList, Event, BlogPosting/Article).
-  Venue address is intentionally partial until the owner confirms it (`VENUES` in `data/seo.ts`).
+  Venue address (owner-confirmed 2026-11-21) is in `VENUES`, `data/seo.ts`.
 - **Discovery:** `/sitemap.xml` + `/nl|id|en/sitemap.xml` (Hugo-identical, built by `scripts/sitemap-split.mjs`, with lastmod),
   `/sitemap-index.xml`, RSS at `/[locale/][section/]index.xml` (`src/pages/[...feed]/index.xml.ts`, same 18 feeds as Hugo), `robots.txt`
   (endpoint), 404 page, icons + `site.webmanifest` (`scripts/build-icons.mjs`).
@@ -165,6 +165,20 @@ new interactive UI rather than reaching for a different framework.
 - **Gates:** `npm run build` ends with `scripts/seo-audit.mjs` (errors fail the build: head tags, canonical, og image 1200×630 ≤300 KB, hreflang
   reciprocity, JSON-LD, sitemap/robots, staging-origin leak in production mode). `npm run seo:diff -- --write` compares the live Hugo sitemaps
   with `dist/` (must stay at 0 missing; report in `docs/seo/url-diff.md`).
+
+## Events and the homepage CTA (skill: `/ppme-event`)
+
+- **Adding, changing, postponing or cancelling an event, or changing the homepage CTA: use `.claude/skills/ppme-event`**
+  (extraction from announcement/flyer, nl/id/en pages, image, SEO input rules, CTA decision, verify, publish). It holds the
+  detailed rules; don't duplicate them here. It builds on the SEO section above (`/ppme-seo` only for SEO *code* changes).
+- Helper scripts in `.claude/skills/ppme-event/scripts/`: `event-status.mjs` (current/queued CTA, upcoming events),
+  `prepare-image.mjs <input> <slug>` (flyer → `public/images/events/<slug>.webp`), `check-seo.mjs <slug>` (per-event SEO
+  report on `dist/`).
+- **Homepage CTA** = the one uncommented `cta:` block in `src/data/{nl,id,en}/homepage.yml` (rendered by
+  `components/Homepage.astro`). Queued/previous ones are kept commented out below it. It does not expire by itself.
+- Traps: a future `publishDate` hides an event and no scheduled rebuild reveals it; `zoom|teams|online|youtube|webinar` in
+  `location` marks it online-only in JSON-LD (also for hybrid events); write `Al Hikmah` without hyphen (venue address
+  match); JSON-LD `eventStatus` is always `EventScheduled`.
 
 ## Known gaps (don't assume these are solved)
 
@@ -188,21 +202,13 @@ new interactive UI rather than reaching for a different framework.
   i.e. until ~2026-12-05). Search Console: the www `sitemap.xml` is submitted. Still open: see the "Afterwards" items in `docs/seo/PROGRESS.md`.
 - **SEO: implemented (milestones M1–M6 mostly done, see `docs/seo/PROGRESS.md`); read the "SEO" section above.** This site
   replaces both `www.ppmedenhaag.nl` and `ppmedenhaag.nl` (canonical = www, apex 301 → www).
-- **Homepage (`src/pages/index.astro` and `[locale]/index.astro`) is a stub** — just
-  renders `<CTA />`. `src/data/config.ts`'s `CTA_CONFIG` is stale sample data (an old
-  "Eid al-Adha 1445H / June 2024" promo, not the live site's current promoted event).
-  The real source of truth for what the homepage should show is
-  `../ppmedenhaag-website/data/{nl,id,en}/homepage.yml` — see
-  `.migration/06-data-i18n-strings.md` for the full key-by-key recreation plan
-  (including two real cross-language content gaps found there: `course` only exists for
-  `en`, `shodaqoh` only exists for `nl`/`id` — don't silently paper over either without
-  flagging it).
+- **Homepage** is built (`components/Homepage.astro`, data in `src/data/{nl,id,en}/homepage.yml`, now the source of truth).
+  Cross-language gaps carried over from Hugo: `course` only exists for `en`, `shodaqoh` only for `nl`/`id` — don't silently
+  paper over either without flagging it.
 - **Contact pages** (`/contact/`, `/id/contact/`, `/en/contact/`, URLs match Hugo) were reviewed 2026-11-21: the form posts to the
   Hugo site's Formspree form (`CONTACT.formAction`, was a 2024 prototype form), has a `_gotcha` honeypot, and a "direct contact" block
   (email, address + directions, socials) follows it. Field names differ from Hugo (`email` instead of `mail`, Formspree's reply-to name).
-- **No adapter, no deploy config yet** — `output: 'static'`, intentionally no adapter
-  (Cloudflare Pages serves `dist/` directly). No Cloudflare Pages project has been
-  created yet; that requires dashboard/account access this session doesn't have.
+- **No adapter** — `output: 'static'`, intentionally (the Worker serves `dist/`, see "Deploy").
 
 ## Build & dev commands
 
@@ -212,7 +218,7 @@ new interactive UI rather than reaching for a different framework.
   From a lower-case path (`c:\...`: VS Code's terminal, Git Bash `/c/...`) Astro silently drops all component CSS (fonts, map, scoped
   styles) from every page. `seo-audit` now fails such a build ("component CSS missing"). Never `wrangler deploy` a build that failed it. CI (Linux) is unaffected.
 - `npm run test:worker` — unit test of the edge Worker's redirects/noindex (no wrangler needed).
-- `node scripts/check-content.mjs [--fix-dates|--write-lang]` — report wrong UTC offsets / language mismatches in front matter; `node scripts/optimize-images.mjs` — shrink oversized public images; `node scripts/indexnow.mjs` — production-only Bing/Yandex ping (run by deploy.yml).
+- `node scripts/check-content.mjs [--fix-dates|--write-lang]` — report wrong UTC offsets / language mismatches in front matter; `node scripts/optimize-images.mjs [--dry] [file...]` — shrink oversized public images (new event images: see `/ppme-event`); `node scripts/indexnow.mjs` — production-only Bing/Yandex ping (run by deploy.yml).
 - `npm run seo:audit` / `npm run seo:diff` — re-run the SEO audit on `dist/` / compare with the live Hugo sitemaps.
 - `npx astro sync` — regenerate content-collection types after changing
   `content.config.ts` or adding/removing collections. Run this whenever `astro check`
@@ -232,7 +238,9 @@ The earlier Cloudflare Pages plan (`.migration/07-deploy-hosting.md`) was supers
 `.github/workflows/deploy.yml` (build + `npx wrangler deploy`) using the repo secrets `CLOUDFLARE_API_TOKEN` and
 `CLOUDFLARE_ACCOUNT_ID`. Live at https://www.ppmedenhaag.nl (and `ppmedenhaag.nl` → www); also reachable (noindexed) at https://website-v2.ppmedenhaag.nl and
 https://ppme-website.ppme-registration.workers.dev. The Cloudflare API token needs account Workers Scripts Write + zone DNS Write / Zone Read / Workers Routes Write / Cache Purge.
-No manual deploy is needed after pushing.
+No manual deploy is needed after pushing, **with one exception:** `deploy.yml` (and `preview.yml`) have
+`paths-ignore: **/*.md`, which also matches `src/content/**`. A push that changes only Markdown does **not** deploy: run
+`gh workflow run deploy.yml --ref main`.
 
 - **Branch previews:** every push to a branch other than `main` runs `.github/workflows/preview.yml`: build (staging origin, no
   `PUBLIC_SITE_URL`) + `wrangler versions upload --preview-alias <branch slug>`. It never deploys; the URL

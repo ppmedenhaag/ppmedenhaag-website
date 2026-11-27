@@ -1,5 +1,5 @@
 // One-off/idempotent: shrinks oversized images in public/images in place (same file name + format, so no URL changes).
-//   node scripts/optimize-images.mjs [--dry]
+//   node scripts/optimize-images.mjs [--dry] [file...]     (no files = everything under public/images)
 // Rules: files > 400 KB are re-encoded; width capped at 2000 px; replaced only when it saves > 15 %.
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -18,7 +18,8 @@ function* walk(dir) {
 }
 
 let saved = 0;
-for (const file of walk("public/images")) {
+const only = process.argv.slice(2).filter((a) => a !== "--dry");
+for (const file of only.length ? only : walk("public/images")) {
   if (!/\.(jpe?g|png|webp)$/i.test(file)) continue;
   const before = statSync(file).size;
   if (before <= MAX_BYTES) continue;
