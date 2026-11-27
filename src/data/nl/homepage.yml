@@ -50,10 +50,6 @@ homepage:
       enable : true
       label : "Lees meer"
       link : "event/istigotsah-akbar-2026/"
-    youtube:
-      enable : false
-      title : ""
-      id : "-1HiLtHLAGk"
     img:
       enable: true
       src: "/images/events/istigotsah-akbar-2026.webp"
@@ -68,10 +64,6 @@ homepage:
   #     enable : true
   #     label : "Lees meer"
   #     link : "event/kajian-dr-aisah-dahlan/"
-  #   youtube:
-  #     enable : false
-  #     title : ""
-  #     id : "-1HiLtHLAGk"
   #   img:
   #     enable: true
   #     src: "/images/events/kajian-dr-aisah-dahlan.webp"
@@ -86,10 +78,6 @@ homepage:
   #     enable : true
   #     label : "Lees meer"
   #     link : "blog/umrah-ppme-den-haag-2026/"
-  #   youtube:
-  #     enable : false
-  #     title : ""
-  #     id : "-1HiLtHLAGk"
   #   img:
   #     enable: true
   #     src: "/images/blog/umrah-2026.webp"

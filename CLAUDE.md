@@ -99,7 +99,7 @@ target raw-HTML `<table>` markup (prayer-time schedules use this pattern in the 
 - `components/Img.astro` + `utils/img.ts` + `src/pages/img/[...path].webp.ts`: build-time WebP `srcset` variants (480/800/1200[/full]) for every `image` in front matter and the homepage CTA, at `/img/<content-hash>/<w>/<name>.webp` (immutable cache). The original public/ path stays the `src`. Use `<Img sizes="card|hero|cta|thumb">` for new card/hero images; images not referenced from front matter/homepage data get no srcset (by design, so a srcset never points at an ungenerated file). Cache: `node_modules/.cache/ppme-img`.
 - `components/DonationBox.astro` (`band` on the nl/id homepage, `panel` on the Sadaqah pages): iDEAL button, IBAN + copy, build-time QR of the iDEAL link (`qrcode`, inline SVG).
 - `components/ShareBar.astro` (event + blog detail: WhatsApp, copy link, native share sheet) and `components/AddToCalendar.astro` (upcoming events: `/ics/<locale>/<slug>.ics` from `src/pages/ics/[...path].ics.ts` + Google Calendar link; end time parsed from the free-text `duration` by `utils/calendar.ts`, default 2 h). Event cards show an "upcoming" label.
-- Global behaviours in `Layout.astro`'s script, by attribute: `[data-copy]` (+`data-copied`, `[data-copy-label]`), `[data-share]` (revealed only where `navigator.share` exists), `[data-expires]` (element removed once the ISO time has passed, so stale builds never show past-event UI). `window.dispatchEvent(new Event("ppme:search"))` opens the search dialog (used by the 404 page).
+- Global behaviours in `Layout.astro`'s script, by attribute: `[data-copy]` (+`data-copied`, `[data-copy-label]`), `[data-share]` (revealed only where `navigator.share` exists), `[data-expires]` (element removed once the ISO time has passed, so stale builds never show past-event UI), `[data-reveals-at]` (its counterpart: a `hidden` element shown once the time has passed), `[data-youtube]` (homepage video poster → player on click). `window.dispatchEvent(new Event("ppme:search"))` opens the search dialog (used by the 404 page).
 - Navbar island hydrates `client:idle` (the SSR'd navbar is visible at once).
 - `<title>`: entries whose title repeats in one language get their date appended via the registry's `docTitle` (visible heading unchanged).
 
@@ -184,6 +184,11 @@ new interactive UI rather than reaching for a different framework.
   report on `dist/`).
 - **Homepage CTA** = the one uncommented `cta:` block in `src/data/{nl,id,en}/homepage.yml` (rendered by
   `components/Homepage.astro`). Queued/previous ones are kept commented out below it. It does not expire by itself.
+- **Homepage video** = `src/data/homepage-video.yml` (`youtube:` link + optional `until: "YYYY-MM-DD HH:MM"` Amsterdam
+  time), one file for all locales; replaces Hugo's per-locale `cta.youtube` (removed). While set, `HomepageVideo.astro`
+  replaces the CTA image with a click-to-play poster (CTA image or YouTube thumbnail; youtube-nocookie iframe only after
+  the click, `[data-youtube]` in `Layout.astro`). `until` uses `[data-expires]` + `[data-reveals-at]` (hidden fallback image).
+  Link parsing: `utils/youtube.ts`; an unparseable link fails the build. Owner steps: README; design: `docs/homepage-cta-video/PLAN.md`.
 - Traps: a future `publishDate` hides an event and no scheduled rebuild reveals it; `zoom|teams|online|youtube|webinar` in
   `location` marks it online-only in JSON-LD (also for hybrid events); write `Al Hikmah` without hyphen (venue address
   match); JSON-LD `eventStatus` is always `EventScheduled`.

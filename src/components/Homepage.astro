@@ -8,6 +8,7 @@ import PostCard from "./PostCard.astro";
 import PrayerTimes from "./PrayerTimes.astro";
 import Img from "./Img.astro";
 import DonationBox from "./DonationBox.astro";
+import HomepageVideo from "./HomepageVideo.astro";
 import type { LangOptions } from "../data/i18n";
 
 interface Props {
@@ -22,6 +23,10 @@ if (!homepageEntry) {
   throw new Error(`Missing homepage entry for locale "${locale}"`);
 }
 const home = homepageEntry.data;
+
+// Homepage video (src/data/homepage-video.yml, same for every locale): replaces the CTA image while set and before `until`.
+const video = (await getEntry("homepage-video", "video"))?.data ?? { id: null, until: null };
+const showVideo = Boolean(video.id) && !(video.until && Date.parse(video.until) <= Date.now());
 
 const events = (
   await getCollection("event", ({ id, data }) => {
@@ -122,14 +127,36 @@ const posts = (
         <span class="text-2xl font-bold tracking-tight text-white lg:text-4xl">
           {home.cta.title}
         </span>
-        {home.cta.img.enable && (
-          <Img
-            class="mt-2 h-auto w-full max-w-xl border border-white/20"
-            src={home.cta.img.src}
-            alt={home.cta.img.desc}
-            sizes="cta"
-            loading="eager"
-          />
+        {showVideo ? (
+          <>
+            <HomepageVideo
+              id={video.id!}
+              title={home.cta.title}
+              playLabel={t("homepage.playVideo")}
+              poster={home.cta.img.enable ? home.cta.img.src : undefined}
+              expires={video.until ?? undefined}
+            />
+            {video.until && home.cta.img.enable && (
+              <div class="mt-2 w-full max-w-xl" hidden data-reveals-at={video.until}>
+                <Img
+                  class="h-auto w-full border border-white/20"
+                  src={home.cta.img.src}
+                  alt={home.cta.img.desc}
+                  sizes="cta"
+                />
+              </div>
+            )}
+          </>
+        ) : (
+          home.cta.img.enable && (
+            <Img
+              class="mt-2 h-auto w-full max-w-xl border border-white/20"
+              src={home.cta.img.src}
+              alt={home.cta.img.desc}
+              sizes="cta"
+              loading="eager"
+            />
+          )
         )}
         {home.cta.button.enable && (
           <a

@@ -186,6 +186,29 @@ const section = segments[0] ?? "page";
   document.querySelectorAll<HTMLElement>("[data-expires]").forEach((el) => {
     if (Date.now() > Date.parse(el.dataset.expires ?? "")) el.remove();
   });
+  // Its counterpart: content rendered `hidden` that appears once the ISO time has passed (the CTA image after the homepage video's `until`).
+  document.querySelectorAll<HTMLElement>("[data-reveals-at]").forEach((el) => {
+    if (Date.now() > Date.parse(el.dataset.revealsAt ?? "")) el.hidden = false;
+  });
+
+  // Homepage video (components/HomepageVideo.astro): the poster link becomes the youtube-nocookie player on click.
+  // Ctrl/Cmd/Shift/middle clicks keep the link's normal behaviour (open YouTube in a new tab/window).
+  document.querySelectorAll<HTMLElement>("[data-youtube]").forEach((box) => {
+    const link = box.querySelector<HTMLAnchorElement>("a");
+    link?.addEventListener("click", (e) => {
+      if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(box.dataset.youtube ?? "")}?autoplay=1&rel=0`;
+      iframe.title = box.dataset.youtubeTitle ?? "YouTube";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.className = "absolute inset-0 size-full border-0";
+      link.replaceWith(iframe);
+      iframe.focus();
+    });
+  });
 
   // Wide tables in Markdown content (schedules, cost tables) scroll inside the article instead of widening the page on
   // phones. Tables that already sit in a scrolling wrapper (overflow-x-auto in the Markdown) are left alone.

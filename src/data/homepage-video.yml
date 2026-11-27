@@ -1,0 +1,12 @@
+# Homepage video: shows a YouTube video (a recording or a live stream) in the homepage CTA band, in nl, id and en.
+#
+# - youtube: paste a YouTube link (watch?v=, youtu.be/, /live/, /shorts/) or just the video ID.
+#   While it is set, the CTA band shows this video instead of its image. Title, subtitle and button keep coming
+#   from the cta: block in src/data/<locale>/homepage.yml. Empty ("") = the normal CTA image.
+# - until (optional): Amsterdam time in quotes, "YYYY-MM-DD HH:MM". From then on visitors see the CTA image again,
+#   even if nobody removes the link. Remove or comment out for no end time.
+#
+# Steps: README.md, "Showing a YouTube video on the homepage".
+video:
+  youtube: ""
+  # until: "2026-11-28 19:00"

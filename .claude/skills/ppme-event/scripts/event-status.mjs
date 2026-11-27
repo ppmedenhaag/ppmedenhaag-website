@@ -37,6 +37,12 @@ for (const locale of ["nl", "id", "en"]) {
   }
 }
 
+// Homepage video (src/data/homepage-video.yml): replaces the CTA image in every locale while set.
+const videoYml = readFileSync("src/data/homepage-video.yml", "utf8");
+const videoLink = videoYml.match(/^\s+youtube\s*:\s*"?([^"\r\n]*)"?\s*$/m)?.[1].trim();
+const videoUntil = videoYml.match(/^\s+until\s*:\s*"?([^"\r\n]*)"?\s*$/m)?.[1].trim();
+console.log(`\nHomepage video: ${videoLink ? `ON  ${videoLink}${videoUntil ? `  (until ${videoUntil} Amsterdam)` : "  (no end time)"}` : "off (CTA image shown)"}`);
+
 console.log("\nUpcoming events (soonest first)");
 const upcoming = [...events].filter(([, e]) => day(e.date) >= today).sort((a, b) => a[1].date - b[1].date);
 for (const [slug, e] of upcoming) console.log(`  ${day(e.date)}  ${slug}  [${e.locales.join(",")}]  ${e.title}`);
