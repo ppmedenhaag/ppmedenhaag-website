@@ -123,6 +123,8 @@ input they are built from. Load `ppme-seo` only if SEO *code* has to change.
 - Venue format: `Name, Street 12, 1234 AB City`, city in Dutch (`Den Haag`, also on id/en: `The Hague` is not
   recognised in the data). `Masjid Al Hikmah` alone gets its address automatically. Digits in a room name after a comma
   are read as the street.
+- **Al Hikmah's address is Medlerstraat 4, 2531 HA Den Haag** (owner-confirmed again 2026-11-27). Some flyers print
+  "Heeswijkplein 170": never copy that into `location` or the body; use `Masjid Al Hikmah` (or Medlerstraat 4).
 - Any of `zoom|teams|online|youtube|webinar` in `location` makes the event **online-only**. Hybrid: put only the venue in
   `location` and mention the stream in the body. Online-only: `Online Zoom`.
 - **Cancelled/postponed is not supported in the data** (always `EventScheduled`): mark it in title, description and body,
