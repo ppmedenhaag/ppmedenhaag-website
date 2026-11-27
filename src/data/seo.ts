@@ -69,7 +69,7 @@ export const STATIC_COPY: Record<Exclude<StaticKey, "prayer">, Record<LangOption
     nl: {
       title: "PPME Den Haag | Islamitische gemeenschap in Den Haag",
       description:
-        "PPME Den Haag is de Indonesische islamitische gemeenschap in Den Haag: gebedstijden, lezingen en activiteiten in Masjid Al Hikmah, informatie over de islam en onze agenda.",
+        "Indonesische islamitische gemeenschap in Den Haag: gebedstijden, lezingen en activiteiten in Masjid Al Hikmah, informatie over de islam en onze agenda.",
       subtitle: "Masjid Al Hikmah · Den Haag",
     },
     id: {
@@ -81,7 +81,7 @@ export const STATIC_COPY: Record<Exclude<StaticKey, "prayer">, Record<LangOption
     en: {
       title: "PPME Den Haag | Indonesian Muslim community in The Hague",
       description:
-        "PPME Den Haag is the Indonesian Muslim community in The Hague: prayer times, lectures and activities at Masjid Al Hikmah, information about Islam and our agenda.",
+        "The Indonesian Muslim community in The Hague: prayer times, lectures and activities at Masjid Al Hikmah, information about Islam and our agenda.",
       subtitle: "Masjid Al Hikmah · The Hague",
     },
   },

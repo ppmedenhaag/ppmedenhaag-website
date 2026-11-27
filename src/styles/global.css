@@ -167,6 +167,9 @@ body {
 
     .page-title {
         @apply text-gradient-brand pb-1 text-4xl font-extrabold tracking-tight sm:text-5xl;
+        /* Long Dutch compounds ("Jongerenprogramma") are wider than a 360 px phone at this size. */
+        hyphens: auto;
+        overflow-wrap: break-word;
     }
 
     /* Bold section heading (homepage Events / News), like the old site. */
@@ -418,6 +421,11 @@ svg[data-icon^="tabler:"] g {
 .prose .row-info { background-color: var(--color-brand-50) !important; }
 .prose .sticky-col { position: sticky; left: 0; background-color: #fff; }
 .prose iframe { max-width: 100%; }
+/* Long URLs / IBANs in content must wrap instead of widening the page on phones. */
+.prose { overflow-wrap: break-word; }
+/* Tables are wrapped in a scroll container (.table-scroll, Layout.astro script) so wide ones scroll inside the article. */
+.prose .table-scroll { overflow-x: auto; margin: 1rem 0; }
+.prose .table-scroll > table { margin: 0; }
 
 /* Buttons: any <a class="btn btn-primary [btn-sm]"> inside content. White on brand, 44px tall. */
 .prose a.btn {

@@ -73,7 +73,8 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
     hidden={i > 0}
   >
   <header class="mb-8 border-b border-slate-200 pb-8">
-    <h1 class="page-title title-rule mb-4">{p.title}</h1>
+    {/* One <h1> per page for crawlers: the (initially hidden) next-year panel uses an <h2> with the same look. */}
+    {i === 0 ? <h1 class="page-title title-rule mb-4">{p.title}</h1> : <h2 class="page-title title-rule mb-4">{p.title}</h2>}
     <p class="max-w-3xl text-slate-600">{s.pageIntro}</p>
     <blockquote class="callout mt-6 max-w-3xl text-sm text-slate-700">
       <p>{s.verse}</p>
@@ -112,7 +113,7 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
                     {s.date}
                   </th>
                   {PRAYER_NAMES.map((p) => (
-                    <th scope="col" class="px-0.5 py-2 text-center text-[10px] font-semibold sm:px-2 sm:text-xs">
+                    <th scope="col" class="px-0.5 py-2 text-center text-[11px] font-semibold sm:px-2 sm:text-xs">
                       {p}
                     </th>
                   ))}
@@ -145,7 +146,7 @@ const panels = [LATEST_YEAR, LATEST_YEAR + 1].filter((y) => getSchedule(y)).map(
                   {d.dst && (
                     <tr class="peer-aria-[current=date]:bg-brand peer-aria-[current=date]:text-white">
                       <td colspan={PRAYER_NAMES.length + 1} class="px-2 pb-1.5 sm:px-3">
-                        <span class="block w-fit border border-current px-1 py-px text-[9px] leading-tight font-semibold uppercase sm:text-[10px]">
+                        <span class="block w-fit border border-current px-1 py-px text-[11px] leading-tight font-semibold uppercase sm:text-xs">
                           {d.dst[0]} <br class="sm:hidden" />
                           {d.dst[1]}
                         </span>

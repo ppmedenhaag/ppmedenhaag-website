@@ -33,7 +33,7 @@ homepage:
     content : "PPME Den Haag is een levendige islamitische gemeenschap in Moskee Al Hikmah. Elke week komen jong en oud samen voor het zaterdagprogramma, Koranlessen voor kinderen, lezingen, jongerenavonden en sociale acties. Iedereen is welkom, ook als je net begint.\n\nOok voor de belangrijkste momenten in je leven staan we klaar: als je wilt trouwen volgens de islam, of als je de stap wilt zetten om moslim te worden."
     button:
       enable : true
-      label : "Lees Meer"
+      label : "Lees meer"
       link : "about/"
 
 
@@ -48,7 +48,7 @@ homepage:
     title : "Istigotsah Akbar PPME Nederland"
     button:
       enable : true
-      label : "Lees Meer"
+      label : "Lees meer"
       link : "event/istigotsah-akbar-2026/"
     youtube:
       enable : false
@@ -66,7 +66,7 @@ homepage:
   #   title : "Lezing met dr. Aisah Dahlan: Verschillen tussen het mannen- en vrouwenbrein (in het Indonesisch)"
   #   button:
   #     enable : true
-  #     label : "Lees Meer"
+  #     label : "Lees meer"
   #     link : "event/kajian-dr-aisah-dahlan/"
   #   youtube:
   #     enable : false
@@ -84,7 +84,7 @@ homepage:
   #   title : "Umrah PPME Den Haag 2026"
   #   button:
   #     enable : true
-  #     label : "Lees Meer"
+  #     label : "Lees meer"
   #     link : "blog/umrah-ppme-den-haag-2026/"
   #   youtube:
   #     enable : false
@@ -102,10 +102,10 @@ homepage:
   ######################## Vision Mission #############################
   vision_mission:
     enable : false
-    bg_image : "images/backgrounds/success-story.jpg"
+    bg_image : "images/backgrounds/success-story.webp"
     vision_title : "Visie PPME"
     mission_title : "Missie PPME"
-    vision : "Onze visie is om te streven naar een vereniging die toegankelijk is voor alle moslims en die met elkaar verbroedering nastreeft. Een vereniging die bestaat uit een hechte gemeenschap, waarin zowel jong als oud zich thuis voelt, die met elkaar de islam actief, bewust en liefdevol beleeft.<br/>We zijn een moderne en toekomstgerichte vereniging die progressie nastreeft en waar mogelijk zetten we technologie in om onze leden te ondersteunen en te faciliteren.<br/>Toekomstgericht betekent ook dat we, naast het actief,bewust en liefdevol beleven van de islam, actief onze bijdrage willen leveren aan een volhoudbare en betrokken samenleving. PPME staat midden in de samenleving."
+    vision : "Onze visie is om te streven naar een vereniging die toegankelijk is voor alle moslims en die met elkaar verbroedering nastreeft. Een vereniging die bestaat uit een hechte gemeenschap, waarin zowel jong als oud zich thuis voelt, die met elkaar de islam actief, bewust en liefdevol beleeft.<br/>We zijn een moderne en toekomstgerichte vereniging die progressie nastreeft en waar mogelijk zetten we technologie in om onze leden te ondersteunen en te faciliteren.<br/>Toekomstgericht betekent ook dat we, naast het actief,bewust en liefdevol beleven van de islam, actief onze bijdrage willen leveren aan een duurzame en betrokken samenleving. PPME staat midden in de samenleving."
     mission : "Onze missie is om – in de lijn van Ahlus Sunnah wal Djama’ah – onze leden te ondersteunen bij hun persoonlijke en religieuze ontwikkeling. Bovendien willen we het positieve beeld over de islam verspreiden en begrip voor de islam versterken en laten zien dat de Islam toegankelijk is voor alle mensen.<br/>Met de mogelijkheden die wij als gemeenschap hebben willen we een belangrijke bijdrage leveren aan de maatschappij. Zo willen wij werken aan de ontwikkeling van actieve en bewuste moslims die hun geloof volgens de leer van Ahlus Sunnah wal Djama’ah belijden, bruggen bouwen en daarmee een positieve impact maken op de maatschappij."
 
 
@@ -130,7 +130,7 @@ homepage:
 
       # funfact item loop
       - name : "Jaren van actieve gemeenschap"
-        count : "53"
+        since : "1971-04-12"  # founding date of PPME: the number of years is computed at build time
 
 
   # funfact is for about page

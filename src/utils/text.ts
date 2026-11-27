@@ -1,3 +1,5 @@
+import { deriveFromBody } from "./seo";
+
 export function stripMarkdown(markdown: string): string {
     if (!markdown) return "";
 
@@ -34,7 +36,18 @@ export function stripMarkdown(markdown: string): string {
     return text.trim();
 }
 
+/** Cut at a word boundary (never mid-word) and add "…". */
 export function truncateText(text: string, maxLength: number): string {
     if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength) + "...";
+    const slice = text.slice(0, maxLength);
+    const space = slice.lastIndexOf(" ");
+    return `${slice.slice(0, space > maxLength * 0.6 ? space : maxLength).replace(/[\s,;:–—-]+$/, "")}…`;
+}
+
+/**
+ * Card teaser from a Markdown body (when there is no front matter `description`): skips greetings
+ * ("Bismillah… Assalamu'alaikum…"), headings and tables, and ends at a sentence or word boundary.
+ */
+export function cardExcerpt(body: string | undefined, max = 160): string {
+    return deriveFromBody(body, max) || truncateText(stripMarkdown(body ?? ""), max);
 }

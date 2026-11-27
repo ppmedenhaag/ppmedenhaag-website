@@ -17,7 +17,9 @@ function lastmodFor(distDir, pathname) {
   if (!existsSync(file)) return undefined;
   const head = readFileSync(file, "utf8").slice(0, 20000);
   const m = head.match(/<meta property="article:published_time" content="([^"]+)"/);
-  return m?.[1];
+  // Never a future lastmod (upcoming events used to report their event date).
+  if (!m || Date.parse(m[1]) > Date.now()) return undefined;
+  return m[1];
 }
 
 export default function sitemapSplit() {

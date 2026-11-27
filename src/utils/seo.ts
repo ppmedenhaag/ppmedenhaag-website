@@ -28,7 +28,29 @@ export function decodeEntities(s: string): string {
 
 /** Greetings / boilerplate openers that make poor descriptions (nl / id / en / ar transliterations). */
 const SALUTATION =
-  /^(assalam|assalaam|as-salam|bismillah|bismilah|beste\b|geachte\b|dear\b|yth\b|kepada\b|salaam|hallo\b|hi\b|lieve\b|saudara|ikhwan|akhi|bapak\b|ibu\b|jama[’']?ah|alhamdulillah|segala puji|puji syukur|in de naam van|in the name of)/i;
+  /^(assalam|assalaam|as-salam|bismil+a+h|beste\b|geachte\b|dear\b|yth\b|kepada\b|salaam|hallo\b|hi\b|lieve\b|saudara|ikhwan|akhi|bapak\b|ibu\b|jama[’']?ah|alhamdulillah|segala puji|puji syukur|in de naam van|in the name of)/i;
+
+/** Unambiguous greeting openers (no "Ibu"/"Bapak"/"Hi", which also start real sentences): safe to cut mid-line. */
+const GREETING_LEAD =
+  /^(assalam|assalaam|as-salam|bismil+a+h|salaam|beste\b|geachte\b|dear\b|yth\b|lieve\b|hallo\b|jama[’']?ah\b|in de naam van|in the name of|w[rb]\b|wa\s+(r[ao]c?h|bar)|war+[ao]c?hmat|wab[ao]r|r[ao]c?hmatull|bar[ao]+kat)/i;
+
+/** One greeting phrase at the start of a line: up to the first . ! ? , : or emoji (max 80 chars). */
+const GREETING_SEGMENT = /^[^.!?,:\n]{0,80}?(?:[.!?,:]+|[\p{Extended_Pictographic}️‍]+)\s*/u;
+
+/**
+ * Drop greeting phrases that open a line ("Bismillah. Assalamu'alaikum wr. wb. 🙏 Beste leden, hier is ..." → "Hier is ...").
+ * A short line (< 90 chars) that opens with any salutation is dropped whole, as before.
+ */
+export function stripLeadingGreeting(line: string): string {
+  let t = line.trim();
+  if (t.length < 90 && SALUTATION.test(t)) return "";
+  for (let i = 0; i < 6 && GREETING_LEAD.test(t); i++) {
+    const m = t.match(GREETING_SEGMENT);
+    if (!m) return t.length < 90 ? "" : t;
+    t = t.slice(m[0].length).replace(/^[\s,.;:–—-]+/, "");
+  }
+  return t ? t.charAt(0).toUpperCase() + t.slice(1) : "";
+}
 
 /** Plain text of a Markdown/MDX/HTML body, one paragraph per array item. */
 export function bodyParagraphs(body: string): string[] {
@@ -65,7 +87,10 @@ export function bodyParagraphs(body: string): string[] {
       .replace(/(\*\*|__|\*|_|`)/g, "")
       .trim();
     if (!line) continue;
-    if (line.length < 90 && SALUTATION.test(line)) continue; // greeting line
+    if (SALUTATION.test(line) || GREETING_LEAD.test(line)) {
+      line = stripLeadingGreeting(line); // greeting line, or greeting phrases in front of the real text
+      if (!line) continue;
+    }
     if (!/[\p{L}]{3}/u.test(line)) continue;
     current.push(line);
   }

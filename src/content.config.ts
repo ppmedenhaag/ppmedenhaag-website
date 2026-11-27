@@ -172,7 +172,12 @@ const homepageSchema = z.object({
   funfacts: z
     .object({
       enable: z.boolean(),
-      funfact_item: z.array(z.object({ name: z.string(), count: z.string() })),
+      // `since: "YYYY-MM-DD"` instead of `count`: whole years since that date, computed at build time (never stale).
+      funfact_item: z.array(
+        z
+          .object({ name: z.string(), count: z.string().optional(), since: z.coerce.date().optional() })
+          .refine((i) => i.count || i.since, { message: "funfact_item needs `count` or `since`" }),
+      ),
     })
     .optional(),
   blog: z.object({ enable: z.boolean(), title: z.string() }),

@@ -7,7 +7,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 import { defineConfig, envField } from "astro/config";
-import { defaultLocale, locales } from "./src/data/i18n";
+import { defaultLocale } from "./src/data/i18n";
 import { DEFAULT_SITE_URL } from "./src/data/seo";
 import sitemapSplit from "./scripts/sitemap-split.mjs";
 

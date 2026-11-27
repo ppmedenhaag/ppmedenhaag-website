@@ -18,7 +18,7 @@ const t = useTranslations(locale);
   method="POST"
   class="min-w-0"
 >
-  <div class="animate-fade-up border border-slate-200 bg-white p-6 sm:p-10">
+  <div class="border border-slate-200 bg-white p-6 sm:p-10">
     <h1 class="page-title title-rule">{t("contact.title")}</h1>
     <p class="mt-5 max-w-prose text-base leading-relaxed text-slate-600">
       {t("contact.subtitle")}
@@ -43,6 +43,7 @@ const t = useTranslations(locale);
           name="name"
           id="name"
           autocomplete="name"
+          required
           class="field"
         />
       </div>
@@ -53,12 +54,13 @@ const t = useTranslations(locale);
           name="email"
           id="email"
           autocomplete="email"
+          required
           class="field"
         />
       </div>
       <div class="sm:col-span-2">
         <label for="message" class="field-label">{t("contact.message")}</label>
-        <textarea id="message" name="message" rows="5" class="field"></textarea>
+        <textarea id="message" name="message" rows="5" class="field" required></textarea>
       </div>
       <div class="sm:col-span-2">
         <button type="submit" class="btn btn-lg btn-primary shine">
@@ -87,38 +89,35 @@ const t = useTranslations(locale);
 <section class="mt-6 border border-slate-200 bg-white p-6 sm:p-8 lg:sticky lg:top-24 lg:mt-0" aria-labelledby="contact-direct">
   <h2 id="contact-direct" class="eyebrow">{t("contact.direct")}</h2>
   <dl class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-1">
-    <div class="flex items-start gap-3">
-      <Icon name="heroicons:envelope" class="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
-      <div class="min-w-0">
-        <dt class="text-xs font-semibold text-slate-500">{t("contact.emailUs")}</dt>
-        <dd class="mt-0.5"><a href={`mailto:${CONTACT.email}`} class="font-semibold break-all text-brand hover:text-brand-dark">{CONTACT.email}</a></dd>
-      </div>
+    <div>
+      <dt class="flex items-center gap-3 text-xs font-semibold text-slate-600">
+        <Icon name="heroicons:envelope" class="size-5 shrink-0 text-brand" aria-hidden="true" />{t("contact.emailUs")}
+      </dt>
+      <dd class="mt-0.5 min-w-0 pl-8"><a href={`mailto:${CONTACT.email}`} class="font-semibold break-all text-brand hover:text-brand-dark">{CONTACT.email}</a></dd>
     </div>
-    <div class="flex items-start gap-3">
-      <Icon name="heroicons:map-pin" class="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
-      <div>
-        <dt class="text-xs font-semibold text-slate-500">{t("contact.visit")}</dt>
-        <dd class="mt-0.5 text-sm leading-relaxed text-slate-800">
-          {CONTACT.address.name}<br />{CONTACT.address.street}<br />{CONTACT.address.postalCode} {CONTACT.address.city}
-        </dd>
-        <dd class="mt-1">
-          <a href={VENUE_MAPS_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:text-brand-dark">
-            {t("contact.directions")}
-            <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
-          </a>
-        </dd>
-      </div>
+    <div>
+      <dt class="flex items-center gap-3 text-xs font-semibold text-slate-600">
+        <Icon name="heroicons:map-pin" class="size-5 shrink-0 text-brand" aria-hidden="true" />{t("contact.visit")}
+      </dt>
+      <dd class="mt-0.5 pl-8 text-sm leading-relaxed text-slate-800">
+        {CONTACT.address.name}<br />{CONTACT.address.street}<br />{CONTACT.address.postalCode} {CONTACT.address.city}
+      </dd>
+      <dd class="mt-1 pl-8">
+        <a href={VENUE_MAPS_URL} target="_blank" rel="noopener" class="inline-flex min-h-6 items-center gap-1 text-xs font-semibold text-brand hover:text-brand-dark">
+          {t("contact.directions")}
+          <Icon name="heroicons:arrow-top-right-on-square" class="size-3.5" aria-hidden="true" />
+        </a>
+      </dd>
     </div>
-    <div class="flex items-start gap-3">
-      <Icon name="heroicons:chat-bubble-left-right" class="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
-      <div>
-        <dt class="text-xs font-semibold text-slate-500">Social media</dt>
-        <dd class="mt-0.5 flex flex-col gap-0.5 text-sm">
-          {SOCIAL_LINKS.map((l) => (
-            <a href={l} target="_blank" rel="noopener" class="font-medium text-slate-800 hover:text-brand">{new URL(l).hostname.replace(/^www\./, "").split(".")[0].replace(/^./, (c) => c.toUpperCase()).replace("Youtube", "YouTube")}</a>
-          ))}
-        </dd>
-      </div>
+    <div>
+      <dt class="flex items-center gap-3 text-xs font-semibold text-slate-600">
+        <Icon name="heroicons:chat-bubble-left-right" class="size-5 shrink-0 text-brand" aria-hidden="true" />Social media
+      </dt>
+      <dd class="mt-0.5 flex flex-col gap-1 pl-8 text-sm">
+        {SOCIAL_LINKS.map((l) => (
+          <a href={l} target="_blank" rel="noopener" class="inline-flex min-h-6 w-fit items-center font-medium text-slate-800 hover:text-brand">{new URL(l).hostname.replace(/^www./, "").split(".")[0].replace(/^./, (c) => c.toUpperCase()).replace("Youtube", "YouTube")}</a>
+        ))}
+      </dd>
     </div>
   </dl>
 </section>

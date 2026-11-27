@@ -18,6 +18,8 @@ const { vm } = Astro.props;
                 <img
                     src={`/${vm.bg_image}`}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                     class="absolute inset-0 -z-20 size-full object-cover"
                 />
             )}

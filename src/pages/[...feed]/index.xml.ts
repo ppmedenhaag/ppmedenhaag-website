@@ -3,7 +3,7 @@
 import rss from "@astrojs/rss";
 import type { APIRoute, GetStaticPaths } from "astro";
 import { defaultLocale, locales, type LangOptions } from "../../data/i18n";
-import { SITE_NAME } from "../../data/seo";
+import { SITE_NAME, STATIC_COPY } from "../../data/seo";
 import { getSeoRegistry } from "../../utils/seo-registry";
 
 const SECTIONS = ["", "event", "blog", "dakwah", "ibadah", "about"] as const;
@@ -14,7 +14,7 @@ const TITLES: Record<string, Record<LangOptions, string>> = {
   blog: { nl: "Nieuws", id: "Berita", en: "News" },
   dakwah: { nl: "Dakwah", id: "Dakwah", en: "Dakwah" },
   ibadah: { nl: "Ibadah", id: "Ibadah", en: "Ibadah" },
-  about: { nl: "Over ons", id: "Tentang kita", en: "About us" },
+  about: { nl: "Over ons", id: "Tentang Kami", en: "About us" },
 };
 
 export const getStaticPaths = (() => {
@@ -45,7 +45,7 @@ export const GET: APIRoute = async ({ props, site }) => {
   const title = section ? `${TITLES[section][locale]} | ${SITE_NAME}` : SITE_NAME;
   return rss({
     title,
-    description: `${TITLES[section][locale]} – ${SITE_NAME}`,
+    description: section ? `${TITLES[section][locale]} – ${SITE_NAME}` : STATIC_COPY.home[locale].description,
     site: site!,
     items,
     trailingSlash: true,
