@@ -144,10 +144,10 @@ new interactive UI rather than reaching for a different framework.
   alternates, dates. `Layout.astro` looks the page up by `Astro.url.pathname` and renders `components/Seo.astro` (title, description,
   canonical, hreflang + x-default, Open Graph, Twitter, RSS link, JSON-LD) **first in `<head>`**. Code-driven pages get localized
   titles/descriptions from `STATIC_COPY` in `src/data/seo.ts` (their `<Layout>` has no `title`). New page type ⇒ add it to the registry.
-- **Descriptions:** **events: the front matter `description` only** (required by the schema, 40-160 chars; written for all 170
-  event files on 2026-11-27): it is the event card text and the meta/og/twitter description, JSON-LD `Event.description`, RSS item
-  and calendar notes. No date in it (card + structured data carry the date). Other sections: front matter, else derived from the
-  body (`utils/seo.ts`: skips greetings, joins to ≥90 chars, ≤155).
+- **Descriptions:** **events and blog posts: the front matter `description` only** (required by the schema, 40-160 chars; written
+  for all 170 event and 68 blog files on 2026-11-27): it is the card text and the meta/og/twitter description, JSON-LD description,
+  RSS item and (events) calendar notes. Event descriptions carry no date (card + structured data do). Other sections (ibadah, about,
+  dakwah): front matter, else derived from the body (`utils/seo.ts`: skips greetings, joins to ≥90 chars, ≤155).
 - **Link-preview cards:** `/og/<locale>/<route>.<hash>.jpg` (1200×630), generated at build by `utils/og.ts` (sharp; satori for title cards)
   through `src/pages/og/[...path].jpg.ts`. Hero image shown whole over a blurred copy (never cropped); no usable image → generated brand
   title card; every page has its own. Cached in `node_modules/.cache/ppme-og` (bump `CARD_VERSION` after changing card layout code).

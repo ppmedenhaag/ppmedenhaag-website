@@ -5,7 +5,7 @@ date: "2023-04-22T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Selama suasana lebaran tidak ada pengajian Sabtu pada 22 dan 29 April serta 6 Mei 2023; pengajian dimulai lagi 13 Mei. Terima kasih kepada semua relawan."
 # post thumbnail
 image: "images/blog/info-april-2023.webp"
 # post author

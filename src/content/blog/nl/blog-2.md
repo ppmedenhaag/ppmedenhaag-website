@@ -5,7 +5,7 @@ date: "2022-04-01T20:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Ramadanprogramma 1443 van PPME Den Haag en Al Hikmah, elke zaterdag: tadarus, iftar, tarawih, een wekelijkse Indonesische lezing en een jongerenprogramma."
 # post thumbnail
 image: "images/blog/post-4.jpg"
 # post author

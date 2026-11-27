@@ -5,7 +5,7 @@ date: "2026-02-07T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "Selamat menunaikan ibadah puasa Ramadhan 1447 H. 1 Ramadhan jatuh pada Rabu, 18 Februari 2026 dan 1 Syawwal pada Jum'at, 20 Maret 2026."
+description: "Selamat menunaikan ibadah puasa Ramadhan 1447 H. 1 Ramadhan jatuh pada Rabu, 18 Februari 2026 dan 1 Syawwal pada Jum'at, 20 Maret 2026."
 # post thumbnail
 image: "images/blog/marhaban-ramadhan-1447.webp"
 # post author

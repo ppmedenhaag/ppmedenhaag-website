@@ -5,7 +5,7 @@ date: "2023-02-15T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian Sabtu Februari 2023: Yasin dan hadits, kajian fiqih, tajwid dan tafsir, serta peringatan Isra' Mi'raj dengan dua penceramah tamu."
 # post thumbnail
 image: "images/blog/februari-2023.webp"
 # post author

@@ -5,7 +5,7 @@ date: "2022-12-09T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Schema van de Indonesische zaterdagbijeenkomsten in december 2022: Yasin en Tahlil, fiqh, Istighotsah, tajwid en tafsir, en een oudergesprek voor de TPA."
 # post thumbnail
 image: "images/blog/december-2022.jpg"
 # post author

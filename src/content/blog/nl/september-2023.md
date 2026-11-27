@@ -5,7 +5,7 @@ date: "2023-09-27T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Programma voor september 2023: Tahlil en Yasin, hadith en fiqh, een shahada, de algemene ledenvergadering met verkiezing van het nieuwe bestuur en tahsin."
 # post thumbnail
 image: "images/blog/september-2023.webp"
 # post author
@@ -27,7 +27,7 @@ Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties
 <table style="width:100%">
 <tr><td style="width:35%;margin:0;">17.27</td><td style="width:65%;margin:0;">‘Asr</td></tr>
 <tr><td style="width:35%;margin:0;">18.00 - 18.30</td><td style="width:65%;margin:0;">Avondeten</td></tr>
-<tr><td style="width:35%;margin:0;">18.45 - 19.45</td><td style="width:65%;margin:0;">Tahlil& Yasiin onder begeleiding van Ust. Isyak</td></tr>
+<tr><td style="width:35%;margin:0;">18.45 - 19.45</td><td style="width:65%;margin:0;">Tahlil & Yasiin onder begeleiding van Ust. Isyak</td></tr>
 <tr><td style="width:35%;margin:0;">19.45 - 20.30</td><td style="width:65%;margin:0;">Hadits door Ust. Isyak </td></tr>
 <tr><td style="width:35%;margin:0;">20.34</td><td style="width:65%;margin:0;">Magrib</td></tr>
 </table>

@@ -5,7 +5,7 @@ date: "2024-03-10T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Selamat menunaikan ibadah puasa Romadhoon 1445H dari pengurus PPME Den Haag, dengan empat program Sabtu: 16, 23, 30 Maret dan 6 April 2024."
 # post thumbnail
 image: "images/blog/romadhoon-1445/romadhoon-1-id.jpeg"
 # post author

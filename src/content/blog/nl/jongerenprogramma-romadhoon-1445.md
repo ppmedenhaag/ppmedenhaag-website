@@ -5,7 +5,7 @@ date: "2024-03-11T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Het Romadhoon-jongerenprogramma 1445 van PPME Den Haag: elke zaterdag twee sessies, een uur voor iftar en kort voor het Isha-gebed."
 # post thumbnail
 image: "images/blog/romadhoon-1445/jongerenprogramma.jpeg"
 # post author

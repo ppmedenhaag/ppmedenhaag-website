@@ -5,7 +5,7 @@ date: "2024-03-10T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Romadhoon Mubarak 1445H van het bestuur van PPME Den Haag, met de vier zaterdagprogramma's: 16, 23 en 30 maart en 6 april 2024."
 # post thumbnail
 image: "images/blog/romadhoon-1445/romadhoon-1-nl.jpeg"
 # post author

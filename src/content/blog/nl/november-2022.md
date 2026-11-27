@@ -5,7 +5,7 @@ date: "2022-11-24T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Programma voor november 2022: de Yanbu'a-lesmethode, Yasin en Tahlil, leiderschapstraining, fiqh, een umrah-presentatie en een lezing over de stad Tarim."
 # post thumbnail
 image: "images/blog/nov-2.jpg"
 # post author

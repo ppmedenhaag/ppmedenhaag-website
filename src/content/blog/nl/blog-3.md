@@ -5,7 +5,7 @@ draft: true
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zakat al-Fitr en fidyah voor Ramadan 1443H: €10 per persoon en €10 per dag. Betalen via PPME Den Haag tot uiterlijk 28 april 2022."
 # post thumbnail
 image: "images/blog/zakat1443h.jpg"
 # post author
@@ -17,7 +17,7 @@ tags: ["Bijdrage"]
 type: "post"
 ---
 
-Door de ulama's is de **Zakat Fitrah** en de **Fidyah** voor Ramadan 1443H vaastgesteld:
+Door de ulama's is de **Zakat Fitrah** en de **Fidyah** voor Ramadan 1443H vastgesteld:
 
 * Zakat Fitrah is per persoon € 10,-
 * Fidyah is €10,-per dag

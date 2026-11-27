@@ -5,7 +5,7 @@ draft: false
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Zomervakantie van de TPA PPME Den Haag van 9 juli tot 20 augustus 2022; de eerste les na de vakantie is op zaterdag 27 augustus."
 # post thumbnail
 image: "images/blog/info-zomervakantie.jpg"
 # post author

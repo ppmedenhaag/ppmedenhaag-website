@@ -5,7 +5,7 @@ date: "2025-02-20T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "Selamat menunaikan ibadah puasa Ramadhan 1446 H. 1 Ramadhan jatuh pada Sabtu, 1 Maret 2025 dan 1 Syawwal pada Ahad, 30 Maret 2025."
+description: "Selamat menunaikan ibadah puasa Ramadhan 1446 H. 1 Ramadhan jatuh pada Sabtu, 1 Maret 2025 dan 1 Syawwal pada Ahad, 30 Maret 2025."
 # post thumbnail
 image: "images/blog/ramadhan-1446.webp"
 # post author

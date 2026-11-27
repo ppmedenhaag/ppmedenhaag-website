@@ -77,8 +77,8 @@ async function pickImage(data: { social_image?: string; image?: string }, body?:
   return { info: null as ImageInfo | null, source: "generated" as const };
 }
 
-/** Events: the front matter description, verbatim (required and length-checked by the schema in content.config.ts). */
-function eventDescription(d: Record<string, any>) {
+/** Events and blog posts: the front matter description, verbatim (required and length-checked by the schema in content.config.ts). */
+function writtenDescription(d: Record<string, any>) {
   return String(d.description).trim();
 }
 
@@ -219,7 +219,7 @@ async function build(): Promise<SeoRegistry> {
         kind,
         title: d.title,
         description:
-          kind === "event" ? eventDescription(d) : plainDescription(d, entry.body, locale, d.title),
+          kind === "event" || kind === "blog" ? writtenDescription(d) : plainDescription(d, entry.body, locale, d.title),
         subtitle:
           kind === "event"
             ? `${formatDate(d.date, locale)} · ${d.location ? plainInline(d.location) : "PPME Den Haag"}`

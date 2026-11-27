@@ -5,7 +5,7 @@ date: "2023-03-04T09:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian Sabtu Maret 2023: kajian dzikir dan tahlilan Ust. Abdul Gafur, fiqih, serta Tarhib Ramadhan Ust. Hambali Maksum dan sholat tasbih."
 # post thumbnail
 image: "images/blog/maret-2023.webp"
 # post author

@@ -41,7 +41,8 @@ const eventSchema = z.object({
     .optional(),
 });
 
-const blogSchema = z.object({
+// Post-shaped front matter (Hugo `type: "post"`), shared by ibadah, about and dakwah: description optional there.
+const postSchema = z.object({
   title: z.string(),
   draft: z.boolean().default(false),
   date: z.coerce.date(),
@@ -52,6 +53,19 @@ const blogSchema = z.object({
   author: z.string().optional(),
   categories: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
+});
+
+// Blog posts: same shape, but the description is required (it is the card text and the search snippet).
+const blogSchema = postSchema.extend({
+  /**
+   * Required one- or two-sentence summary of the post (no greeting). Like events: it is the post card text AND the
+   * meta/og/twitter description, JSON-LD description and RSS item; nothing is derived from the body. Max 160 chars.
+   */
+  description: z
+    .string()
+    .trim()
+    .min(40, "blog `description` is required: one or two sentences summarising the post (40-160 characters)")
+    .max(160, "blog `description` is too long: keep it at most 160 characters (it is the card text and the search snippet)"),
 });
 
 // Entries live at src/content/<section>/<locale>/<slug>.md — id becomes
@@ -203,15 +217,15 @@ export const collections = {
   event: sectionCollection("event", eventSchema),
   blog: sectionCollection("blog", blogSchema),
   // Same front matter shape as blog (both are Hugo `type: "post"` content) — reusing
-  // blogSchema rather than duplicating it. See CLAUDE.md's "ibadah ... not yet ported"
+  // postSchema (blogSchema minus the required description) rather than duplicating it. See CLAUDE.md's "ibadah ... not yet ported"
   // gap list; these 5 pages (toetreden-islam, sadaqah, geboorte, overlijden,
   // islamitisch-trouwen) are the Navbar's "Ibadah" submenu targets.
-  ibadah: sectionCollection("ibadah", blogSchema),
+  ibadah: sectionCollection("ibadah", postSchema),
   // Same front matter shape as blog/ibadah ("post"-style) — about-1.md ("Lidmaatschap").
-  about: sectionCollection("about", blogSchema),
+  about: sectionCollection("about", postSchema),
   "about-overview": aboutOverview,
   // Dakwah: same shapes as about (post-style entries + per-locale _index overview).
-  dakwah: sectionCollection("dakwah", blogSchema),
+  dakwah: sectionCollection("dakwah", postSchema),
   "dakwah-overview": overviewCollection("dakwah"),
   "homepage-nl": homepageCollection("nl"),
   "homepage-id": homepageCollection("id"),

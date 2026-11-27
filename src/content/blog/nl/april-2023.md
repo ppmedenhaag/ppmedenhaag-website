@@ -5,7 +5,7 @@ date: "2023-04-22T09:00:00+02:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Na de Ramadan is er op 22 en 29 april en 6 mei 2023 geen zaterdagprogramma; het start weer op 13 mei. Met dank aan alle vrijwilligers en Eid Mubarak."
 # post thumbnail
 image: "images/blog/info-april-2023-nl.webp"
 # post author

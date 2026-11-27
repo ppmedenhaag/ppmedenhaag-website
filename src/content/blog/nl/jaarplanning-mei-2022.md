@@ -5,7 +5,7 @@ draft: true
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Voorstel voor de jaarplanning mei 2022 – mei 2023 rond 51 jaar PPME Den Haag: doel, verantwoordelijken, activiteiten en begroting."
 # post thumbnail
 image: "images/blog/jaarplan-2022.jpg"
 # post author

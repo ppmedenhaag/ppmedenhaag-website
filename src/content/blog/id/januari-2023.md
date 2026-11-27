@@ -5,7 +5,7 @@ date: "2023-01-20T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Jadwal pengajian Sabtu Januari 2023: Yasin dan Tahlil, ceramah Anne Dijk tentang ketahanan umat, pengumuman pengurus, Istighotsah, serta tajwid dan tafsir."
 # post thumbnail
 image: "images/blog/januari-2023.webp"
 # post author

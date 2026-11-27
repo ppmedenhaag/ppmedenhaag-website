@@ -5,7 +5,7 @@ date: "2023-02-15T22:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description: "Schema van de Indonesische zaterdagbijeenkomsten in februari 2023: Yasin en hadith, fiqh, tajwid en tafsir, en de Isra' Mi'raj-herdenking met gastsprekers."
 # post thumbnail
 image: "images/blog/februari-2023.webp"
 # post author
