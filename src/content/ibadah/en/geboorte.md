@@ -21,7 +21,7 @@ The birth of a child is a gift from Allah SWT. It is a trust given to parents. O
 
 Besides the recommended ritual, the slaughter of a sheep, there is also the cutting of the hair. PPME Den Haag facilitates the latter during the Indonesian meeting in the evening program on Saturday.
 
-## What does that look like?
+### What does that look like?
 
 Those present that evening stand in a room and melodically read the Salawat nabi. At the same time, the parents walk past those present. One parent carries the baby in their arms, the other holds a bowl with a bowl of water, scissors and a cloth on it. It is then the intention that all those present cut off a piece of hair or brush a little water on the head of the baby. After this evening, the parents can continue at home with the complete shaving of the hair.
 

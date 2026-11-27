@@ -24,5 +24,5 @@ Kini PPME telah berusia **lebih dari lima puluh tahun** dan terus berkembang, me
 
 PPME telah berhasil menjaga tali persaudaraan umat Muslim yang penuh makna. Waktu dan tenaga yang diberikan para pakar, ibu-ibu, jamaah **Al-Mu'minun** (cabang PPME yang dijalankan para mualaf Belanda), remaja, dan anak-anak telah menumbuhkan organisasi Islam yang penuh hikmah. Semoga dengan memegang prinsip kebersamaan, PPME terus berkembang dan berhasil menanamkan benih-benih kepribadian Islam sesuai ajaran agama dan sunnah Rasulullah saw. Aamiin.
 
-## Pengurus
+### Pengurus
 [Kenali pengurus PPME Den Haag 2026](/id/bestuur-2026/)

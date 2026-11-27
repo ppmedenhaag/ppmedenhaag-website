@@ -22,13 +22,13 @@ type: "post"
 
 Islam menawarkan kita lebih dari satu cara untuk menyucikan diri kita dari kekurangan kita. Memberikan dukungan kepada orang-orang yang membutuhkan dukungan material atau moral adalah contohnya. Tapi senyum tulus pun sudah bisa membantumu agar kekurangan dan dosamu diampuni oleh Allah SWT. Ini adalah bentuk amal yang sederhana. Dan sedekah adalah salah satu bentuk ibadah.
 
-## Zakat
+### Zakat
 Adalah salah satu dari lima rukun Islam. Seorang muslim wajib menafkahkan sebagian hartanya kepada yang berhak.
 
-## Infaq
+### Infaq
 Ini adalah pengeluaran sukarela kekayaan atau properti untuk tujuan menyenangkan Allah SWT, tanpa mencari imbalan apa pun.
 
-## Sadaqah
+### Sadaqah
 ​​Ini adalah pemberian sukarela uang, sumber daya, pengetahuan dan dukungan kepada yang membutuhkan.
 
 Dalam Al-Qur'an Allah SWT menjelaskan pentingnya sedekah:
@@ -39,5 +39,5 @@ Dalam Al-Qur'an Allah SWT menjelaskan pentingnya sedekah:
 
 
 
-### Persatuan Pemuda Muslim se-Eropa Den Haag
+##### Persatuan Pemuda Muslim se-Eropa Den Haag
 IBAN **NL26 INGB 0002 1661 44**

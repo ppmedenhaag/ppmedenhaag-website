@@ -46,14 +46,14 @@ Onderwerp: **"Verschillen tussen het mannen- en vrouwenbrein"**
 🗣️ De lezing wordt in het Indonesisch gegeven<br/>
 🎟️ Aanmelden: [event.ppmedenhaag.nl](https://event.ppmedenhaag.nl) (beperkt aantal plaatsen)<br/>
 
-## 📝 Inschrijfperiodes
+### 📝 Inschrijfperiodes
 
 - **Ronde 1:** 14 - 21 november (leden van PPME Den Haag)
 - **Ronde 2:** 22 - 30 november (algemeen publiek)
 
 ⚠️ **Aanmelden is verplicht** en kan alleen tijdens bovenstaande inschrijfperiodes. Bezoekers die zich niet hebben aangemeld, hebben **geen gegarandeerde plaats bij het evenement**.
 
-## 🤲 Infaq / Sadaqah
+### 🤲 Infaq / Sadaqah
 
 Wilt u dit evenement steunen, dan kunt u via onderstaande knop een infaq of sadaqah doneren. Jazakumullahu khairan.
 
@@ -63,7 +63,7 @@ Wilt u dit evenement steunen, dan kunt u via onderstaande knop een infaq of sada
       </div>
 </div>
 
-## 👩‍⚕️ Over de spreker: dr. Aisah Dahlan, MKM., CCHt., CI.
+### 👩‍⚕️ Over de spreker: dr. Aisah Dahlan, MKM., CCHt., CI.
 
 dr. Aisah Dahlan is arts en predikster, bekend om haar lezingen over het gezinsleven en *neuroparenting*. Zij studeerde geneeskunde aan de Hasanuddin Universiteit (Unhas) in Makassar en volgde daarna haar medische beroepsopleiding aan de Gadjah Mada Universiteit (UGM) in Yogyakarta. Ook heeft zij een certificering in hypnotherapie.
 

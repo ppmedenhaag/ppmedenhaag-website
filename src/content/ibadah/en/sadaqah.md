@@ -20,15 +20,15 @@ type: "post"
 Islam offers us more than a way to purify ourselves of our shortcomings. Providing support to people who need material or moral support is an example of this. But even a sincere smile can already help you to have your shortcomings and sins forgiven by Allah SWT. It's a simple form of charity. And charity is a form of worship.
 
  
-## Zakat
+### Zakat
 It is one of the five pillars of Islam: every Muslim who is able must give a prescribed portion of his or her wealth to those who are entitled to it.
 
  
-## Infaq
+### Infaq
 This is the voluntary spending of wealth or property for the sole purpose of pleasing Allah SWT, without seeking anything in return.
 
 
-## Sadaqah
+### Sadaqah
 This is the voluntary giving of money, resources, knowledge and support to the needy.
 In the Qur'an Allah SWT describes the importance of charity:
 
@@ -36,5 +36,5 @@ In the Qur'an Allah SWT describes the importance of charity:
 > *Indeed, those men and women who give in charity and lend to Allah a good loan will have it multiplied for them, and they will have an honourable reward.* [**Al-Hadid: 18**](https://quran.com/57/18)
 
 
-### Persatuan Pemuda Muslim se-Eropa Den Haag
+##### Persatuan Pemuda Muslim se-Eropa Den Haag
 IBAN **NL26 INGB 0002 1661 44**

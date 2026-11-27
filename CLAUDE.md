@@ -195,6 +195,12 @@ new interactive UI rather than reaching for a different framework.
 
 - **Hugo shortcodes:** converted in event/blog/dakwah content (see the first bullet); the 2026-11-27 crawl of the live site
   found no `{{< … >}}` residue. Recheck when porting a new section from Hugo.
+- **Markdown heading levels are renumbered at build time** (`src/plugins/heading-levels.mjs`, a Sätteri hast plugin registered
+  in `astro.config.mjs` → `markdown.processor`): every content page gets a gap-free outline (h1 title → h2 → h3 …) and each
+  renumbered heading carries `md-h<original level>`, which the unlayered `.prose .md-hN` rules at the bottom of `global.css` style
+  like the original level. Authors keep choosing sizes with `###`/`#####` as before; don't "fix" levels in Markdown. **Gotcha:**
+  the content layer caches rendered Markdown in `node_modules/.astro/data-store.json` per file, so after changing a Markdown
+  plugin delete that file before building, or unchanged entries keep the old HTML.
 - **Site audit 2026-11-27:** `docs/audit/SITE-AUDIT-2026-11-27.md` (live crawl, Lighthouse, contrast, language). Fixed items and
   the remaining manual checks are listed in its "Status" section.
 - **Cutover done (2026-11-21):** `www.ppmedenhaag.nl` and `ppmedenhaag.nl` are custom domains of the Worker (`wrangler.jsonc`

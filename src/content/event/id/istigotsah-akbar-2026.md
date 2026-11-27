@@ -33,7 +33,7 @@ Dengan mengharap ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i sekalian u
 ⏰ **Waktu:** 12:00 - 19:00 CET<br/>
 📍 **Tempat:** Masdjid Al-Hikmah, Meddlerstraat 4, Den Haag
 
-## Rangkaian acara
+#### Rangkaian acara
 
 - Pembukaan
 - Updates PPME cabang-cabang Nederland
@@ -48,7 +48,7 @@ Jazakumullahu khairan katsiran atas perhatian dan kehadirannya.
 
 Bahasa pengantar: **bahasa Indonesia & bahasa Belanda**.
 
-## Pendaftaran
+#### Pendaftaran
 
 Jamaah yang kami hormati, terima kasih bagi mereka yang telah mendaftarkan diri untuk acara Istigotsah Akbar mendatang. Bagi yang belum mendaftar, mohon secepatnya dilakukan agar kita dapat mempersiapkan konsumsi dengan baik. InsyaaAllah.
 

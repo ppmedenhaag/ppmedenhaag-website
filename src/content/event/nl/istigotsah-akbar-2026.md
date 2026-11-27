@@ -32,7 +32,7 @@ In de hoop op de goedkeuring van Allah SWT nodigen wij u van harte uit voor de *
 ⏰ **Tijd:** 12:00 - 19:00 CET<br/>
 📍 **Locatie:** Masdjid Al-Hikmah, Meddlerstraat 4, Den Haag
 
-## Programma
+#### Programma
 
 - Opening
 - Updates van de PPME-afdelingen in Nederland
@@ -47,7 +47,7 @@ Jazakumullahu khairan katsiran voor uw aandacht en aanwezigheid.
 
 Voertaal: **Bahasa Indonesia en Nederlands**.
 
-## Aanmelden
+#### Aanmelden
 
 Geachte aanwezigen, hartelijk dank aan iedereen die zich al heeft aangemeld voor de aankomende Istigotsah Akbar. Wie zich nog niet heeft aangemeld, verzoeken wij dit zo spoedig mogelijk te doen, zodat we het eten goed kunnen voorbereiden. InshaAllah.
 

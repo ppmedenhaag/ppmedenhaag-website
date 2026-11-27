@@ -26,7 +26,7 @@ The words you need to say to become a Muslim are:
  
 PPME Den Haag guides you through the process of embracing Islam, for example by putting you in touch with an imam who can answer your questions and clear up anything that is unclear.
 
-## Are you interested?
+### Are you interested?
 
 You can fill in this [form](/forms/Mualaf_Formulier_NL_2025.docx). We use the data for the certificate you receive after joining.
  

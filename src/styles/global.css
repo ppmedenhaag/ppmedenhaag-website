@@ -529,3 +529,34 @@ svg[data-icon^="tabler:"] g {
 .prose .accordion-trigger[aria-expanded="true"]::after { transform: translateY(-30%) rotate(225deg); }
 .prose .accordion-body { padding: 1rem; border-top: 1px solid var(--color-slate-200); }
 .prose .accordion-panel:not(.is-open) { display: none; }
+
+/*
+ * Renumbered Markdown headings (src/plugins/heading-levels.mjs): a heading written as ##### becomes e.g. <h2 class="md-h5">
+ * so the outline has no gaps; these rules give it the look of its ORIGINAL level again (verified against the live site
+ * with computed styles). Sizes/margins are copied from @tailwindcss/typography (prose / prose-lg / prose-xl) for h3 and
+ * h4; h5/h6 have body size, no margins, and the shared prose-headings color/tracking at weight 600. Typography removes
+ * the top margin of the element after an h2/h3/h4 ("h2 + *"), which an h5/h6 never did: restored for paragraphs and
+ * lists (tables keep their own unlayered margin; a following heading keeps 0).
+ */
+.prose :is(.md-h3, .md-h4, .md-h5, .md-h6) { font-weight: 600; }
+.prose .md-h3 { font-size: 1.25em; margin-top: 1.6em; margin-bottom: 0.6em; line-height: 1.6; }
+.prose .md-h4 { font-size: 1em; margin-top: 1.5em; margin-bottom: 0.5em; line-height: 1.5; }
+.prose :is(.md-h5, .md-h6) { font-size: 1em; line-height: inherit; margin: 0; color: var(--color-slate-900); }
+.prose :is(.md-h5, .md-h6) + :is(p, ul, ol) { margin-top: 1.25em; }
+.prose > :is(.md-h3, .md-h4, .md-h5, .md-h6):first-child { margin-top: 0; }
+
+@media (min-width: 1024px) {
+    .lg\:prose-lg .md-h3 { font-size: 1.3333333em; margin-top: 1.6666667em; margin-bottom: 0.6666667em; line-height: 1.5; }
+    .lg\:prose-lg .md-h4 { margin-top: 1.7777778em; margin-bottom: 0.4444444em; line-height: 1.5555556; }
+    .lg\:prose-lg :is(.md-h5, .md-h6) + :is(p, ul, ol) { margin-top: 1.3333333em; }
+
+    .lg\:prose-xl .md-h3 { font-size: 1.5em; margin-top: 1.6em; margin-bottom: 0.6666667em; line-height: 1.3333333; }
+    .lg\:prose-xl .md-h4 { margin-top: 1.8em; margin-bottom: 0.6em; line-height: 1.6; }
+    .lg\:prose-xl :is(.md-h5, .md-h6) + :is(p, ul, ol) { margin-top: 1.2em; }
+}
+
+@media (min-width: 1536px) {
+    .\32xl\:prose-xl .md-h3 { font-size: 1.5em; margin-top: 1.6em; margin-bottom: 0.6666667em; line-height: 1.3333333; }
+    .\32xl\:prose-xl .md-h4 { margin-top: 1.8em; margin-bottom: 0.6em; line-height: 1.6; }
+    .\32xl\:prose-xl :is(.md-h5, .md-h6) + :is(p, ul, ol) { margin-top: 1.2em; }
+}

@@ -32,7 +32,7 @@ Seeking the pleasure of Allah SWT, we cordially invite you to the **Istighotsah 
 ⏰ **Time:** 12:00 - 19:00 CET<br/>
 📍 **Location:** Masdjid Al-Hikmah, Meddlerstraat 4, The Hague
 
-## Programme
+#### Programme
 
 - Opening
 - Updates from the PPME branches in the Netherlands
@@ -47,7 +47,7 @@ Jazakumullahu khairan katsiran for your attention and attendance.
 
 Languages: **Indonesian and Dutch**.
 
-## Registration
+#### Registration
 
 Dear attendees, thank you to everyone who has already registered for the upcoming Istigotsah Akbar. If you have not registered yet, please do so as soon as possible so that we can prepare the food properly. InshaAllah.
 

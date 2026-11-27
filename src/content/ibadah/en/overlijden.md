@@ -32,7 +32,7 @@ The Jenazah Committee of PPME Den Haag can provide support in arranging the fune
 
  
 
-## Role of the committee after death
+### Role of the committee after death
 
 If the Jenazah Committee is asked to supervise a funeral, we are responsible for ensuring that it runs smoothly. This starts with communication between the Committee and the next of kin. In addition, the Committee assists as much as possible in communication with the insurance company.
 
@@ -87,7 +87,7 @@ The Committee also provides a funeral kit. It contains all the necessities for w
 
  
 
-## Funeral Insurance
+### Funeral Insurance
 
 Do you have funeral insurance? Check whether they are also aware of your wishes. Otherwise you can still report this to them. If you do not yet have insurance, you can state your wishes directly when taking out insurance.
  
@@ -105,7 +105,7 @@ Do you want to be buried in a country other than the Netherlands? Then contact t
 
  
 
-## Someone has passed away. What should I do?
+### Someone has passed away. What should I do?
 
 
 * The first thing we say when we hear or see that someone has died:
