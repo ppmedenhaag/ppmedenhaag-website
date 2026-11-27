@@ -167,6 +167,14 @@ Edit `src/data/{nl,id,en}/homepage.yml` together:
 - Keep the replaced block if its event is still upcoming: comment it out below the active one in the file's existing
   style (`  # cta:` at two spaces), with a "restore after" line. Only one uncommented `cta:` may exist.
 
+**Video or live stream in the CTA band** (the user gives a YouTube link, "live stream", "tonton", "kijk live"): set
+`youtube:` in `src/data/homepage-video.yml` (one file for all three languages; any YouTube link or the bare ID) and, for
+a live stream, `until: "YYYY-MM-DD HH:MM"` = the event's end in Amsterdam time, so the image comes back by itself. The video
+replaces the CTA image (which becomes its poster); title, subtitle and button stay from the `cta:` blocks, so make sure
+the active CTA is the event the video belongs to. Leave `homepage.yml` alone otherwise. Switch off: `youtube: ""`.
+A wrong link fails the build. `event-status.mjs` shows whether the video is on. To embed a video in an event's **page**,
+keep using a raw iframe in its Markdown (step 3).
+
 ## 5. Verify
 
 1. `node scripts/check-content.mjs`: no offset or language mismatch for the new files.

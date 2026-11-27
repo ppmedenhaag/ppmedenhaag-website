@@ -24,7 +24,7 @@ children (TPA Al Amin), Indonesian study sessions for adults, a youth programme,
 | **News / blog** (`/blog/`) | 31 posts since March 2022 (68 pages): monthly Saturday schedules (2022-23), Ramadan and Eid announcements with the dates, zakat al-fitr and fidyah amounts, the yearly Umrah trip, aid appeals with Dompet Dhuafa, and news about PPME itself. |
 | **Ibadah** (`/ibadah/`) | Practical guides: converting to Islam, Islamic marriage, birth, death and funerals, zakat and sadaqah, plus the yearly prayer-times table. |
 | **Dakwah, About, Board** | Classes and lectures, PPME's history and membership, the 2026 board. |
-| **Homepage** | Today's prayer times, the current highlight (a featured event), upcoming events, latest news and (nl/id) donation details. |
+| **Homepage** | Today's prayer times, the current highlight (a featured event, optionally with a YouTube video or live stream), upcoming events, latest news and (nl/id) donation details. |
 
 Not every page exists in every language: Dutch and Indonesian cover almost everything, English about a third. The language
 switcher only offers translations that exist.
@@ -118,6 +118,32 @@ The same slug in another language folder is its translation.
 - **Images** go in `public/images/events/` or `public/images/blog/` as WebP (`node scripts/optimize-images.mjs` shrinks large ones).
 - Pushing to `main` deploys automatically, **except** a push that changes only Markdown: then run
   `gh workflow run deploy.yml --ref main`.
+
+### Showing a YouTube video on the homepage
+
+The highlighted block on the homepage (the blue band under the introduction, the "CTA") normally shows a flyer. It can
+show a YouTube video or live stream instead, in all three languages at once:
+
+1. Open `src/data/homepage-video.yml`.
+2. Paste the YouTube link between the quotes of `youtube:`. Any normal link works (`https://youtu.be/…`,
+   `https://www.youtube.com/watch?v=…`, `https://www.youtube.com/live/…`, `/shorts/…`), or just the video ID.
+   For a live stream, use the link YouTube gives when you schedule the stream; it is known in advance.
+3. Optional, recommended for a live stream: set an end time so the flyer comes back by itself afterwards. Remove the
+   `#` and write the time in quotes, in Dutch time:
+   ```yaml
+   video:
+     youtube: "https://www.youtube.com/live/R-Y4dK1OkwQ"
+     until: "2026-11-28 19:00"
+   ```
+4. Commit and push to `main` (or edit the file on GitHub and commit there). The site is live with the video about
+   2 minutes later; visitors who already had the page open may need to refresh.
+
+What visitors see: the block's title, subtitle and button stay as they are in `src/data/<nl|id|en>/homepage.yml`, so
+check that the block is about the event the video belongs to. The flyer becomes the video's cover with a play button;
+the video starts when someone presses it. Nothing loads from YouTube before that.
+
+To switch it off: set `youtube: ""` again and push. A link the site does not recognise as YouTube makes the build fail
+with a message naming the file, so a broken video never goes online (the old version stays live until it is fixed).
 
 [CLAUDE.md](CLAUDE.md) has the full details (SEO system, search, i18n, known gaps) and is the reference for anyone, human or AI,
 working in this repo.

@@ -1,0 +1,55 @@
+---
+// Homepage CTA video (src/data/homepage-video.yml): a click-to-play poster. Nothing loads from YouTube until the visitor
+// clicks; the [data-youtube] script in Layout.astro then swaps in the youtube-nocookie player. Without JavaScript the
+// poster is a plain link to the video on YouTube.
+import Img from "./Img.astro";
+import { thumbUrl, watchUrl } from "../utils/youtube";
+
+interface Props {
+  id: string;
+  /** Player title for screen readers (the locale's CTA title). */
+  title: string;
+  /** Localized "Play video". */
+  playLabel: string;
+  /** public/ image used as the poster (the CTA image); YouTube's own thumbnail if absent. */
+  poster?: string;
+  /** ISO time after which the video is removed (the existing [data-expires] behaviour). */
+  expires?: string;
+}
+const { id, title, playLabel, poster, expires } = Astro.props;
+---
+
+<div
+  class="relative mt-2 aspect-video w-full max-w-xl overflow-hidden border border-white/20 bg-slate-950"
+  data-youtube={id}
+  data-youtube-title={title}
+  data-expires={expires}
+>
+  <a
+    href={watchUrl(id)}
+    class="group absolute inset-0 flex items-center justify-center focus-visible:outline-white focus-visible:-outline-offset-4"
+    aria-label={`${playLabel}: ${title}`}
+  >
+    {
+      poster ? (
+        <Img class="absolute inset-0 size-full object-contain" src={poster} alt="" sizes="cta" loading="eager" />
+      ) : (
+        <img
+          class="absolute inset-0 size-full object-cover"
+          src={thumbUrl(id)}
+          alt=""
+          width="480"
+          height="360"
+          loading="eager"
+          referrerpolicy="no-referrer"
+        />
+      )
+    }
+    <span
+      class="relative flex size-16 items-center justify-center rounded-full bg-brand text-white ring-4 ring-white/30 transition group-hover:scale-105 group-hover:bg-brand-dark motion-reduce:transition-none sm:size-20"
+      aria-hidden="true"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" class="ml-1 size-8 sm:size-10"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.92-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14Z" /></svg>
+    </span>
+  </a>
+</div>

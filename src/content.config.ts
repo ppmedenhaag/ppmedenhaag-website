@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { glob, file } from "astro/loaders";
+import { amsterdamTime, parseYouTubeId } from "./utils/youtube";
 
 // Field names/optionality verified against real front matter in
 // ppmedenhaag-website's content/{nederland,indonesia,english}/event and /blog
@@ -166,11 +167,7 @@ const homepageSchema = z.object({
       label: z.string(),
       link: z.string(),
     }),
-    youtube: z.object({
-      enable: z.boolean(),
-      title: z.string().optional(),
-      id: z.string().optional(),
-    }),
+    // Hugo's `youtube:` block is gone: a video in this band is set in src/data/homepage-video.yml (all locales).
     img: z.object({
       enable: z.boolean(),
       src: z.string(),
@@ -203,6 +200,26 @@ const homepageSchema = z.object({
   blog: z.object({ enable: z.boolean(), title: z.string() }),
 });
 
+// src/data/homepage-video.yml: one YouTube link shown in the homepage CTA band of every locale (see that file).
+// An unreadable link or `until` fails the build, so a broken embed never ships.
+const homepageVideoSchema = z
+  .object({
+    youtube: z.string().nullish(),
+    until: z.coerce
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}$/, 'homepage-video.yml: write `until` in quotes as "YYYY-MM-DD HH:MM" (Amsterdam time)')
+      .nullish(),
+  })
+  .transform((v, ctx) => {
+    const raw = v.youtube?.trim() ?? "";
+    const id = raw ? parseYouTubeId(raw) : null;
+    if (raw && !id) {
+      ctx.addIssue({ code: "custom", path: ["youtube"], message: `homepage-video.yml: "${raw}" is not a YouTube link or video ID` });
+      return z.NEVER;
+    }
+    return { id, until: v.until ? amsterdamTime(v.until).toISOString() : null };
+  });
+
 function homepageCollection(locale: "nl" | "id" | "en") {
   return defineCollection({
     loader: file(`./src/data/${locale}/homepage.yml`),
@@ -227,4 +244,5 @@ export const collections = {
   "homepage-nl": homepageCollection("nl"),
   "homepage-id": homepageCollection("id"),
   "homepage-en": homepageCollection("en"),
+  "homepage-video": defineCollection({ loader: file("./src/data/homepage-video.yml"), schema: homepageVideoSchema }),
 };
