@@ -30,7 +30,7 @@ Pembayaran dapat dilakukan secara tunai di masjid Al Hikmah setiap hari Sabtu se
 </div>
 
 
-Pembayaran melalui transfer bank atau link diatas dapat dilakukan sampai dengan **27 Maret 2025 / 27 Ramadan 1446H**.
+Pembayaran melalui transfer bank atau link di atas dapat dilakukan sampai dengan **27 Maret 2025 / 27 Ramadan 1446H**.
 <br/>
 <br/>
 Jazakumullahu khairon katshiron,

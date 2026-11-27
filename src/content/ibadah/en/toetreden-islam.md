@@ -17,16 +17,16 @@ tags: ["Mualaf"]
 type: "post"
 ---
 
-A convert is one who has joined Islam. In order to do this, you must pronounce the shahadah. After pronouncing the shahadah, one is called a Muslim.
+A convert is someone who has embraced Islam. To do so, you pronounce the shahadah, the declaration of faith. Once you have pronounced it, you are a Muslim.
 The words you need to say to become a Muslim are:
 
 
-> **I bear witness that there is no god but Allah and I bear witness that Muhammad is his prophet.**
+> **I bear witness that there is no god but Allah and I bear witness that Muhammad is His Messenger.**
 
  
-PPME Den Haag facilitates the process of accession to Islam. For example, by bringing interested parties into contact with an imam. Together, questions can be answered and any ambiguities can be clarified.
+PPME Den Haag guides you through the process of embracing Islam, for example by putting you in touch with an imam who can answer your questions and clear up anything that is unclear.
 
-### Are you interested?
+## Are you interested?
 
 You can fill in this [form](/forms/Mualaf_Formulier_NL_2025.docx). We use the data for the certificate you receive after joining.
  
@@ -34,6 +34,6 @@ You can fill in this [form](/forms/Mualaf_Formulier_NL_2025.docx). We use the da
 Have you completed the form?
 
 You can then send an email to [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl) to make an appointment at the mosque or come by on Saturdays from 4 p.m.
-Please bring a copy of your identification along with the form when you visit the mosque. For example, a passport or identity card with photo.
-During the appointment in the mosque we discuss when the accession will take place.
-We will try as much as possible to hold the accession during our Saturday meetings.
+When you visit the mosque, please bring the form and a copy of a photo ID, such as a passport or identity card.
+During the appointment at the mosque we agree on a date for the shahadah.
+Wherever possible, we hold it during our Saturday gatherings.

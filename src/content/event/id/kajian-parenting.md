@@ -38,7 +38,7 @@ Assalamu'alaykum wa rahmatullahi wa barakaatuh
 
 Kepada Yth. jama'ah PPME Den Haag,
 
-Pengajian berbahasa Indonesia akan dilaksanakan fisik di Mesjid Al Hikmah dan online. Pengajian akan dilaksanakan di ruang besar bawah
+Pengajian berbahasa Indonesia akan dilaksanakan fisik di Masjid Al Hikmah dan online. Pengajian akan dilaksanakan di ruang besar bawah
 
 Hari: Sabtu, 4 Rabbi'ul Akhir 1444/ 29 Oktober 2022
 

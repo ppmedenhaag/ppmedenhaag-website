@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode januari 2022 / Jumadil Akhir-Rajab 1444:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode januari 2022 / Jumadil Akhir-Rajab 1444:
 
 ##### Zaterdag 7 januari /<br/> 14 Jumadil Akhir
 <table style="width:100%">

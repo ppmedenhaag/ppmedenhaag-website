@@ -45,7 +45,7 @@ We zien u graag op Zaterdag, 14 januari 2023 om 19:15 (na het Isya gebed).
 
 
 
-Deze lezing kunt u ook live bekijken via onze website: [ppmedenhaag.nl](https://ppmedenhaag.nl).
+Deze lezing kunt u ook live bekijken via onze website: [ppmedenhaag.nl](https://www.ppmedenhaag.nl/).
 
 Wassalamu 'alaykum wr wb.
 

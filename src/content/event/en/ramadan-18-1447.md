@@ -93,7 +93,7 @@ Below is the program for Saturday, **18 Ramadan 1447**.
 To help ensure the event runs smoothly, we kindly request the following:
 
 1. Please follow the instructions of the Ramadan Committee team wearing uniforms.
-2. Attendees who plan to particpate in Khatam Qur'an are expected to arrive on time at **16:30**.
+2. Attendees who plan to participate in Khatam Qur'an are expected to arrive on time at **16:30**.
 3. For the **Al Ittihaad** group (Indonesian language), the Islamic lecture will be given by **Ustad A. Firmansyah** in the **upper room**.
 4. Please take your place for iftar as directed by the committee. Keep the saf (rows) tight.
 5. Takjil (snacks) will be distributed to everyone. The warm meal will be served after Maghrib.

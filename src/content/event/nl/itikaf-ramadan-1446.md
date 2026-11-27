@@ -50,7 +50,7 @@ Wij nodigen u van harte uit om deel te nemen aan de Itikaf, die zal plaatsvinden
 
 <br/>
 
-Dit programma is beperkt tot **250** personnen.<br/>
+Dit programma is beperkt tot **250** personen.<br/>
 **Registratie**📝 [hier via Google Form](https://forms.gle/AVRzw3FopKHt9wmm9).
 
 

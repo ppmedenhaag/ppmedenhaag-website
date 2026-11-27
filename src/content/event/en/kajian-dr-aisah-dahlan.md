@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "PPME Den Haag, in cooperation with Human Initiative Europe, presents a lecture by dr. Aisah Dahlan on the differences between the male and female brain, Saturday 5 December 2026 at Masjid Al Hikmah. The lecture is in Indonesian. Register at event.ppmedenhaag.nl (limited capacity)."
+description: "Lecture by dr. Aisah Dahlan on the differences between the male and female brain, Sat 5 December 2026 at Masjid Al Hikmah (in Indonesian)."
 # Event image
 image: "images/events/kajian-dr-aisah-dahlan.webp"
 # location
@@ -42,14 +42,14 @@ Topic: **"Differences between the Male and Female Brain"**
 🗣️ The lecture is held in Indonesian<br/>
 🎟️ Registration: [event.ppmedenhaag.nl](https://event.ppmedenhaag.nl) (limited capacity)<br/>
 
-### 📝 Registration Schedule
+## 📝 Registration Schedule
 
 - **Round 1:** 14 - 21 November (PPME Den Haag members)
 - **Round 2:** 22 - 30 November (general public)
 
 ⚠️ **Registration is mandatory** and is only available during the registration periods above. Attendees who show up without registering are **not guaranteed a place at the event**.
 
-### 🤲 Infaq / Sadaqah
+## 🤲 Infaq / Sadaqah
 
 If you wish, you are welcome to support this event with an infaq or sadaqah donation via the button below. Jazakumullahu khairan.
 
@@ -59,7 +59,7 @@ If you wish, you are welcome to support this event with an infaq or sadaqah dona
       </div>
 </div>
 
-### 👩‍⚕️ About the Speaker: dr. Aisah Dahlan, MKM., CCHt., CI.
+## 👩‍⚕️ About the Speaker: dr. Aisah Dahlan, MKM., CCHt., CI.
 
 dr. Aisah Dahlan is a medical doctor and preacher, known for her lectures on family life and *neuroparenting*. She studied medicine at Hasanuddin University (Unhas) in Makassar, then continued her medical professional programme at Gadjah Mada University (UGM) in Yogyakarta. She also holds a certification in hypnotherapy.
 

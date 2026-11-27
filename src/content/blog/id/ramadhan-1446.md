@@ -5,7 +5,7 @@ date: "2025-02-20T00:00:00+01:00"
 # page title background image
 #bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : ""
+description : "Selamat menunaikan ibadah puasa Ramadhan 1446 H. 1 Ramadhan jatuh pada Sabtu, 1 Maret 2025 dan 1 Syawwal pada Ahad, 30 Maret 2025."
 # post thumbnail
 image: "images/blog/ramadhan-1446.webp"
 # post author
@@ -27,7 +27,7 @@ Jamaah PPME Den Haag yang kami hormati, bersama ini kami ingin menghaturkan sela
 
 **1 Syawwal 1446H** jatuh pada hari **Ahad (Minggu), 30 Maret 2025**.
 
-Atas nama pengurus PPME Den Haag kami ucapkan mohon maaf lahir dan bathin atas segala kesalahan dan kekhilafan kami. In syaa Allah, program Ramadhan PPME Den Haag segera akan kita umumkan di website ini. 
+Atas nama pengurus PPME Den Haag kami ucapkan mohon maaf lahir dan batin atas segala kesalahan dan kekhilafan kami. In syaa Allah, program Ramadhan PPME Den Haag segera akan kita umumkan di website ini. 
 
 
 Wassalamu 'alaykum warrohmatullohiwabarokatuh. 

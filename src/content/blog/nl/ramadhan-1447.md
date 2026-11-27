@@ -26,7 +26,7 @@ Bij dezen wensen wij u een gezegende vastenperiode toe in de maand Ramadan 1447H
 <br/>
 
 📅 Belangrijke Data:
-* **1 Ramadhan 1447H** valt op **woendsdag 18 februari 2025**.
+* **1 Ramadhan 1447H** valt op **woensdag 18 februari 2025**.
 
 * **1 Syawwal 1447H** valt op **vrijdag 20 maret 2026**.
 

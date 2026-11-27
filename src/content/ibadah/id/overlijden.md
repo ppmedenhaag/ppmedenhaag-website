@@ -26,7 +26,7 @@ Dalam hidup tidak ada keraguan atau kemungkinan tentang satu hal. Kematian. Kita
 
 Panitia Jenazah PPME Den Haag dapat memberikan dukungan dalam mengatur pemakaman. Kemudian bertanggung jawab atas pengawasan dari saat seseorang meninggal sampai pemakaman. Ini hanya terjadi atas permintaan orang yang meninggal atau kerabat terdekat. Oleh karena itu, ada baiknya untuk mengungkapkan keinginan Anda kepada kami dan/atau keluarga terlebih dahulu. Juga beri tahu keluarga dekat Anda bahwa ini adalah kewajiban dan keinginan Anda sebagai seorang Muslim.
 
-### Peran panitia setelah kematian
+## Peran panitia setelah kematian
 
 Jika Komisi Jenazah diminta untuk mengawasi pemakaman, kami bertanggung jawab untuk memastikannya berjalan lancar. Ini dimulai dengan komunikasi antara Komisi dan keluarga terdekat. Selain itu, Komisi membantu semaksimal mungkin dalam komunikasi dengan perusahaan asuransi.
 Komisi membentuk tim yang bertanggung jawab atas pelaksanaan pemakaman. Dalam tim ini, para anggota bertanggung jawab atas berbagai komponen. Misalnya, mencari orang untuk memandikan dan membungkus almarhum dengan kafan, dan seorang imam yang memimpin pemakaman di kuburan. Semua ini dilakukan dalam konsultasi yang erat dengan keluarga terdekat dan mungkin asuransi pemakaman.
@@ -69,7 +69,7 @@ Komisi juga menyediakan paket kematian. Ini berisi semua kebutuhan untuk memandi
 
 
 
-### Asuransi pemakaman
+## Asuransi pemakaman
 Apakah Anda memiliki asuransi pemakaman? Periksa apakah mereka juga mengetahui keinginan Anda. Jika tidak, Anda masih dapat melaporkan ini kepada mereka. Jika Anda belum memiliki asuransi, Anda dapat menyatakan keinginan Anda secara langsung saat mengambil asuransi.
 Selain itu, ada baiknya untuk mempertimbangkan:
 * Siapa kelak yang akan memandikan jenazah (dari jenis kelamin yang sama)?
@@ -79,7 +79,7 @@ Selain itu, ada baiknya untuk mempertimbangkan:
 Jika anda ingin dimakamkan di negara selain Belanda, jangan lupa hubungi kedutaan negara itu.
 
 
-### Seseorang telah meninggal. Apa yang harus saya lakukan?
+## Seseorang telah meninggal. Apa yang harus saya lakukan?
 
 * Hal pertama yang kita ucapkan ketika mendengar atau melihat seseorang telah meninggal:
 

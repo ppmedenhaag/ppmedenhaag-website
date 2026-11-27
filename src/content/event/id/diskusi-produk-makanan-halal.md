@@ -28,7 +28,7 @@ Insyaa Allah akan diadakan pada:
 🕒 **19.00 – selesai**<br/>
 📍 **Masjid Al Hikmah, Medlerstraat 4, 2531 HA Den Haag**<br/>
 
-Bagi Bapak/Ibu yang memiliki pertanyaan seputar tema halal-haram produk makanan/restoran, silahkan mengisi tautan di bawah ini:
+Bagi Bapak/Ibu yang memiliki pertanyaan seputar tema halal-haram produk makanan/restoran, silakan mengisi tautan di bawah ini:
 
 https://forms.gle/qmZAhe75QBbgYBsN8
 

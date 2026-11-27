@@ -29,13 +29,13 @@ Kami ingin memperingati tonggak sejarah “51 Tahun PPME” ini dengan mengadaka
 ### Aktivitas
 Pada jadwal di bawah ini Anda dapat melihat kegiatan apa saja yang akan direncanakan. Informasi tentang, misalnya, target grup, waktu dan biaya, akan segera diposting di situs web kami. Mohon situs web kami diperhatikan terus untuk informasi yang paling baru.
  
-Kami ingin merayakan "51 Tahun PPME" ini secara terbuka. Oleh karena itu, baik anggota maupun simpatisan dipersilahkan untuk berpartisipasi dalam aktivitas tersebut.
+Kami ingin merayakan "51 Tahun PPME" ini secara terbuka. Oleh karena itu, baik anggota maupun simpatisan dipersilakan untuk berpartisipasi dalam aktivitas tersebut.
 
  
 ### Pendaftaran
-Bila Anda tertarik untuk mendaftarkan diri, kami mempersilahkan untuk mendaftar lewat <a href="/id/contact/">halaman kontak</a> lalu pilih “Daftar untuk event 51 tahun PPME”. Masukkan nama aktivitas yang Anda ingin ikuti di kolom pesan.
+Bila Anda tertarik untuk mendaftarkan diri, kami mempersilakan untuk mendaftar lewat <a href="/id/contact/">halaman kontak</a> lalu pilih “Daftar untuk event 51 tahun PPME”. Masukkan nama aktivitas yang Anda ingin ikuti di kolom pesan.
 
-Apakah Anda ingin <a href="/id/about/about-1/">mendaftar</a> sebagai anggota di PPME Den Haag dan mungkin membantu mengatur kegiatan dan acara di masa mendatang? Anda sangat dipersilahkan!
+Apakah Anda ingin <a href="/id/about/about-1/">mendaftar</a> sebagai anggota di PPME Den Haag dan mungkin membantu mengatur kegiatan dan acara di masa mendatang? Anda sangat dipersilakan!
  
 Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag! 
 
@@ -131,7 +131,7 @@ Selamat mengikuti rangkaian peringatan “51 Tahun PPME” bersama PPME Den Haag
       <div class="accordion-body">
             <span class="badge badge-success">Tanpa Pendaftaran</span>
             <span class="badge badge-success">Terbuka untuk Umum</span>
-            <p>Penceramah dalam bhasa Indonesia: <strong>E. Ainun Nadjib</strong><br/>Penceramah dalam bahasa Belanda: Mrs. <strong>Anne Dijk</strong> (Fahm Instituut)
+            <p>Penceramah dalam bahasa Indonesia: <strong>E. Ainun Nadjib</strong><br/>Penceramah dalam bahasa Belanda: Mrs. <strong>Anne Dijk</strong> (Fahm Instituut)
 </p>
       </div>
     </div>

@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "PPME Den Haag presenteert in samenwerking met Human Initiative Europe een lezing van dr. Aisah Dahlan over de verschillen tussen het mannen- en vrouwenbrein, zaterdag 5 december 2026 in Masjid Al Hikmah. De lezing is in het Indonesisch. Aanmelden via event.ppmedenhaag.nl (beperkt aantal plaatsen)."
+description: "Lezing van dr. Aisah Dahlan over de verschillen tussen het mannen- en vrouwenbrein, za 5 december 2026 in Masjid Al Hikmah (in het Indonesisch)."
 # Event image
 image: "images/events/kajian-dr-aisah-dahlan.webp"
 # location
@@ -26,9 +26,9 @@ speaker:
     designation : "Spreker"
 ---
 
-<h6 class="callout">
+<p class="callout">
 🗣️ <strong>Let op:</strong> deze lezing wordt gehouden in het <strong>Indonesisch</strong>. Er is geen Nederlandse vertaling.
-</h6>
+</p>
 
 Assalamu'alaikum warohmatullahi wa barakatuh
 
@@ -46,14 +46,14 @@ Onderwerp: **"Verschillen tussen het mannen- en vrouwenbrein"**
 🗣️ De lezing wordt in het Indonesisch gegeven<br/>
 🎟️ Aanmelden: [event.ppmedenhaag.nl](https://event.ppmedenhaag.nl) (beperkt aantal plaatsen)<br/>
 
-### 📝 Inschrijfperiodes
+## 📝 Inschrijfperiodes
 
 - **Ronde 1:** 14 - 21 november (leden van PPME Den Haag)
 - **Ronde 2:** 22 - 30 november (algemeen publiek)
 
 ⚠️ **Aanmelden is verplicht** en kan alleen tijdens bovenstaande inschrijfperiodes. Bezoekers die zich niet hebben aangemeld, hebben **geen gegarandeerde plaats bij het evenement**.
 
-### 🤲 Infaq / Sadaqah
+## 🤲 Infaq / Sadaqah
 
 Wilt u dit evenement steunen, dan kunt u via onderstaande knop een infaq of sadaqah doneren. Jazakumullahu khairan.
 
@@ -63,7 +63,7 @@ Wilt u dit evenement steunen, dan kunt u via onderstaande knop een infaq of sada
       </div>
 </div>
 
-### 👩‍⚕️ Over de spreker: dr. Aisah Dahlan, MKM., CCHt., CI.
+## 👩‍⚕️ Over de spreker: dr. Aisah Dahlan, MKM., CCHt., CI.
 
 dr. Aisah Dahlan is arts en predikster, bekend om haar lezingen over het gezinsleven en *neuroparenting*. Zij studeerde geneeskunde aan de Hasanuddin Universiteit (Unhas) in Makassar en volgde daarna haar medische beroepsopleiding aan de Gadjah Mada Universiteit (UGM) in Yogyakarta. Ook heeft zij een certificering in hypnotherapie.
 

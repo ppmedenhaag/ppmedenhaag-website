@@ -120,7 +120,7 @@ Wilt u zich als lid <a href="/about/about-1/">aanmelden</a> bij PPME Den Haag en
 
   <div class="accordion-item">
     <div class="accordion-trigger text-center" id="heading6"  data-accordion-trigger data-accordion-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-          <p>Lezing: “De adhab en akhlaq van mensen binnen een moskee gemeenschap”</p>
+          <p>Lezing: “De adhab en akhlaq van mensen binnen een moskeegemeenschap”</p>
           📅14 Januari 2023 /<br/>11 Jumadil Akhir 1444
     </div>
     <div id="collapse6" class="accordion-panel" aria-labelledby="heading6" data-accordion-group="#accordion">
@@ -321,7 +321,7 @@ Wilt u zich als lid <a href="/about/about-1/">aanmelden</a> bij PPME Den Haag en
                 </td>
                 <td rowspan="2">
                     <p><span>Lezing:
-                            &ldquo;De adhab en akhlaq van mensen binnen een moskee gemeenschap&rdquo;</span></p>
+                            &ldquo;De adhab en akhlaq van mensen binnen een moskeegemeenschap&rdquo;</span></p>
                 </td>
                 <td rowspan="2">
                     <p><span>In het Indonesisch: E. Ainun Nadjib</span></p>

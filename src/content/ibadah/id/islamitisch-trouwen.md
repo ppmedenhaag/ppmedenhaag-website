@@ -70,6 +70,6 @@ Ikhtisar di bawah ini menunjukkan biaya untuk pernikahan di PPME Den Haag:
 | Pelaksanaan di luar Masjid     | € 50        | € 50            | 
 | Administrasi                   | € 75        | € 150           |
 
-Untuk informasi lebih lanjut, silahkan menghubungi kami melalui email:  [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
+Untuk informasi lebih lanjut, silakan menghubungi kami melalui email:  [info@ppmedenhaag.nl](mailto:info@ppmedenhaag.nl).
 
 [Checklist dan Formulir Nikah 📝](/forms/20210925-Checklist-trouwerij-PPME-Den-Haag.docx)

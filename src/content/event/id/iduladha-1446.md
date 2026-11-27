@@ -59,7 +59,7 @@ PPME Den Haag bekerjasama dengan Yayasan Masdjid Al Hikmah menyampaikan pengumum
 * Akan ada pengawas untuk mengoordinasikan arus masuk di pintu masuk utama dan di pintu masuk di lantai pertama, 
 * Jika salat Idul Fitri kedua diperlukan, akan ada seorang Imam yang memimpin salat di Masjid.
 
-Terakhir, setiap orang yang hadir harus mentaati aturan dan saling memperhatikan.
+Terakhir, setiap orang yang hadir harus menaati aturan dan saling memperhatikan.
 
  [Informasi resmi Masjid Al Hikmah (pdf)](/docs/idul-adha-1445h.pdf)
 

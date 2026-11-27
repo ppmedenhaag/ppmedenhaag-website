@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode februari 2023 / Rajab - Sya’ban 1444:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode februari 2023 / Rajab - Sya’ban 1444:
 
 ##### Zaterdag 4 Februari /<br/> 13 Rajab
 <table style="width:100%">

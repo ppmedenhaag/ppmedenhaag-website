@@ -30,7 +30,7 @@ Pelajaran membaca Al Qur'an bersama komunitas PPME Den Haag dibagi menjadi kateg
 Untuk pertanyaan berkaitan dengan:
 * Bagaimana saya mendaftarkan anak saya untuk belajar baca Qur'an?
 * Apakah ada test masuk?
-* Berapa beaya untuk ikut belajar bersama?
+* Berapa biaya untuk ikut belajar bersama?
 * Kurikulum apa yang digunakan PPME Den Haag?
 * Apakah saya dan keluarga perlu bergabung dulu dengan PPME Den Haag?
 * Berapakah biaya untuk menjadi anggota ?

@@ -43,7 +43,7 @@ The event itinerary:
 | 17.05 - 18.05 | Dinner and social interactions |
 
 
-Istigotsah Akbar PPME has been arranged with collaborations and partitipations from all PPME areas:
+Istigotsah Akbar PPME has been arranged with collaborations and participation from all PPME areas:
 * **Den Haag**
 * **Amsterdam**
 * **Breda**

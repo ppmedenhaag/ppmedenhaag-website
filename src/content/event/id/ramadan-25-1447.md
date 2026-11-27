@@ -79,7 +79,7 @@ Berikut adalah program untuk Sabtu **25 Ramadan 1447**.
 </table>
 </div>
 <div class="block lg:hidden">
-(➡️ geser ke kanan di tabel diatas untuk melihat secara lengkap)
+(➡️ geser ke kanan di tabel di atas untuk melihat secara lengkap)
 </div>
 <br/>
 

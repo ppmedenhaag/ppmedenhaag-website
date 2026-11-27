@@ -44,7 +44,7 @@ Kami tunggu kehadiran anda pada hari Sabtu, 14 Januari 2023 pukul 19.15 (setelah
 
 
 
-Anda juga dapat menyaksikan ceramah ini secara langsung melalui situs web kami: [ppmedenhaag.nl](https://ppmedenhaag.nl).
+Anda juga dapat menyaksikan ceramah ini secara langsung melalui situs web kami: [ppmedenhaag.nl](https://www.ppmedenhaag.nl/).
 
 Wassalamu'alaykum wr wb.
 

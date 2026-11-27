@@ -16,7 +16,7 @@ type: "about"
 ---
 
 ## Membership
-Since PPME was founded in the 1970s, you can join as a member. PPME has several branches, such as in Amsterdam and Breda.
+Membership has been open since PPME was founded in the 1970s. PPME has several branches, such as in Amsterdam and Breda.
 
 Your **monthly membership fee** supports the association and allows us to keep offering high-quality, current and varied programs, both religious and social.
 

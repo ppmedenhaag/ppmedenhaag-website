@@ -47,5 +47,5 @@ Het programma ziet er als volg uit:
 We hopen op de aanwezigheid van u allen. In sha Allah, tot ziens bij de Reünie Haji & Umrah PPME Den Haag op zaterdag 11 november 2023 om 13.00 uur. In sha Allah.
 
 
-Wassalamu'alaykum warrohmatullohiwabarotuh
+Wassalamu'alaykum warrohmatullohi wabarokatuh
 

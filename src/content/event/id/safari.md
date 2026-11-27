@@ -31,7 +31,7 @@ type: "event"
 ---
 Assalamu’alaikum warohmatullahi wa barakatuh
 
-Acara silahturahmi PPME Den Haag bersama **Dr KH Ahmad Buchory Muslim S. Ag, SH, MA, ME. Sy.** akan diadakan di mesjid Al Hikmah pada: 
+Acara silaturahmi PPME Den Haag bersama **Dr KH Ahmad Buchory Muslim S. Ag, SH, MA, ME. Sy.** akan diadakan di mesjid Al Hikmah pada: 
 
 
 |Hari | Jam |

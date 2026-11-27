@@ -54,7 +54,7 @@ protokol kesehatan yang tetap ingin kita jaga bersama, in syaa Allah,
 
 Pengajian juga dapat diikuti secara online dengan menggunakan link Zoom berikut:
 
-Link sudah bisa diakses setengah jam sebelum pengajian di mulai, dimohon mematikan video/audio hingga pengajian dimulai.
+Link sudah bisa diakses setengah jam sebelum pengajian dimulai, dimohon mematikan video/audio hingga pengajian dimulai.
 
 Semoga pengajian rutin setiap hari sabtu PPME Den Haag dilancarkanNya dan membawa berkah. Aamiiin.
 

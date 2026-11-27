@@ -51,8 +51,8 @@ Berikut susunan program:
 
 <br/>
 
-Mohon diperhatikan, progam ini terbatas untuk **250** orang.<br/>
-**Registrasi**📝 dapat dilakukan [disini melalui Google Form](https://forms.gle/AVRzw3FopKHt9wmm9).
+Mohon diperhatikan, program ini terbatas untuk **250** orang.<br/>
+**Registrasi**📝 dapat dilakukan [di sini melalui Google Form](https://forms.gle/AVRzw3FopKHt9wmm9).
 
 
 <br/>

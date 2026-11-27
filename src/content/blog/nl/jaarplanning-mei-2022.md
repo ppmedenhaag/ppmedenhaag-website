@@ -283,7 +283,7 @@ Wati Chaeron, Ilman Sulchan, Ifa Chaeron, Wahyu Koen, Vicka Imron, Archi Delphin
             <td rowspan="2">
                 <p>
                     Lezing: De adhab en akhlaq van mensen<br/>
-                    binnen een moskee gemeenschap
+                    binnen een moskeegemeenschap
                 </p>
             </td>
             <td rowspan="2">

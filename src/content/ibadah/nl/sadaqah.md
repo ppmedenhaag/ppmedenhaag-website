@@ -21,16 +21,16 @@ type: "post"
 
 De islam biedt ons meer dan een manier om onszelf te zuiveren van onze tekortkomingen. Steun bieden aan mensen die materiële of morele steun nodig hebben is daar een voorbeeld van. Maar zelfs een oprechte glimlach kan al helpen jouw tekortkomingen en zondes te laten vergeven door Allah SWT. Het is een simpele vorm van liefdadigheid. En liefdadigheid is een vorm van aanbidding.
 
-### Zakat
-Het behoort tot een van de vijf pilaren van de islam. Het is een verplichting voor een moslim om een voorgeschreven deel van zijn/haar vermogen uit te geven aan mensen die er recht op hebben.
+## Zakat
+Het is een van de vijf zuilen van de islam. Het is een verplichting voor een moslim om een voorgeschreven deel van zijn/haar vermogen uit te geven aan mensen die er recht op hebben.
 
 
-### Infaq
+## Infaq
 Dit is het vrijwillig uitgeven van rijkdom of bezitting met als enige doel Allah SWT te behagen, zonder ervoor iets terug te willen krijgen.
 
  
 
-### Sadaqah
+## Sadaqah
 Dit is het vrijwillig geven van geld, hulpmiddelen, kennis en steun aan behoeftigen.
 
 In de Qur’an beschrijft Allah SWT het belang van liefdadigheid:
@@ -40,5 +40,5 @@ In de Qur’an beschrijft Allah SWT het belang van liefdadigheid:
 
 
 
-##### Persatuan Pemuda Muslim se-Eropa Den Haag
+### Persatuan Pemuda Muslim se-Eropa Den Haag
 IBAN **NL26 INGB 0002 1661 44**

@@ -33,12 +33,12 @@ Assalamu ‘alaykum wr wb
 
 Yth. Anggota dan Sahabat PPME Den Haag,
 
-Organisasi kita telah berjalan lebih dari 50 tahun dan telah mengalami banyak perubahan dan perkembangan. Bukan hanya zaman yang berubah namun komposisi demografi jamaah kita juga berubah. Awalnya organisasi kita dijalankan oleh para pemuda/mahasiswa, kini mereka telah menginjak usia tua sebagai sesepuh kita. Perubahan ini harus kita waspadai karena kebutuhan spiritual dan pembimbingan agama perlu disesuaikan. Kita harus siap menghadap tantangan baru yang akan kita hadapi sekaranga dan masa depan. Untuk menghadapi tantangan-tantangan ini kita harus merenungkan hal-hal sebagai berikut:
+Organisasi kita telah berjalan lebih dari 50 tahun dan telah mengalami banyak perubahan dan perkembangan. Bukan hanya zaman yang berubah namun komposisi demografi jamaah kita juga berubah. Awalnya organisasi kita dijalankan oleh para pemuda/mahasiswa, kini mereka telah menginjak usia tua sebagai sesepuh kita. Perubahan ini harus kita waspadai karena kebutuhan spiritual dan pembimbingan agama perlu disesuaikan. Kita harus siap menghadap tantangan baru yang akan kita hadapi sekarang dan masa depan. Untuk menghadapi tantangan-tantangan ini kita harus merenungkan hal-hal sebagai berikut:
 Bagaimana kita bisa menjalin komunikasi yang baik dan benar antara jamaah lintas usia dengan latar belakang yang berbeda-beda?
 
 Bagaimana caranya mengadakan perubahan di dalam organisasi agar kebutuhan jamaah sesuai zamannya dapat dijalankan tanpa kehilangan nilai-nilai pendidikan orang tua kita?
 
-Bagaimana caranya kita menjadi pemimpin yang dapat menjaga kedamaian dan kehormatan di dalam organisasi yang dinais dan kompleks (berbagai macam latar belakang, kepentingan, usia dll)?
+Bagaimana caranya kita menjadi pemimpin yang dapat menjaga kedamaian dan kehormatan di dalam organisasi yang dinamis dan kompleks (berbagai macam latar belakang, kepentingan, usia dll)?
 
 Apakah ajaran terpenting yang dapat kita ambil dari contoh Rasulullah SAW sebagai pemimpin termulia ummah yang beraneka ragam?
 

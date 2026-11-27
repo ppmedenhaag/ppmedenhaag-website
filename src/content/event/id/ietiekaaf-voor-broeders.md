@@ -28,7 +28,7 @@ Satu malam penuh persaudaraan, ilmu, dan refleksi.
 
 Pada 15-16 Syawwal 1447 (3-4 April '26), PPME Rotterdam bersama organisasi-organisasi lainnya menyelenggarakan sebuah Ie'tiekaaf istimewa dengan tema "Persaudaraan dan Tantangan Zaman Ini."
 
-Kami mentargetkan dua kelompok usia, namun acara ini tentu juga terbuka bagi yang lebih tua.
+Kami menargetkan dua kelompok usia, namun acara ini tentu juga terbuka bagi yang lebih tua.
 
 Sebuah momen untuk bersama-sama merenungkan tanggung jawab kita sebagai saudara, ikatan kita satu sama lain, dan bagaimana kita tetap teguh di tengah zaman yang penuh tantangan.
 

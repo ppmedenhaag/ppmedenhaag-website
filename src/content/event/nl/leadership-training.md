@@ -66,7 +66,7 @@ Ter gelegenheid van 51 jaar PPME, wil het bestuur van PPME Den Haag een training
 
 #### Beschrijving
 
-Onze vereniging bestaat meer dan 50 jaar en heeft verschillende ontwikkelingen mee gemaakt. Niet alleen de tijden veranderen, maar ook de demografie en dus ook de behoeftes van onze leden veranderen. Nieuwe uitdagingen komen hier bijkijken onder andere intergenerationele kwesties. 
+Onze vereniging bestaat meer dan 50 jaar en heeft verschillende ontwikkelingen mee gemaakt. Niet alleen de tijden veranderen, maar ook de demografie en dus ook de behoeftes van onze leden veranderen. Nieuwe uitdagingen komen hierbij, onder andere intergenerationele kwesties. 
 * **Hoe kunnen we goed met elkaar communiceren**? 
 * **Hoe kunnen we veranderingen brengen in een groeiende organisatie die mee wilt met de tijd zonder de kern van de opvoeding van onze ouders kwijt te raken**?
 * **Hoe word je een leider die de harmonie en respect kan bewaken in een organisatie die dynamisch en complex is** (verschillende etnische achtergronden, belangen, leeftijden enz.)
@@ -76,10 +76,10 @@ Onze vereniging bestaat meer dan 50 jaar en heeft verschillende ontwikkelingen m
 
 #### Verwachte uitkomst
 
-* entale doorbraak met belangrijke inzichten over de hoofdvragen
-* Realiseer dat iedereen is nodig bij een organisatie, iedereen heeft een rol en we moeten iedereen zo goed mogelijk accomoderen
-* Een keten van respect en vertrouwen creeëren binnen de gemeenschap
-* Beseffing dat verschil van mening een verrijking is en niet een reden van segregratie en polarisatie
+* Mentale doorbraak met belangrijke inzichten over de hoofdvragen
+* Realiseer dat iedereen is nodig bij een organisatie, iedereen heeft een rol en we moeten iedereen zo goed mogelijk accommoderen
+* Een keten van respect en vertrouwen creëren binnen de gemeenschap
+* Beseffing dat verschil van mening een verrijking is en niet een reden van segregatie en polarisatie
 
 <br/>
 

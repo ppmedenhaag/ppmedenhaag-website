@@ -27,7 +27,7 @@ Hierbij willen wij u graag informeren dat op de drie volgende zaterdagen geen pr
 * 29 april 2023/ 9 Syawal 1444 
 * 6 mei 2023/ 16 Syawal 1444 
 
-Zaterdag 13 mei 2023/ 23 Syawal 1444 H, zal in syaa Allah het PPME Den Haag zaterdagpogramma weer van start.
+Zaterdag 13 mei 2023/ 23 Syawal 1444 H, zal in syaa Allah het PPME Den Haag zaterdagprogramma weer van start.
 
 Het bestuur vraagt u om vergeving voor al haar tekortkomingen in de maand Ramadan.
 

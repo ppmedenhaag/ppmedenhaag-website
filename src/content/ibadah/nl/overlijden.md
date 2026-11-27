@@ -32,7 +32,7 @@ De Commissie Jenazah van PPME Den Haag kan ondersteunen bij het regelen van de u
 
  
 
-### Rol van de Commissie Jenazah na overlijden
+## Rol van de Commissie Jenazah na overlijden
 
 Als de Commissie Jenazah wordt gevraagd een uitvaart te begeleiden, dan zijn wij verantwoordelijk voor het goed laten verlopen hiervan. Dit begint bij de communicatie tussen de Commissie en de nabestaanden. Daarnaast begeleidt de Commissie zo veel mogelijk bij de communicatie met de verzekeringsmaatschappij.
 
@@ -78,7 +78,7 @@ De Commissie stelt daarnaast een overlijdenspakket beschikbaar. Hierin zitten al
 </table>
 
 
-### Uitvaartverzekering
+## Uitvaartverzekering
 
 Heb je een uitvaartverzekering? Check dan of ook zij van je wensen op de hoogte zijn. En anders kun je dit alsnog melden bij hun. Als je nog geen verzekering hebt, dan kan je je wensen direct bij het afsluiten doorgeven.
  
@@ -86,7 +86,7 @@ Heb je een uitvaartverzekering? Check dan of ook zij van je wensen op de hoogte 
 Daarnaast is het goed om te bedenken:
 
 * door wie je gewassen wil worden (meerdere personen van hetzelfde geslacht)
-* door wie je  ingewikkeld wil worden (meerdere personen van hetzelfde geslacht)
+* door wie je in de kafan gewikkeld wil worden (meerdere personen van hetzelfde geslacht)
 * waar je begraven wil worden
 * wie de contactpersoon is
 
@@ -95,7 +95,7 @@ Daarnaast is het goed om te bedenken:
 Wil je in een ander land dan Nederland begraven worden? Neem dan contact op met de ambassade van dat land.
 
 
-### Iemand is overleden. Wat moet ik doen?
+## Iemand is overleden. Wat moet ik doen?
 
 * Het eerste dat we zeggen als we horen of zien dat iemand is overleden: 
 

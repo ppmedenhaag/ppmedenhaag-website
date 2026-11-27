@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode augustus 2023 / Muharram - Safar 1445:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode augustus 2023 / Muharram - Safar 1445:
 
 ##### Zaterdag 5 Agustus 2023 /<br/> 18 Muharram 1445 
 <table style="width:100%">

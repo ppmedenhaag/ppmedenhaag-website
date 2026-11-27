@@ -17,7 +17,7 @@ tags: ["Romadhoon"]
 type: "post"
 ---
 
-Assalamu'alaykum wa rahmtullahi wa barakaatuh
+Assalamu'alaykum wa rahmatullahi wa barakaatuh
 
 Alhamdulillaah zal er dit jaar weer een Romadhoon Jongerenprogramma georganiseerd worden door PPME Den Haag.
 Zeer vereerd en dankbaar voor de sprekers die de lezingen zullen verzorgen.

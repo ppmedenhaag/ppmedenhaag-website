@@ -19,7 +19,7 @@ type: "post"
 
 Assalamu’alaikum warohmatullahi wa barakatuh,
 
-Beste PPME Den Haag gemeente, hier is het schema voor Indonesische recitaties voor de periode december 2022 / Jumadil Awwal-Jumadil Akhir 1444:
+Beste PPME Den Haag-gemeenschap, hier is het schema voor Indonesische recitaties voor de periode december 2022 / Jumadil Awwal-Jumadil Akhir 1444:
 
 ##### Zaterdag 3 december /<br/> 9 Jumadil Awwal
 <table style="width:100%">

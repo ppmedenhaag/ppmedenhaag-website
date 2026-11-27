@@ -26,7 +26,7 @@ type: "event"
 Assalamu ‘alaykum warrohmatullohi wabarokatuh,<br/>
 PPME mengundang anda ke Istigotsah Akbar edisi pertama, sejak hari jadinya yang ke-50!
 
-Bagi yang belum mendaftar, dipersilahkan untuk mendaftarkan diri [di sini](https://www.eventbrite.com/e/tickets-istigotsah-ppme-akbar-749016156487) melalui Eventbrite.
+Bagi yang belum mendaftar, dipersilakan untuk mendaftarkan diri [di sini](https://www.eventbrite.com/e/tickets-istigotsah-ppme-akbar-749016156487) melalui Eventbrite.
 
 Agenda acara:
 

@@ -40,7 +40,7 @@ Onderwerp:
 Fiqh Studie van het gebedshoofdstuk met Ustazd Nur Hasyim Subadi LC., MA.
 
 * De kenmerken van gebed
-* Sunnah ab’at en prostratie sahwi
+* Sunnah ab’at en sujud sahwi
 * Dingen die het gebed ongeldig maken
 Evenementen zijn te volgen via de Teams-link.
 

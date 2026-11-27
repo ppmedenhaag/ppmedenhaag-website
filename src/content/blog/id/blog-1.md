@@ -17,6 +17,6 @@ tags: ["Kontribusi"]
 type: "post"
 ---
 
-PPME Den Haag berterimakasih kepada Bapak Subono, Ibu Novita, Bapak Wawan dan Bapak Ferry Irawan atas donasi yang diberikan untuk pembuatan website PPME Den Haag. Terimakasih juga kami sampaikan kepada semua pihak yang telah membantu dalam proses pembuatan website ini.
+PPME Den Haag berterima kasih kepada Bapak Subono, Ibu Novita, Bapak Wawan dan Bapak Ferry Irawan atas donasi yang diberikan untuk pembuatan website PPME Den Haag. Terimakasih juga kami sampaikan kepada semua pihak yang telah membantu dalam proses pembuatan website ini.
 
 Semoga Allah memberikan pahala yang sebesar-besarnya. Aamiin.

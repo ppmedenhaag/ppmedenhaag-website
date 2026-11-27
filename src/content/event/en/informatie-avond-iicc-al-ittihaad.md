@@ -10,7 +10,7 @@ draft: false
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description: "Information evening about the plans for the Indonesian Islamic Cultural Centre (IICC) Al Ittihaad on Saturday 7 November 2026, 17:45–19:45 at Al Hikmah, PPME Den Haag."
+description: "Information evening about the Indonesian Islamic Cultural Centre (IICC) Al Ittihaad, Saturday 7 November 2026, 17:45–19:45 at Al Hikmah."
 # Event image
 image: "images/events/informatie-avond-iicc-al-ittihaad-20261107.webp"
 # location

@@ -42,7 +42,7 @@ PPME Den Haag will commemorate Maulid Prophet Muhammad saws,  in syaa Allah will
 <tr><td>Place</td><td>Masjid Al-Hikmah<br/>Medlerstraat 4<br/>2531 HA, Den Haag</td>
 </table>
 
-with the breakdown of the schedue as follow:
+with the breakdown of the schedule as follow:
 
 | From | To | Activity |
 |----|----|---|
